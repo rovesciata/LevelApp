@@ -9,16 +9,30 @@
 import UIKit
 
 class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
+    
+    // スクロールビュー
+    @IBOutlet weak var myScrollView: UIScrollView!
+    // スクロールビューのサブビュー
+    @IBOutlet weak var contentView: UIView!
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var skill1Field: UITextField!
     @IBOutlet weak var skill2Field: UITextField!
     @IBOutlet weak var skill3Field: UITextField!
+    // プロフィール写真
     @IBOutlet weak var selectImageView: UIImageView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // スクロールビューの領域を指定する
+        let scrollFrame = CGRect(x: 0, y: 77, width: view.frame.width, height: view.frame.height-20)
+        myScrollView.frame = scrollFrame
+        // コンテンツのサイズを指定する
+        let contentRect = contentView.bounds
+        myScrollView.contentSize = CGSize(width: contentRect.width, height: contentRect.height)
 
         // タップしたらキーボードが消える
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewProfileViewController.tapGesture(_:)))
