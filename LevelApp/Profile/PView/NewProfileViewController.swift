@@ -232,7 +232,13 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]){
-        selectImageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        
+        // 再表示
+        DispatchQueue.main.async {
+            self.selectImageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
+            
+            self.selectImageView.setNeedsLayout()
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
