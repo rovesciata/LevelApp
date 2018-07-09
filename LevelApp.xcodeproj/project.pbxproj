@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5791C8BC6DBF56C119D2A306 /* Pods_LevelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F089C8BDF61C63B9BCA1E26D /* Pods_LevelApp.framework */; };
+		8C9357DC20F24F9D00271B39 /* SkillSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9357DB20F24F9D00271B39 /* SkillSelection.swift */; };
+		8C9357E320F2575C00271B39 /* reload_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357DE20F2575C00271B39 /* reload_icon.png */; };
+		8C9357E420F2575C00271B39 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357DF20F2575C00271B39 /* menu_icon.png */; };
+		8C9357E520F2575C00271B39 /* stop_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357E020F2575C00271B39 /* stop_icon.png */; };
+		8C9357E620F2575C00271B39 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357E120F2575C00271B39 /* back_icon.png */; };
+		8C9357E720F2575C00271B39 /* go_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357E220F2575C00271B39 /* go_icon.png */; };
 		8CA8DA4620E9E63000B87947 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8DA4520E9E63000B87947 /* Profile.swift */; };
 		8CA8DA4820E9E96E00B87947 /* ProfileCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8DA4720E9E96E00B87947 /* ProfileCollection.swift */; };
 		8CA8DA4A20E9F20100B87947 /* NewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8DA4920E9F20100B87947 /* NewProfileViewController.swift */; };
@@ -57,6 +63,12 @@
 		6E8DC9AA8E59AA7448B5A849 /* Pods-LevelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LevelAppTests/Pods-LevelAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		76C922BF514A0A9F57F0F649 /* Pods_LevelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LevelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDB0513C864CA1D9136DEA9 /* Pods-LevelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LevelApp/Pods-LevelApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8C9357DB20F24F9D00271B39 /* SkillSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSelection.swift; sourceTree = "<group>"; };
+		8C9357DE20F2575C00271B39 /* reload_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload_icon.png; sourceTree = "<group>"; };
+		8C9357DF20F2575C00271B39 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
+		8C9357E020F2575C00271B39 /* stop_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop_icon.png; sourceTree = "<group>"; };
+		8C9357E120F2575C00271B39 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
+		8C9357E220F2575C00271B39 /* go_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go_icon.png; sourceTree = "<group>"; };
 		8CA8DA4520E9E63000B87947 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8CA8DA4720E9E96E00B87947 /* ProfileCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollection.swift; sourceTree = "<group>"; };
 		8CA8DA4920E9F20100B87947 /* NewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +187,18 @@
 			path = PController;
 			sourceTree = "<group>";
 		};
+		8C9357DD20F2575C00271B39 /* UIWebView_images */ = {
+			isa = PBXGroup;
+			children = (
+				8C9357DE20F2575C00271B39 /* reload_icon.png */,
+				8C9357DF20F2575C00271B39 /* menu_icon.png */,
+				8C9357E020F2575C00271B39 /* stop_icon.png */,
+				8C9357E120F2575C00271B39 /* back_icon.png */,
+				8C9357E220F2575C00271B39 /* go_icon.png */,
+			);
+			path = UIWebView_images;
+			sourceTree = "<group>";
+		};
 		8CB9DA2A20DB57DB0093F711 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +238,8 @@
 				8CC11CF620E77099003E32B8 /* Todo */,
 				8CBED50C20DB453500FF0DE3 /* AppDelegate.swift */,
 				8CBED51020DB453500FF0DE3 /* Main.storyboard */,
+				8C9357DD20F2575C00271B39 /* UIWebView_images */,
+				8C9357DB20F24F9D00271B39 /* SkillSelection.swift */,
 				8CED55DA20ECF27C002AD241 /* icons8-カレンダー-50.png */,
 				8CED55D820ECF27B002AD241 /* icons8-ホーム-filled-50.png */,
 				8CED55D920ECF27B002AD241 /* icons8-リスト-50.png */,
@@ -395,13 +421,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9357E420F2575C00271B39 /* menu_icon.png in Resources */,
 				8CED55DE20ECF27C002AD241 /* icons8-カレンダー-50.png in Resources */,
+				8C9357E520F2575C00271B39 /* stop_icon.png in Resources */,
 				8CB9DA2920DB57B80093F711 /* 女子学生.jpg in Resources */,
 				8CBED51720DB453600FF0DE3 /* LaunchScreen.storyboard in Resources */,
+				8C9357E620F2575C00271B39 /* back_icon.png in Resources */,
+				8C9357E720F2575C00271B39 /* go_icon.png in Resources */,
 				8CED55DF20ECF27C002AD241 /* icons8-設定-50.png in Resources */,
 				8CBED51420DB453600FF0DE3 /* Assets.xcassets in Resources */,
 				8CBED51220DB453500FF0DE3 /* Main.storyboard in Resources */,
 				8CED55DD20ECF27C002AD241 /* icons8-リスト-50.png in Resources */,
+				8C9357E320F2575C00271B39 /* reload_icon.png in Resources */,
 				8CED55DC20ECF27C002AD241 /* icons8-ホーム-filled-50.png in Resources */,
 				8CB9DA2820DB57B80093F711 /* 男子学生.jpg in Resources */,
 			);
@@ -514,6 +545,7 @@
 				8CBED50D20DB453500FF0DE3 /* AppDelegate.swift in Sources */,
 				8CC11CEC20E625CB003E32B8 /* TodoListTableViewController.swift in Sources */,
 				8CC11D0120E7915D003E32B8 /* CalendarViewController.swift in Sources */,
+				8C9357DC20F24F9D00271B39 /* SkillSelection.swift in Sources */,
 				8CC11CF120E629D7003E32B8 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var todoField: UITextField!
+    @IBOutlet weak var skillSelectedLabel: UILabel!
     
     let todoCollection = TodoCollection.sharedInstance
     
@@ -38,6 +39,7 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewTodoViewController.close))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewTodoViewController.save))
+        skillSelectedLabel.text =  UserDefaults.standard.object(forKey: "text1") as? String
     }
     
     @objc func close() {
@@ -69,6 +71,16 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
         todoField.resignFirstResponder()
         return true
     }
+    
+    // skillSelectionから戻る
+//    @IBAction func unwindToTop(segue: UIStoryboardSegue) {
+//
+//        // userDefaultsの読み込み
+////        let defaults = UserDefaults.standard
+////        skillSelectedLabel.text = defaults.object(forKey: "skill1Text") as? String
+////        skillSelectedLabel.text = defaults.object(forKey: "skill2Text") as? String
+////        skillSelectedLabel.text = defaults.object(forKey: "skill3Text") as? String
+//    }
 
     /*
     // MARK: - Navigation
