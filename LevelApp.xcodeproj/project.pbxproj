@@ -14,6 +14,8 @@
 		8C9357E520F2575C00271B39 /* stop_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357E020F2575C00271B39 /* stop_icon.png */; };
 		8C9357E620F2575C00271B39 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357E120F2575C00271B39 /* back_icon.png */; };
 		8C9357E720F2575C00271B39 /* go_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357E220F2575C00271B39 /* go_icon.png */; };
+		8C9357EA20F3BBD600271B39 /* icons8-スター-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357E920F3BBD500271B39 /* icons8-スター-48.png */; };
+		8C9357EC20F3BBFA00271B39 /* icons8-星-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357EB20F3BBFA00271B39 /* icons8-星-48.png */; };
 		8CA8DA4620E9E63000B87947 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8DA4520E9E63000B87947 /* Profile.swift */; };
 		8CA8DA4820E9E96E00B87947 /* ProfileCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8DA4720E9E96E00B87947 /* ProfileCollection.swift */; };
 		8CA8DA4A20E9F20100B87947 /* NewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8DA4920E9F20100B87947 /* NewProfileViewController.swift */; };
@@ -69,6 +71,8 @@
 		8C9357E020F2575C00271B39 /* stop_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop_icon.png; sourceTree = "<group>"; };
 		8C9357E120F2575C00271B39 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_icon.png; sourceTree = "<group>"; };
 		8C9357E220F2575C00271B39 /* go_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go_icon.png; sourceTree = "<group>"; };
+		8C9357E920F3BBD500271B39 /* icons8-スター-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-スター-48.png"; sourceTree = "<group>"; };
+		8C9357EB20F3BBFA00271B39 /* icons8-星-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-星-48.png"; sourceTree = "<group>"; };
 		8CA8DA4520E9E63000B87947 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8CA8DA4720E9E96E00B87947 /* ProfileCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollection.swift; sourceTree = "<group>"; };
 		8CA8DA4920E9F20100B87947 /* NewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +203,20 @@
 			path = UIWebView_images;
 			sourceTree = "<group>";
 		};
+		8C9357E820F3ACD400271B39 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8C9357EB20F3BBFA00271B39 /* icons8-星-48.png */,
+				8C9357E920F3BBD500271B39 /* icons8-スター-48.png */,
+				8C9357DD20F2575C00271B39 /* UIWebView_images */,
+				8CED55DA20ECF27C002AD241 /* icons8-カレンダー-50.png */,
+				8CED55D820ECF27B002AD241 /* icons8-ホーム-filled-50.png */,
+				8CED55D920ECF27B002AD241 /* icons8-リスト-50.png */,
+				8CED55DB20ECF27C002AD241 /* icons8-設定-50.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		8CB9DA2A20DB57DB0093F711 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,17 +251,13 @@
 		8CBED50B20DB453500FF0DE3 /* LevelApp */ = {
 			isa = PBXGroup;
 			children = (
+				8C9357E820F3ACD400271B39 /* Image */,
 				8C52C7D120E9E39500E44F84 /* Profile */,
 				8CC11CFB20E78004003E32B8 /* Calendar */,
 				8CC11CF620E77099003E32B8 /* Todo */,
 				8CBED50C20DB453500FF0DE3 /* AppDelegate.swift */,
 				8CBED51020DB453500FF0DE3 /* Main.storyboard */,
-				8C9357DD20F2575C00271B39 /* UIWebView_images */,
 				8C9357DB20F24F9D00271B39 /* SkillSelection.swift */,
-				8CED55DA20ECF27C002AD241 /* icons8-カレンダー-50.png */,
-				8CED55D820ECF27B002AD241 /* icons8-ホーム-filled-50.png */,
-				8CED55D920ECF27B002AD241 /* icons8-リスト-50.png */,
-				8CED55DB20ECF27C002AD241 /* icons8-設定-50.png */,
 				8CBED51320DB453600FF0DE3 /* Assets.xcassets */,
 				8CBED51520DB453600FF0DE3 /* LaunchScreen.storyboard */,
 				8CBED51820DB453600FF0DE3 /* Info.plist */,
@@ -426,11 +440,13 @@
 				8C9357E520F2575C00271B39 /* stop_icon.png in Resources */,
 				8CB9DA2920DB57B80093F711 /* 女子学生.jpg in Resources */,
 				8CBED51720DB453600FF0DE3 /* LaunchScreen.storyboard in Resources */,
+				8C9357EA20F3BBD600271B39 /* icons8-スター-48.png in Resources */,
 				8C9357E620F2575C00271B39 /* back_icon.png in Resources */,
 				8C9357E720F2575C00271B39 /* go_icon.png in Resources */,
 				8CED55DF20ECF27C002AD241 /* icons8-設定-50.png in Resources */,
 				8CBED51420DB453600FF0DE3 /* Assets.xcassets in Resources */,
 				8CBED51220DB453500FF0DE3 /* Main.storyboard in Resources */,
+				8C9357EC20F3BBFA00271B39 /* icons8-星-48.png in Resources */,
 				8CED55DD20ECF27C002AD241 /* icons8-リスト-50.png in Resources */,
 				8C9357E320F2575C00271B39 /* reload_icon.png in Resources */,
 				8CED55DC20ECF27C002AD241 /* icons8-ホーム-filled-50.png in Resources */,

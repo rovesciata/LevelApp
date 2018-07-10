@@ -313,13 +313,24 @@
                                     <segue destination="464-P9-f1U" kind="presentation" id="rG9-pR-XCp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="skillSelected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czo-Fo-qbK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タスク" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czo-Fo-qbK">
                                 <rect key="frame" x="20" y="449" width="253" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-スター-48.png" translatesAutoresizingMaskIntoConstraints="NO" id="m7f-fB-oez">
+                                <rect key="frame" x="322" y="442" width="33" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rl9-IP-qy3">
+                                <rect key="frame" x="323" y="444" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="tapped:" destination="fv5-f4-L72" eventType="touchUpInside" id="4ln-33-jZT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -342,6 +353,7 @@
                     <connections>
                         <outlet property="descriptionView" destination="JNG-Q4-u4x" id="43o-Lg-2QZ"/>
                         <outlet property="skillSelectedLabel" destination="czo-Fo-qbK" id="BE9-H5-ckY"/>
+                        <outlet property="starView" destination="m7f-fB-oez" id="Fmr-sO-6pJ"/>
                         <outlet property="todoField" destination="f4i-3G-1L0" id="xNX-Zr-pvJ"/>
                     </connections>
                 </viewController>
@@ -511,4 +523,7 @@
             <point key="canvasLocation" x="2528.8000000000002" y="131.78410794602701"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-スター-48.png" width="48" height="48"/>
+    </resources>
 </document>

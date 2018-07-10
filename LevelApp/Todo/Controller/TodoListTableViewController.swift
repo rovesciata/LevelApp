@@ -49,6 +49,7 @@ class TodoListTableViewController: UITableViewController {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "reuseIdentifier")
         let todo = self.todoCollection.todos[indexPath.row]
+//        cell.textLabel!.text = UserDefaults.standard.object(forKey: "text1") as? String
         cell.textLabel!.text = todo.title
         cell.detailTextLabel!.text = todo.descript
         cell.textLabel!.font = UIFont(name: "HirakakuProN-W3", size: 15)
