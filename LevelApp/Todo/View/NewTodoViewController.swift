@@ -13,9 +13,12 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var todoField: UITextField!
     @IBOutlet weak var skillSelectedLabel: UILabel!
+    @IBOutlet weak var skillSegment: UISegmentedControl!
+    
     // 星ボタンの生成
     @IBOutlet weak var starView: UIImageView!
     var checked: UIImage = UIImage(named: "icons8-星-48.png")!
+    // 星ボタンの縮小
     var transScale = CGAffineTransform()
     
     
@@ -36,6 +39,7 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
     // 星ボタンを押した時の処理
     @IBAction func tapped(_ sender: UIButton) {
             starView.image = checked
+        // 星ボタンの縮小処理
         transScale = CGAffineTransform(scaleX: 1, y: 1)
         starView.transform = transScale
     }
@@ -68,10 +72,12 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
 //        } else {
             let todo = Todo()
         
-        // ？　defaults.userの値をタスク画面に表示
+        // 　defaults.userの値をタスク画面に表示
             todo.title = UserDefaults.standard.object(forKey: "text1") as! String
 //            todo.title = todoField.text!
             todo.descript = descriptionView.text
+            // enumのTodoSkill型に変換されたものを代入
+//            todo.skill = TodoSkill(rawValue: skillSegment.selectedSegmentIndex)!
             self.todoCollection.addTodoCollection(todo: todo)
             print(self.todoCollection.todos)
             self.dismiss(animated: true, completion: nil)

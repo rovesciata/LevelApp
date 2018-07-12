@@ -14,6 +14,9 @@ class TodoListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // セルの登録
+        tableView.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
+        
         todoCollection.fetchTodos()
         
     }
@@ -33,27 +36,35 @@ class TodoListTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    // セクション数
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    // セル数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return self.todoCollection.todos.count
     }
 
-    
+    // セルの内容
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "reuseIdentifier")
+        // セルの内容表示
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
         let todo = self.todoCollection.todos[indexPath.row]
-//        cell.textLabel!.text = UserDefaults.standard.object(forKey: "text1") as? String
-        cell.textLabel!.text = todo.title
-        cell.detailTextLabel!.text = todo.descript
-        cell.textLabel!.font = UIFont(name: "HirakakuProN-W3", size: 15)
-
+        cell.labelCell.text = todo.title
+        cell.detailCell.text = todo.descript
+        cell.labelCell!.font = UIFont(name: "HirakakuProN-W3", size: 15)
+        
+        
+//      重要  let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "reuseIdentifier")
+//        let todo = self.todoCollection.todos[indexPath.row]
+//
+//        cell.textLabel!.text = todo.title
+//        cell.detailTextLabel!.text = todo.descript
+//        cell.textLabel!.font = UIFont(name: "HirakakuProN-W3", size: 15)
+        
         return cell
     }
     

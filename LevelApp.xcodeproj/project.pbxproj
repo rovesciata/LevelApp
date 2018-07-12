@@ -16,6 +16,8 @@
 		8C9357E720F2575C00271B39 /* go_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357E220F2575C00271B39 /* go_icon.png */; };
 		8C9357EA20F3BBD600271B39 /* icons8-スター-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357E920F3BBD500271B39 /* icons8-スター-48.png */; };
 		8C9357EC20F3BBFA00271B39 /* icons8-星-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357EB20F3BBFA00271B39 /* icons8-星-48.png */; };
+		8C9357F320F6627F00271B39 /* TodoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9357F120F6627F00271B39 /* TodoListTableViewCell.swift */; };
+		8C9357F420F6627F00271B39 /* TodoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357F220F6627F00271B39 /* TodoListTableViewCell.xib */; };
 		8CA8DA4620E9E63000B87947 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8DA4520E9E63000B87947 /* Profile.swift */; };
 		8CA8DA4820E9E96E00B87947 /* ProfileCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8DA4720E9E96E00B87947 /* ProfileCollection.swift */; };
 		8CA8DA4A20E9F20100B87947 /* NewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8DA4920E9F20100B87947 /* NewProfileViewController.swift */; };
@@ -73,6 +75,8 @@
 		8C9357E220F2575C00271B39 /* go_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go_icon.png; sourceTree = "<group>"; };
 		8C9357E920F3BBD500271B39 /* icons8-スター-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-スター-48.png"; sourceTree = "<group>"; };
 		8C9357EB20F3BBFA00271B39 /* icons8-星-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-星-48.png"; sourceTree = "<group>"; };
+		8C9357F120F6627F00271B39 /* TodoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewCell.swift; sourceTree = "<group>"; };
+		8C9357F220F6627F00271B39 /* TodoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListTableViewCell.xib; sourceTree = "<group>"; };
 		8CA8DA4520E9E63000B87947 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8CA8DA4720E9E96E00B87947 /* ProfileCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollection.swift; sourceTree = "<group>"; };
 		8CA8DA4920E9F20100B87947 /* NewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileViewController.swift; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				8CC11CEB20E625CB003E32B8 /* TodoListTableViewController.swift */,
+				8C9357F120F6627F00271B39 /* TodoListTableViewCell.swift */,
+				8C9357F220F6627F00271B39 /* TodoListTableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 				8CBED51420DB453600FF0DE3 /* Assets.xcassets in Resources */,
 				8CBED51220DB453500FF0DE3 /* Main.storyboard in Resources */,
 				8C9357EC20F3BBFA00271B39 /* icons8-星-48.png in Resources */,
+				8C9357F420F6627F00271B39 /* TodoListTableViewCell.xib in Resources */,
 				8CED55DD20ECF27C002AD241 /* icons8-リスト-50.png in Resources */,
 				8C9357E320F2575C00271B39 /* reload_icon.png in Resources */,
 				8CED55DC20ECF27C002AD241 /* icons8-ホーム-filled-50.png in Resources */,
@@ -563,6 +570,7 @@
 				8CC11D0120E7915D003E32B8 /* CalendarViewController.swift in Sources */,
 				8C9357DC20F24F9D00271B39 /* SkillSelection.swift in Sources */,
 				8CC11CF120E629D7003E32B8 /* Todo.swift in Sources */,
+				8C9357F320F6627F00271B39 /* TodoListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

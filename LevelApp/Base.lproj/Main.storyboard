@@ -269,39 +269,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タスク" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLx-VC-3lP">
-                                <rect key="frame" x="20" y="94" width="335" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="qcQ-nf-chm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タスクを記入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4i-3G-1L0">
-                                <rect key="frame" x="20" y="125" width="335" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dho-VA-4vG"/>
-                                </constraints>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タスクを記入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4i-3G-1L0">
+                                <rect key="frame" x="20" y="606" width="335" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="詳細" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuQ-1U-x5C">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="詳細" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuQ-1U-x5C">
                                 <rect key="frame" x="20" y="185" width="335" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="3pK-Rt-gRe"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JNG-Q4-u4x">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JNG-Q4-u4x">
                                 <rect key="frame" x="20" y="216" width="335" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="k7z-L9-bju"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -331,27 +316,38 @@
                                     <action selector="tapped:" destination="fv5-f4-L72" eventType="touchUpInside" id="4ln-33-jZT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="スキル選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1U-WU-oxc">
+                                <rect key="frame" x="16" y="85" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タスク" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLx-VC-3lP">
+                                <rect key="frame" x="20" y="577" width="335" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kav-cs-8cB">
+                                <rect key="frame" x="16" y="122" width="333" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Skill1"/>
+                                    <segment title="Skill2"/>
+                                    <segment title="Skill3"/>
+                                </segments>
+                                <color key="tintColor" red="0.1939630826" green="0.66757217639999999" blue="0.42424463359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="f4i-3G-1L0" firstAttribute="leading" secondItem="NqD-N5-RS5" secondAttribute="leading" constant="20" id="8iA-le-kXe"/>
-                            <constraint firstItem="JNG-Q4-u4x" firstAttribute="leading" secondItem="NqD-N5-RS5" secondAttribute="leading" constant="20" id="AaV-Ky-xYN"/>
-                            <constraint firstItem="MuQ-1U-x5C" firstAttribute="leading" secondItem="NqD-N5-RS5" secondAttribute="leading" constant="20" id="D2Y-2h-M5S"/>
-                            <constraint firstItem="NqD-N5-RS5" firstAttribute="trailing" secondItem="JNG-Q4-u4x" secondAttribute="trailing" constant="20" id="D4a-LE-C6x"/>
-                            <constraint firstItem="NqD-N5-RS5" firstAttribute="trailing" secondItem="f4i-3G-1L0" secondAttribute="trailing" constant="20" id="JbI-6y-pAi"/>
-                            <constraint firstItem="f4i-3G-1L0" firstAttribute="top" secondItem="GLx-VC-3lP" secondAttribute="bottom" constant="10" id="LsU-2q-mdB"/>
-                            <constraint firstItem="NqD-N5-RS5" firstAttribute="trailing" secondItem="GLx-VC-3lP" secondAttribute="trailing" constant="20" id="ULW-Z9-Cyn"/>
-                            <constraint firstItem="JNG-Q4-u4x" firstAttribute="top" secondItem="MuQ-1U-x5C" secondAttribute="bottom" constant="10" id="UrQ-ld-jnY"/>
-                            <constraint firstItem="GLx-VC-3lP" firstAttribute="leading" secondItem="NqD-N5-RS5" secondAttribute="leading" constant="20" id="amN-h9-jac"/>
-                            <constraint firstItem="NqD-N5-RS5" firstAttribute="trailing" secondItem="MuQ-1U-x5C" secondAttribute="trailing" constant="20" id="h7s-fZ-URf"/>
-                            <constraint firstItem="MuQ-1U-x5C" firstAttribute="top" secondItem="f4i-3G-1L0" secondAttribute="bottom" constant="30" id="sTs-Ig-0lQ"/>
-                            <constraint firstItem="GLx-VC-3lP" firstAttribute="top" secondItem="NqD-N5-RS5" secondAttribute="top" constant="30" id="yyN-fn-rn5"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NqD-N5-RS5"/>
                     </view>
                     <navigationItem key="navigationItem" title="タスク作成" id="r2J-x0-vnM"/>
                     <connections>
                         <outlet property="descriptionView" destination="JNG-Q4-u4x" id="43o-Lg-2QZ"/>
+                        <outlet property="skillSegment" destination="kav-cs-8cB" id="tCB-Py-0fF"/>
                         <outlet property="skillSelectedLabel" destination="czo-Fo-qbK" id="BE9-H5-ckY"/>
                         <outlet property="starView" destination="m7f-fB-oez" id="Fmr-sO-6pJ"/>
                         <outlet property="todoField" destination="f4i-3G-1L0" id="xNX-Zr-pvJ"/>

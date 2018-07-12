@@ -8,9 +8,15 @@
 
 import UIKit
 
+// skill選択の列挙型enumのプロパティを定義
+//enum TodoSkill: Int {
+//    case Skill1 = 0
+//    case Skill2 = 1
+//    case Skill3 = 2
+//}
+
 class Todo: NSObject {
-    
     var title = ""
     var descript = ""
-
+//    var skill: TodoSkill = .Skill1
 }
