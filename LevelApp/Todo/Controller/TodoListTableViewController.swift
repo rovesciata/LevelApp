@@ -8,6 +8,18 @@
 
 import UIKit
 
+// 星ボタンの機能拡張
+public extension UITableView {
+    
+    func indexPathForView(_ view: UIView) -> IndexPath? {
+        let origin = view.bounds.origin
+        let viewOrigin = self.convert(origin, from: view)
+        let indexPath = self.indexPathForRow(at: viewOrigin)
+        return indexPath
+    }
+}
+
+
 class TodoListTableViewController: UITableViewController {
     let todoCollection = TodoCollection.sharedInstance
 
@@ -46,6 +58,7 @@ class TodoListTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return self.todoCollection.todos.count
     }
+    
 
     // セルの内容
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,7 +69,18 @@ class TodoListTableViewController: UITableViewController {
         cell.labelCell.text = todo.title
         cell.detailCell.text = todo.descript
         cell.labelCell!.font = UIFont(name: "HirakakuProN-W3", size: 15)
+
         
+        
+        cell.starButton2.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
+        
+        
+        if todo.finished == false {
+            cell.starButton2.setImage(UIImage(named: "icons8-スター-48.png"), for: .normal)
+        } else {
+            cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
+        }
+       
         
 //      重要  let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "reuseIdentifier")
 //        let todo = self.todoCollection.todos[indexPath.row]
@@ -67,6 +91,28 @@ class TodoListTableViewController: UITableViewController {
         
         return cell
     }
+    
+    var boolButton = false
+    
+    @objc func buttonTapped(_ button: UIButton) {
+        if let indexPath = self.tableView.indexPathForView(button) {
+            print("Button tapped at indexPath \(indexPath.row)")
+            
+            let todo = self.todoCollection.todos[indexPath.row + 1]
+
+            todo.finished = true
+        }
+        else {
+            print("Button indexPath not found")
+            
+            let todo = self.todoCollection.todos[0]
+            todo.finished = true
+        }
+        self.tableView.reloadData()
+    }
+    
+    
+    
     
     @objc func newTodo() {
         self.performSegue(withIdentifier: "PresentNewTodoViewController", sender: self)
@@ -83,50 +129,5 @@ class TodoListTableViewController: UITableViewController {
         }
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

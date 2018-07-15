@@ -12,10 +12,13 @@ class TodoListTableViewCell: UITableViewCell {
     @IBOutlet weak var labelCell: UILabel!
     @IBOutlet weak var detailCell: UILabel!
     @IBOutlet weak var starImageCell: UIImageView!
+    @IBOutlet weak var starButton2: UIButton!
     
-    var checked: UIImage = UIImage(named: "icons8-星-48.png")!
-    // 星ボタンの縮小
-    var transScale = CGAffineTransform()
+    let todoCollection = TodoCollection.sharedInstance
+//    let todo = Todo()
+//    var checked: UIImage = UIImage(named: "icons8-星-48.png")!
+//    // 星ボタンの縮小
+//    var transScale = CGAffineTransform()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,9 +32,6 @@ class TodoListTableViewCell: UITableViewCell {
     }
     
     @IBAction func starButtonCell(_ sender: UIButton) {
-        starImageCell.image = checked
-        // 星ボタンの縮小処理
-        transScale = CGAffineTransform(scaleX: 1, y: 1)
-        starImageCell.transform = transScale
+
     }
 }

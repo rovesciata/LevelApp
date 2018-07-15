@@ -164,8 +164,9 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
         skill2Field.text = defaults.object(forKey: "skill2Text") as? String
         skill3Field.text = defaults.object(forKey: "skill3Text") as? String
         // imageViewのuserDefaultsはNSデータ型にしてから読み込み
-        let imageData:NSData = UserDefaults.standard.object(forKey: "selectImage") as! NSData
+        if let imageData:NSData = UserDefaults.standard.object(forKey: "selectImage") as? NSData {
         selectImageView.image = UIImage(data: imageData as Data)
+    }
     }
     
     // 閉じるボタンが押された時の処理

@@ -52,8 +52,10 @@ class ViewController: UIViewController {
         skill2.text = defaults.object(forKey: "skill2Text") as? String
         skill3.text = defaults.object(forKey: "skill3Text") as? String
         // imageViewのuserDefaultsはNSデータ型にしてから読み込み
-        let imageData:NSData = UserDefaults.standard.object(forKey: "selectImage") as! NSData
-        profileImage.image = UIImage(data: imageData as Data)
+        if let imageData:NSData = UserDefaults.standard.object(forKey: "selectImage") as? NSData
+        {
+            profileImage.image = UIImage(data: imageData as Data)
+        }
     }
     
     

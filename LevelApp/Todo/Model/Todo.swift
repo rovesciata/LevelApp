@@ -18,5 +18,6 @@ import UIKit
 class Todo: NSObject {
     var title = ""
     var descript = ""
+    var finished = false
 //    var skill: TodoSkill = .Skill1
 }

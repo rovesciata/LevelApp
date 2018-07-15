@@ -19,19 +19,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="394" height="74.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-スター-48.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bln-oS-fpZ">
-                        <rect key="frame" x="351" y="20" width="33" height="34"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="33" id="BfS-iC-sbO"/>
-                            <constraint firstAttribute="height" constant="34" id="TSv-de-2Rs"/>
-                        </constraints>
-                    </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8H-q2-viq">
+                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8H-q2-viq">
                         <rect key="frame" x="339" y="9.5" width="55" height="56"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="55" id="8hY-nG-CeS"/>
                             <constraint firstAttribute="height" constant="56" id="mOp-Wp-i0p"/>
                         </constraints>
+                        <state key="normal" image="icons8-スター-48.png"/>
                         <connections>
                             <action selector="starButtonCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0mo-DD-dA8"/>
                         </connections>
@@ -58,10 +52,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="B8H-q2-viq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="M2W-kQ-1TG"/>
-                    <constraint firstItem="Bln-oS-fpZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Oqr-WA-bcr"/>
                     <constraint firstItem="Fr8-DX-pmY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="ZYb-G9-Toy"/>
                     <constraint firstItem="Fr8-DX-pmY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="iMy-ZT-Wkp"/>
-                    <constraint firstAttribute="trailing" secondItem="Bln-oS-fpZ" secondAttribute="trailing" constant="10" id="kav-rW-tSX"/>
                     <constraint firstAttribute="trailing" secondItem="B8H-q2-viq" secondAttribute="trailing" id="l1E-qc-d7p"/>
                     <constraint firstAttribute="bottom" secondItem="Z9C-We-42t" secondAttribute="bottom" constant="5" id="o3M-3J-3Er"/>
                     <constraint firstItem="Z9C-We-42t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="w5g-1l-pZb"/>
@@ -71,7 +63,7 @@
             <connections>
                 <outlet property="detailCell" destination="Z9C-We-42t" id="nVq-0F-PA5"/>
                 <outlet property="labelCell" destination="Fr8-DX-pmY" id="NiS-wr-j5c"/>
-                <outlet property="starImageCell" destination="Bln-oS-fpZ" id="LKC-rU-7BZ"/>
+                <outlet property="starButton2" destination="B8H-q2-viq" id="DRF-yq-lFb"/>
             </connections>
             <point key="canvasLocation" x="71" y="69.5"/>
         </tableViewCell>
