@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5791C8BC6DBF56C119D2A306 /* Pods_LevelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F089C8BDF61C63B9BCA1E26D /* Pods_LevelApp.framework */; };
+		8C8F68A620FC8BB900D5941A /* icons8-ホーム-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */; };
+		8C8F68A820FC8C8A00D5941A /* icons8-カレンダー-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */; };
+		8C8F68AA20FC8CA200D5941A /* icons8-タスクリスト-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A920FC8CA200D5941A /* icons8-タスクリスト-30.png */; };
+		8C8F68AC20FC8E9300D5941A /* icons8-設定-filled-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68AB20FC8E9200D5941A /* icons8-設定-filled-30.png */; };
 		8C9357DC20F24F9D00271B39 /* SkillSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9357DB20F24F9D00271B39 /* SkillSelection.swift */; };
 		8C9357E320F2575C00271B39 /* reload_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357DE20F2575C00271B39 /* reload_icon.png */; };
 		8C9357E420F2575C00271B39 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C9357DF20F2575C00271B39 /* menu_icon.png */; };
@@ -67,6 +71,10 @@
 		6E8DC9AA8E59AA7448B5A849 /* Pods-LevelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LevelAppTests/Pods-LevelAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		76C922BF514A0A9F57F0F649 /* Pods_LevelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LevelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDB0513C864CA1D9136DEA9 /* Pods-LevelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LevelApp/Pods-LevelApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ホーム-30.png"; sourceTree = "<group>"; };
+		8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-カレンダー-30.png"; sourceTree = "<group>"; };
+		8C8F68A920FC8CA200D5941A /* icons8-タスクリスト-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-タスクリスト-30.png"; sourceTree = "<group>"; };
+		8C8F68AB20FC8E9200D5941A /* icons8-設定-filled-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-設定-filled-30.png"; sourceTree = "<group>"; };
 		8C9357DB20F24F9D00271B39 /* SkillSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSelection.swift; sourceTree = "<group>"; };
 		8C9357DE20F2575C00271B39 /* reload_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload_icon.png; sourceTree = "<group>"; };
 		8C9357DF20F2575C00271B39 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
@@ -210,6 +218,10 @@
 		8C9357E820F3ACD400271B39 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				8C8F68AB20FC8E9200D5941A /* icons8-設定-filled-30.png */,
+				8C8F68A920FC8CA200D5941A /* icons8-タスクリスト-30.png */,
+				8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */,
+				8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */,
 				8C9357EB20F3BBFA00271B39 /* icons8-星-48.png */,
 				8C9357E920F3BBD500271B39 /* icons8-スター-48.png */,
 				8C9357DD20F2575C00271B39 /* UIWebView_images */,
@@ -441,16 +453,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C8F68AC20FC8E9300D5941A /* icons8-設定-filled-30.png in Resources */,
 				8C9357E420F2575C00271B39 /* menu_icon.png in Resources */,
 				8CED55DE20ECF27C002AD241 /* icons8-カレンダー-50.png in Resources */,
 				8C9357E520F2575C00271B39 /* stop_icon.png in Resources */,
 				8CB9DA2920DB57B80093F711 /* 女子学生.jpg in Resources */,
 				8CBED51720DB453600FF0DE3 /* LaunchScreen.storyboard in Resources */,
 				8C9357EA20F3BBD600271B39 /* icons8-スター-48.png in Resources */,
+				8C8F68AA20FC8CA200D5941A /* icons8-タスクリスト-30.png in Resources */,
 				8C9357E620F2575C00271B39 /* back_icon.png in Resources */,
 				8C9357E720F2575C00271B39 /* go_icon.png in Resources */,
 				8CED55DF20ECF27C002AD241 /* icons8-設定-50.png in Resources */,
 				8CBED51420DB453600FF0DE3 /* Assets.xcassets in Resources */,
+				8C8F68A620FC8BB900D5941A /* icons8-ホーム-30.png in Resources */,
 				8CBED51220DB453500FF0DE3 /* Main.storyboard in Resources */,
 				8C9357EC20F3BBFA00271B39 /* icons8-星-48.png in Resources */,
 				8C9357F420F6627F00271B39 /* TodoListTableViewCell.xib in Resources */,
@@ -458,6 +473,7 @@
 				8C9357E320F2575C00271B39 /* reload_icon.png in Resources */,
 				8CED55DC20ECF27C002AD241 /* icons8-ホーム-filled-50.png in Resources */,
 				8CB9DA2820DB57B80093F711 /* 男子学生.jpg in Resources */,
+				8C8F68A820FC8C8A00D5941A /* icons8-カレンダー-30.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

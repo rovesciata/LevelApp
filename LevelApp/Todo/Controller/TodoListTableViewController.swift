@@ -8,7 +8,8 @@
 
 import UIKit
 
-// 星ボタンの機能拡張
+
+// 星ボタンのセル選択のための機能拡張
 public extension UITableView {
     
     func indexPathForView(_ view: UIView) -> IndexPath? {
@@ -20,8 +21,17 @@ public extension UITableView {
 }
 
 
+
+
 class TodoListTableViewController: UITableViewController {
+    
+    
     let todoCollection = TodoCollection.sharedInstance
+    
+    // 星ボタン完了のカウント初期値
+    var count: Float = 0
+    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +48,7 @@ class TodoListTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // ヘッダーのボタン作成
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
@@ -48,6 +59,7 @@ class TodoListTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
     // セクション数
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -58,6 +70,8 @@ class TodoListTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return self.todoCollection.todos.count
     }
+    
+    
     
 
     // セルの内容
@@ -70,18 +84,30 @@ class TodoListTableViewController: UITableViewController {
         cell.detailCell.text = todo.descript
         cell.labelCell!.font = UIFont(name: "HirakakuProN-W3", size: 15)
 
-        
-        
+        // 星ボタンを押した時
         cell.starButton2.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
-        
-        
         if todo.finished == false {
+            // 星ボタン(くり抜き)を表示
             cell.starButton2.setImage(UIImage(named: "icons8-スター-48.png"), for: .normal)
         } else {
+            // 星ボタン(塗りつぶし)を表示
             cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
+            
+            
+            // 星ボタン完了カウント変数を定義
+            //    let starCount = UITableViewController()
+            
+            // 星ボタンを押した時、0.5を足す
+            count += 0.5
+            
+            // 星ボタンの完了カウント数をuserDefaultsで保存
+            let defaults = UserDefaults.standard
+            defaults.set(count, forKey: "countStar")
+            
+            // 星ボタンの押したか押してないかを保存
+            defaults.set(todo.finished, forKey: "finishedStar")
         }
        
-        
 //      重要  let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "reuseIdentifier")
 //        let todo = self.todoCollection.todos[indexPath.row]
 //
@@ -92,26 +118,24 @@ class TodoListTableViewController: UITableViewController {
         return cell
     }
     
+    // 星ボタンを押した時の真偽
     var boolButton = false
     
+    
+    // 星ボタンを押した時の処理
     @objc func buttonTapped(_ button: UIButton) {
         if let indexPath = self.tableView.indexPathForView(button) {
             print("Button tapped at indexPath \(indexPath.row)")
-            
             let todo = self.todoCollection.todos[indexPath.row + 1]
-
             todo.finished = true
         }
         else {
             print("Button indexPath not found")
-            
             let todo = self.todoCollection.todos[0]
             todo.finished = true
         }
         self.tableView.reloadData()
     }
-    
-    
     
     
     @objc func newTodo() {
@@ -128,6 +152,7 @@ class TodoListTableViewController: UITableViewController {
             return
         }
     }
+    
     
 
 }

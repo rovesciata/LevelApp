@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     // ViewControllerクラスのプロパティとしてProfileCollectionクラスのインスタンスを宣言
     let profileCollection = ProfileCollection()
     
@@ -20,6 +21,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var skill3: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     
+    
+    
+    @IBAction func testBtn(_ sender: UIButton) {
+        // 現在の進捗に50%を加算する。
+//        levelBar.setProgress(levelBar.progress + 0.5, animated: true)
+        let defaults = UserDefaults.standard
+        let trueStar = defaults.bool(forKey: "finishedStar")
+        
+        if trueStar == false {
+            // レベルバーを初期値に戻す
+            levelBar.progress = 0
+            
+        } else {
+          
+            // 星ボタン完了カウント数の読み込み
+            
+            let starCount = defaults.float(forKey: "countStar")
+            
+            levelBar.setProgress(starCount, animated: true)
+            //        levelBar.progress = starCount
+        }
+        
+        
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +78,7 @@ class ViewController: UIViewController {
         skill1.text = defaults.object(forKey: "skill1Text") as? String
         skill2.text = defaults.object(forKey: "skill2Text") as? String
         skill3.text = defaults.object(forKey: "skill3Text") as? String
+        
         // imageViewのuserDefaultsはNSデータ型にしてから読み込み
         if let imageData:NSData = UserDefaults.standard.object(forKey: "selectImage") as? NSData
         {
