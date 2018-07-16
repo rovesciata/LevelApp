@@ -26,10 +26,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var levelSkill3: UILabel!
     
     
-   
-    let floatNum: Float = 0.0
     
     
+    var num = 1
     
     @IBAction func testBtn(_ sender: UIButton) {
         // 現在の進捗に50%を加算する。
@@ -39,15 +38,13 @@ class ViewController: UIViewController {
         let trueStar = defaults.bool(forKey: "finishedStar")
         
         
-        
-        var num = 1
-        
-        
-        
 ////        // lv.1〜99までleverBarを上げる
-        for num in 1...99 {
+//        for num in 1...98 {
+        
+        
+        if levelBar.progress >= 0.0 && levelBar.progress < 1.0 {
             
-            while floatNum < 1.0  {
+        
                 if trueStar == false {
                     // レベルバーを初期値に戻す
                     //                levelBar = UIProgressView(progressViewStyle: UIProgressViewStyle.default)
@@ -56,17 +53,19 @@ class ViewController: UIViewController {
                 } else {
                     
                     
-                    
                     let starCount = defaults.float(forKey: "countStar")
+//                    let starCount = defaults.float(forKey: "countStar")
                     levelBar.setProgress(starCount, animated: true)
                     //        levelBar.progress = starCount
                 }
-
-            }
-            let num = num + 1
+        } else {
+            var num = self.num
+            num = num + 1
             levelAll.text = String(num)
+            levelBar.progress = 0.0
+            }
 
-        }
+//        }
     
     }
     
