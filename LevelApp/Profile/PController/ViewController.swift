@@ -20,32 +20,54 @@ class ViewController: UIViewController {
     @IBOutlet weak var skill2: UILabel!
     @IBOutlet weak var skill3: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var levelAll: UILabel!
+    @IBOutlet weak var levelSkill1: UILabel!
+    @IBOutlet weak var levelSkill2: UILabel!
+    @IBOutlet weak var levelSkill3: UILabel!
+    
+    
+   
+    let floatNum: Float = 0.0
     
     
     
     @IBAction func testBtn(_ sender: UIButton) {
         // 現在の進捗に50%を加算する。
 //        levelBar.setProgress(levelBar.progress + 0.5, animated: true)
+        // 星ボタン完了カウント数の読み込み
         let defaults = UserDefaults.standard
         let trueStar = defaults.bool(forKey: "finishedStar")
         
-        if trueStar == false {
-            // レベルバーを初期値に戻す
-            levelBar.progress = 0
+        
+        
+        var num = 1
+        
+        
+        
+////        // lv.1〜99までleverBarを上げる
+        for num in 1...99 {
             
-        } else {
-          
-            // 星ボタン完了カウント数の読み込み
-            
-            let starCount = defaults.float(forKey: "countStar")
-            
-            levelBar.setProgress(starCount, animated: true)
-            //        levelBar.progress = starCount
+            while floatNum < 1.0  {
+                if trueStar == false {
+                    // レベルバーを初期値に戻す
+                    //                levelBar = UIProgressView(progressViewStyle: UIProgressViewStyle.default)
+                    
+                    
+                } else {
+                    
+                    
+                    
+                    let starCount = defaults.float(forKey: "countStar")
+                    levelBar.setProgress(starCount, animated: true)
+                    //        levelBar.progress = starCount
+                }
+
+            }
+            let num = num + 1
+            levelAll.text = String(num)
+
         }
-        
-        
-        
-        
+    
     }
     
     override func viewDidLoad() {
@@ -56,9 +78,8 @@ class ViewController: UIViewController {
         // levelBar.layer.cornerRadius = 5
         // levelBarの枠
         levelBar.layer.borderWidth = 0.3
-        
-        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -69,6 +90,7 @@ class ViewController: UIViewController {
     // Home画面からProfile編集画面への遷移
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "編集", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.newProfile))
         
@@ -91,12 +113,6 @@ class ViewController: UIViewController {
     @objc func newProfile() {
         self.performSegue(withIdentifier: "PresentNewProfileViewController", sender: self)
     }
-    
-    
-    
-        
-        
-        
         
     }
     
