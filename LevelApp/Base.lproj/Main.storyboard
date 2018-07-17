@@ -19,56 +19,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-スター-48.png" translatesAutoresizingMaskIntoConstraints="NO" id="kuV-Y3-btB">
-                                <rect key="frame" x="16" y="69" width="343" height="270"/>
+                                <rect key="frame" x="16" y="69" width="343" height="314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lv." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLx-ue-thc">
-                                <rect key="frame" x="20" y="428" width="21" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1v9-fM-IP7">
-                                <rect key="frame" x="131" y="438" width="102" height="2"/>
+                                <rect key="frame" x="161" y="428" width="102" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="progressTintColor" red="0.1939630826" green="0.66757217639999999" blue="0.42424463359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="0.048916842490000001" green="0.1020083973" blue="0.355528236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lv." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAD-cd-mCe">
-                                <rect key="frame" x="139" y="478" width="21" height="21"/>
+                                <rect key="frame" x="171" y="479" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="42n-fF-WDO">
+                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42n-fF-WDO">
                                 <rect key="frame" x="236" y="488" width="102" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="progressTintColor" red="0.1939630826" green="0.66757217639999999" blue="0.42424463359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="progressTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="0.048916842490000001" green="0.1020083973" blue="0.355528236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
-                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="to6-5h-gFC">
+                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="to6-5h-gFC">
                                 <rect key="frame" x="236" y="535" width="102" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="progressTintColor" red="0.1939630826" green="0.66757217639999999" blue="0.42424463359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="progressTintColor" red="1" green="0.90592536690000003" blue="0.107972635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="0.048916842490000001" green="0.1020083973" blue="0.355528236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
-                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="a6O-6g-r5X">
+                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6O-6g-r5X">
                                 <rect key="frame" x="236" y="580" width="102" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="progressTintColor" red="0.1939630826" green="0.66757217639999999" blue="0.42424463359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="progressTintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="0.048916842490000001" green="0.1020083973" blue="0.355528236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lv." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pl-ye-yTV">
-                                <rect key="frame" x="139" y="526" width="21" height="21"/>
+                                <rect key="frame" x="171" y="526" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lv." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmn-DI-NbT">
-                                <rect key="frame" x="139" y="571" width="21" height="21"/>
+                                <rect key="frame" x="171" y="570" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -114,28 +107,35 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd3-Mc-aFM">
-                                <rect key="frame" x="166" y="478" width="8" height="21"/>
+                                <rect key="frame" x="200" y="479" width="28" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s56-NU-41P">
-                                <rect key="frame" x="166" y="526" width="8" height="21"/>
+                                <rect key="frame" x="200" y="526" width="36" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koz-iR-IQG">
-                                <rect key="frame" x="166" y="571" width="8" height="21"/>
+                                <rect key="frame" x="200" y="571" width="25" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b44-xL-Bzf">
-                                <rect key="frame" x="49" y="427" width="43" height="21"/>
+                                <rect key="frame" x="121" y="419" width="43" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lv." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLx-ue-thc">
+                                <rect key="frame" x="92" y="419" width="21" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -149,6 +149,9 @@
                     <connections>
                         <outlet property="levelAll" destination="b44-xL-Bzf" id="Knh-Ux-MxZ"/>
                         <outlet property="levelBar" destination="1v9-fM-IP7" id="NVU-VL-hf0"/>
+                        <outlet property="levelBarSkill1" destination="42n-fF-WDO" id="5JA-bZ-bCt"/>
+                        <outlet property="levelBarSkill2" destination="to6-5h-gFC" id="5Mo-uz-pI9"/>
+                        <outlet property="levelBarSkill3" destination="a6O-6g-r5X" id="rS8-4j-3X6"/>
                         <outlet property="levelSkill1" destination="gd3-Mc-aFM" id="2fV-vI-C6o"/>
                         <outlet property="levelSkill2" destination="s56-NU-41P" id="UZn-gh-BQc"/>
                         <outlet property="levelSkill3" destination="koz-iR-IQG" id="Zxu-1F-9lJ"/>
@@ -359,13 +362,6 @@
                                     <action selector="tapped:" destination="fv5-f4-L72" eventType="touchUpInside" id="4ln-33-jZT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="スキル選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1U-WU-oxc">
-                                <rect key="frame" x="16" y="85" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タスク" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLx-VC-3lP">
                                 <rect key="frame" x="20" y="577" width="335" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -373,16 +369,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kav-cs-8cB">
-                                <rect key="frame" x="16" y="122" width="333" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Skill1"/>
-                                    <segment title="Skill2"/>
-                                    <segment title="Skill3"/>
-                                </segments>
-                                <color key="tintColor" red="0.1939630826" green="0.66757217639999999" blue="0.42424463359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NqD-N5-RS5"/>
@@ -390,7 +376,6 @@
                     <navigationItem key="navigationItem" title="タスク作成" id="r2J-x0-vnM"/>
                     <connections>
                         <outlet property="descriptionView" destination="JNG-Q4-u4x" id="43o-Lg-2QZ"/>
-                        <outlet property="skillSegment" destination="kav-cs-8cB" id="tCB-Py-0fF"/>
                         <outlet property="skillSelectedLabel" destination="czo-Fo-qbK" id="BE9-H5-ckY"/>
                         <outlet property="starView" destination="m7f-fB-oez" id="Fmr-sO-6pJ"/>
                         <outlet property="todoField" destination="f4i-3G-1L0" id="xNX-Zr-pvJ"/>
@@ -425,41 +410,17 @@
             </objects>
             <point key="canvasLocation" x="2773.5999999999999" y="1607.9460269865069"/>
         </scene>
-        <!--Data Source-->
+        <!--カレンダー-->
         <scene sceneID="6hX-qx-vn0">
             <objects>
-                <viewController id="kYQ-Lb-2mt" customClass="CalendarViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarViewController" id="kYQ-Lb-2mt" customClass="CalendarViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="et8-ff-6CY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iY-lD-fJN" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="20" width="375" height="359"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="265" id="hYh-la-Fjn"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="yyyy年 MM月"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="kYQ-Lb-2mt" id="uMx-oH-qxx"/>
-                                    <outlet property="delegate" destination="kYQ-Lb-2mt" id="aYF-w1-RzN"/>
-                                </connections>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="6iY-lD-fJN" firstAttribute="trailing" secondItem="pMv-Hp-iUg" secondAttribute="trailing" id="2jW-o5-Cqh"/>
-                            <constraint firstItem="6iY-lD-fJN" firstAttribute="top" secondItem="pMv-Hp-iUg" secondAttribute="top" id="kAN-bF-koL"/>
-                            <constraint firstItem="6iY-lD-fJN" firstAttribute="leading" secondItem="pMv-Hp-iUg" secondAttribute="leading" id="xfz-B7-Mlx"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pMv-Hp-iUg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="カレンダー" id="U1j-jF-tOj"/>
-                    <connections>
-                        <outlet property="calendar" destination="6iY-lD-fJN" id="oo1-pf-gOC"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="カレンダー" image="icons8-カレンダー-30.png" id="U1j-jF-tOj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be8-0M-0n8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -563,6 +524,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-カレンダー-30.png" width="30" height="30"/>
         <image name="icons8-スター-48.png" width="48" height="48"/>
         <image name="icons8-タスクリスト-30.png" width="30" height="30"/>
         <image name="icons8-ホーム-30.png" width="30" height="30"/>

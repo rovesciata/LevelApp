@@ -7,8 +7,24 @@
 //
 
 import UIKit
+import RealmSwift
+
+// スケジュール登録のディスプレイサイズ取得
+let w2 = UIScreen.main.bounds.size.width
+let h2 = UIScreen.main.bounds.size.height
+// スケジュール内容入力テキスト
+let eventText = UITextView(frame: CGRect(x: (w2 - 300) / 2, y: 100, width: 300, height: 200))
+// 日付フォーム(UIDatePickerを使用)
+let y = UIDatePicker(frame: CGRect(x: 0, y: 300, width: w2, height: 300))
+// 日付表示
+let y_text = UILabel(frame: CGRect(x: (w2 - 300) / 2, y: 570, width: 300, height: 20))
+
+
+    
+
 
 class NewTodoViewController: UIViewController, UITextFieldDelegate {
+    
 
     @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var todoField: UITextField!
@@ -24,9 +40,55 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
     
     let todoCollection = TodoCollection.sharedInstance
     
+    
+    // カレンダーのスケジュール登録日付定義
+    var date: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // スケジュール内容入力テキスト設定
+        eventText.text = ""
+        eventText.layer.borderColor = UIColor.grey.cgColor
+        eventText.layer.borderWidth = 1.0
+        evetnText.layer.cornerRadius = 10.0
+        view.addSubview(eventText)
+        // 日付フォーム設定
+        y.datePickerMode = UIDatePickerMode.date
+        y.timeZone = NSTimeZone.local
+        y.addTarget(self, action: #selector(picker(_:)), for: .valueChanged)
+        view.addSubview(y)
+        // 日付表示設定
+        y_text.backgroundColor = .white
+        y_text.textAlignment = .center
+        view.addSubview(y_text)
+        
+        // 日付フォーム
+        @objc func picker(_ sender: UIDatePicker) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yy/MM/dd"
+            y_text.text = formatter.string(from: sender.date)
+            view.addSubview(y_text)
+        }
+        // DB書き込み処理
+        @objc func saveEvent(_ : UIButton) {
+            print("データ書き込み開始")
+            
+            let realm = try! Realm()
+            
+            try! realm.write {
+                // 日付表示の内容とスケジュール入力の内容が書き込まれる。
+                let Events = [Event(value: ["date": y_text.text, "event": eventText.text])]
+                realm.add(Events)
+                print("データ書き込み中")
+            }
+            
+            print("データ書き込み完了")
+            // 前のページに戻る
+            dismiss(animated: true, completion: nil)
+        }
+        
+        // 詳細記入欄
         descriptionView.layer.cornerRadius = 5
         descriptionView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
         descriptionView.layer.borderWidth = 1

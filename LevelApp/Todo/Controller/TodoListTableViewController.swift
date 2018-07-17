@@ -90,6 +90,7 @@ class TodoListTableViewController: UITableViewController {
             // 星ボタン(くり抜き)を表示
             cell.starButton2.setImage(UIImage(named: "icons8-スター-48.png"), for: .normal)
         } else {
+            
             // 星ボタン(塗りつぶし)を表示
             cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
             

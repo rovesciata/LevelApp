@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var levelSkill1: UILabel!
     @IBOutlet weak var levelSkill2: UILabel!
     @IBOutlet weak var levelSkill3: UILabel!
+    @IBOutlet weak var levelBarSkill1: UIProgressView!
+    @IBOutlet weak var levelBarSkill2: UIProgressView!
+    @IBOutlet weak var levelBarSkill3: UIProgressView!
     
     
     
@@ -36,6 +39,9 @@ class ViewController: UIViewController {
         // 星ボタン完了カウント数の読み込み
         let defaults = UserDefaults.standard
         let trueStar = defaults.bool(forKey: "finishedStar")
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
+        
         
         
 ////        // lv.1〜99までleverBarを上げる
@@ -50,22 +56,35 @@ class ViewController: UIViewController {
                     //                levelBar = UIProgressView(progressViewStyle: UIProgressViewStyle.default)
                     
                     
-                } else {
+                } else if ((cell.textLabel?.text = defaults.object(forKey: "text1") as? String) != nil) {
                     
                     
                     let starCount = defaults.float(forKey: "countStar")
-//                    let starCount = defaults.float(forKey: "countStar")
+//
                     levelBar.setProgress(starCount, animated: true)
-                    //        levelBar.progress = starCount
-                }
+                    levelBarSkill1.setProgress(starCount, animated: true)
+                    
+                } else if ((cell.textLabel?.text = defaults.object(forKey: "text1") as? String) != nil) {
+                    
+                    let starCount = defaults.float(forKey: "countStar")
+                    
+                    levelBar.setProgress(starCount, animated: true)
+                    levelBarSkill2.setProgress(starCount, animated: true)
+                    
+                } else if ((cell.textLabel?.text = defaults.object(forKey: "text1") as? String) != nil) {
+                    
+                    let starCount = defaults.float(forKey: "countStar")
+                    
+                    levelBar.setProgress(starCount, animated: true)
+                    levelBarSkill3.setProgress(starCount, animated: true)
         } else {
-            var num = self.num
+//            var num = num
             num = num + 1
             levelAll.text = String(num)
             levelBar.progress = 0.0
             }
 
-//        }
+        }
     
     }
     
@@ -77,6 +96,18 @@ class ViewController: UIViewController {
         // levelBar.layer.cornerRadius = 5
         // levelBarの枠
         levelBar.layer.borderWidth = 0.3
+        
+        // levelBarSkill1の高さ変更
+        levelBarSkill1.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
+        levelBarSkill1.layer.borderWidth = 0.3
+        
+        // levelBarSkill2の高さ変更
+        levelBarSkill2.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
+        levelBarSkill2.layer.borderWidth = 0.3
+        
+        // levelBarSkill3の高さ変更
+        levelBarSkill3.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
+        levelBarSkill3.layer.borderWidth = 0.3
     }
     
 
