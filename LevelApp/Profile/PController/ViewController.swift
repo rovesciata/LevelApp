@@ -32,6 +32,9 @@ class ViewController: UIViewController {
     
     
     var num = 1
+    var numSkill1 = 1
+    var numSkill2 = 1
+    var numSkill3 = 1
     
     @IBAction func testBtn(_ sender: UIButton) {
         // 現在の進捗に50%を加算する。
@@ -42,50 +45,53 @@ class ViewController: UIViewController {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
         
-        
-        
 ////        // lv.1〜99までleverBarを上げる
 //        for num in 1...98 {
-        
-        
-        if levelBar.progress >= 0.0 && levelBar.progress < 1.0 {
-            
-        
                 if trueStar == false {
-                    // レベルバーを初期値に戻す
-                    //                levelBar = UIProgressView(progressViewStyle: UIProgressViewStyle.default)
                     
-                    
-                } else if ((cell.textLabel?.text = defaults.object(forKey: "text1") as? String) != nil) {
-                    
-                    
+                } else {
+                    // 全体のlevelBarを上げる
+                    cell.textLabel?.text = defaults.object(forKey: "text1") as? String
+                    if levelBar.progress >= 0.0 && levelBar.progress < 1.0 {
                     let starCount = defaults.float(forKey: "countStar")
-//
                     levelBar.setProgress(starCount, animated: true)
-                    levelBarSkill1.setProgress(starCount, animated: true)
-                    
-                } else if ((cell.textLabel?.text = defaults.object(forKey: "text1") as? String) != nil) {
-                    
-                    let starCount = defaults.float(forKey: "countStar")
-                    
-                    levelBar.setProgress(starCount, animated: true)
-                    levelBarSkill2.setProgress(starCount, animated: true)
-                    
-                } else if ((cell.textLabel?.text = defaults.object(forKey: "text1") as? String) != nil) {
-                    
-                    let starCount = defaults.float(forKey: "countStar")
-                    
-                    levelBar.setProgress(starCount, animated: true)
-                    levelBarSkill3.setProgress(starCount, animated: true)
-        } else {
-//            var num = num
-            num = num + 1
-            levelAll.text = String(num)
-            levelBar.progress = 0.0
+                    } else {
+                        num = num + 1
+                        levelAll.text = String(num)
+                        levelBar.progress = 0.0
+                    }
+                    // skill1のlevelBarを上げる
+                    if cell.textLabel?.text == defaults.object(forKey: "skill1Text") as? String {
+                        if levelBarSkill1.progress >= 0.0 && levelBarSkill1.progress < 1.0 {
+                        let starCount1 = defaults.float(forKey: "countStar1")
+                        levelBarSkill1.setProgress(starCount1, animated: true)
+                    } else {
+                        numSkill1 = numSkill1 + 1
+                        levelSkill1.text = String(numSkill1)
+                        levelBarSkill1.progress = 0.0
+                        }
+                    // skill2のlevelBarを上げる
+                    } else if cell.textLabel?.text == defaults.object(forKey: "skill2Text") as? String {
+                        if levelBarSkill2.progress >= 0.0 && levelBarSkill2.progress < 1.0 {
+                        let starCount2 = defaults.float(forKey: "countStar2")
+                        levelBarSkill2.setProgress(starCount2, animated: true)
+                        } else {
+                            numSkill2 = numSkill2 + 1
+                            levelSkill2.text = String(numSkill2)
+                            levelBarSkill2.progress = 0.0
+                        }
+                    // skill3のlevelBarを上げる
+                    } else if cell.textLabel?.text == defaults.object(forKey: "skill3Text") as? String {
+                        if levelBarSkill3.progress >= 0.0 && levelBarSkill3.progress < 1.0 {
+                        let starCount3 = defaults.float(forKey: "countStar3")
+                        levelBarSkill3.setProgress(starCount3, animated: true)
+                        } else {
+                            numSkill3 = numSkill3 + 1
+                            levelSkill3.text = String(numSkill3)
+                            levelBarSkill3.progress = 0.0
+                        }
+                    }
             }
-
-        }
-    
     }
     
     override func viewDidLoad() {

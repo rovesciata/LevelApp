@@ -12,7 +12,7 @@ import CalculateCalendarLogic
 import RealmSwift
 
 // ディスプレイサイズ取得
-let w = UISCreen.main.bounds.size.width
+let w = UIScreen.main.bounds.size.width
 let h = UIScreen.main.bounds.size.height
 
 class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance{
@@ -22,9 +22,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     // 「主なスケジュール」の表示
     let labelTitle = UILabel(frame: CGRect(x: 0, y: 530, width: 180, height: 50))
     // カレンダー部分
-    let dateView = FSCalendar(frame: CGRect(x: 0, y: 30, widht: w, height: 400))
+    let dateView = FSCalendar(frame: CGRect(x: 0, y: 30, width: w, height: 400))
     // 日付の表示
-    let Date = UILabe(frame: CGRect(x: 5, y: 430, width: 200, height: 100))
+    let Date = UILabel(frame: CGRect(x: 5, y: 430, width: 200, height: 100))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,14 +52,14 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         // スケジュール内容表示設定
         labelDate.text = ""
-        labelDate.font = UIFont.system(ofSize: 18.0)
+        labelDate.font = UIFont.systemFont(ofSize: 18.0)
         view.addSubview(labelDate)
         
         // スケジュール追加ボタン
-        let addBtn = UIButton(frame: CGRect(x: w - 70, y: h - 70, width: 60, height: 60))
+        let addBtn = UIButton(frame: CGRect(x: w - 70, y: h - 135, width: 60, height: 60))
         addBtn.setTitle("+", for: UIControlState())
         addBtn.setTitleColor(.white, for: UIControlState())
-        addBtn.backgroundColor = .orange
+        addBtn.backgroundColor = .red
         addBtn.layer.cornerRadius = 30.0
         addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
         view.addSubview(addBtn)
@@ -104,9 +104,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     }
     
     // 土日や祝日の日の文字色を変える
-    func calendar(_ calendar: FSCalendar, appearance: FSCalendar, titleDefaultColorFor date: Date) -> UIColor? {
-        // 祝日判定をする
-        if self.judgeHoliday(date) {
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+        //祝日判定をする
+        if self.judgeHoliday(date){
             return UIColor.red
         }
         
@@ -124,22 +124,23 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     // 画面遷移(スケジュール登録ページ)
     @objc func onClick(_: UIButton) {
+//        self.performSegue(withIdentifier: "NewTodoViewController", sender: self)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
         present(SecondController, animated: true, completion: nil)
     }
-    
+
     // カレンダー処理(スケジュール表示処理)
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        labelTitle.text = "主なスケジュール"
-        labelTitle.backgroundColor = .orange
-        view.addSubview(labelTitle)
+//        labelTitle.text = "主なスケジュール"
+//        labelTitle.backgroundColor = .orange
+//        view.addSubview(labelTitle)
         
         // 予定がある場合、スケジュールをDBから取得・表示する。
         // ない場合、「スケジュールはありません」と表示
-        labelDate.text = "スケジュールはありません"
-        labelDate.textColor = .lightGray
-        view.addSubview(labelDate)
+//        labelDate.text = "スケジュールはありません"
+//        labelDate.textColor = .lightGray
+//        view.addSubview(labelDate)
         
         let tmpDate = Calendar(identifier: .gregorian)
         let year = tmpDate.component(.year, from: date)

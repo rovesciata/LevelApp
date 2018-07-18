@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5791C8BC6DBF56C119D2A306 /* Pods_LevelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F089C8BDF61C63B9BCA1E26D /* Pods_LevelApp.framework */; };
+		8C00276020FED03600552381 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C00275F20FED03600552381 /* EventViewController.swift */; };
 		8C8E0BBF20FD943C009A7B5A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E0BBE20FD943C009A7B5A /* Event.swift */; };
 		8C8F68A620FC8BB900D5941A /* icons8-ホーム-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */; };
 		8C8F68A820FC8C8A00D5941A /* icons8-カレンダー-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */; };
@@ -72,6 +73,7 @@
 		6E8DC9AA8E59AA7448B5A849 /* Pods-LevelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LevelAppTests/Pods-LevelAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		76C922BF514A0A9F57F0F649 /* Pods_LevelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LevelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDB0513C864CA1D9136DEA9 /* Pods-LevelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LevelApp/Pods-LevelApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8C00275F20FED03600552381 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		8C8E0BBE20FD943C009A7B5A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ホーム-30.png"; sourceTree = "<group>"; };
 		8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-カレンダー-30.png"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				8CC11D0020E7915D003E32B8 /* CalendarViewController.swift */,
 				8C8E0BBE20FD943C009A7B5A /* Event.swift */,
+				8C00275F20FED03600552381 /* EventViewController.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -542,11 +545,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LevelApp/Pods-LevelApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CalculateCalendarLogic/CalculateCalendarLogic.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CalculateCalendarLogic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -587,6 +594,7 @@
 				8CBED50D20DB453500FF0DE3 /* AppDelegate.swift in Sources */,
 				8CC11CEC20E625CB003E32B8 /* TodoListTableViewController.swift in Sources */,
 				8CC11D0120E7915D003E32B8 /* CalendarViewController.swift in Sources */,
+				8C00276020FED03600552381 /* EventViewController.swift in Sources */,
 				8C9357DC20F24F9D00271B39 /* SkillSelection.swift in Sources */,
 				8CC11CF120E629D7003E32B8 /* Todo.swift in Sources */,
 				8C9357F320F6627F00271B39 /* TodoListTableViewCell.swift in Sources */,
