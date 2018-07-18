@@ -95,8 +95,15 @@ class TodoListTableViewController: UITableViewController {
         } else {
             // 星ボタン(塗りつぶし)を表示
             cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
-            // 星ボタンを押した時、0.5を足す
-            count += 0.5
+            
+//            while count <= 1.0 {
+                // 星ボタンを押した時、0.5を足す
+                count += 0.5
+                
+                
+                
+            
+            
             // 星ボタンの完了カウント数をuserDefaultsで保存
             let defaults = UserDefaults.standard
             defaults.set(count, forKey: "countStar")
