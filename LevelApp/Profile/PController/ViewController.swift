@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     
     
     
-    
+    // level数の初期値を宣言
     var num = 1
     var numSkill1 = 1
     var numSkill2 = 1
@@ -38,17 +38,19 @@ class ViewController: UIViewController {
     
     
     
+    
+    
+    // 星ボタンを押された後、タップボタンを押したときの処理
     @IBAction func testBtn(_ sender: UIButton) {
+        
+            
+        
         // 現在の進捗に50%を加算する。
 //        levelBar.setProgress(levelBar.progress + 0.5, animated: true)
         // 星ボタン完了カウント数の読み込み
         let defaults = UserDefaults.standard
         // 星ボタンが押されたかどうか判別
         let trueStar = defaults.bool(forKey: "finishedStar")
-        
-        
-        
-        
         
         // levelBarとlevelの値の読み込み
 //        levelBar.progress = defaults.float(forKey: "levelBarSet")
@@ -65,42 +67,73 @@ class ViewController: UIViewController {
         
 ////        // lv.1〜99までleverBarを上げる
 //        for num in 1...98 {
+        // 星ボタンが押されたかどうか判別
                 if trueStar == false {
                     
                     
                 } else {
+                    
+//                            let maxLevel = "99"
+//                            let defaults = UserDefaults.standard
+//                            let levelRange = defaults.object(forKey: "numCount") as? String
+//                            while levelRange! < maxLevel {
+                    
+                    
                     // 全体のlevelBarを上げる
+                    // 選択されたスキルのLabelを読み込む
                     cell.textLabel?.text = defaults.object(forKey: "text1") as? String
-                    if levelBar.progress >= 0.0 && levelBar.progress < 1.0 {
-                    let starCount = defaults.float(forKey: "countStar")
-                    levelBar.setProgress(starCount, animated: true)
+                    // 星ボタンを押した値を読み込む
+                    var starCount = defaults.float(forKey: "countStar")
+                    // levelBarの値が0.0〜0.99999の間の場合
+                    if starCount >= 0.0 && starCount < 1.0 {
+                    // levelBarの値を増やす
+                    levelBar.setProgress(levelBar.progress + starCount, animated: true)
                     // levelBarの値を保存
                     defaults.set(levelBar.progress, forKey: "levelBarSet")
                         
+                        
+                        
                     } else {
+                        
+                        levelBar.setProgress(starCount, animated: true)
+                        
                         // レベル数を１上げる
                         num = num + 1
                         levelAll.text = String(num)
-                        levelBar.progress = 0.0
+                        starCount = 0.0
                         
                         // レベル数を保存
                         defaults.set(levelAll.text, forKey: "numCount")
+                        
+                        // levelBarの値を保存
+                        defaults.set(levelBar.progress, forKey: "levelBarSet")
                         
                         
                     }
                     // skill1のlevelBarを上げる
                     if cell.textLabel?.text == defaults.object(forKey: "skill1Text") as? String {
+                        
                         if levelBarSkill1.progress >= 0.0 && levelBarSkill1.progress < 1.0 {
                         let starCount1 = defaults.float(forKey: "countStar1")
                         levelBarSkill1.setProgress(starCount1, animated: true)
-                        // levelBarの値を保存
-                        defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
+                        
+                            // levelBarの値を保存
+                            defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
+                            
                     } else {
                         numSkill1 = numSkill1 + 1
                         levelSkill1.text = String(numSkill1)
                         levelBarSkill1.progress = 0.0
-                        // レベル数を保存
-                        defaults.set(levelSkill1.text, forKey: "numCount1")
+                        
+                            
+                            
+                            
+                            
+                        
+                            // レベル数を保存
+                            defaults.set(numSkill1, forKey: "numCount1")
+
+                            
                             
                         }
                     // skill2のlevelBarを上げる
@@ -133,8 +166,15 @@ class ViewController: UIViewController {
                             // レベル数を保存
                             defaults.set(levelSkill3.text, forKey: "numCount3")
                         }
+                        
+                        
                     }
                     
+                    
+                    
+                    
+                    
+//                    sender.isEnabled = false
                     
                     // levelBarの値とlevelの値をuserDefaultsで保存
 //                    let defaults = UserDefaults.standard
@@ -150,9 +190,13 @@ class ViewController: UIViewController {
             }
     }
     
+
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // levelBarの高さ変更
         levelBar.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
         // levelBarの角丸
@@ -171,6 +215,7 @@ class ViewController: UIViewController {
         // levelBarSkill3の高さ変更
         levelBarSkill3.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
         levelBarSkill3.layer.borderWidth = 0.3
+        
         
     }
     
@@ -197,9 +242,14 @@ class ViewController: UIViewController {
         
         // level数の読み込み
         levelAll.text = defaults.object(forKey: "numCount") as? String
-        levelSkill1.text = defaults.object(forKey: "numCount1") as? String
+        
+        
+        numSkill1 = defaults.integer(forKey: "numCount1")
+        
+//        levelSkill1.text = defaults.object(forKey: "numCount1") as? String
         levelSkill2.text = defaults.object(forKey: "numCount2") as? String
         levelSkill3.text = defaults.object(forKey: "numCount3") as? String
+        
         
         // levelbarの値の読み込み
         levelBar.progress = defaults.float(forKey: "levelBarSet")
