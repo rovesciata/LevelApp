@@ -146,6 +146,55 @@ class ViewController: UIViewController {
                                 // levelBarの値を保存
                                 defaults.set(levelBar.progress, forKey: "levelBarSet")
                             }
+                    
+                        } else if num > 50 && num <= 70 {
+
+                            // levelBarの値が0.0〜0.89の間の場合
+                            if levelBar.progress >= 0.0 && levelBar.progress < 0.89 {
+                                // 星ボタンを押した値を読み込む
+                                let starCount50to70 = defaults.float(forKey: "countStar50to70")
+                                // levelBarの値を増やす
+                                levelBar.setProgress(levelBar.progress + starCount50to70, animated: true)
+                                // levelBarの値を保存
+                                defaults.set(levelBar.progress, forKey: "levelBarSet")
+                            } else if levelBar.progress >= 0.89 {
+                                // 星ボタンを押した値を読み込む
+                                let starCount50to70 = defaults.float(forKey: "countStar50to70")
+                                levelBar.setProgress(levelBar.progress + starCount50to70, animated: true)
+                                num = num + 1
+                                levelAll.text = String(num)
+                                levelBar.progress = 0.0
+
+                                // レベル数を保存
+                                //                        defaults.set(levelAll.text, forKey: "numCount")
+                                defaults.set(num, forKey: "numCount")
+                                // levelBarの値を保存
+                                defaults.set(levelBar.progress, forKey: "levelBarSet")
+                            }
+                        }  else if num > 70 && num <= 99 {
+                            
+                            // levelBarの値が0.0〜0.89の間の場合
+                            if levelBar.progress >= 0.0 && levelBar.progress < 0.89 {
+                                // 星ボタンを押した値を読み込む
+                                let starCount70to99 = defaults.float(forKey: "countStar70to99")
+                                // levelBarの値を増やす
+                                levelBar.setProgress(levelBar.progress + starCount70to99, animated: true)
+                                // levelBarの値を保存
+                                defaults.set(levelBar.progress, forKey: "levelBarSet")
+                            } else if levelBar.progress >= 0.89 {
+                                // 星ボタンを押した値を読み込む
+                                let starCount70to99 = defaults.float(forKey: "countStar70to99")
+                                levelBar.setProgress(levelBar.progress + starCount70to99, animated: true)
+                                num = num + 1
+                                levelAll.text = String(num)
+                                levelBar.progress = 0.0
+                                
+                                // レベル数を保存
+                                //                        defaults.set(levelAll.text, forKey: "numCount")
+                                defaults.set(num, forKey: "numCount")
+                                // levelBarの値を保存
+                                defaults.set(levelBar.progress, forKey: "levelBarSet")
+                            }
                     }
                     
                     
