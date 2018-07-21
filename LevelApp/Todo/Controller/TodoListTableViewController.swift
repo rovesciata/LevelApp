@@ -26,10 +26,10 @@ class TodoListTableViewController: UITableViewController {
     let todoCollection = TodoCollection.sharedInstance
     
     // 星ボタン完了のカウント初期値
-    var count: Float = 0
-    var countSkill1: Float = 0
-    var countSkill2: Float = 0
-    var countSkill3: Float = 0
+    var count: Float = 0.0
+    
+    var countSkill2: Float = 0.0
+    var countSkill3: Float = 0.0
     
    
 
@@ -153,12 +153,26 @@ class TodoListTableViewController: UITableViewController {
                     cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
                     
                     
+                        var countSkill1: Float = 0.0
+                    if (countSkill1 >= 0.0) && (countSkill1 < 1.0) {
                         // 星ボタンを押した時、0.5を足す
-                        countSkill1 += 0.5
+                        countSkill1 += 0.45
+                        
+                        // Skill1の星ボタンの完了カウント数を保存
+                        defaults.set(countSkill1, forKey: "countStar1")
+                    
+                    } else if countSkill1 == 1.0 {
+                        countSkill1 = 0.0
+                        // Skill1の星ボタンの完了カウント数を保存
+                        defaults.set(countSkill1, forKey: "countStar1")
+                    }
+                        
+                        
                     
                     
-                    // Skill1の星ボタンの完了カウント数を保存
-                    defaults.set(countSkill1, forKey: "countStar1")
+                    
+                    
+                    
                     // 星ボタンの押したか押してないかを保存
                     defaults.set(todo.finished, forKey: "finishedStar")
                     

@@ -113,29 +113,38 @@ class ViewController: UIViewController {
                     // skill1のlevelBarを上げる
                     if cell.textLabel?.text == defaults.object(forKey: "skill1Text") as? String {
                         
-                        if levelBarSkill1.progress >= 0.0 && levelBarSkill1.progress < 1.0 {
+                        if levelBarSkill1.progress >= 0.0 && levelBarSkill1.progress < 0.89 {
                         let starCount1 = defaults.float(forKey: "countStar1")
-                        levelBarSkill1.setProgress(starCount1, animated: true)
+                        levelBarSkill1.setProgress(levelBarSkill1.progress + starCount1, animated: true)
                         
                             // levelBarの値を保存
                             defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
                             
-                    } else {
-                        numSkill1 = numSkill1 + 1
-                        levelSkill1.text = String(numSkill1)
-                        levelBarSkill1.progress = 0.0
+                    } else if levelBarSkill1.progress >= 0.89 {
+                            
+                            let starCount1 = defaults.float(forKey: "countStar1")
+                            levelBarSkill1.setProgress(levelBarSkill1.progress + starCount1, animated: true)
+                            
+                                numSkill1 = numSkill1 + 1
+                                levelSkill1.text = String(numSkill1)
+                                levelBarSkill1.progress = 0.0
+                            
+                        
                         
                             
-                            
-                            
-                            
+                            // levelBarの値を保存
+                            defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
                         
                             // レベル数を保存
                             defaults.set(numSkill1, forKey: "numCount1")
 
-                            
-                            
                         }
+                        
+                        
+                        
+                        
+                        
+                        
                     // skill2のlevelBarを上げる
                     } else if cell.textLabel?.text == defaults.object(forKey: "skill2Text") as? String {
                         if levelBarSkill2.progress >= 0.0 && levelBarSkill2.progress < 1.0 {
