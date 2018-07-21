@@ -277,7 +277,7 @@ class TodoListTableViewController: UITableViewController {
                     
                     countSkill370to99 += 0.0036
                     
-                    // Skill2の星ボタンの完了カウント数を保存
+                    // Skill3の星ボタンの完了カウント数を保存
                     defaults.set(countSkill30to10, forKey: "countStar3")
                     defaults.set(countSkill310to30, forKey: "countStar310to30")
                     defaults.set(countSkill330to50, forKey: "countStar330to50")

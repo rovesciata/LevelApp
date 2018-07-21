@@ -201,30 +201,7 @@ class ViewController: UIViewController {
                     // skill1のlevelBarを上げる
                     if cell.textLabel?.text == defaults.object(forKey: "skill1Text") as? String {
                         
-                        
-//                        if levelBarSkill1.progress >= 0.0 && levelBarSkill1.progress < 0.89 {
-//                        let starCount1 = defaults.float(forKey: "countStar1")
-//                        levelBarSkill1.setProgress(levelBarSkill1.progress + starCount1, animated: true)
-//
-//                            // levelBarの値を保存
-//                            defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
-//
-//                    } else if levelBarSkill1.progress >= 0.89 {
-//
-//                            let starCount1 = defaults.float(forKey: "countStar1")
-//                            levelBarSkill1.setProgress(levelBarSkill1.progress + starCount1, animated: true)
-//
-//                                numSkill1 = numSkill1 + 1
-//                                levelSkill1.text = String(numSkill1)
-//                                levelBarSkill1.progress = 0.0
-//
-//                            // levelBarの値を保存
-//                            defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
-//
-//                            // レベル数を保存
-//                            defaults.set(numSkill1, forKey: "numCount1")
-//
-//                        }
+                    
                         if numSkill1 >= 0 && numSkill1 <= 10 {
                             // levelBarの値が0.0〜0.89の間の場合
                             if levelBarSkill1.progress >= 0.0 && levelBarSkill1.progress < 0.89 {
@@ -242,9 +219,9 @@ class ViewController: UIViewController {
                                 levelBarSkill1.progress = 0.0
                                 
                                 // レベル数を保存
-                                defaults.set(num, forKey: "numCount1")
+                                defaults.set(numSkill1, forKey: "numCount1")
                                 // levelBarの値を保存
-                                defaults.set(levelBar.progress, forKey: "levelBar1Set")
+                                defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
                             }
                         }           else if numSkill1 > 10 && numSkill1 <= 30 {
                             
@@ -349,66 +326,236 @@ class ViewController: UIViewController {
                     // skill2のlevelBarを上げる
                     } else if cell.textLabel?.text == defaults.object(forKey: "skill2Text") as? String {
                         
-                        if levelBarSkill2.progress >= 0.0 && levelBarSkill2.progress < 0.89 {
-                        let starCount2 = defaults.float(forKey: "countStar2")
-                        levelBarSkill2.setProgress(levelBarSkill2.progress + starCount2, animated: true)
-                            
-                        // levelBarの値を保存
-                        defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
-                            
-                        } else if levelBarSkill2.progress >= 0.89 {
-                            
-                            let starCount2 = defaults.float(forKey: "countStar2")
-                            levelBarSkill2.setProgress(levelBarSkill2.progress + starCount2, animated: true)
-                            
-                            numSkill2 = numSkill2 + 1
-                            levelSkill2.text = String(numSkill2)
-                            levelBarSkill2.progress = 0.0
-                            
-                            // levelBarの値を保存
-                            defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
-                            // レベル数を保存
-//                            defaults.set(levelSkill2.text, forKey: "numCount2")
-                            defaults.set(numSkill2, forKey: "numCount2")
-                        }
+                        
+                        if numSkill2 >= 0 && numSkill2 <= 10 {
+                            // levelBarの値が0.0〜0.89の間の場合
+                            if levelBarSkill2.progress >= 0.0 && levelBarSkill2.progress < 0.89 {
+                                
+                                let starCount20to10 = defaults.float(forKey: "countStar2")
+                                levelBarSkill2.setProgress(levelBarSkill2.progress + starCount20to10, animated: true)
+                                // levelBarの値を保存
+                                defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+                            } else if levelBarSkill2.progress >= 0.89 {
+                                
+                                let starCount20to10 = defaults.float(forKey: "countStar2")
+                                levelBarSkill2.setProgress(levelBarSkill2.progress + starCount20to10, animated: true)
+                                numSkill2 = numSkill2 + 1
+                                levelSkill2.text = String(numSkill2)
+                                levelBarSkill2.progress = 0.0
+                                
+                                // レベル数を保存
+                                defaults.set(numSkill2, forKey: "numCount2")
+                                // levelBarの値を保存
+                                defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+                                
+                            }
+                        } else if numSkill2 > 10 && numSkill2 <= 30 {
+                                // levelBarの値が0.0〜0.89の間の場合
+                                if levelBarSkill2.progress >= 0.0 && levelBarSkill2.progress < 0.89 {
+                                    
+                                    let starCount210to30 = defaults.float(forKey: "countStar210to30")
+                                    levelBarSkill2.setProgress(levelBarSkill2.progress + starCount210to30, animated: true)
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+                                } else if levelBarSkill2.progress >= 0.89 {
+                                    
+                                    let starCount210to30 = defaults.float(forKey: "countStar210to30")
+                                    levelBarSkill2.setProgress(levelBarSkill2.progress + starCount210to30, animated: true)
+                                    numSkill2 = numSkill2 + 1
+                                    levelSkill2.text = String(numSkill2)
+                                    levelBarSkill2.progress = 0.0
+                                    
+                                    // レベル数を保存
+                                    defaults.set(numSkill2, forKey: "numCount2")
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+                                }
+                            } else if numSkill2 > 30 && numSkill2 <= 50 {
+                                // levelBarの値が0.0〜0.89の間の場合
+                                if levelBarSkill2.progress >= 0.0 && levelBarSkill2.progress < 0.89 {
+                                    
+                                    let starCount230to50 = defaults.float(forKey: "countStar230to50")
+                                    levelBarSkill2.setProgress(levelBarSkill2.progress + starCount230to50, animated: true)
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+                                } else if levelBarSkill2.progress >= 0.89 {
+                                    
+                                    let starCount230to50 = defaults.float(forKey: "countStar230to50")
+                                    levelBarSkill2.setProgress(levelBarSkill2.progress + starCount230to50, animated: true)
+                                    numSkill2 = numSkill2 + 1
+                                    levelSkill2.text = String(numSkill2)
+                                    levelBarSkill2.progress = 0.0
+                                    
+                                    // レベル数を保存
+                                    defaults.set(numSkill2, forKey: "numCount2")
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+                                }
+                            } else if numSkill2 > 50 && numSkill2 <= 70 {
+                                // levelBarの値が0.0〜0.89の間の場合
+                                if levelBarSkill2.progress >= 0.0 && levelBarSkill2.progress < 0.89 {
+                                    
+                                    let starCount250to70 = defaults.float(forKey: "countStar250to70")
+                                    levelBarSkill2.setProgress(levelBarSkill2.progress + starCount250to70, animated: true)
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+                                } else if levelBarSkill2.progress >= 0.89 {
+                                    
+                                    let starCount250to70 = defaults.float(forKey: "countStar250to70")
+                                    levelBarSkill2.setProgress(levelBarSkill2.progress + starCount250to70, animated: true)
+                                    numSkill2 = numSkill2 + 1
+                                    levelSkill2.text = String(numSkill2)
+                                    levelBarSkill2.progress = 0.0
+                                    
+                                    // レベル数を保存
+                                    defaults.set(numSkill2, forKey: "numCount2")
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+                                }
+                            } else if numSkill2 > 70 && numSkill2 <= 99 {
+                                // levelBarの値が0.0〜0.89の間の場合
+                                if levelBarSkill2.progress >= 0.0 && levelBarSkill2.progress < 0.89 {
+                                    
+                                    let starCount270to99 = defaults.float(forKey: "countStar270to99")
+                                    levelBarSkill2.setProgress(levelBarSkill2.progress + starCount270to99, animated: true)
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+                                } else if levelBarSkill2.progress >= 0.89 {
+                                    
+                                    let starCount270to99 = defaults.float(forKey: "countStar270to99")
+                                    levelBarSkill2.setProgress(levelBarSkill2.progress + starCount270to99, animated: true)
+                                    numSkill2 = numSkill2 + 1
+                                    levelSkill2.text = String(numSkill2)
+                                    levelBarSkill2.progress = 0.0
+                                    
+                                    // レベル数を保存
+                                    defaults.set(numSkill2, forKey: "numCount2")
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+                                }
+                            }
+                        
                     // skill3のlevelBarを上げる
                     } else if cell.textLabel?.text == defaults.object(forKey: "skill3Text") as? String {
                         
-                        if levelBarSkill3.progress >= 0.0 && levelBarSkill3.progress < 0.89 {
-                        let starCount3 = defaults.float(forKey: "countStar3")
-                        levelBarSkill3.setProgress(levelBarSkill3.progress + starCount3, animated: true)
                         
-                        // levelBarの値を保存
-                        defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
-                            
-                        } else if levelBarSkill3.progress >= 0.89 {
-                            
-                            let starCount3 = defaults.float(forKey: "countStar3")
-                            levelBarSkill3.setProgress(levelBarSkill3.progress + starCount3, animated: true)
-                            
-                            numSkill3 = numSkill3 + 1
-                            levelSkill3.text = String(numSkill3)
-                            levelBarSkill3.progress = 0.0
-                            
-                            // levelBarの値を保存
-                            defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
-                            // レベル数を保存
-                            defaults.set(numSkill3, forKey: "numCount3")
+                            if numSkill3 >= 0 && numSkill3 <= 10 {
+                                // levelBarの値が0.0〜0.89の間の場合
+                                if levelBarSkill3.progress >= 0.0 && levelBarSkill3.progress < 0.89 {
+                                    
+                                    let starCount30to10 = defaults.float(forKey: "countStar3")
+                                    levelBarSkill3.setProgress(levelBarSkill3.progress + starCount30to10, animated: true)
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+                                } else if levelBarSkill3.progress >= 0.89 {
+                                    
+                                    let starCount30to10 = defaults.float(forKey: "countStar3")
+                                    levelBarSkill3.setProgress(levelBarSkill3.progress + starCount30to10, animated: true)
+                                    numSkill3 = numSkill3 + 1
+                                    levelSkill3.text = String(numSkill3)
+                                    levelBarSkill3.progress = 0.0
+                                    
+                                    // レベル数を保存
+                                    defaults.set(numSkill3, forKey: "numCount3")
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+                                    
+                                }
+                            } else if numSkill3 > 10 && numSkill3 <= 30 {
+                                // levelBarの値が0.0〜0.89の間の場合
+                                if levelBarSkill3.progress >= 0.0 && levelBarSkill3.progress < 0.89 {
+                                    
+                                    let starCount310to30 = defaults.float(forKey: "countStar310to30")
+                                    levelBarSkill3.setProgress(levelBarSkill3.progress + starCount310to30, animated: true)
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+                                } else if levelBarSkill3.progress >= 0.89 {
+                                    
+                                    let starCount310to30 = defaults.float(forKey: "countStar310to30")
+                                    levelBarSkill3.setProgress(levelBarSkill3.progress + starCount310to30, animated: true)
+                                    numSkill3 = numSkill3 + 1
+                                    levelSkill3.text = String(numSkill3)
+                                    levelBarSkill3.progress = 0.0
+                                    
+                                    // レベル数を保存
+                                    defaults.set(numSkill3, forKey: "numCount3")
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+                                    
+                                }
+                            } else if numSkill3 > 30 && numSkill3 <= 50 {
+                                // levelBarの値が0.0〜0.89の間の場合
+                                if levelBarSkill3.progress >= 0.0 && levelBarSkill3.progress < 0.89 {
+                                    
+                                    let starCount330to50 = defaults.float(forKey: "countStar330to50")
+                                    levelBarSkill3.setProgress(levelBarSkill3.progress + starCount330to50, animated: true)
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+                                } else if levelBarSkill3.progress >= 0.89 {
+                                    
+                                    let starCount330to50 = defaults.float(forKey: "countStar330to50")
+                                    levelBarSkill3.setProgress(levelBarSkill3.progress + starCount330to50, animated: true)
+                                    numSkill3 = numSkill3 + 1
+                                    levelSkill3.text = String(numSkill3)
+                                    levelBarSkill3.progress = 0.0
+                                    
+                                    // レベル数を保存
+                                    defaults.set(numSkill3, forKey: "numCount3")
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+                                    
+                                }
+                            } else if numSkill3 > 50 && numSkill3 <= 70 {
+                                // levelBarの値が0.0〜0.89の間の場合
+                                if levelBarSkill3.progress >= 0.0 && levelBarSkill3.progress < 0.89 {
+                                    
+                                    let starCount350to70 = defaults.float(forKey: "countStar350to70")
+                                    levelBarSkill3.setProgress(levelBarSkill3.progress + starCount350to70, animated: true)
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+                                } else if levelBarSkill3.progress >= 0.89 {
+                                    
+                                    let starCount350to70 = defaults.float(forKey: "countStar350to70")
+                                    levelBarSkill3.setProgress(levelBarSkill3.progress + starCount350to70, animated: true)
+                                    numSkill3 = numSkill3 + 1
+                                    levelSkill3.text = String(numSkill3)
+                                    levelBarSkill3.progress = 0.0
+                                    
+                                    // レベル数を保存
+                                    defaults.set(numSkill3, forKey: "numCount3")
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+                                    
+                                }
+                            } else if numSkill3 > 70 && numSkill3 <= 99 {
+                                // levelBarの値が0.0〜0.89の間の場合
+                                if levelBarSkill3.progress >= 0.0 && levelBarSkill3.progress < 0.89 {
+                                    
+                                    let starCount370to99 = defaults.float(forKey: "countStar370to99")
+                                    levelBarSkill3.setProgress(levelBarSkill3.progress + starCount370to99, animated: true)
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+                                } else if levelBarSkill3.progress >= 0.89 {
+                                    
+                                    let starCount370to99 = defaults.float(forKey: "countStar370to99")
+                                    levelBarSkill3.setProgress(levelBarSkill3.progress + starCount370to99, animated: true)
+                                    numSkill3 = numSkill3 + 1
+                                    levelSkill3.text = String(numSkill3)
+                                    levelBarSkill3.progress = 0.0
+                                    
+                                    // レベル数を保存
+                                    defaults.set(numSkill3, forKey: "numCount3")
+                                    // levelBarの値を保存
+                                    defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+                                    
+                                }
+                            }
+                 
+                        }
+//                    sender.isEnabled = false
                         }
                         
-                        
-                    }
-                    
-                 
-                    
-//                    sender.isEnabled = false
-                    
-                    
-            }
-    }
-    
-
-    
+                        }
     
     
     override func viewDidLoad() {
