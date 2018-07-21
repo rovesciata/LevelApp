@@ -27,7 +27,7 @@ class TodoListTableViewController: UITableViewController {
     
     // 星ボタン完了のカウント初期値
     var count0to10: Float = 0.0
-    var countSkill1: Float = 0.0
+    var countSkill10to10: Float = 0.0
     var countSkill2: Float = 0.0
     var countSkill3: Float = 0.0
     
@@ -36,6 +36,23 @@ class TodoListTableViewController: UITableViewController {
     var count30to50: Float = 0.0
     var count50to70: Float = 0.0
     var count70to99: Float = 0.0
+    
+    var countSkill110to30: Float = 0.0
+    var countSkill130to50: Float = 0.0
+    var countSkill150to70: Float = 0.0
+    var countSkill170to99: Float = 0.0
+    
+    var countSkill20to10: Float = 0.0
+    var countSkill210to30: Float = 0.0
+    var countSkill230to50: Float = 0.0
+    var countSkill250to70: Float = 0.0
+    var countSkill270to99: Float = 0.0
+    
+    var countSkill30to10: Float = 0.0
+    var countSkill310to30: Float = 0.0
+    var countSkill330to50: Float = 0.0
+    var countSkill350to70: Float = 0.0
+    var countSkill370to99: Float = 0.0
     
    
 
@@ -173,20 +190,31 @@ class TodoListTableViewController: UITableViewController {
                     // 星ボタン(塗りつぶし)を表示
                     cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
                     
+                    var countSkill10to10: Float = 0.0
+                    var countSkill110to30: Float = 0.0
+                    var countSkill130to50: Float = 0.0
+                    var countSkill150to70: Float = 0.0
+                    var countSkill170to99: Float = 0.0
                     
-                        var countSkill1: Float = 0.0
-                    if (countSkill1 >= 0.0) && (countSkill1 < 1.0) {
-                        // 星ボタンを押した時、0.45を足す
-                        countSkill1 += 0.45
+                    
+                    // 星ボタンを押した時、0.45を足す
+                    countSkill10to10 += 0.45
+                    
+                    countSkill110to30 += 0.100
+                    
+                    countSkill130to50 += 0.050
+                    
+                    countSkill150to70 += 0.010
+                    
+                    countSkill170to99 += 0.0036
                         
-                        // Skill1の星ボタンの完了カウント数を保存
-                        defaults.set(countSkill1, forKey: "countStar1")
+                    // Skill1の星ボタンの完了カウント数を保存
+                    defaults.set(countSkill10to10, forKey: "countStar1")
+                    defaults.set(countSkill110to30, forKey: "countStar110to30")
+                    defaults.set(countSkill130to50, forKey: "countStar130to50")
+                    defaults.set(countSkill150to70, forKey: "countStar150to70")
+                    defaults.set(countSkill170to99, forKey: "countStar170to99")
                     
-                    } else if countSkill1 == 1.0 {
-                        countSkill1 = 0.0
-                        // Skill1の星ボタンの完了カウント数を保存
-                        defaults.set(countSkill1, forKey: "countStar1")
-                    }
                     
                     // 星ボタンの押したか押してないかを保存
                     defaults.set(todo.finished, forKey: "finishedStar")
@@ -197,13 +225,32 @@ class TodoListTableViewController: UITableViewController {
                     cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
                     
                     
-                    var countSkill2: Float = 0.0
+                    var countSkill20to10: Float = 0.0
+                    var countSkill210to30: Float = 0.0
+                    var countSkill230to50: Float = 0.0
+                    var countSkill250to70: Float = 0.0
+                    var countSkill270to99: Float = 0.0
+                    
                     
                     // 星ボタンを押した時、0.45を足す
-                    countSkill2 += 0.45
+                    countSkill20to10 += 0.45
                     
-                    // 星ボタンの完了カウント数をuserDefaultsで保存
-                    defaults.set(countSkill2, forKey: "countStar2")
+                    countSkill210to30 += 0.100
+                    
+                    countSkill230to50 += 0.050
+                    
+                    countSkill250to70 += 0.010
+                    
+                    countSkill270to99 += 0.0036
+                    
+                    // Skill2の星ボタンの完了カウント数を保存
+                    defaults.set(countSkill20to10, forKey: "countStar2")
+                    defaults.set(countSkill210to30, forKey: "countStar210to30")
+                    defaults.set(countSkill230to50, forKey: "countStar230to50")
+                    defaults.set(countSkill250to70, forKey: "countStar250to70")
+                    defaults.set(countSkill270to99, forKey: "countStar270to99")
+                    
+                    
                     // 星ボタンの押したか押してないかを保存
                     defaults.set(todo.finished, forKey: "finishedStar")
                     
@@ -212,13 +259,32 @@ class TodoListTableViewController: UITableViewController {
                     // 星ボタン(塗りつぶし)を表示
                     cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
                     
-                    var countSkill3: Float = 0.0
+                    var countSkill30to10: Float = 0.0
+                    var countSkill310to30: Float = 0.0
+                    var countSkill330to50: Float = 0.0
+                    var countSkill350to70: Float = 0.0
+                    var countSkill370to99: Float = 0.0
+                    
                     
                     // 星ボタンを押した時、0.45を足す
-                    countSkill3 += 0.45
+                    countSkill30to10 += 0.45
                     
-                    // 星ボタンの完了カウント数をuserDefaultsで保存
-                    defaults.set(countSkill3, forKey: "countStar3")
+                    countSkill310to30 += 0.100
+                    
+                    countSkill330to50 += 0.050
+                    
+                    countSkill350to70 += 0.010
+                    
+                    countSkill370to99 += 0.0036
+                    
+                    // Skill2の星ボタンの完了カウント数を保存
+                    defaults.set(countSkill30to10, forKey: "countStar3")
+                    defaults.set(countSkill310to30, forKey: "countStar310to30")
+                    defaults.set(countSkill330to50, forKey: "countStar330to50")
+                    defaults.set(countSkill350to70, forKey: "countStar350to70")
+                    defaults.set(countSkill370to99, forKey: "countStar370to99")
+                    
+                    
                     // 星ボタンの押したか押してないかを保存
                     defaults.set(todo.finished, forKey: "finishedStar")
                     
