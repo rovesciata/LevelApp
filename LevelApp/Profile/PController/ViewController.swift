@@ -39,7 +39,6 @@ class ViewController: UIViewController {
     
     
     
-    
     // 星ボタンを押された後、タップボタンを押したときの処理
     @IBAction func testBtn(_ sender: UIButton) {
         
@@ -72,6 +71,8 @@ class ViewController: UIViewController {
                     
                     
                 } else {
+                    
+                    
                     
 //                            let maxLevel = "99"
 //                            let defaults = UserDefaults.standard
@@ -205,6 +206,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // skill1の現Level数を表示
+        let defaults = UserDefaults.standard
+        numSkill1 = defaults.integer(forKey: "numCount1")
+        levelSkill1.text = String(numSkill1)
         
         // levelBarの高さ変更
         levelBar.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
