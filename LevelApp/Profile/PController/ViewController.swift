@@ -90,7 +90,8 @@ class ViewController: UIViewController {
                         levelBar.progress = 0.0
                         
                         // レベル数を保存
-                        defaults.set(levelAll.text, forKey: "numCount")
+//                        defaults.set(levelAll.text, forKey: "numCount")
+                        defaults.set(num, forKey: "numCount")
                         // levelBarの値を保存
                         defaults.set(levelBar.progress, forKey: "levelBarSet")
                     }
@@ -145,7 +146,8 @@ class ViewController: UIViewController {
                             // levelBarの値を保存
                             defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
                             // レベル数を保存
-                            defaults.set(levelSkill2.text, forKey: "numCount2")
+//                            defaults.set(levelSkill2.text, forKey: "numCount2")
+                            defaults.set(numSkill2, forKey: "numCount2")
                         }
                     // skill3のlevelBarを上げる
                     } else if cell.textLabel?.text == defaults.object(forKey: "skill3Text") as? String {
@@ -169,7 +171,7 @@ class ViewController: UIViewController {
                             // levelBarの値を保存
                             defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
                             // レベル数を保存
-                            defaults.set(levelSkill3.text, forKey: "numCount3")
+                            defaults.set(numSkill3, forKey: "numCount3")
                         }
                         
                         
@@ -263,14 +265,15 @@ class ViewController: UIViewController {
         skill3.text = defaults.object(forKey: "skill3Text") as? String
         
         // level数の読み込み
-        levelAll.text = defaults.object(forKey: "numCount") as? String
+//        levelAll.text = defaults.object(forKey: "numCount") as? String
         
-        
+        num = defaults.integer(forKey: "numCount")
         numSkill1 = defaults.integer(forKey: "numCount1")
-        
+        numSkill2 = defaults.integer(forKey: "numCount2")
+        numSkill3 = defaults.integer(forKey: "numCount3")
 //        levelSkill1.text = defaults.object(forKey: "numCount1") as? String
-        levelSkill2.text = defaults.object(forKey: "numCount2") as? String
-        levelSkill3.text = defaults.object(forKey: "numCount3") as? String
+//        levelSkill2.text = defaults.object(forKey: "numCount2") as? String
+//        levelSkill3.text = defaults.object(forKey: "numCount3") as? String
         
         
         // levelbarの値の読み込み
