@@ -38,7 +38,7 @@
                             <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42n-fF-WDO">
                                 <rect key="frame" x="236" y="488" width="102" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="progressTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="progressTintColor" red="1" green="0.14901960784313725" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="0.048916842490000001" green="0.1020083973" blue="0.355528236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="to6-5h-gFC">
@@ -95,17 +95,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikz-i8-GKT">
-                                <rect key="frame" x="307" y="421" width="63" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
-                                <state key="normal" title="タップ!!">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="testBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CkX-Tx-5tP"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd3-Mc-aFM">
                                 <rect key="frame" x="200" y="479" width="28" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,6 +130,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQJ-3M-eUS">
+                                <rect key="frame" x="277" y="400" width="82" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Level UP!!">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -155,6 +152,7 @@
                         <outlet property="levelSkill1" destination="gd3-Mc-aFM" id="2fV-vI-C6o"/>
                         <outlet property="levelSkill2" destination="s56-NU-41P" id="UZn-gh-BQc"/>
                         <outlet property="levelSkill3" destination="koz-iR-IQG" id="Zxu-1F-9lJ"/>
+                        <outlet property="levelUpBtn" destination="kQJ-3M-eUS" id="AtI-qN-pCc"/>
                         <outlet property="name" destination="BfP-Qx-TiM" id="GkV-1K-IK6"/>
                         <outlet property="profileImage" destination="kuV-Y3-btB" id="QRU-TP-Cmk"/>
                         <outlet property="skill1" destination="Fbt-eR-2OA" id="8gk-if-yzM"/>

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		5791C8BC6DBF56C119D2A306 /* Pods_LevelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F089C8BDF61C63B9BCA1E26D /* Pods_LevelApp.framework */; };
 		8C00276020FED03600552381 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C00275F20FED03600552381 /* EventViewController.swift */; };
+		8C3690E92103FB69002D1FE3 /* 黄星無し.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E32103FB66002D1FE3 /* 黄星無し.png */; };
+		8C3690EA2103FB69002D1FE3 /* 黄星有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E42103FB67002D1FE3 /* 黄星有り.png */; };
+		8C3690EB2103FB69002D1FE3 /* 赤星有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E52103FB67002D1FE3 /* 赤星有り.png */; };
+		8C3690EC2103FB69002D1FE3 /* 青星有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E62103FB68002D1FE3 /* 青星有り.png */; };
+		8C3690ED2103FB69002D1FE3 /* 青星無し.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E72103FB68002D1FE3 /* 青星無し.png */; };
+		8C3690EE2103FB69002D1FE3 /* 赤星無し.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E82103FB69002D1FE3 /* 赤星無し.png */; };
 		8C8E0BBF20FD943C009A7B5A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E0BBE20FD943C009A7B5A /* Event.swift */; };
 		8C8F68A620FC8BB900D5941A /* icons8-ホーム-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */; };
 		8C8F68A820FC8C8A00D5941A /* icons8-カレンダー-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */; };
@@ -74,6 +80,12 @@
 		76C922BF514A0A9F57F0F649 /* Pods_LevelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LevelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDB0513C864CA1D9136DEA9 /* Pods-LevelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LevelApp/Pods-LevelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8C00275F20FED03600552381 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		8C3690E32103FB66002D1FE3 /* 黄星無し.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄星無し.png"; sourceTree = "<group>"; };
+		8C3690E42103FB67002D1FE3 /* 黄星有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄星有り.png"; sourceTree = "<group>"; };
+		8C3690E52103FB67002D1FE3 /* 赤星有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赤星有り.png"; sourceTree = "<group>"; };
+		8C3690E62103FB68002D1FE3 /* 青星有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "青星有り.png"; sourceTree = "<group>"; };
+		8C3690E72103FB68002D1FE3 /* 青星無し.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "青星無し.png"; sourceTree = "<group>"; };
+		8C3690E82103FB69002D1FE3 /* 赤星無し.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赤星無し.png"; sourceTree = "<group>"; };
 		8C8E0BBE20FD943C009A7B5A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ホーム-30.png"; sourceTree = "<group>"; };
 		8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-カレンダー-30.png"; sourceTree = "<group>"; };
@@ -277,6 +289,12 @@
 				8CC11CF620E77099003E32B8 /* Todo */,
 				8CBED50C20DB453500FF0DE3 /* AppDelegate.swift */,
 				8CBED51020DB453500FF0DE3 /* Main.storyboard */,
+				8C3690E82103FB69002D1FE3 /* 赤星無し.png */,
+				8C3690E32103FB66002D1FE3 /* 黄星無し.png */,
+				8C3690E72103FB68002D1FE3 /* 青星無し.png */,
+				8C3690E42103FB67002D1FE3 /* 黄星有り.png */,
+				8C3690E52103FB67002D1FE3 /* 赤星有り.png */,
+				8C3690E62103FB68002D1FE3 /* 青星有り.png */,
 				8C9357DB20F24F9D00271B39 /* SkillSelection.swift */,
 				8CBED51320DB453600FF0DE3 /* Assets.xcassets */,
 				8CBED51520DB453600FF0DE3 /* LaunchScreen.storyboard */,
@@ -465,10 +483,15 @@
 				8C9357E520F2575C00271B39 /* stop_icon.png in Resources */,
 				8CB9DA2920DB57B80093F711 /* 女子学生.jpg in Resources */,
 				8CBED51720DB453600FF0DE3 /* LaunchScreen.storyboard in Resources */,
+				8C3690E92103FB69002D1FE3 /* 黄星無し.png in Resources */,
+				8C3690ED2103FB69002D1FE3 /* 青星無し.png in Resources */,
 				8C9357EA20F3BBD600271B39 /* icons8-スター-48.png in Resources */,
+				8C3690EC2103FB69002D1FE3 /* 青星有り.png in Resources */,
+				8C3690EE2103FB69002D1FE3 /* 赤星無し.png in Resources */,
 				8C8F68AA20FC8CA200D5941A /* icons8-タスクリスト-30.png in Resources */,
 				8C9357E620F2575C00271B39 /* back_icon.png in Resources */,
 				8C9357E720F2575C00271B39 /* go_icon.png in Resources */,
+				8C3690EB2103FB69002D1FE3 /* 赤星有り.png in Resources */,
 				8CED55DF20ECF27C002AD241 /* icons8-設定-50.png in Resources */,
 				8CBED51420DB453600FF0DE3 /* Assets.xcassets in Resources */,
 				8C8F68A620FC8BB900D5941A /* icons8-ホーム-30.png in Resources */,
@@ -478,6 +501,7 @@
 				8CED55DD20ECF27C002AD241 /* icons8-リスト-50.png in Resources */,
 				8C9357E320F2575C00271B39 /* reload_icon.png in Resources */,
 				8CED55DC20ECF27C002AD241 /* icons8-ホーム-filled-50.png in Resources */,
+				8C3690EA2103FB69002D1FE3 /* 黄星有り.png in Resources */,
 				8CB9DA2820DB57B80093F711 /* 男子学生.jpg in Resources */,
 				8C8F68A820FC8C8A00D5941A /* icons8-カレンダー-30.png in Resources */,
 			);

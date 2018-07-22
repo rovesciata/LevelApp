@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var levelBarSkill3: UIProgressView!
     
     
+    @IBOutlet weak var levelUpBtn: UIButton!
+    
     
     // level数の初期値を宣言
     var num = 1
@@ -36,41 +38,28 @@ class ViewController: UIViewController {
     var numSkill2 = 1
     var numSkill3 = 1
     
+
     
-    
-    
-    // 星ボタンを押された後、タップボタンを押したときの処理
-    @IBAction func testBtn(_ sender: UIButton) {
+    @objc func levelTap(_ button: UIButton) {
         
-            
-        
-        // 現在の進捗に50%を加算する。
-//        levelBar.setProgress(levelBar.progress + 0.5, animated: true)
+
         // 星ボタン完了カウント数の読み込み
         let defaults = UserDefaults.standard
         // 星ボタンが押されたかどうか判別
         let trueStar = defaults.bool(forKey: "finishedStar")
         
-        // levelBarとlevelの値の読み込み
-//        levelBar.progress = defaults.float(forKey: "levelBarSet")
-        
-//        levelBarSkill1.progress = defaults.float(forKey: "levelBar1Set")
-//        numSkill1 = defaults.integer(forKey: "numCount1")
-//        levelBarSkill2.progress = defaults.float(forKey: "levelBar2Set")
-//        numSkill2 = defaults.integer(forKey: "numCount2")
-//        levelBarSkill3.progress = defaults.float(forKey: "levelBar3Set")
-//        numSkill3 = defaults.integer(forKey: "numCount3")
         
         
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
         
-////        // lv.1〜99までleverBarを上げる
-//        for num in 1...98 {
+
         // 星ボタンが押されたかどうか判別
                 if trueStar == false {
-                    
+//                    levelUpBtn.isEnabled = false
                     
                 } else {
+                    
+                    
                     // 全体のlevelBarを上げる
                     // 選択されたスキルのLabelを読み込む
                     cell.textLabel?.text = defaults.object(forKey: "text1") as? String
@@ -560,6 +549,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // 星ボタンを押された後、タップボタンを押したときの処理
+        levelUpBtn.addTarget(self, action: #selector(self.levelTap(_:)), for: .touchUpInside)
+//        levelUpBtn.isHidden = true
+//        let defaults = UserDefaults.standard
+//        let trueStar = defaults.bool(forKey: "finishedStar")
+//        if trueStar == false {
+//            levelUpBtn.isEnabled = false
+//        } else {
+//            levelUpBtn.isEnabled = true
+//        }
+        
         
         // levelAllの現Level数を表示
         let defaults = UserDefaults.standard

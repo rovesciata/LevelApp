@@ -113,13 +113,35 @@ class TodoListTableViewController: UITableViewController {
         // 星ボタンを押した時
         cell.starButton2.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
         
+        let defaults = UserDefaults.standard
+//        cell.textLabel?.text = defaults.object(forKey: "text1") as? String
         
         if todo.finished == false {
             // 星ボタン(くり抜き)を表示
-            cell.starButton2.setImage(UIImage(named: "icons8-スター-48.png"), for: .normal)
+            
+            
+            if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
+                cell.starButton2.setImage(UIImage(named: "赤星無し.png"), for: .normal)
+            }
+            else if cell.labelCell.text == defaults.object(forKey: "skill2Text") as? String {
+                    cell.starButton2.setImage(UIImage(named: "黄星無し.png"), for: .normal)
+            } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
+                cell.starButton2.setImage(UIImage(named: "青星無し.png"), for: .normal)
+            }
+        
+//            cell.starButton2.setImage(UIImage(named: "icons8-スター-48.png"), for: .normal)
         } else {
             // 星ボタン(塗りつぶし)を表示
-            cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
+            let defaults = UserDefaults.standard
+            if cell.labelCell?.text == defaults.object(forKey: "skill1Text") as? String {
+                cell.starButton2.setImage(UIImage(named: "赤星有り.png"), for: .normal)
+            } else if cell.labelCell?.text == defaults.object(forKey: "skill2Text") as? String {
+                cell.starButton2.setImage(UIImage(named: "黄星有り.png"), for: .normal)
+            } else if cell.labelCell?.text == defaults.object(forKey: "skill3Text") as? String {
+                cell.starButton2.setImage(UIImage(named: "青星有り.png"), for: .normal)
+            }
+        
+//            cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
             
             
         }
@@ -258,6 +280,7 @@ class TodoListTableViewController: UITableViewController {
                 } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
                     // 星ボタン(塗りつぶし)を表示
                     cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
+                    
                     
                     var countSkill30to10: Float = 0.0
                     var countSkill310to30: Float = 0.0
