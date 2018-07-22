@@ -25,39 +25,12 @@ class TodoListTableViewController: UITableViewController {
     
     let todoCollection = TodoCollection.sharedInstance
     
-    // 星ボタン完了のカウント初期値
-    var count0to10: Float = 0.0
-    var countSkill10to10: Float = 0.0
-    var countSkill2: Float = 0.0
-    var countSkill3: Float = 0.0
-    
-    
-    var count10to30: Float = 0.0
-    var count30to50: Float = 0.0
-    var count50to70: Float = 0.0
-    var count70to99: Float = 0.0
-    
-    var countSkill110to30: Float = 0.0
-    var countSkill130to50: Float = 0.0
-    var countSkill150to70: Float = 0.0
-    var countSkill170to99: Float = 0.0
-    
-    var countSkill20to10: Float = 0.0
-    var countSkill210to30: Float = 0.0
-    var countSkill230to50: Float = 0.0
-    var countSkill250to70: Float = 0.0
-    var countSkill270to99: Float = 0.0
-    
-    var countSkill30to10: Float = 0.0
-    var countSkill310to30: Float = 0.0
-    var countSkill330to50: Float = 0.0
-    var countSkill350to70: Float = 0.0
-    var countSkill370to99: Float = 0.0
-    
-   
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         // セルの登録
         tableView.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
@@ -73,6 +46,8 @@ class TodoListTableViewController: UITableViewController {
     
     // ヘッダーボタン作成
     override func viewWillAppear(_ animated: Bool) {
+        
+        
         super.viewWillAppear(animated)
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         self.navigationController!.navigationBar.tintColor = UIColor.black
@@ -116,6 +91,7 @@ class TodoListTableViewController: UITableViewController {
         let defaults = UserDefaults.standard
 //        cell.textLabel?.text = defaults.object(forKey: "text1") as? String
         
+        
         if todo.finished == false {
             // 星ボタン(くり抜き)を表示
             
@@ -129,6 +105,7 @@ class TodoListTableViewController: UITableViewController {
                 cell.starButton2.setImage(UIImage(named: "青星無し.png"), for: .normal)
             }
         
+            
 //            cell.starButton2.setImage(UIImage(named: "icons8-スター-48.png"), for: .normal)
         } else {
             // 星ボタン(塗りつぶし)を表示
@@ -145,6 +122,10 @@ class TodoListTableViewController: UITableViewController {
             
             
         }
+        // 星ボタンの押したか押してないかを保存
+        defaults.set(todo.finished, forKey: "finishedStar")
+        
+        
        
 //      重要  let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "reuseIdentifier")
 //        let todo = self.todoCollection.todos[indexPath.row]
@@ -156,13 +137,15 @@ class TodoListTableViewController: UITableViewController {
         return cell
     }
     
+    // 星ボタンが押された回数の定義
+    var times = 0
+    var timesSkill1 = 0
+    var timesSkill2 = 0
+    var timesSkill3 = 0
+    
     // 星ボタンを押した時の処理
     @objc func buttonTapped(_ button: UIButton) {
         
-//        let maxLevel = "99"
-//        let defaults = UserDefaults.standard
-//        let levelRange = defaults.object(forKey: "numCount") as? String
-//        while levelRange! < maxLevel {
         
             if let indexPath = self.tableView.indexPathForView(button) {
                 print("Button tapped at indexPath \(indexPath.row)")
@@ -172,6 +155,9 @@ class TodoListTableViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
                 cell.labelCell.text = todo.title
                 
+                
+                
+                times += 1
                 
                 var count0to10: Float = 0.0
                 
@@ -204,13 +190,15 @@ class TodoListTableViewController: UITableViewController {
                 defaults.set(count50to70, forKey: "countStar50to70")
                 defaults.set(count70to99, forKey: "countStar70to99")
                 
+                defaults.set(times, forKey: "numberTimes")
+                
                 // 星ボタンの押したか押してないかを保存
                 defaults.set(todo.finished, forKey: "finishedStar")
                 
                 // スキルの選別をしてlevelBarを増やす
                 if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
-                    // 星ボタン(塗りつぶし)を表示
-                    cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
+                    
+                    cell.starButton2.setImage(UIImage(named: "赤星有り.png"), for: .normal)
                     
                     var countSkill10to10: Float = 0.0
                     var countSkill110to30: Float = 0.0
@@ -218,6 +206,8 @@ class TodoListTableViewController: UITableViewController {
                     var countSkill150to70: Float = 0.0
                     var countSkill170to99: Float = 0.0
                     
+                    timesSkill1 = defaults.integer(forKey: "numberTimes1")
+                    timesSkill1 += 1
                     
                     // 星ボタンを押した時、0.45を足す
                     countSkill10to10 += 0.45
@@ -237,15 +227,16 @@ class TodoListTableViewController: UITableViewController {
                     defaults.set(countSkill150to70, forKey: "countStar150to70")
                     defaults.set(countSkill170to99, forKey: "countStar170to99")
                     
+                    defaults.set(timesSkill1, forKey: "numberTimes1")
+                    
                     
                     // 星ボタンの押したか押してないかを保存
                     defaults.set(todo.finished, forKey: "finishedStar")
                     
                     // Skill2の星ボタンをタップした場合
                 } else if cell.labelCell.text == defaults.object(forKey: "skill2Text") as? String{
-                    // 星ボタン(塗りつぶし)を表示
-                    cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
                     
+                    cell.starButton2.setImage(UIImage(named: "黄星有り.png"), for: .normal)
                     
                     var countSkill20to10: Float = 0.0
                     var countSkill210to30: Float = 0.0
@@ -253,6 +244,8 @@ class TodoListTableViewController: UITableViewController {
                     var countSkill250to70: Float = 0.0
                     var countSkill270to99: Float = 0.0
                     
+                    
+                    timesSkill2 += 1
                     
                     // 星ボタンを押した時、0.45を足す
                     countSkill20to10 += 0.45
@@ -272,15 +265,16 @@ class TodoListTableViewController: UITableViewController {
                     defaults.set(countSkill250to70, forKey: "countStar250to70")
                     defaults.set(countSkill270to99, forKey: "countStar270to99")
                     
+                    defaults.set(timesSkill2, forKey: "numberTimes2")
+                    
                     
                     // 星ボタンの押したか押してないかを保存
                     defaults.set(todo.finished, forKey: "finishedStar")
                     
                     // Skill3の星ボタンを押した場合
                 } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
-                    // 星ボタン(塗りつぶし)を表示
-                    cell.starButton2.setImage(UIImage(named: "icons8-星-48.png"), for: .normal)
                     
+                    cell.starButton2.setImage(UIImage(named: "青星有り.png"), for: .normal)
                     
                     var countSkill30to10: Float = 0.0
                     var countSkill310to30: Float = 0.0
@@ -288,6 +282,8 @@ class TodoListTableViewController: UITableViewController {
                     var countSkill350to70: Float = 0.0
                     var countSkill370to99: Float = 0.0
                     
+                    
+                    timesSkill3 += 1
                     
                     // 星ボタンを押した時、0.45を足す
                     countSkill30to10 += 0.45
@@ -307,6 +303,7 @@ class TodoListTableViewController: UITableViewController {
                     defaults.set(countSkill350to70, forKey: "countStar350to70")
                     defaults.set(countSkill370to99, forKey: "countStar370to99")
                     
+                    defaults.set(timesSkill3, forKey: "numberTimes3")
                     
                     // 星ボタンの押したか押してないかを保存
                     defaults.set(todo.finished, forKey: "finishedStar")

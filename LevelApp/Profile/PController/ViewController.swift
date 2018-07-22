@@ -31,6 +31,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var levelUpBtn: UIButton!
     
+    @IBOutlet weak var redUpBtn: UIButton!
+    @IBOutlet weak var yellowUpBtn: UIButton!
+    @IBOutlet weak var blueUpBtn: UIButton!
+    
+    
     
     // level数の初期値を宣言
     var num = 1
@@ -38,6 +43,25 @@ class ViewController: UIViewController {
     var numSkill2 = 1
     var numSkill3 = 1
     
+    var numTimes = 1
+    var numTimes1 = 1
+    var numTimes2 = 1
+    var numTimes3 = 1
+    
+    // 赤矢印ボタンを押した時の処理
+    @objc func redTap(_ button: UIButton) {
+        
+    }
+    
+    // 黄矢印ボタンを押した時の処理
+    @objc func yellowTap(_ button: UIButton) {
+        
+    }
+    
+    // 青矢印ボタンを押した時の処理
+    @objc func blueTap(_ button: UIButton) {
+        
+    }
 
     
     @objc func levelTap(_ button: UIButton) {
@@ -69,9 +93,11 @@ class ViewController: UIViewController {
                         if num >= 0 && num <= 10 {
                             // levelBarの値が0.0〜0.89の間の場合
                             if levelBar.progress >= 0.0 && levelBar.progress < 0.89 {
+                                
+                                numTimes = defaults.integer(forKey: "numberTimes")
 
                             let starCount0to10 = defaults.float(forKey: "countStar")
-                            levelBar.setProgress(levelBar.progress + starCount0to10, animated: true)
+                            levelBar.setProgress(levelBar.progress + (starCount0to10 * Float(numTimes)), animated: true)
                                 // levelBarの値を保存
                                 defaults.set(levelBar.progress, forKey: "levelBarSet")
                             } else if levelBar.progress >= 0.89 {
@@ -192,17 +218,20 @@ class ViewController: UIViewController {
                         
                     
                         if numSkill1 >= 0 && numSkill1 <= 10 {
+                            
+                            numTimes1 = defaults.integer(forKey: "numberTimes1")
+                            
                             // levelBarの値が0.0〜0.89の間の場合
                             if levelBarSkill1.progress >= 0.0 && levelBarSkill1.progress < 0.89 {
                                 
                                 let starCount10to10 = defaults.float(forKey: "countStar1")
-                                levelBarSkill1.setProgress(levelBarSkill1.progress + starCount10to10, animated: true)
+                                levelBarSkill1.setProgress(levelBarSkill1.progress + (starCount10to10 * Float(numTimes1)), animated: true)
                                 // levelBarの値を保存
                                 defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
                             } else if levelBarSkill1.progress >= 0.89 {
                                 
                                 let starCount10to10 = defaults.float(forKey: "countStar")
-                                levelBarSkill1.setProgress(levelBarSkill1.progress + starCount10to10, animated: true)
+                                levelBarSkill1.setProgress(levelBarSkill1.progress + (starCount10to10 * Float(numTimes1)), animated: true)
                                 numSkill1 = numSkill1 + 1
                                 levelSkill1.text = String(numSkill1)
                                 levelBarSkill1.progress = 0.0
@@ -310,6 +339,9 @@ class ViewController: UIViewController {
                                 defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
                             }
                         }
+                        
+                        numTimes1 = 0
+                        defaults.set(numTimes1, forKey: "numberTimes1")
             
                         
                     // skill2のlevelBarを上げる
@@ -317,11 +349,14 @@ class ViewController: UIViewController {
                         
                         
                         if numSkill2 >= 0 && numSkill2 <= 10 {
+                            
+                            numTimes2 = defaults.integer(forKey: "numberTimes2")
+                            
                             // levelBarの値が0.0〜0.89の間の場合
                             if levelBarSkill2.progress >= 0.0 && levelBarSkill2.progress < 0.89 {
                                 
                                 let starCount20to10 = defaults.float(forKey: "countStar2")
-                                levelBarSkill2.setProgress(levelBarSkill2.progress + starCount20to10, animated: true)
+                                levelBarSkill2.setProgress(levelBarSkill2.progress + (starCount20to10 * Float(numTimes2)), animated: true)
                                 // levelBarの値を保存
                                 defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
                             } else if levelBarSkill2.progress >= 0.89 {
@@ -562,6 +597,9 @@ class ViewController: UIViewController {
 //            levelUpBtn.isEnabled = true
 //        }
         
+        redUpBtn.addTarget(self, action: #selector(self.redTap(_:)), for: .touchUpInside)
+        blueUpBtn.addTarget(self, action: #selector(self.blueTap(_:)), for: .touchUpInside)
+        yellowUpBtn.addTarget(self, action: #selector(self.yellowTap(_:)), for: .touchUpInside)
         
         // levelAllの現Level数を表示
         let defaults = UserDefaults.standard
