@@ -158,19 +158,19 @@ class ViewController: UIViewController {
             
             if numSkill2 >= 0 && numSkill2 <= 10 {
                 // levelBarを上げる
-                lvUpBar2()
+                lvUpBar2(e: "countSkill20to10", f: "countStar2")
                 
             } else if numSkill2 > 10 && numSkill2 <= 30 {
-                lvUpBar2()
+                lvUpBar2(e: "countSkill210to30", f: "countStar210to30")
                 
             } else if numSkill2 > 30 && numSkill2 <= 50 {
-                lvUpBar2()
+                lvUpBar2(e: "countSkill230to50", f: "countStar230to50")
                 
             } else if numSkill2 > 50 && numSkill2 <= 70 {
-                lvUpBar2()
+                lvUpBar2(e: "countSkill250to70", f: "countStar250to70")
                 
             } else if numSkill2 > 70 && numSkill2 <= 99 {
-                lvUpBar2()
+                lvUpBar2(e: "countSkill270to99", f: "countStar270to99")
                 
             }
             
@@ -225,19 +225,19 @@ class ViewController: UIViewController {
                
                 if numSkill3 >= 0 && numSkill3 <= 10 {
                     // levelBarを上げる
-                    lvUpBar3()
+                    lvUpBar3(g: "countSkill30to10", h: "countStar3")
                     
                 } else if numSkill3 > 10 && numSkill3 <= 30 {
-                    lvUpBar3()
+                    lvUpBar3(g: "countSkill310to30", h: "countStar310to30")
                     
                 } else if numSkill3 > 30 && numSkill3 <= 50 {
-                    lvUpBar3()
+                    lvUpBar3(g: "countSkill330to50", h: "countStar330to50")
                     
                 } else if numSkill3 > 50 && numSkill3 <= 70 {
-                    lvUpBar3()
+                    lvUpBar3(g: "countSkill350to70", h: "countStar350to70")
                     
                 } else if numSkill3 > 70 && numSkill3 <= 99 {
-                    lvUpBar3()
+                    lvUpBar3(g: "countSkill370to99", h: "countStar370to99")
                     
                 }
             
@@ -366,7 +366,7 @@ class ViewController: UIViewController {
     }
     
     // skill2のlevelBarを上げる
-    func lvUpBar2() {
+    func lvUpBar2(e: String, f: String) {
         let defaults = UserDefaults.standard
         
         numTimes2 = defaults.integer(forKey: "numberTimes2")
@@ -374,13 +374,13 @@ class ViewController: UIViewController {
         // levelBarの値が0.0〜0.89の間の場合
         if levelBarSkill2.progress >= 0.0 && levelBarSkill2.progress < 0.89 {
             
-            let starCount20to10 = defaults.float(forKey: "countStar2")
-            levelBarSkill2.setProgress(levelBarSkill2.progress + (starCount20to10 * Float(numTimes2)), animated: true)
+            let e = defaults.float(forKey: f)
+            levelBarSkill2.setProgress(levelBarSkill2.progress + (e * Float(numTimes2)), animated: true)
             
         } else if levelBarSkill2.progress >= 0.89 {
             
-            let starCount20to10 = defaults.float(forKey: "countStar2")
-            levelBarSkill2.setProgress(levelBarSkill2.progress + (starCount20to10 * Float(numTimes2)), animated: true)
+            let e = defaults.float(forKey: f)
+            levelBarSkill2.setProgress(levelBarSkill2.progress + (e * Float(numTimes2)), animated: true)
             // レベル数を１上げる
             numSkill2Plus()
         
@@ -388,7 +388,7 @@ class ViewController: UIViewController {
     }
     
     // skill3のlevelBarを上げる
-    func lvUpBar3() {
+    func lvUpBar3(g: String, h: String) {
         let defaults = UserDefaults.standard
         
         numTimes3 = defaults.integer(forKey: "numberTimes3")
@@ -396,13 +396,13 @@ class ViewController: UIViewController {
         // levelBarの値が0.0〜0.89の間の場合
         if levelBarSkill3.progress >= 0.0 && levelBarSkill3.progress < 0.89 {
             
-            let starCount30to10 = defaults.float(forKey: "countStar3")
-            levelBarSkill3.setProgress(levelBarSkill3.progress + (starCount30to10 * Float(numTimes3)), animated: true)
+            let g = defaults.float(forKey: h)
+            levelBarSkill3.setProgress(levelBarSkill3.progress + (g * Float(numTimes3)), animated: true)
             
         } else if levelBarSkill3.progress >= 0.89 {
             
-            let starCount30to10 = defaults.float(forKey: "countStar3")
-            levelBarSkill3.setProgress(levelBarSkill3.progress + (starCount30to10 * Float(numTimes3)), animated: true)
+            let g = defaults.float(forKey: h)
+            levelBarSkill3.setProgress(levelBarSkill3.progress + (g * Float(numTimes3)), animated: true)
             
             numSkill3Plus()
         }
