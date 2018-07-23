@@ -155,10 +155,12 @@ class TodoListTableViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
                 cell.labelCell.text = todo.title
                 
+                let defaults = UserDefaults.standard
                 
-                
+                times = defaults.integer(forKey: "numberTimes")
+
                 times += 1
-                
+
                 var count0to10: Float = 0.0
                 
                 var count10to30: Float = 0.0
@@ -183,7 +185,7 @@ class TodoListTableViewController: UITableViewController {
                     
                     
                 // 星ボタンの完了カウント数をuserDefaultsで保存
-                let defaults = UserDefaults.standard
+                
                 defaults.set(count0to10, forKey: "countStar")
                 defaults.set(count10to30, forKey: "countStar10to30")
                 defaults.set(count30to50, forKey: "countStar30to50")
@@ -244,7 +246,7 @@ class TodoListTableViewController: UITableViewController {
                     var countSkill250to70: Float = 0.0
                     var countSkill270to99: Float = 0.0
                     
-                    
+                    timesSkill2 = defaults.integer(forKey: "numberTimes2")
                     timesSkill2 += 1
                     
                     // 星ボタンを押した時、0.45を足す
@@ -282,7 +284,7 @@ class TodoListTableViewController: UITableViewController {
                     var countSkill350to70: Float = 0.0
                     var countSkill370to99: Float = 0.0
                     
-                    
+                    timesSkill3 = defaults.integer(forKey: "numberTimes3")
                     timesSkill3 += 1
                     
                     // 星ボタンを押した時、0.45を足す
