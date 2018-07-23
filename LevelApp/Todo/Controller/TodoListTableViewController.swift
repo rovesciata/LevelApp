@@ -112,13 +112,7 @@ class TodoListTableViewController: UITableViewController {
             let defaults = UserDefaults.standard
             if cell.labelCell?.text == defaults.object(forKey: "skill1Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "赤星有り.png"), for: .normal)
-                
-                todo.redHidden = defaults.bool(forKey: "redUpBtnHidden")
-                
-                    
-                    todo.redHidden = false
-            
-                
+       
             } else if cell.labelCell?.text == defaults.object(forKey: "skill2Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "黄星有り.png"), for: .normal)
             } else if cell.labelCell?.text == defaults.object(forKey: "skill3Text") as? String {

@@ -255,8 +255,24 @@ class ViewController: UIViewController {
             
             // skill3のlevelBarを上げる
             if cell.textLabel?.text == defaults.object(forKey: "skill3Text") as? String {
-                numIf(num: numSkill3)
-                
+               
+                if numSkill3 >= 0 && numSkill3 <= 10 {
+                    // levelBarを上げる
+                    lvUpBar3()
+                    
+                } else if numSkill3 > 10 && numSkill3 <= 30 {
+                    lvUpBar3()
+                    
+                } else if numSkill3 > 30 && numSkill3 <= 50 {
+                    lvUpBar3()
+                    
+                } else if numSkill3 > 50 && numSkill3 <= 70 {
+                    lvUpBar3()
+                    
+                } else if numSkill3 > 70 && numSkill3 <= 99 {
+                    lvUpBar3()
+                    
+                }
             
             // 星ボタンを押した回数を0に戻す
             numTimes3 = 0
@@ -272,24 +288,24 @@ class ViewController: UIViewController {
         
     }
     
-    func numIf (num: Int ) {
-        if num >= 0 && num <= 10 {
-            lvUpBar3()
-            
-        } else if num > 10 && num <= 30 {
-            lvUpBar3()
-            
-        } else if num > 30 && num <= 50 {
-            lvUpBar3()
-            
-        } else if num > 50 && num <= 70 {
-            lvUpBar3()
-            
-        } else if num > 70 && num <= 99 {
-            lvUpBar3()
-            
-        }
-    }
+//    func numIf (num: Int ) {
+//        if num >= 0 && num <= 10 {
+//            lvUpBar3()
+//
+//        } else if num > 10 && num <= 30 {
+//            lvUpBar3()
+//
+//        } else if num > 30 && num <= 50 {
+//            lvUpBar3()
+//
+//        } else if num > 50 && num <= 70 {
+//            lvUpBar3()
+//
+//        } else if num > 70 && num <= 99 {
+//            lvUpBar3()
+//
+//        }
+//    }
     
     // 全体のlevel数を１上げる
     func numLevelPlus() {
@@ -423,9 +439,6 @@ class ViewController: UIViewController {
         
         let defaults = UserDefaults.standard
         redUpBtn.addTarget(self, action: #selector(self.redTap(_:)), for: .touchUpInside)
-        redUpBtn.isHidden = true
-        defaults.set(redUpBtn.isHidden, forKey: "redUpBtnHidden")
-        
         blueUpBtn.addTarget(self, action: #selector(self.blueTap(_:)), for: .touchUpInside)
         yellowUpBtn.addTarget(self, action: #selector(self.yellowTap(_:)), for: .touchUpInside)
         
@@ -479,6 +492,10 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+        
+        
+        
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "編集", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.newProfile))
         
@@ -488,6 +505,29 @@ class ViewController: UIViewController {
         skill1.text = defaults.object(forKey: "skill1Text") as? String
         skill2.text = defaults.object(forKey: "skill2Text") as? String
         skill3.text = defaults.object(forKey: "skill3Text") as? String
+        
+        
+        // 矢印ボタンの表示オン/オフ
+        numTimes1 = defaults.integer(forKey: "numberTimes1")
+        if numTimes1 >= 1 {
+            redUpBtn.isHidden = false
+        } else {
+            redUpBtn.isHidden = true
+        }
+        
+        numTimes2 = defaults.integer(forKey: "numberTimes2")
+        if numTimes2 >= 1 {
+            yellowUpBtn.isHidden = false
+        } else {
+            yellowUpBtn.isHidden = true
+        }
+        
+        numTimes3 = defaults.integer(forKey: "numberTimes3")
+        if numTimes3 >= 1 {
+            blueUpBtn.isHidden = false
+        } else {
+            blueUpBtn.isHidden = true
+        }
         
         
         // level数の読み込み
