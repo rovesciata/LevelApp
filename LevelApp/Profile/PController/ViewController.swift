@@ -61,6 +61,7 @@ class ViewController: UIViewController {
 
         // 星ボタンが押されたかどうか判別
         if trueStar == false {
+            
 
         } else {
 
@@ -68,21 +69,8 @@ class ViewController: UIViewController {
             // 選択されたスキルのLabelを読み込む
             cell.textLabel?.text = defaults.object(forKey: "text1") as? String
 
-            if num >= 0 && num <= 10 {
-                lvUpBar()
-
-            }      else if num > 10 && num <= 30 {
-                lvUpBar()
-
-            }  else if num > 30 && num <= 50 {
-                lvUpBar()
-
-            } else if num > 50 && num <= 70 {
-                lvUpBar()
-
-            }  else if num > 70 && num <= 99 {
-                lvUpBar()
-            }
+            // 全体のlevel数毎の処理
+            allUp()
 
             // 星ボタンを押した回数を0に戻す
             numTimes = 0
@@ -98,23 +86,25 @@ class ViewController: UIViewController {
                 
                 if numSkill1 >= 0 && numSkill1 <= 10 {
                     // levelBarを上げる
-                    lvUpBar1()
+                    lvUpBar1(c: "contSkill10to10", d: "countStar1")
+                    
                     
                 }  else if numSkill1 > 10 && numSkill1 <= 30 {
+                    lvUpBar1(c: "countSkill110to30", d:  "countStar110to30")
                     
-                    lvUpBar1()
                     
                 }  else if numSkill1 > 30 && numSkill1 <= 50 {
+                    lvUpBar1(c: "countSkill130to50", d: "countStar130to50")
                     
-                    lvUpBar1()
                     
                 } else if numSkill1 > 50 && numSkill1 <= 70 {
+                    lvUpBar1(c: "countSkill150to70", d: "countStar150to70")
                     
-                    lvUpBar1()
                 }  else if numSkill1 > 70 && numSkill1 <= 99 {
                     
-                    lvUpBar1()
+                    lvUpBar1(c: "countSkill170to99", d: "countStar170to99")
                 }
+                
                 
                 // 星ボタンを押した回数を0に戻す
                 numTimes1 = 0
@@ -136,33 +126,22 @@ class ViewController: UIViewController {
         // 星ボタンが押されたかどうか判別
         let trueStar = defaults.bool(forKey: "finishedStar")
         
+        
+        
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
         
         
         // 星ボタンが押されたかどうか判別
         if trueStar == false {
-            
+        
         } else {
             
             // 全体のlevelBarを上げる
             // 選択されたスキルのLabelを読み込む
             cell.textLabel?.text = defaults.object(forKey: "text1") as? String
             
-            if num >= 0 && num <= 10 {
-                lvUpBar()
-                
-            }      else if num > 10 && num <= 30 {
-                lvUpBar()
-                
-            }  else if num > 30 && num <= 50 {
-                lvUpBar()
-                
-            } else if num > 50 && num <= 70 {
-                lvUpBar()
-                
-            }  else if num > 70 && num <= 99 {
-                lvUpBar()
-            }
+            // 全体のlevel数毎の処理
+            allUp()
             
             // 星ボタンを押した回数を0に戻す
             numTimes = 0
@@ -222,28 +201,16 @@ class ViewController: UIViewController {
         
         // 星ボタンが押されたかどうか判別
         if trueStar == false {
-            
+        
+        
         } else {
             
             // 全体のlevelBarを上げる
             // 選択されたスキルのLabelを読み込む
             cell.textLabel?.text = defaults.object(forKey: "text1") as? String
             
-            if num >= 0 && num <= 10 {
-                lvUpBar()
-                
-            }      else if num > 10 && num <= 30 {
-                lvUpBar()
-                
-            }  else if num > 30 && num <= 50 {
-                lvUpBar()
-                
-            } else if num > 50 && num <= 70 {
-                lvUpBar()
-                
-            }  else if num > 70 && num <= 99 {
-                lvUpBar()
-            }
+            // 全体のlevel数毎の処理
+            allUp()
             
             // 星ボタンを押した回数を0に戻す
             numTimes = 0
@@ -336,20 +303,39 @@ class ViewController: UIViewController {
     }
     
     
+    // 全体のlevel数毎の処理
+    func allUp() {
+        if num >= 0 && num <= 10 {
+            lvUpBar(a: "count0to10", b: "countStar")
+            
+        }      else if num > 10 && num <= 30 {
+            lvUpBar(a: "count10to30", b: "countStar10to30")
+            
+        }  else if num > 30 && num <= 50 {
+            lvUpBar(a: "count30to50", b: "countStar30to50")
+            
+        } else if num > 50 && num <= 70 {
+            lvUpBar(a: "count50to70", b: "countStar50to70")
+            
+        }  else if num > 70 && num <= 99 {
+            lvUpBar(a: "count70to99", b: "countStar70to99")
+        }
+    }
+    
     // 全体のlevelbarを上げる
-    func lvUpBar() {
+    func lvUpBar(a: String, b: String) {
         let defaults = UserDefaults.standard
         // 星ボタンを押した回数を読み込み
         numTimes = defaults.integer(forKey: "numberTimes")
         
         if levelBar.progress >= 0.0 && levelBar.progress < 0.89 {
             
-        let starCount0to10 = defaults.float(forKey: "countStar")
-        levelBar.setProgress(levelBar.progress + (starCount0to10 * Float(numTimes)), animated: true)
+        let a = defaults.float(forKey: b)
+        levelBar.setProgress(levelBar.progress + (a * Float(numTimes)), animated: true)
         
         } else if levelBar.progress >= 0.89 {
-        let starCount0to10 = defaults.float(forKey: "countStar")
-        levelBar.setProgress(levelBar.progress + (starCount0to10 * Float(numTimes)), animated: true)
+            let a = defaults.float(forKey: b)
+            levelBar.setProgress(levelBar.progress + (a * Float(numTimes)), animated: true)
         // レベル数を１上げる
         numLevelPlus()
             
@@ -358,7 +344,7 @@ class ViewController: UIViewController {
     }
     
     // skill1のlevelBarを上げる
-    func lvUpBar1() {
+    func lvUpBar1(c: String, d: String) {
         let defaults = UserDefaults.standard
         
         numTimes1 = defaults.integer(forKey: "numberTimes1")
@@ -366,13 +352,13 @@ class ViewController: UIViewController {
         // levelBarの値が0.0〜0.89の間の場合
         if levelBarSkill1.progress >= 0.0 && levelBarSkill1.progress < 0.89 {
             
-            let starCount10to10 = defaults.float(forKey: "countStar1")
-            levelBarSkill1.setProgress(levelBarSkill1.progress + (starCount10to10 * Float(numTimes1)), animated: true)
+            let a = defaults.float(forKey: d)
+            levelBarSkill1.setProgress(levelBarSkill1.progress + (a * Float(numTimes1)), animated: true)
             
         } else if levelBarSkill1.progress >= 0.89 {
+            let a = defaults.float(forKey: d)
+            levelBarSkill1.setProgress(levelBarSkill1.progress + (a * Float(numTimes1)), animated: true)
             
-            let starCount10to10 = defaults.float(forKey: "countStar1")
-            levelBarSkill1.setProgress(levelBarSkill1.progress + (starCount10to10 * Float(numTimes1)), animated: true)
             // レベル数を１上げる
             numSkill1Plus()
             
