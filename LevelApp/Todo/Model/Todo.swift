@@ -19,5 +19,8 @@ class Todo: NSObject {
     var title = ""
     var descript = ""
     var finished = false
+    
+    var redHidden = true
+    
 //    var skill: TodoSkill = .Skill1
 }

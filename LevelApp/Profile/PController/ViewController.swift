@@ -51,16 +51,244 @@ class ViewController: UIViewController {
     // 赤矢印ボタンを押した時の処理
     @objc func redTap(_ button: UIButton) {
         
+        // 星ボタン完了カウント数の読み込み
+        let defaults = UserDefaults.standard
+        // 星ボタンが押されたかどうか判別
+        let trueStar = defaults.bool(forKey: "finishedStar")
+
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
+
+
+        // 星ボタンが押されたかどうか判別
+        if trueStar == false {
+
+        } else {
+
+            // 全体のlevelBarを上げる
+            // 選択されたスキルのLabelを読み込む
+            cell.textLabel?.text = defaults.object(forKey: "text1") as? String
+
+            if num >= 0 && num <= 10 {
+                lvUpBar()
+
+            }      else if num > 10 && num <= 30 {
+                lvUpBar()
+
+            }  else if num > 30 && num <= 50 {
+                lvUpBar()
+
+            } else if num > 50 && num <= 70 {
+                lvUpBar()
+
+            }  else if num > 70 && num <= 99 {
+                lvUpBar()
+            }
+
+            // 星ボタンを押した回数を0に戻す
+            numTimes = 0
+            defaults.set(numTimes, forKey: "numberTimes")
+            // レベル数を保存
+            defaults.set(num, forKey: "numCount")
+            // levelBarの値を保存
+            defaults.set(levelBar.progress, forKey: "levelBarSet")
+        
+        
+            // skill1のlevelBarを上げる
+            if cell.textLabel?.text == defaults.object(forKey: "skill1Text") as? String {
+                
+                if numSkill1 >= 0 && numSkill1 <= 10 {
+                    // levelBarを上げる
+                    lvUpBar1()
+                    
+                }  else if numSkill1 > 10 && numSkill1 <= 30 {
+                    
+                    lvUpBar1()
+                    
+                }  else if numSkill1 > 30 && numSkill1 <= 50 {
+                    
+                    lvUpBar1()
+                    
+                } else if numSkill1 > 50 && numSkill1 <= 70 {
+                    
+                    lvUpBar1()
+                }  else if numSkill1 > 70 && numSkill1 <= 99 {
+                    
+                    lvUpBar1()
+                }
+                
+                // 星ボタンを押した回数を0に戻す
+                numTimes1 = 0
+                defaults.set(numTimes1, forKey: "numberTimes1")
+                
+                // レベル数を保存
+                defaults.set(numSkill1, forKey: "numCount1")
+                // levelBarの値を保存
+                defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
+            }
+        }
     }
     
     // 黄矢印ボタンを押した時の処理
     @objc func yellowTap(_ button: UIButton) {
+        
+        // 星ボタン完了カウント数の読み込み
+        let defaults = UserDefaults.standard
+        // 星ボタンが押されたかどうか判別
+        let trueStar = defaults.bool(forKey: "finishedStar")
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
+        
+        
+        // 星ボタンが押されたかどうか判別
+        if trueStar == false {
+            
+        } else {
+            
+            // 全体のlevelBarを上げる
+            // 選択されたスキルのLabelを読み込む
+            cell.textLabel?.text = defaults.object(forKey: "text1") as? String
+            
+            if num >= 0 && num <= 10 {
+                lvUpBar()
+                
+            }      else if num > 10 && num <= 30 {
+                lvUpBar()
+                
+            }  else if num > 30 && num <= 50 {
+                lvUpBar()
+                
+            } else if num > 50 && num <= 70 {
+                lvUpBar()
+                
+            }  else if num > 70 && num <= 99 {
+                lvUpBar()
+            }
+            
+            // 星ボタンを押した回数を0に戻す
+            numTimes = 0
+            defaults.set(numTimes, forKey: "numberTimes")
+            // レベル数を保存
+            defaults.set(num, forKey: "numCount")
+            // levelBarの値を保存
+            defaults.set(levelBar.progress, forKey: "levelBarSet")
+            
+            
+            // skill2のlevelBarを上げる
+            if cell.textLabel?.text == defaults.object(forKey: "skill2Text") as? String {
+            
+            
+            if numSkill2 >= 0 && numSkill2 <= 10 {
+                // levelBarを上げる
+                lvUpBar2()
+                
+            } else if numSkill2 > 10 && numSkill2 <= 30 {
+                lvUpBar2()
+                
+            } else if numSkill2 > 30 && numSkill2 <= 50 {
+                lvUpBar2()
+                
+            } else if numSkill2 > 50 && numSkill2 <= 70 {
+                lvUpBar2()
+                
+            } else if numSkill2 > 70 && numSkill2 <= 99 {
+                lvUpBar2()
+                
+            }
+            
+            // 星ボタンを押した回数を0に戻す
+            numTimes2 = 0
+            defaults.set(numTimes2, forKey: "numberTimes2")
+            
+            // レベル数を保存
+            defaults.set(numSkill2, forKey: "numCount2")
+            // levelBarの値を保存
+            defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
+        }
+    }
+        
         
     }
     
     // 青矢印ボタンを押した時の処理
     @objc func blueTap(_ button: UIButton) {
         
+        // 星ボタン完了カウント数の読み込み
+        let defaults = UserDefaults.standard
+        // 星ボタンが押されたかどうか判別
+        let trueStar = defaults.bool(forKey: "finishedStar")
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
+        
+        
+        // 星ボタンが押されたかどうか判別
+        if trueStar == false {
+            
+        } else {
+            
+            // 全体のlevelBarを上げる
+            // 選択されたスキルのLabelを読み込む
+            cell.textLabel?.text = defaults.object(forKey: "text1") as? String
+            
+            if num >= 0 && num <= 10 {
+                lvUpBar()
+                
+            }      else if num > 10 && num <= 30 {
+                lvUpBar()
+                
+            }  else if num > 30 && num <= 50 {
+                lvUpBar()
+                
+            } else if num > 50 && num <= 70 {
+                lvUpBar()
+                
+            }  else if num > 70 && num <= 99 {
+                lvUpBar()
+            }
+            
+            // 星ボタンを押した回数を0に戻す
+            numTimes = 0
+            defaults.set(numTimes, forKey: "numberTimes")
+            // レベル数を保存
+            defaults.set(num, forKey: "numCount")
+            // levelBarの値を保存
+            defaults.set(levelBar.progress, forKey: "levelBarSet")
+            
+            // skill3のlevelBarを上げる
+            if cell.textLabel?.text == defaults.object(forKey: "skill3Text") as? String {
+                numIf(num: numSkill3)
+                
+            
+            // 星ボタンを押した回数を0に戻す
+            numTimes3 = 0
+            defaults.set(numTimes3, forKey: "numberTimes3")
+            
+            // レベル数を保存
+            defaults.set(numSkill3, forKey: "numCount3")
+            // levelBarの値を保存
+            defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
+            
+        }
+    }
+        
+    }
+    
+    func numIf (num: Int ) {
+        if num >= 0 && num <= 10 {
+            lvUpBar3()
+            
+        } else if num > 10 && num <= 30 {
+            lvUpBar3()
+            
+        } else if num > 30 && num <= 50 {
+            lvUpBar3()
+            
+        } else if num > 50 && num <= 70 {
+            lvUpBar3()
+            
+        } else if num > 70 && num <= 99 {
+            lvUpBar3()
+            
+        }
     }
     
     // 全体のlevel数を１上げる
@@ -131,7 +359,8 @@ class ViewController: UIViewController {
             levelBarSkill1.setProgress(levelBarSkill1.progress + (starCount10to10 * Float(numTimes1)), animated: true)
             // レベル数を１上げる
             numSkill1Plus()
-    }
+            
+        }
     }
     
     // skill2のlevelBarを上げる
@@ -177,170 +406,12 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
 
-    
-    @objc func levelTap(_ button: UIButton) {
-        
-
-        // 星ボタン完了カウント数の読み込み
-        let defaults = UserDefaults.standard
-        // 星ボタンが押されたかどうか判別
-        let trueStar = defaults.bool(forKey: "finishedStar")
-        
-        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
-        
-
-        // 星ボタンが押されたかどうか判別
-                if trueStar == false {
-                    
-                } else {
-                    
-                    // 全体のlevelBarを上げる
-                    // 選択されたスキルのLabelを読み込む
-                    cell.textLabel?.text = defaults.object(forKey: "text1") as? String
-                
-                        if num >= 0 && num <= 10 {
-                            lvUpBar()
-                            
-                    }      else if num > 10 && num <= 30 {
-                            lvUpBar()
-                            
-                        }  else if num > 30 && num <= 50 {
-                            lvUpBar()
-                            
-                        } else if num > 50 && num <= 70 {
-                            lvUpBar()
-                            
-                        }  else if num > 70 && num <= 99 {
-                            lvUpBar()
-                    }
-                    
-                    // 星ボタンを押した回数を0に戻す
-                    numTimes = 0
-                    defaults.set(numTimes, forKey: "numberTimes")
-                            // レベル数を保存
-                            defaults.set(num, forKey: "numCount")
-                            // levelBarの値を保存
-                            defaults.set(levelBar.progress, forKey: "levelBarSet")
-                    
-                    
-                    // skill1のlevelBarを上げる
-                    if cell.textLabel?.text == defaults.object(forKey: "skill1Text") as? String {
-                        
-                        if numSkill1 >= 0 && numSkill1 <= 10 {
-                            // levelBarを上げる
-                            lvUpBar1()
-                            
-                        }  else if numSkill1 > 10 && numSkill1 <= 30 {
-                            
-                            lvUpBar1()
-                           
-                        }  else if numSkill1 > 30 && numSkill1 <= 50 {
-                            
-                            lvUpBar1()
-                            
-                        } else if numSkill1 > 50 && numSkill1 <= 70 {
-                            
-                            lvUpBar1()
-                        }  else if numSkill1 > 70 && numSkill1 <= 99 {
-                            
-                            lvUpBar1()
-                        }
-                        
-                        // 星ボタンを押した回数を0に戻す
-                        numTimes1 = 0
-                        defaults.set(numTimes1, forKey: "numberTimes1")
-                        
-                        // レベル数を保存
-                        defaults.set(numSkill1, forKey: "numCount1")
-                        // levelBarの値を保存
-                        defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
-            
-                        
-                    // skill2のlevelBarを上げる
-                    } else if cell.textLabel?.text == defaults.object(forKey: "skill2Text") as? String {
-                        
-                        
-                        if numSkill2 >= 0 && numSkill2 <= 10 {
-                            // levelBarを上げる
-                            lvUpBar2()
-                            
-                        } else if numSkill2 > 10 && numSkill2 <= 30 {
-                            lvUpBar2()
-                            
-                            } else if numSkill2 > 30 && numSkill2 <= 50 {
-                               lvUpBar2()
-                            
-                            } else if numSkill2 > 50 && numSkill2 <= 70 {
-                                lvUpBar2()
-                            
-                            } else if numSkill2 > 70 && numSkill2 <= 99 {
-                                lvUpBar2()
-                            
-                            }
-                        
-                        // 星ボタンを押した回数を0に戻す
-                        numTimes2 = 0
-                        defaults.set(numTimes2, forKey: "numberTimes2")
-                        
-                        // レベル数を保存
-                        defaults.set(numSkill2, forKey: "numCount2")
-                        // levelBarの値を保存
-                        defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
-                        
-                    // skill3のlevelBarを上げる
-                    } else if cell.textLabel?.text == defaults.object(forKey: "skill3Text") as? String {
-                        
-                        
-                            if numSkill3 >= 0 && numSkill3 <= 10 {
-                                lvUpBar3()
-                                
-                            } else if numSkill3 > 10 && numSkill3 <= 30 {
-                                lvUpBar3()
-                                
-                            } else if numSkill3 > 30 && numSkill3 <= 50 {
-                                lvUpBar3()
-                                
-                            } else if numSkill3 > 50 && numSkill3 <= 70 {
-                                lvUpBar3()
-                                
-                            } else if numSkill3 > 70 && numSkill3 <= 99 {
-                                lvUpBar3()
-                                
-                            }
-                        
-                        // 星ボタンを押した回数を0に戻す
-                        numTimes3 = 0
-                        defaults.set(numTimes3, forKey: "numberTimes3")
-                        
-                        // レベル数を保存
-                        defaults.set(numSkill3, forKey: "numCount3")
-                        // levelBarの値を保存
-                        defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
-                 
-                        }
-                    
-//                    sender.isEnabled = false
-                        }
-                        
-                        }
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        // 星ボタンを押された後、タップボタンを押したときの処理
-        levelUpBtn.addTarget(self, action: #selector(self.levelTap(_:)), for: .touchUpInside)
+
 //        levelUpBtn.isHidden = true
 //        let defaults = UserDefaults.standard
 //        let trueStar = defaults.bool(forKey: "finishedStar")
@@ -350,12 +421,16 @@ class ViewController: UIViewController {
 //            levelUpBtn.isEnabled = true
 //        }
         
+        let defaults = UserDefaults.standard
         redUpBtn.addTarget(self, action: #selector(self.redTap(_:)), for: .touchUpInside)
+        redUpBtn.isHidden = true
+        defaults.set(redUpBtn.isHidden, forKey: "redUpBtnHidden")
+        
         blueUpBtn.addTarget(self, action: #selector(self.blueTap(_:)), for: .touchUpInside)
         yellowUpBtn.addTarget(self, action: #selector(self.yellowTap(_:)), for: .touchUpInside)
         
         // levelAllの現Level数を表示
-        let defaults = UserDefaults.standard
+//        let defaults = UserDefaults.standard
         num = defaults.integer(forKey: "numCount")
         levelAll.text = String(num)
         
@@ -414,25 +489,18 @@ class ViewController: UIViewController {
         skill2.text = defaults.object(forKey: "skill2Text") as? String
         skill3.text = defaults.object(forKey: "skill3Text") as? String
         
-        // level数の読み込み
-//        levelAll.text = defaults.object(forKey: "numCount") as? String
         
+        // level数の読み込み
         num = defaults.integer(forKey: "numCount")
         numSkill1 = defaults.integer(forKey: "numCount1")
         numSkill2 = defaults.integer(forKey: "numCount2")
         numSkill3 = defaults.integer(forKey: "numCount3")
-//        levelSkill1.text = defaults.object(forKey: "numCount1") as? String
-//        levelSkill2.text = defaults.object(forKey: "numCount2") as? String
-//        levelSkill3.text = defaults.object(forKey: "numCount3") as? String
-        
         
         // levelbarの値の読み込み
         levelBar.progress = defaults.float(forKey: "levelBarSet")
         levelBarSkill1.progress = defaults.float(forKey: "levelBar1Set")
         levelBarSkill2.progress = defaults.float(forKey: "levelBar2Set")
         levelBarSkill3.progress = defaults.float(forKey: "levelBar3Set")
-        
-        
         // imageViewのuserDefaultsはNSデータ型にしてから読み込み
         if let imageData:NSData = UserDefaults.standard.object(forKey: "selectImage") as? NSData
         {

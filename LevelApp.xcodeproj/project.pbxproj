@@ -204,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				8CA8DA4920E9F20100B87947 /* NewProfileViewController.swift */,
+				8C9357DB20F24F9D00271B39 /* SkillSelection.swift */,
 			);
 			path = PView;
 			sourceTree = "<group>";
@@ -240,6 +241,15 @@
 		8C9357E820F3ACD400271B39 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				8C3690F121044294002D1FE3 /* 赤矢印.png */,
+				8C3690EF21044293002D1FE3 /* 青矢印.png */,
+				8C3690F021044294002D1FE3 /* 黄矢印.png */,
+				8C3690E82103FB69002D1FE3 /* 赤星無し.png */,
+				8C3690E32103FB66002D1FE3 /* 黄星無し.png */,
+				8C3690E72103FB68002D1FE3 /* 青星無し.png */,
+				8C3690E42103FB67002D1FE3 /* 黄星有り.png */,
+				8C3690E52103FB67002D1FE3 /* 赤星有り.png */,
+				8C3690E62103FB68002D1FE3 /* 青星有り.png */,
 				8C8F68AB20FC8E9200D5941A /* icons8-設定-filled-30.png */,
 				8C8F68A920FC8CA200D5941A /* icons8-タスクリスト-30.png */,
 				8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */,
@@ -289,22 +299,12 @@
 		8CBED50B20DB453500FF0DE3 /* LevelApp */ = {
 			isa = PBXGroup;
 			children = (
+				8CBED50C20DB453500FF0DE3 /* AppDelegate.swift */,
+				8CBED51020DB453500FF0DE3 /* Main.storyboard */,
 				8C9357E820F3ACD400271B39 /* Image */,
 				8C52C7D120E9E39500E44F84 /* Profile */,
 				8CC11CFB20E78004003E32B8 /* Calendar */,
 				8CC11CF620E77099003E32B8 /* Todo */,
-				8CBED50C20DB453500FF0DE3 /* AppDelegate.swift */,
-				8CBED51020DB453500FF0DE3 /* Main.storyboard */,
-				8C3690F121044294002D1FE3 /* 赤矢印.png */,
-				8C3690EF21044293002D1FE3 /* 青矢印.png */,
-				8C3690F021044294002D1FE3 /* 黄矢印.png */,
-				8C3690E82103FB69002D1FE3 /* 赤星無し.png */,
-				8C3690E32103FB66002D1FE3 /* 黄星無し.png */,
-				8C3690E72103FB68002D1FE3 /* 青星無し.png */,
-				8C3690E42103FB67002D1FE3 /* 黄星有り.png */,
-				8C3690E52103FB67002D1FE3 /* 赤星有り.png */,
-				8C3690E62103FB68002D1FE3 /* 青星有り.png */,
-				8C9357DB20F24F9D00271B39 /* SkillSelection.swift */,
 				8CBED51320DB453600FF0DE3 /* Assets.xcassets */,
 				8CBED51520DB453600FF0DE3 /* LaunchScreen.storyboard */,
 				8CBED51820DB453600FF0DE3 /* Info.plist */,

@@ -124,14 +124,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQJ-3M-eUS">
-                                <rect key="frame" x="271" y="412" width="82" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Level UP!!">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpo-mc-YLJ">
                                 <rect key="frame" x="321" y="474" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -174,7 +166,6 @@
                         <outlet property="levelSkill1" destination="gd3-Mc-aFM" id="2fV-vI-C6o"/>
                         <outlet property="levelSkill2" destination="s56-NU-41P" id="UZn-gh-BQc"/>
                         <outlet property="levelSkill3" destination="koz-iR-IQG" id="Zxu-1F-9lJ"/>
-                        <outlet property="levelUpBtn" destination="kQJ-3M-eUS" id="AtI-qN-pCc"/>
                         <outlet property="name" destination="BfP-Qx-TiM" id="GkV-1K-IK6"/>
                         <outlet property="profileImage" destination="kuV-Y3-btB" id="QRU-TP-Cmk"/>
                         <outlet property="redUpBtn" destination="jpo-mc-YLJ" id="kGr-ZB-r5U"/>
