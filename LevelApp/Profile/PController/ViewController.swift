@@ -82,7 +82,6 @@ class ViewController: UIViewController {
         
         
             // skill1のlevelBarを上げる
-//            if cell.textLabel?.text == defaults.object(forKey: "skill1Text") as? String {
             
                 if numSkill1 >= 0 && numSkill1 <= 10 {
                     // levelBarを上げる
@@ -114,7 +113,10 @@ class ViewController: UIViewController {
                 defaults.set(numSkill1, forKey: "numCount1")
                 // levelBarの値を保存
                 defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
-//            }
+            
+                // 星ボタンを押したことを保存
+            defaults.set(trueStar, forKey: "finishedStar")
+
         }
     }
     
@@ -153,8 +155,6 @@ class ViewController: UIViewController {
             
             
             // skill2のlevelBarを上げる
-//            if cell.textLabel?.text == defaults.object(forKey: "skill2Text") as? String {
-            
             
             if numSkill2 >= 0 && numSkill2 <= 10 {
                 // levelBarを上げる
@@ -182,7 +182,10 @@ class ViewController: UIViewController {
             defaults.set(numSkill2, forKey: "numCount2")
             // levelBarの値を保存
             defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
-//        }
+            
+            // 星ボタンを押したことを保存
+            defaults.set(trueStar, forKey: "finishedStar")
+
     }
         
         
@@ -221,7 +224,6 @@ class ViewController: UIViewController {
             defaults.set(levelBar.progress, forKey: "levelBarSet")
             
             // skill3のlevelBarを上げる
-//            if cell.textLabel?.text == defaults.object(forKey: "skill3Text") as? String {
             
                 if numSkill3 >= 0 && numSkill3 <= 10 {
                     // levelBarを上げる
@@ -250,7 +252,9 @@ class ViewController: UIViewController {
             // levelBarの値を保存
             defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
             
-//        }
+            // 星ボタンを押したことを保存
+            defaults.set(trueStar, forKey: "finishedStar")
+            
     }
         
     }
@@ -489,6 +493,8 @@ class ViewController: UIViewController {
         redUpBtn.addTarget(self, action: #selector(self.redTap(_:)), for: .touchUpInside)
         blueUpBtn.addTarget(self, action: #selector(self.blueTap(_:)), for: .touchUpInside)
         yellowUpBtn.addTarget(self, action: #selector(self.yellowTap(_:)), for: .touchUpInside)
+        
+        
         
         // levelAllの現Level数を表示
 //        let defaults = UserDefaults.standard

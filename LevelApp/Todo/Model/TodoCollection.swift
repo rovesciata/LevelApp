@@ -17,8 +17,8 @@ class TodoCollection: NSObject {
         if let todoList = defaults.object(forKey: "todoLists") as? Array<Dictionary<String, AnyObject>> {
             for todoDic in todoList {
                 let todo = TodoCollection.convertTodoModel(attiributes: todoDic)
-                self.todos.append(todo)
-//                self.todos.insert(todo, at: 0)
+//                self.todos.append(todo)
+                self.todos.insert(todo, at: 0)
             }
         }
     }
@@ -33,8 +33,8 @@ class TodoCollection: NSObject {
     }
     
     func addTodoCollection(todo: Todo) {
-        self.todos.append(todo)
-//        self.todos.insert(todo, at: 0)
+//        self.todos.append(todo)
+        self.todos.insert(todo, at: 0)
         self.save()
     }
     
@@ -42,8 +42,8 @@ class TodoCollection: NSObject {
         var todoList: Array<Dictionary<String, AnyObject>> = []
         for todo in todos {
             let todoDic = TodoCollection.convertDictionary(todo: todo)
-            todoList.append(todoDic)
-//            todoList.insert(todoDic, at: 0)
+//            todoList.append(todoDic)
+            todoList.insert(todoDic, at: 0)
         }
         let defaults = UserDefaults.standard
         defaults.set(todoList, forKey: "todoLists")

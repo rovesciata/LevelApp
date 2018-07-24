@@ -14,7 +14,9 @@ public extension UITableView {
     
     func indexPathForView(_ view: UIView) -> IndexPath? {
         let origin = view.bounds.origin
-        let viewOrigin = self.convert(origin, from: view)
+        // タブバー分ずらしてセルの位置を取得
+        let height: CGPoint = CGPoint(x: 0, y: 44)
+        let viewOrigin = self.convert(height, from: view)
         let indexPath = self.indexPathForRow(at: viewOrigin)
         return indexPath
     }
@@ -25,7 +27,6 @@ class TodoListTableViewController: UITableViewController {
     
     let todoCollection = TodoCollection.sharedInstance
     
- 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,9 @@ class TodoListTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
         
         todoCollection.fetchTodos()
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,12 +47,14 @@ class TodoListTableViewController: UITableViewController {
     // ヘッダーボタン作成
     override func viewWillAppear(_ animated: Bool) {
         
+        
         super.viewWillAppear(animated)
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TodoListTableViewController.newTodo))
         self.navigationItem.leftBarButtonItem = editButtonItem
         self.tableView.reloadData()
+        
     }
 
     // MARK: - Table view data source
@@ -74,11 +80,16 @@ class TodoListTableViewController: UITableViewController {
         cell.detailCell.text = todo.descript
         cell.labelCell!.font = UIFont(name: "HirakakuProN-W3", size: 15)
         
+        
+        
 
         // 星ボタンを押した時
         cell.starButton2.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
         
         let defaults = UserDefaults.standard
+
+//        todo.finished = defaults.bool(forKey: "finishedStar")
+        
         
         if todo.finished == false {
             // 星ボタン(くり抜き)を表示
@@ -91,6 +102,7 @@ class TodoListTableViewController: UITableViewController {
                 cell.starButton2.setImage(UIImage(named: "青星無し.png"), for: .normal)
             }
         
+            
         } else {
             // 星ボタン(塗りつぶし)を表示
             let defaults = UserDefaults.standard
@@ -126,21 +138,24 @@ class TodoListTableViewController: UITableViewController {
     var timesSkill2 = 0
     var timesSkill3 = 0
     
+    
     // 星ボタンを押した時の処理
     @objc func buttonTapped(_ button: UIButton) {
         
             if let indexPath = self.tableView.indexPathForView(button) {
                 print("Button tapped at indexPath \(indexPath.row)")
-                let todo = self.todoCollection.todos[indexPath.row + 1]
+                let todo = self.todoCollection.todos[indexPath.row]
                 todo.finished = true
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
                 cell.labelCell.text = todo.title
                 
+                
                 let defaults = UserDefaults.standard
                 
                 // 星ボタンの押したか押してないかを保存
                 defaults.set(todo.finished, forKey: "finishedStar")
+                
                 
                 // スキルの選別をしてlevelBarを増やす
                 // skill1の場合
@@ -372,15 +387,13 @@ class TodoListTableViewController: UITableViewController {
                     
                 }
                 
-            }
-            else {
-                print("Button indexPath not found")
-                let todo = self.todoCollection.todos[0]
-                todo.finished = true
-            }
             
+        }
         
-                self.tableView.reloadData()
+        // 配列を全て保存
+        self.todoCollection.save()
+        
+        self.tableView.reloadData()
 
     }
     

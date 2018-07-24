@@ -32,10 +32,10 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var skillSegment: UISegmentedControl!
     
     // 星ボタンの生成
-    @IBOutlet weak var starView: UIImageView!
-    var checked: UIImage = UIImage(named: "icons8-星-48.png")!
-    // 星ボタンの縮小
-    var transScale = CGAffineTransform()
+//    @IBOutlet weak var starView: UIImageView!
+//    var checked: UIImage = UIImage(named: "icons8-星-48.png")!
+//    // 星ボタンの縮小
+//    var transScale = CGAffineTransform()
     
     
     let todoCollection = TodoCollection.sharedInstance
@@ -99,12 +99,12 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
     }
     
     // 星ボタンを押した時の処理
-    @IBAction func tapped(_ sender: UIButton) {
-            starView.image = checked
-        // 星ボタンの縮小処理
-        transScale = CGAffineTransform(scaleX: 1, y: 1)
-        starView.transform = transScale
-    }
+//    @IBAction func tapped(_ sender: UIButton) {
+//            starView.image = checked
+//        // 星ボタンの縮小処理
+//        transScale = CGAffineTransform(scaleX: 1, y: 1)
+//        starView.transform = transScale
+//    }
     
 
     override func didReceiveMemoryWarning() {
@@ -140,10 +140,14 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
             todo.descript = descriptionView.text
             // enumのTodoSkill型に変換されたものを代入
 //            todo.skill = TodoSkill(rawValue: skillSegment.selectedSegmentIndex)!
+        todo.finished = false
             self.todoCollection.addTodoCollection(todo: todo)
             print(self.todoCollection.todos)
             self.dismiss(animated: true, completion: nil)
 //    }
+        
+        
+
         
     }
     
