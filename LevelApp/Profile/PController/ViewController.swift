@@ -82,8 +82,8 @@ class ViewController: UIViewController {
         
         
             // skill1のlevelBarを上げる
-            if cell.textLabel?.text == defaults.object(forKey: "skill1Text") as? String {
-                
+//            if cell.textLabel?.text == defaults.object(forKey: "skill1Text") as? String {
+            
                 if numSkill1 >= 0 && numSkill1 <= 10 {
                     // levelBarを上げる
                     lvUpBar1(c: "contSkill10to10", d: "countStar1")
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
                 defaults.set(numSkill1, forKey: "numCount1")
                 // levelBarの値を保存
                 defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
-            }
+//            }
         }
     }
     
@@ -145,7 +145,7 @@ class ViewController: UIViewController {
             
             // 星ボタンを押した回数を0に戻す
             numTimesYellow = 0
-            defaults.set(numTimes, forKey: "numberTimesYellow")
+            defaults.set(numTimesYellow, forKey: "numberTimesYellow")
             // レベル数を保存
             defaults.set(num, forKey: "numCount")
             // levelBarの値を保存
@@ -153,7 +153,7 @@ class ViewController: UIViewController {
             
             
             // skill2のlevelBarを上げる
-            if cell.textLabel?.text == defaults.object(forKey: "skill2Text") as? String {
+//            if cell.textLabel?.text == defaults.object(forKey: "skill2Text") as? String {
             
             
             if numSkill2 >= 0 && numSkill2 <= 10 {
@@ -182,7 +182,7 @@ class ViewController: UIViewController {
             defaults.set(numSkill2, forKey: "numCount2")
             // levelBarの値を保存
             defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
-        }
+//        }
     }
         
         
@@ -214,15 +214,15 @@ class ViewController: UIViewController {
             
             // 星ボタンを押した回数を0に戻す
             numTimesBlue = 0
-            defaults.set(numTimes, forKey: "numberTimesBlue")
+            defaults.set(numTimesBlue, forKey: "numberTimesBlue")
             // レベル数を保存
             defaults.set(num, forKey: "numCount")
             // levelBarの値を保存
             defaults.set(levelBar.progress, forKey: "levelBarSet")
             
             // skill3のlevelBarを上げる
-            if cell.textLabel?.text == defaults.object(forKey: "skill3Text") as? String {
-               
+//            if cell.textLabel?.text == defaults.object(forKey: "skill3Text") as? String {
+            
                 if numSkill3 >= 0 && numSkill3 <= 10 {
                     // levelBarを上げる
                     lvUpBar3(g: "countSkill30to10", h: "countStar3")
@@ -250,7 +250,7 @@ class ViewController: UIViewController {
             // levelBarの値を保存
             defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
             
-        }
+//        }
     }
         
     }
@@ -425,12 +425,12 @@ class ViewController: UIViewController {
         // levelBarの値が0.0〜0.89の間の場合
         if levelBarSkill1.progress >= 0.0 && levelBarSkill1.progress < 0.89 {
             
-            let a = defaults.float(forKey: d)
-            levelBarSkill1.setProgress(levelBarSkill1.progress + (a * Float(numTimes1)), animated: true)
+            let c = defaults.float(forKey: d)
+            levelBarSkill1.setProgress(levelBarSkill1.progress + (c * Float(numTimes1)), animated: true)
             
         } else if levelBarSkill1.progress >= 0.89 {
-            let a = defaults.float(forKey: d)
-            levelBarSkill1.setProgress(levelBarSkill1.progress + (a * Float(numTimes1)), animated: true)
+            let c = defaults.float(forKey: d)
+            levelBarSkill1.setProgress(levelBarSkill1.progress + (c * Float(numTimes1)), animated: true)
             
             // レベル数を１上げる
             numSkill1Plus()
@@ -484,17 +484,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
-//        levelUpBtn.isHidden = true
-//        let defaults = UserDefaults.standard
-//        let trueStar = defaults.bool(forKey: "finishedStar")
-//        if trueStar == false {
-//            levelUpBtn.isEnabled = false
-//        } else {
-//            levelUpBtn.isEnabled = true
-//        }
         
         let defaults = UserDefaults.standard
         redUpBtn.addTarget(self, action: #selector(self.redTap(_:)), for: .touchUpInside)
@@ -550,11 +539,7 @@ class ViewController: UIViewController {
     // Home画面からProfile編集画面への遷移
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-        
-        
-        
+
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "編集", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.newProfile))
         
