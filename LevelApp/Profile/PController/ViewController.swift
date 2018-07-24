@@ -44,6 +44,8 @@ class ViewController: UIViewController {
     var numSkill3 = 1
     
     var numTimes = 1
+    var numTimesYellow = 1
+    var numTimesBlue = 1
     var numTimes1 = 1
     var numTimes2 = 1
     var numTimes3 = 1
@@ -58,11 +60,9 @@ class ViewController: UIViewController {
 
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
 
-
         // 星ボタンが押されたかどうか判別
         if trueStar == false {
             
-
         } else {
 
             // 全体のlevelBarを上げる
@@ -141,11 +141,11 @@ class ViewController: UIViewController {
             cell.textLabel?.text = defaults.object(forKey: "text1") as? String
             
             // 全体のlevel数毎の処理
-            allUp()
+            allUpY()
             
             // 星ボタンを押した回数を0に戻す
-            numTimes = 0
-            defaults.set(numTimes, forKey: "numberTimes")
+            numTimesYellow = 0
+            defaults.set(numTimes, forKey: "numberTimesYellow")
             // レベル数を保存
             defaults.set(num, forKey: "numCount")
             // levelBarの値を保存
@@ -210,11 +210,11 @@ class ViewController: UIViewController {
             cell.textLabel?.text = defaults.object(forKey: "text1") as? String
             
             // 全体のlevel数毎の処理
-            allUp()
+            allUpB()
             
             // 星ボタンを押した回数を0に戻す
-            numTimes = 0
-            defaults.set(numTimes, forKey: "numberTimes")
+            numTimesBlue = 0
+            defaults.set(numTimes, forKey: "numberTimesBlue")
             // レベル数を保存
             defaults.set(num, forKey: "numCount")
             // levelBarの値を保存
@@ -322,6 +322,42 @@ class ViewController: UIViewController {
         }
     }
     
+    func allUpY() {
+        if num >= 0 && num <= 10 {
+            lvUpBarY(a: "count0to10", b: "countStar")
+            
+        }      else if num > 10 && num <= 30 {
+            lvUpBarY(a: "count10to30", b: "countStar10to30")
+            
+        }  else if num > 30 && num <= 50 {
+            lvUpBarY(a: "count30to50", b: "countStar30to50")
+            
+        } else if num > 50 && num <= 70 {
+            lvUpBarY(a: "count50to70", b: "countStar50to70")
+            
+        }  else if num > 70 && num <= 99 {
+            lvUpBarY(a: "count70to99", b: "countStar70to99")
+        }
+    }
+    
+    func allUpB() {
+        if num >= 0 && num <= 10 {
+            lvUpBarB(a: "count0to10", b: "countStar")
+            
+        }      else if num > 10 && num <= 30 {
+            lvUpBarB(a: "count10to30", b: "countStar10to30")
+            
+        }  else if num > 30 && num <= 50 {
+            lvUpBarB(a: "count30to50", b: "countStar30to50")
+            
+        } else if num > 50 && num <= 70 {
+            lvUpBarB(a: "count50to70", b: "countStar50to70")
+            
+        }  else if num > 70 && num <= 99 {
+            lvUpBarB(a: "count70to99", b: "countStar70to99")
+        }
+    }
+    
     // 全体のlevelbarを上げる
     func lvUpBar(a: String, b: String) {
         let defaults = UserDefaults.standard
@@ -340,7 +376,44 @@ class ViewController: UIViewController {
         numLevelPlus()
             
     }
+    }
+    
+    func lvUpBarY(a: String, b: String) {
+        let defaults = UserDefaults.standard
+        // 星ボタンを押した回数を読み込み
+        numTimesYellow = defaults.integer(forKey: "numberTimesYellow")
         
+        if levelBar.progress >= 0.0 && levelBar.progress < 0.89 {
+            
+            let a = defaults.float(forKey: b)
+            levelBar.setProgress(levelBar.progress + (a * Float(numTimesYellow)), animated: true)
+            
+        } else if levelBar.progress >= 0.89 {
+            let a = defaults.float(forKey: b)
+            levelBar.setProgress(levelBar.progress + (a * Float(numTimesYellow)), animated: true)
+            // レベル数を１上げる
+            numLevelPlus()
+            
+        }
+    }
+    
+    func lvUpBarB(a: String, b: String) {
+        let defaults = UserDefaults.standard
+        // 星ボタンを押した回数を読み込み
+        numTimesBlue = defaults.integer(forKey: "numberTimesBlue")
+        
+        if levelBar.progress >= 0.0 && levelBar.progress < 0.89 {
+            
+            let a = defaults.float(forKey: b)
+            levelBar.setProgress(levelBar.progress + (a * Float(numTimesBlue)), animated: true)
+            
+        } else if levelBar.progress >= 0.89 {
+            let a = defaults.float(forKey: b)
+            levelBar.setProgress(levelBar.progress + (a * Float(numTimesBlue)), animated: true)
+            // レベル数を１上げる
+            numLevelPlus()
+            
+        }
     }
     
     // skill1のlevelBarを上げる

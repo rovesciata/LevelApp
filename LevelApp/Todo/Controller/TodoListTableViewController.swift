@@ -140,6 +140,9 @@ class TodoListTableViewController: UITableViewController {
     
     // 星ボタンが押された回数の定義
     var times = 0
+    var timesYellow = 0
+    var timesBlue = 0
+    
     var timesSkill1 = 0
     var timesSkill2 = 0
     var timesSkill3 = 0
@@ -158,42 +161,42 @@ class TodoListTableViewController: UITableViewController {
                 
                 let defaults = UserDefaults.standard
                 
-                times = defaults.integer(forKey: "numberTimes")
-
-                times += 1
-
-                var count0to10: Float = 0.0
-                
-                var count10to30: Float = 0.0
-                
-                var count30to50: Float = 0.0
-                
-                var count50to70: Float = 0.0
-                
-                var count70to99: Float = 0.0
-                
-                
-                    // 星ボタンを押した時、0.45を足す
-                    count0to10 += 0.45
-                
-                count10to30 += 0.100
-                
-                count30to50 += 0.050
-                
-                count50to70 += 0.010
-                
-                count70to99 += 0.0036
-                    
-                    
-                // 星ボタンの完了カウント数をuserDefaultsで保存
-                
-                defaults.set(count0to10, forKey: "countStar")
-                defaults.set(count10to30, forKey: "countStar10to30")
-                defaults.set(count30to50, forKey: "countStar30to50")
-                defaults.set(count50to70, forKey: "countStar50to70")
-                defaults.set(count70to99, forKey: "countStar70to99")
-                
-                defaults.set(times, forKey: "numberTimes")
+//                times = defaults.integer(forKey: "numberTimes")
+//
+//                times += 1
+//
+//                var count0to10: Float = 0.0
+//
+//                var count10to30: Float = 0.0
+//
+//                var count30to50: Float = 0.0
+//
+//                var count50to70: Float = 0.0
+//
+//                var count70to99: Float = 0.0
+//
+//
+//                    // 星ボタンを押した時、0.45を足す
+//                    count0to10 += 0.45
+//
+//                count10to30 += 0.100
+//
+//                count30to50 += 0.050
+//
+//                count50to70 += 0.010
+//
+//                count70to99 += 0.0036
+//
+//
+//                // 星ボタンの完了カウント数をuserDefaultsで保存
+//
+//                defaults.set(count0to10, forKey: "countStar")
+//                defaults.set(count10to30, forKey: "countStar10to30")
+//                defaults.set(count30to50, forKey: "countStar30to50")
+//                defaults.set(count50to70, forKey: "countStar50to70")
+//                defaults.set(count70to99, forKey: "countStar70to99")
+//
+//                defaults.set(times, forKey: "numberTimes")
                 
                 // 星ボタンの押したか押してないかを保存
                 defaults.set(todo.finished, forKey: "finishedStar")
@@ -204,19 +207,42 @@ class TodoListTableViewController: UITableViewController {
                     cell.starButton2.setImage(UIImage(named: "赤星有り.png"), for: .normal)
                     
                     
-                    // 赤矢印ボタンが表示される
-//                    var redUpBtnShow = defaults.bool(forKey: "redUpBtnHidden")
-//                    redUpBtnShow = false
+                    times = defaults.integer(forKey: "numberTimes")
                     
-//                    todo.redHidden = defaults.bool(forKey: "redUpBtnHidden")
-//
-//                    if todo.redHidden == true {
-//
-//                        todo.redHidden = false
-//
-//                    } else {
-//
-//                    }
+                    times += 1
+                    
+                    var count0to10: Float = 0.0
+                    
+                    var count10to30: Float = 0.0
+                    
+                    var count30to50: Float = 0.0
+                    
+                    var count50to70: Float = 0.0
+                    
+                    var count70to99: Float = 0.0
+                    
+                    
+                    // 星ボタンを押した時、0.45を足す
+                    count0to10 += 0.45
+                    
+                    count10to30 += 0.100
+                    
+                    count30to50 += 0.050
+                    
+                    count50to70 += 0.010
+                    
+                    count70to99 += 0.0036
+                    
+                    
+                    // 星ボタンの完了カウント数をuserDefaultsで保存
+                    
+                    defaults.set(count0to10, forKey: "countStar")
+                    defaults.set(count10to30, forKey: "countStar10to30")
+                    defaults.set(count30to50, forKey: "countStar30to50")
+                    defaults.set(count50to70, forKey: "countStar50to70")
+                    defaults.set(count70to99, forKey: "countStar70to99")
+                    
+                    defaults.set(times, forKey: "numberTimes")
                     
                     
                     var countSkill10to10: Float = 0.0
@@ -257,6 +283,43 @@ class TodoListTableViewController: UITableViewController {
                     
                     cell.starButton2.setImage(UIImage(named: "黄星有り.png"), for: .normal)
                     
+                    timesYellow = defaults.integer(forKey: "numberTimesYellow")
+                    
+                    timesYellow += 1
+                    
+                    var count0to10: Float = 0.0
+                    
+                    var count10to30: Float = 0.0
+                    
+                    var count30to50: Float = 0.0
+                    
+                    var count50to70: Float = 0.0
+                    
+                    var count70to99: Float = 0.0
+                    
+                    
+                    // 星ボタンを押した時、0.45を足す
+                    count0to10 += 0.45
+                    
+                    count10to30 += 0.100
+                    
+                    count30to50 += 0.050
+                    
+                    count50to70 += 0.010
+                    
+                    count70to99 += 0.0036
+                    
+                    
+                    // 星ボタンの完了カウント数をuserDefaultsで保存
+                    
+                    defaults.set(count0to10, forKey: "countStar")
+                    defaults.set(count10to30, forKey: "countStar10to30")
+                    defaults.set(count30to50, forKey: "countStar30to50")
+                    defaults.set(count50to70, forKey: "countStar50to70")
+                    defaults.set(count70to99, forKey: "countStar70to99")
+                    
+                    defaults.set(times, forKey: "numberTimes")
+                    
                     var countSkill20to10: Float = 0.0
                     var countSkill210to30: Float = 0.0
                     var countSkill230to50: Float = 0.0
@@ -294,6 +357,44 @@ class TodoListTableViewController: UITableViewController {
                 } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
                     
                     cell.starButton2.setImage(UIImage(named: "青星有り.png"), for: .normal)
+                    
+                    
+                    timesBlue = defaults.integer(forKey: "numberTimesBlue")
+                    
+                    timesBlue += 1
+                    
+                    var count0to10: Float = 0.0
+                    
+                    var count10to30: Float = 0.0
+                    
+                    var count30to50: Float = 0.0
+                    
+                    var count50to70: Float = 0.0
+                    
+                    var count70to99: Float = 0.0
+                    
+                    
+                    // 星ボタンを押した時、0.45を足す
+                    count0to10 += 0.45
+                    
+                    count10to30 += 0.100
+                    
+                    count30to50 += 0.050
+                    
+                    count50to70 += 0.010
+                    
+                    count70to99 += 0.0036
+                    
+                    
+                    // 星ボタンの完了カウント数をuserDefaultsで保存
+                    
+                    defaults.set(count0to10, forKey: "countStar")
+                    defaults.set(count10to30, forKey: "countStar10to30")
+                    defaults.set(count30to50, forKey: "countStar30to50")
+                    defaults.set(count50to70, forKey: "countStar50to70")
+                    defaults.set(count70to99, forKey: "countStar70to99")
+                    
+                    defaults.set(times, forKey: "numberTimes")
                     
                     var countSkill30to10: Float = 0.0
                     var countSkill310to30: Float = 0.0
@@ -337,8 +438,8 @@ class TodoListTableViewController: UITableViewController {
             }
             
         
-       
-        self.tableView.reloadData()
+                self.tableView.reloadData()
+
     }
     
     
