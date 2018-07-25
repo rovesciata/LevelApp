@@ -12,6 +12,7 @@ class TodoListTableViewCell: UITableViewCell {
     @IBOutlet weak var labelCell: UILabel!
     @IBOutlet weak var detailCell: UILabel!
     @IBOutlet weak var starButton2: UIButton!
+    @IBOutlet weak var starView: UIImageView!
     
     let todoCollection = TodoCollection.sharedInstance
     
@@ -26,6 +27,7 @@ class TodoListTableViewCell: UITableViewCell {
         // 詳細の長さにより高さを可変にする
         detailCell.numberOfLines = 0
         
+        starView.isHidden = true
         
     }
 

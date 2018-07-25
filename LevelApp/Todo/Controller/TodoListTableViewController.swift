@@ -13,7 +13,7 @@ import UIKit
 public extension UITableView {
     
     func indexPathForView(_ view: UIView) -> IndexPath? {
-        let origin = view.bounds.origin
+//        let origin = view.bounds.origin
         // セルの位置を取得
         let height: CGPoint = CGPoint(x: 0, y: 0)
         let viewOrigin = self.convert(height, from: view)
@@ -93,6 +93,7 @@ class TodoListTableViewController: UITableViewController {
         cell.starButton2.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
         
         let defaults = UserDefaults.standard
+        
 
 //        todo.finished = defaults.bool(forKey: "finishedStar")
         let redUpAble = defaults.bool(forKey: "redUpBool")
@@ -108,6 +109,7 @@ class TodoListTableViewController: UITableViewController {
                     cell.starButton2.setImage(UIImage(named: "黄星無し.png"), for: .normal)
             } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "青星無し.png"), for: .normal)
+                
             }
         
             
@@ -116,11 +118,18 @@ class TodoListTableViewController: UITableViewController {
             let defaults = UserDefaults.standard
             if cell.labelCell?.text == defaults.object(forKey: "skill1Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "赤星有り.png"), for: .normal)
+                cell.starView.isHidden = false
+                cell.starView.image = UIImage(named: "赤星有り.png")
        
             } else if cell.labelCell?.text == defaults.object(forKey: "skill2Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "黄星有り.png"), for: .normal)
+                cell.starView.isHidden = false
+                cell.starView.image = UIImage(named: "黄星有り.png")
+                
             } else if cell.labelCell?.text == defaults.object(forKey: "skill3Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "青星有り.png"), for: .normal)
+                cell.starView.isHidden = false
+                cell.starView.image = UIImage(named: "青星有り.png")
             }
             
             cell.starButton2.isEnabled = false
@@ -158,13 +167,14 @@ class TodoListTableViewController: UITableViewController {
                 todo.finished = true
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
+                
                 cell.labelCell.text = todo.title
                 
                 
                 let defaults = UserDefaults.standard
                 
                 // 星ボタンの押したか押してないかを保存
-                defaults.set(todo.finished, forKey: "finishedStar")
+//                defaults.set(todo.finished, forKey: "finishedStar")
                 
                 
                 
@@ -173,7 +183,7 @@ class TodoListTableViewController: UITableViewController {
                 // skill1の場合
                 if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
                     
-                    cell.starButton2.setImage(UIImage(named: "赤星有り.png"), for: .normal)
+//                    cell.starButton2.setImage(UIImage(named: "赤星有り.png"), for: .normal)
                     
                     
                     times = defaults.integer(forKey: "numberTimes")
@@ -245,12 +255,12 @@ class TodoListTableViewController: UITableViewController {
                     
                     
                     // 星ボタンの押したか押してないかを保存
-                    defaults.set(todo.finished, forKey: "finishedStar")
+//                    defaults.set(todo.finished, forKey: "finishedStar")
                     
                     // Skill2の星ボタンをタップした場合
                 } else if cell.labelCell.text == defaults.object(forKey: "skill2Text") as? String{
                     
-                    cell.starButton2.setImage(UIImage(named: "黄星有り.png"), for: .normal)
+//                    cell.starButton2.setImage(UIImage(named: "黄星有り.png"), for: .normal)
                     
                     timesYellow = defaults.integer(forKey: "numberTimesYellow")
                     
@@ -320,12 +330,12 @@ class TodoListTableViewController: UITableViewController {
                     
                     
                     // 星ボタンの押したか押してないかを保存
-                    defaults.set(todo.finished, forKey: "finishedStar")
+//                    defaults.set(todo.finished, forKey: "finishedStar")
                     
                     // Skill3の星ボタンを押した場合
                 } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
                     
-                    cell.starButton2.setImage(UIImage(named: "青星有り.png"), for: .normal)
+//                    cell.starButton2.setImage(UIImage(named: "青星有り.png"), for: .normal)
                     
                     
                     timesBlue = defaults.integer(forKey: "numberTimesBlue")
@@ -394,11 +404,12 @@ class TodoListTableViewController: UITableViewController {
                     
                     defaults.set(timesSkill3, forKey: "numberTimes3")
                     
-                    // 星ボタンの押したか押してないかを保存
-                    defaults.set(todo.finished, forKey: "finishedStar")
+//                    // 星ボタンの押したか押してないかを保存
+//                    defaults.set(todo.finished, forKey: "finishedStar")
                     
                 }
-                
+                // 星ボタンの押したか押してないかを保存
+                defaults.set(todo.finished, forKey: "finishedStar")
             
         }
         

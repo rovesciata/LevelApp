@@ -25,6 +25,9 @@
                             <action selector="starButtonCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0mo-DD-dA8"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jRi-dC-cNP">
+                        <rect key="frame" x="340" y="8" width="46" height="59"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9C-We-42t">
                         <rect key="frame" x="16" y="29" width="300" height="44"/>
                         <constraints>
@@ -46,9 +49,13 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="jRi-dC-cNP" secondAttribute="trailing" constant="8" id="0qx-Pe-VL7"/>
+                    <constraint firstItem="jRi-dC-cNP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="40B-cU-Fz0"/>
                     <constraint firstItem="B8H-q2-viq" firstAttribute="leading" secondItem="Fr8-DX-pmY" secondAttribute="trailing" constant="24" id="5KP-4H-Cdc"/>
                     <constraint firstItem="Fr8-DX-pmY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="7Il-gJ-zsU"/>
+                    <constraint firstAttribute="bottom" secondItem="jRi-dC-cNP" secondAttribute="bottom" constant="8" id="AWM-8y-uPp"/>
                     <constraint firstItem="B8H-q2-viq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ceq-Xk-bUB"/>
+                    <constraint firstItem="jRi-dC-cNP" firstAttribute="leading" secondItem="Fr8-DX-pmY" secondAttribute="trailing" constant="24" id="IFT-kI-X7x"/>
                     <constraint firstAttribute="bottom" secondItem="Z9C-We-42t" secondAttribute="bottom" constant="2" id="Tt9-QO-u2N"/>
                     <constraint firstAttribute="trailing" secondItem="B8H-q2-viq" secondAttribute="trailing" constant="8" id="VbK-WC-psJ"/>
                     <constraint firstAttribute="bottom" secondItem="B8H-q2-viq" secondAttribute="bottom" constant="8" id="WUh-7s-24a"/>
@@ -62,6 +69,7 @@
                 <outlet property="detailCell" destination="Z9C-We-42t" id="nVq-0F-PA5"/>
                 <outlet property="labelCell" destination="Fr8-DX-pmY" id="NiS-wr-j5c"/>
                 <outlet property="starButton2" destination="B8H-q2-viq" id="DRF-yq-lFb"/>
+                <outlet property="starView" destination="jRi-dC-cNP" id="f2e-eP-fbC"/>
             </connections>
             <point key="canvasLocation" x="71" y="69.5"/>
         </tableViewCell>
