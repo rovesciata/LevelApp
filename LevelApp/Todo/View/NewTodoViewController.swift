@@ -27,9 +27,7 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
     
 
     @IBOutlet weak var descriptionView: UITextView!
-    @IBOutlet weak var todoField: UITextField!
     @IBOutlet weak var skillSelectedLabel: UILabel!
-    @IBOutlet weak var skillSegment: UISegmentedControl!
     
     // 星ボタンの生成
 //    @IBOutlet weak var starView: UIImageView!
@@ -47,6 +45,17 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //キーボードの完了ボタン
+        let kbToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
+        kbToolBar.barStyle = UIBarStyle.default  // スタイルを設定
+        kbToolBar.sizeToFit()  // 画面幅に合わせてサイズを変更
+        // スペーサー
+        let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        // 閉じるボタン
+        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.commitButtonTapped))
+        kbToolBar.items = [spacer, commitButton]
+        descriptionView.inputAccessoryView = kbToolBar
+       
         // スケジュール内容入力テキスト設定
 //        eventText.text = ""
 //        eventText.layer.borderColor = UIColor.gray.cgColor
@@ -94,7 +103,6 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
         descriptionView.layer.borderWidth = 1
 //        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewTodoViewController.tapGesture(_:)))
 //        self.view.addGestureRecognizer(tapRecognizer)
-        todoField.delegate = self
         
     }
     
@@ -146,9 +154,16 @@ class NewTodoViewController: UIViewController, UITextFieldDelegate {
             self.dismiss(animated: true, completion: nil)
 //    }
         
-        
+    }
+    
+   
 
-        
+
+    
+
+    // キーボードの完了ボタン処理
+    @objc func commitButtonTapped() {
+        self.view.endEditing(true)
     }
     
     
