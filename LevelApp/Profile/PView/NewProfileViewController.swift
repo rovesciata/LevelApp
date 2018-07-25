@@ -123,7 +123,7 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
         let skill2FieldFrame = view.convert(skill2Field.frame, from: contentView)
         let skill3FieldFrame = view.convert(skill3Field.frame, from: contentView)
         // 編集中のテキストフィールドがキーボードと重なっていないか調べる
-        overlap = nameFieldFrame.maxY - keyboardFrame.minY + 5
+        overlap = nameFieldFrame.maxY - keyboardFrame.minY + 20
         if overlap > 0 {
             // キーボードで隠れている分だけスクロールする
             overlap += myScrollView.contentOffset.y  // すでにスクロールしている分を加算する

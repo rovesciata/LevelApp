@@ -20,14 +20,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8H-q2-viq">
-                        <rect key="frame" x="332" y="8" width="54" height="59"/>
+                        <rect key="frame" x="340" y="8" width="46" height="59"/>
                         <state key="normal" image="icons8-スター-48.png"/>
                         <connections>
                             <action selector="starButtonCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0mo-DD-dA8"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9C-We-42t">
-                        <rect key="frame" x="8" y="29" width="300" height="44"/>
+                        <rect key="frame" x="16" y="29" width="300" height="44"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="300" id="t6n-Jo-wef"/>
                         </constraints>
@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr8-DX-pmY">
-                        <rect key="frame" x="8" y="6" width="300" height="21"/>
+                        <rect key="frame" x="16" y="6" width="300" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="hQX-1Y-Aqy"/>
                             <constraint firstAttribute="width" constant="300" id="kiy-tO-5K6"/>
@@ -50,12 +50,12 @@
                     <constraint firstItem="B8H-q2-viq" firstAttribute="leading" secondItem="Fr8-DX-pmY" secondAttribute="trailing" constant="24" id="5KP-4H-Cdc"/>
                     <constraint firstItem="Fr8-DX-pmY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="7Il-gJ-zsU"/>
                     <constraint firstItem="B8H-q2-viq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ceq-Xk-bUB"/>
-                    <constraint firstItem="Z9C-We-42t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="I3H-0l-f3U"/>
                     <constraint firstAttribute="bottom" secondItem="Z9C-We-42t" secondAttribute="bottom" constant="2" id="Tt9-QO-u2N"/>
                     <constraint firstAttribute="trailing" secondItem="B8H-q2-viq" secondAttribute="trailing" constant="8" id="VbK-WC-psJ"/>
                     <constraint firstAttribute="bottom" secondItem="B8H-q2-viq" secondAttribute="bottom" constant="8" id="WUh-7s-24a"/>
-                    <constraint firstItem="Fr8-DX-pmY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ZDT-fs-nIe"/>
                     <constraint firstItem="Z9C-We-42t" firstAttribute="top" secondItem="Fr8-DX-pmY" secondAttribute="bottom" constant="2" id="qFa-tM-SYB"/>
+                    <constraint firstItem="Fr8-DX-pmY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="wTz-WU-KeN"/>
+                    <constraint firstItem="Z9C-We-42t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="y86-cH-reg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

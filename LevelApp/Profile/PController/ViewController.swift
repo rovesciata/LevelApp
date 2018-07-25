@@ -525,6 +525,9 @@ class ViewController: UIViewController {
         // levelBarの枠
         levelBar.layer.borderWidth = 0.3
         
+//        levelBar.layer.shadowOpacity = 1.0
+//        levelBar.layer.shadowOffset = CGSize(width: 5, height: 0.01)
+        
         // levelBarSkill1の高さ変更
         levelBarSkill1.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
         levelBarSkill1.layer.borderWidth = 0.3
@@ -536,6 +539,9 @@ class ViewController: UIViewController {
         // levelBarSkill3の高さ変更
         levelBarSkill3.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
         levelBarSkill3.layer.borderWidth = 0.3
+        
+        profileImage.layer.shadowOpacity = 1.0
+        profileImage.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         
     }

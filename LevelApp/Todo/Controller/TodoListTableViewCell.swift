@@ -25,6 +25,8 @@ class TodoListTableViewCell: UITableViewCell {
         
         // 詳細の長さにより高さを可変にする
         detailCell.numberOfLines = 0
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
