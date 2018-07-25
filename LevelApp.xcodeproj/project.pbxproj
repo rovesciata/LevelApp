@@ -50,6 +50,12 @@
 		8CC11CF320E62AAA003E32B8 /* TodoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC11CF220E62AAA003E32B8 /* TodoCollection.swift */; };
 		8CC11CF520E6325B003E32B8 /* NewTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC11CF420E6325B003E32B8 /* NewTodoViewController.swift */; };
 		8CC11D0120E7915D003E32B8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC11D0020E7915D003E32B8 /* CalendarViewController.swift */; };
+		8CC5E9252108D17B001A4D78 /* 青星光有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E91F2108D17A001A4D78 /* 青星光有り.png */; };
+		8CC5E9262108D17B001A4D78 /* 青星光無し.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E9202108D17A001A4D78 /* 青星光無し.png */; };
+		8CC5E9272108D17B001A4D78 /* 黄星光無し.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E9212108D17B001A4D78 /* 黄星光無し.png */; };
+		8CC5E9282108D17B001A4D78 /* 赤星光有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E9222108D17B001A4D78 /* 赤星光有り.png */; };
+		8CC5E9292108D17B001A4D78 /* 黄星光有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E9232108D17B001A4D78 /* 黄星光有り.png */; };
+		8CC5E92A2108D17B001A4D78 /* 赤星光無し.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E9242108D17B001A4D78 /* 赤星光無し.png */; };
 		8CED55DC20ECF27C002AD241 /* icons8-ホーム-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CED55D820ECF27B002AD241 /* icons8-ホーム-filled-50.png */; };
 		8CED55DD20ECF27C002AD241 /* icons8-リスト-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CED55D920ECF27B002AD241 /* icons8-リスト-50.png */; };
 		8CED55DE20ECF27C002AD241 /* icons8-カレンダー-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CED55DA20ECF27C002AD241 /* icons8-カレンダー-50.png */; };
@@ -130,6 +136,12 @@
 		8CC11CF220E62AAA003E32B8 /* TodoCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCollection.swift; sourceTree = "<group>"; };
 		8CC11CF420E6325B003E32B8 /* NewTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoViewController.swift; sourceTree = "<group>"; };
 		8CC11D0020E7915D003E32B8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		8CC5E91F2108D17A001A4D78 /* 青星光有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "青星光有り.png"; sourceTree = "<group>"; };
+		8CC5E9202108D17A001A4D78 /* 青星光無し.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "青星光無し.png"; sourceTree = "<group>"; };
+		8CC5E9212108D17B001A4D78 /* 黄星光無し.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄星光無し.png"; sourceTree = "<group>"; };
+		8CC5E9222108D17B001A4D78 /* 赤星光有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赤星光有り.png"; sourceTree = "<group>"; };
+		8CC5E9232108D17B001A4D78 /* 黄星光有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄星光有り.png"; sourceTree = "<group>"; };
+		8CC5E9242108D17B001A4D78 /* 赤星光無し.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赤星光無し.png"; sourceTree = "<group>"; };
 		8CED55D820ECF27B002AD241 /* icons8-ホーム-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ホーム-filled-50.png"; sourceTree = "<group>"; };
 		8CED55D920ECF27B002AD241 /* icons8-リスト-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-リスト-50.png"; sourceTree = "<group>"; };
 		8CED55DA20ECF27C002AD241 /* icons8-カレンダー-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-カレンダー-50.png"; sourceTree = "<group>"; };
@@ -241,6 +253,12 @@
 		8C9357E820F3ACD400271B39 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				8CC5E9202108D17A001A4D78 /* 青星光無し.png */,
+				8CC5E9242108D17B001A4D78 /* 赤星光無し.png */,
+				8CC5E9212108D17B001A4D78 /* 黄星光無し.png */,
+				8CC5E91F2108D17A001A4D78 /* 青星光有り.png */,
+				8CC5E9222108D17B001A4D78 /* 赤星光有り.png */,
+				8CC5E9232108D17B001A4D78 /* 黄星光有り.png */,
 				8C3690F121044294002D1FE3 /* 赤矢印.png */,
 				8C3690EF21044293002D1FE3 /* 青矢印.png */,
 				8C3690F021044294002D1FE3 /* 黄矢印.png */,
@@ -488,6 +506,7 @@
 			files = (
 				8C8F68AC20FC8E9300D5941A /* icons8-設定-filled-30.png in Resources */,
 				8C9357E420F2575C00271B39 /* menu_icon.png in Resources */,
+				8CC5E9282108D17B001A4D78 /* 赤星光有り.png in Resources */,
 				8CED55DE20ECF27C002AD241 /* icons8-カレンダー-50.png in Resources */,
 				8C3690F221044295002D1FE3 /* 青矢印.png in Resources */,
 				8C9357E520F2575C00271B39 /* stop_icon.png in Resources */,
@@ -495,6 +514,7 @@
 				8CBED51720DB453600FF0DE3 /* LaunchScreen.storyboard in Resources */,
 				8C3690E92103FB69002D1FE3 /* 黄星無し.png in Resources */,
 				8C3690F421044295002D1FE3 /* 赤矢印.png in Resources */,
+				8CC5E9292108D17B001A4D78 /* 黄星光有り.png in Resources */,
 				8C3690ED2103FB69002D1FE3 /* 青星無し.png in Resources */,
 				8C9357EA20F3BBD600271B39 /* icons8-スター-48.png in Resources */,
 				8C3690EC2103FB69002D1FE3 /* 青星有り.png in Resources */,
@@ -504,14 +524,18 @@
 				8C9357E720F2575C00271B39 /* go_icon.png in Resources */,
 				8C3690EB2103FB69002D1FE3 /* 赤星有り.png in Resources */,
 				8CED55DF20ECF27C002AD241 /* icons8-設定-50.png in Resources */,
+				8CC5E9252108D17B001A4D78 /* 青星光有り.png in Resources */,
 				8CBED51420DB453600FF0DE3 /* Assets.xcassets in Resources */,
 				8C8F68A620FC8BB900D5941A /* icons8-ホーム-30.png in Resources */,
 				8CBED51220DB453500FF0DE3 /* Main.storyboard in Resources */,
 				8C9357EC20F3BBFA00271B39 /* icons8-星-48.png in Resources */,
+				8CC5E9262108D17B001A4D78 /* 青星光無し.png in Resources */,
 				8C9357F420F6627F00271B39 /* TodoListTableViewCell.xib in Resources */,
 				8C3690F321044295002D1FE3 /* 黄矢印.png in Resources */,
+				8CC5E92A2108D17B001A4D78 /* 赤星光無し.png in Resources */,
 				8CED55DD20ECF27C002AD241 /* icons8-リスト-50.png in Resources */,
 				8C9357E320F2575C00271B39 /* reload_icon.png in Resources */,
+				8CC5E9272108D17B001A4D78 /* 黄星光無し.png in Resources */,
 				8CED55DC20ECF27C002AD241 /* icons8-ホーム-filled-50.png in Resources */,
 				8C3690EA2103FB69002D1FE3 /* 黄星有り.png in Resources */,
 				8CB9DA2820DB57B80093F711 /* 男子学生.jpg in Resources */,
