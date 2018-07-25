@@ -15,7 +15,7 @@ public extension UITableView {
     func indexPathForView(_ view: UIView) -> IndexPath? {
         let origin = view.bounds.origin
         // タブバー分ずらしてセルの位置を取得
-        let height: CGPoint = CGPoint(x: 0, y: 44)
+        let height: CGPoint = CGPoint(x: 0, y: 0)
         let viewOrigin = self.convert(height, from: view)
         let indexPath = self.indexPathForRow(at: viewOrigin)
         return indexPath
@@ -35,6 +35,10 @@ class TodoListTableViewController: UITableViewController {
         
         todoCollection.fetchTodos()
         
+        
+        //セルの高さを自動で計算
+        self.tableView.estimatedRowHeight = 78
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         
     }
@@ -80,6 +84,7 @@ class TodoListTableViewController: UITableViewController {
         cell.labelCell.text = todo.title
         cell.detailCell.text = todo.descript
         cell.labelCell!.font = UIFont(name: "HirakakuProN-W3", size: 15)
+        
         
         
         
