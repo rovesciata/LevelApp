@@ -21,7 +21,6 @@
                 <subviews>
                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8H-q2-viq">
                         <rect key="frame" x="340" y="8" width="46" height="59"/>
-                        <state key="normal" image="icons8-スター-48.png"/>
                         <connections>
                             <action selector="starButtonCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0mo-DD-dA8"/>
                         </connections>
@@ -67,7 +66,4 @@
             <point key="canvasLocation" x="71" y="69.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="icons8-スター-48.png" width="48" height="48"/>
-    </resources>
 </document>
