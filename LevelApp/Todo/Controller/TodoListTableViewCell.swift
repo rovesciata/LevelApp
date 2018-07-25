@@ -14,11 +14,16 @@ class TodoListTableViewCell: UITableViewCell {
     @IBOutlet weak var starButton2: UIButton!
     
     let todoCollection = TodoCollection.sharedInstance
+    
+    
+    
 
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

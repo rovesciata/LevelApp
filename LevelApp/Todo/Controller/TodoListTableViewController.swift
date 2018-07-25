@@ -48,6 +48,7 @@ class TodoListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         
+        
         super.viewWillAppear(animated)
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         self.navigationController!.navigationBar.tintColor = UIColor.black
@@ -89,6 +90,8 @@ class TodoListTableViewController: UITableViewController {
         let defaults = UserDefaults.standard
 
 //        todo.finished = defaults.bool(forKey: "finishedStar")
+        let redUpAble = defaults.bool(forKey: "redUpBool")
+        cell.starButton2.isEnabled = true
         
         
         if todo.finished == false {
@@ -114,6 +117,8 @@ class TodoListTableViewController: UITableViewController {
             } else if cell.labelCell?.text == defaults.object(forKey: "skill3Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "青星有り.png"), for: .normal)
             }
+            
+            cell.starButton2.isEnabled = false
             
         }
         // 星ボタンの押したか押してないかを保存
@@ -155,6 +160,8 @@ class TodoListTableViewController: UITableViewController {
                 
                 // 星ボタンの押したか押してないかを保存
                 defaults.set(todo.finished, forKey: "finishedStar")
+                
+                
                 
                 
                 // スキルの選別をしてlevelBarを増やす

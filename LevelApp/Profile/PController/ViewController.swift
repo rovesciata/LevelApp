@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueUpBtn: UIButton!
     
     
+    var redUpBool = false
     
     // level数の初期値を宣言
     var num = 1
@@ -99,7 +100,7 @@ class ViewController: UIViewController {
                 } else if numSkill1 > 50 && numSkill1 <= 70 {
                     lvUpBar1(c: "countSkill150to70", d: "countStar150to70")
                     
-                }  else if numSkill1 > 70 && numSkill1 <= 99 {
+                }  else if numSkill1 > 70 && numSkill1 <= 98 {
                     
                     lvUpBar1(c: "countSkill170to99", d: "countStar170to99")
                 }
@@ -115,7 +116,11 @@ class ViewController: UIViewController {
                 defaults.set(levelBarSkill1.progress, forKey: "levelBar1Set")
             
                 // 星ボタンを押したことを保存
-            defaults.set(trueStar, forKey: "finishedStar")
+//            defaults.set(trueStar, forKey: "finishedStar")
+            
+            
+            redUpBool = true
+            defaults.set(redUpBool, forKey: "redUpBool")
 
         }
     }
@@ -169,7 +174,7 @@ class ViewController: UIViewController {
             } else if numSkill2 > 50 && numSkill2 <= 70 {
                 lvUpBar2(e: "countSkill250to70", f: "countStar250to70")
                 
-            } else if numSkill2 > 70 && numSkill2 <= 99 {
+            } else if numSkill2 > 70 && numSkill2 <= 98 {
                 lvUpBar2(e: "countSkill270to99", f: "countStar270to99")
                 
             }
@@ -184,7 +189,7 @@ class ViewController: UIViewController {
             defaults.set(levelBarSkill2.progress, forKey: "levelBar2Set")
             
             // 星ボタンを押したことを保存
-            defaults.set(trueStar, forKey: "finishedStar")
+//            defaults.set(trueStar, forKey: "finishedStar")
 
     }
         
@@ -238,7 +243,7 @@ class ViewController: UIViewController {
                 } else if numSkill3 > 50 && numSkill3 <= 70 {
                     lvUpBar3(g: "countSkill350to70", h: "countStar350to70")
                     
-                } else if numSkill3 > 70 && numSkill3 <= 99 {
+                } else if numSkill3 > 70 && numSkill3 <= 98 {
                     lvUpBar3(g: "countSkill370to99", h: "countStar370to99")
                     
                 }
@@ -253,7 +258,7 @@ class ViewController: UIViewController {
             defaults.set(levelBarSkill3.progress, forKey: "levelBar3Set")
             
             // 星ボタンを押したことを保存
-            defaults.set(trueStar, forKey: "finishedStar")
+//            defaults.set(trueStar, forKey: "finishedStar")
             
     }
         
@@ -321,7 +326,7 @@ class ViewController: UIViewController {
         } else if num > 50 && num <= 70 {
             lvUpBar(a: "count50to70", b: "countStar50to70")
             
-        }  else if num > 70 && num <= 99 {
+        }  else if num > 70 && num <= 98 {
             lvUpBar(a: "count70to99", b: "countStar70to99")
         }
     }
@@ -339,7 +344,7 @@ class ViewController: UIViewController {
         } else if num > 50 && num <= 70 {
             lvUpBarY(a: "count50to70", b: "countStar50to70")
             
-        }  else if num > 70 && num <= 99 {
+        }  else if num > 70 && num <= 98 {
             lvUpBarY(a: "count70to99", b: "countStar70to99")
         }
     }
@@ -357,7 +362,7 @@ class ViewController: UIViewController {
         } else if num > 50 && num <= 70 {
             lvUpBarB(a: "count50to70", b: "countStar50to70")
             
-        }  else if num > 70 && num <= 99 {
+        }  else if num > 70 && num <= 98 {
             lvUpBarB(a: "count70to99", b: "countStar70to99")
         }
     }
