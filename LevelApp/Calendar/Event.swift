@@ -9,6 +9,8 @@
 import Foundation
 import RealmSwift
 
+
+
 // RealmのDB設定
 class Event: Object {
     
@@ -16,3 +18,6 @@ class Event: Object {
     @objc dynamic var event: String = ""
     
 }
+
+
+

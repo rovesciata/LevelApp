@@ -9,27 +9,62 @@
 
 import UIKit
 import RealmSwift
+
+
+
 //ディスプレイサイズ取得
 let w2 = UIScreen.main.bounds.size.width
 let h2 = UIScreen.main.bounds.size.height
 //スケジュール内容入力テキスト
-let eventText = UITextView(frame: CGRect(x: (w2 - 300) / 2, y: 50, width: 300, height: 200))
+//let eventText = UITextView(frame: CGRect(x: (w2 - 300) / 2, y: 50, width: 300, height: 200))
 
 //日付フォーム(UIDatePickerを使用)
 let y = UIDatePicker(frame: CGRect(x: 0, y: 250, width: w2, height: 300))
 //日付表示
 let y_text = UILabel(frame: CGRect(x: (w2 - 300) / 2, y: 570, width: 300, height: 20))
+
+
+
 class EventViewController: UIViewController {
     var date: String!
+    
+    
+    let todoCollection = TodoCollection.sharedInstance
+    
+    @IBOutlet weak var skillSelectedLabel: UILabel!
+    @IBOutlet weak var descriptionView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        //キーボードの完了ボタン
+        let kbToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
+        kbToolBar.barStyle = UIBarStyle.default  // スタイルを設定
+        kbToolBar.sizeToFit()  // 画面幅に合わせてサイズを変更
+        // スペーサー
+        let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        // 閉じるボタン
+        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.commitButtonTapped))
+        kbToolBar.items = [spacer, commitButton]
+        descriptionView.inputAccessoryView = kbToolBar
+        
+        
+        
+        // 詳細記入欄
+        descriptionView.layer.cornerRadius = 5
+        descriptionView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
+        descriptionView.layer.borderWidth = 1
+        
+        
+        
         //スケジュール内容入力テキスト設定
-        eventText.text = ""
-        eventText.layer.borderColor = UIColor.gray.cgColor
-        eventText.layer.borderWidth = 1.0
-        eventText.layer.cornerRadius = 10.0
-        view.addSubview(eventText)
+//        eventText.text = ""
+//        eventText.layer.borderColor = UIColor.gray.cgColor
+//        eventText.layer.borderWidth = 1.0
+//        eventText.layer.cornerRadius = 10.0
+//        view.addSubview(eventText)
         
         //日付フォーム設定
         y.datePickerMode = UIDatePickerMode.date
@@ -43,12 +78,12 @@ class EventViewController: UIViewController {
         view.addSubview(y_text)
         
         //「書く!」ボタン
-        let eventInsert = UIButton(frame: CGRect(x: (w2 - 200) / 2, y: 530, width: 200, height: 50))
-        eventInsert.setTitle("保存", for: UIControlState())
-        eventInsert.setTitleColor(.white, for: UIControlState())
-        eventInsert.backgroundColor = .orange
-        eventInsert.addTarget(self, action: #selector(saveEvent(_:)), for: .touchUpInside)
-        view.addSubview(eventInsert)
+//        let eventInsert = UIButton(frame: CGRect(x: (w2 - 200) / 2, y: 530, width: 200, height: 50))
+//        eventInsert.setTitle("保存", for: UIControlState())
+//        eventInsert.setTitleColor(.white, for: UIControlState())
+//        eventInsert.backgroundColor = .orange
+//        eventInsert.addTarget(self, action: #selector(saveEvent(_:)), for: .touchUpInside)
+//        view.addSubview(eventInsert)
         
         //「戻る!」ボタン
         let backBtn = UIButton(frame: CGRect(x: (w - 200) / 2, y: h - 60, width: 200, height: 30))
@@ -77,23 +112,71 @@ class EventViewController: UIViewController {
     }
     
     //DB書き込み処理
-    @objc func saveEvent(_ : UIButton){
-        print("データ書き込み開始")
+//    @objc func saveEvent(_ : UIButton){
+//        print("データ書き込み開始")
+//
+//        let realm = try! Realm()
+//
+//        try! realm.write {
+//            //日付表示の内容とスケジュール入力の内容が書き込まれる。
+//            let Events = [Event(value: ["date": y_text.text, "event": eventText.text])]
+//            realm.add(Events)
+//            print("データ書き込み中")
+//        }
+//
+//        print("データ書き込み完了")
+//
+//        //前のページに戻る
+//        dismiss(animated: true, completion: nil)
+//
+//    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+        self.navigationController!.navigationBar.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.plain, target: self, action: #selector(EventViewController.close))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: UIBarButtonItemStyle.plain, target: self, action: #selector(EventViewController.save))
+        skillSelectedLabel.text =  UserDefaults.standard.object(forKey: "text1") as? String
         
-        let realm = try! Realm()
+    }
+    
+    @objc func close() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func save() {
+        //        if todoField.text!.isEmpty {
+        //            let alertView = UIAlertController(title: "エラー", message: "タスクが記述されていません", preferredStyle: UIAlertControllerStyle.alert)
+        //            alertView.addAction(UIAlertAction(title: "はい", style: UIAlertActionStyle.default, handler: nil))
+        //            self.present(alertView, animated: true, completion: nil)
+        //        } else {
+        let todo = Todo()
         
-        try! realm.write {
-            //日付表示の内容とスケジュール入力の内容が書き込まれる。
-            let Events = [Event(value: ["date": y_text.text, "event": eventText.text])]
-            realm.add(Events)
-            print("データ書き込み中")
-        }
+        // 　defaults.userの値をタスク画面に表示
+        todo.title = UserDefaults.standard.object(forKey: "text1") as! String
+        //            todo.title = todoField.text!
+        todo.descript = descriptionView.text
+        // enumのTodoSkill型に変換されたものを代入
+        //            todo.skill = TodoSkill(rawValue: skillSegment.selectedSegmentIndex)!
+        todo.finished = false
+        self.todoCollection.addTodoCollection(todo: todo)
+        print(self.todoCollection.todos)
+        self.dismiss(animated: true, completion: nil)
+        //    }
         
-        print("データ書き込み完了")
-        
-        //前のページに戻る
-        dismiss(animated: true, completion: nil)
-        
+    }
+    
+    
+    
+    
+    
+    
+    // キーボードの完了ボタン処理
+    @objc func commitButtonTapped() {
+        self.view.endEditing(true)
     }
     
 }

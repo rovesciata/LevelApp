@@ -87,22 +87,22 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         view.addSubview(labelDate)
         
         // スケジュール追加ボタン
-        let addBtn = UIButton(frame: CGRect(x: w - 55, y: h - 115, width: 50, height: 50))
-        addBtn.setTitle("+", for: UIControlState())
-        addBtn.setTitleColor(.white, for: UIControlState())
-        addBtn.backgroundColor = .red
-        addBtn.layer.cornerRadius = 25.0
-        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
-        view.addSubview(addBtn)
+//        let addBtn = UIButton(frame: CGRect(x: w - 55, y: h - 115, width: 50, height: 50))
+//        addBtn.setTitle("+", for: UIControlState())
+//        addBtn.setTitleColor(.white, for: UIControlState())
+//        addBtn.backgroundColor = .red
+//        addBtn.layer.cornerRadius = 25.0
+//        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+//        view.addSubview(addBtn)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
-//        self.navigationController!.navigationBar.tintColor = UIColor.black
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TodoListTableViewController.newTodo))
-//        self.navigationItem.leftBarButtonItem = editButtonItem
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+        self.navigationController!.navigationBar.tintColor = UIColor.black
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalendarViewController.newTodo))
+        self.navigationItem.leftBarButtonItem = editButtonItem
         self.scheduleTable.reloadData()
         
     }
@@ -164,12 +164,14 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     }
     
     // 画面遷移(スケジュール登録ページ)
-    @objc func onClick(_: UIButton) {
-//        self.performSegue(withIdentifier: "NewTodoViewController", sender: self)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
-        present(SecondController, animated: true, completion: nil)
-    }
+//    @objc func onClick(_: UIButton) {
+////        self.performSegue(withIdentifier: "NewTodoViewController", sender: self)
+//
+////        self.performSegue(withIdentifier: "PresentNewTodoViewController", sender: self)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
+//        present(SecondController, animated: true, completion: nil)
+//    }
 
     // カレンダー処理(スケジュール表示処理)
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -566,7 +568,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     
     @objc func newTodo() {
-        self.performSegue(withIdentifier: "PresentNewTodoViewController", sender: self)
+        self.performSegue(withIdentifier: "Insert", sender: self)
     }
     
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
