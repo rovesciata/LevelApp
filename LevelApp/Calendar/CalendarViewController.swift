@@ -28,7 +28,8 @@ public extension UITableView {
 let w = UIScreen.main.bounds.size.width
 let h = UIScreen.main.bounds.size.height
 
-class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance {
+
+class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var scheduleTable: UITableView!
     
@@ -57,8 +58,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         self.scheduleTable.estimatedRowHeight = 78
         scheduleTable.rowHeight = UITableViewAutomaticDimension
         
-//        scheduleTable.delegate = self
-//        scheduleTable.dataSource  = self
+        scheduleTable.delegate = self
+        scheduleTable.dataSource  = self
         
         //カレンダー設定
         self.dateView.dataSource = self
@@ -561,7 +562,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         // 配列を全て保存
         self.todoCollection.save()
         
-//        self.tableView.reloadData()
+        self.scheduleTable.reloadData()
         
     }
     
@@ -571,16 +572,16 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         self.performSegue(withIdentifier: "Insert", sender: self)
     }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        switch editingStyle {
-//        case .delete:
-//            self.todoCollection.todos.remove(at: indexPath.row)
-//            self.todoCollection.save()
-//            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.middle)
-//        default:
-//            return
-//        }
-//    }
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            self.todoCollection.todos.remove(at: indexPath.row)
+            self.todoCollection.save()
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.middle)
+        default:
+            return
+        }
+    }
     
         
    

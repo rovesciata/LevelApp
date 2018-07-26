@@ -494,7 +494,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hOY-eo-wG8"/>
                     <connections>
-                        <outlet property="scheduleTable" destination="MEM-Du-ZdJ" id="Mst-dQ-37d"/>
+                        <outlet property="scheduleTable" destination="MEM-Du-ZdJ" id="I9O-ru-xnw"/>
                         <segue destination="awP-el-wkC" kind="presentation" identifier="Insert" id="GnA-6b-IQu"/>
                     </connections>
                 </viewController>
