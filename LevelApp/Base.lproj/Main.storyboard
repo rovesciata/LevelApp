@@ -612,9 +612,7 @@
         <scene sceneID="a9Z-jI-sMK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iFu-oY-t7l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ホーム" image="icons8-ホーム-30.png" id="jXy-kn-LkD">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="icons8-ホーム-30.png" id="jXy-kn-LkD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eBP-ME-g51">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

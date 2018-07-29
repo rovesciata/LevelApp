@@ -10,6 +10,10 @@ import UIKit
 import FSCalendar
 import CalculateCalendarLogic
 import RealmSwift
+import AVFoundation
+
+
+
 
 // 星ボタンのセル選択のための機能拡張
 public extension UITableView {
@@ -30,6 +34,14 @@ let h = UIScreen.main.bounds.size.height
 
 
 class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance, UITableViewDelegate, UITableViewDataSource {
+    
+//    var player: AVAudioPlayer?
+    
+    var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
+    
+    
+    
+//    var audioPlayerInstance : AVAudioPlayer! = nil  // 再生するサウンドのインスタンス
 
     @IBOutlet weak var scheduleTable: UITableView!
     
@@ -46,6 +58,19 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // サウンドファイルのパスを生成
+//        let soundFilePath = Bundle.main.path(forResource: "星ボタン音", ofType: "mp3")!
+//        let sound:URL = URL(fileURLWithPath: soundFilePath)
+//        // AVAudioPlayerのインスタンスを作成
+//        do {
+//            audioPlayerInstance = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+//        } catch {
+//            print("AVAudioPlayerインスタンス作成失敗")
+//        }
+//        // バッファに保持していつでも再生できるようにする
+//        audioPlayerInstance.prepareToPlay()
         
         
         // セルの登録
@@ -100,6 +125,10 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        makeSound()
+        
+        
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalendarViewController.newTodo))
@@ -163,6 +192,16 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         return nil
     }
+    
+    
+//    @IBAction func playSound() {
+//        // 連打した時に連続して音がなるようにする
+//        audioPlayerInstance.currentTime = 0         // 再生位置を先頭(0)に戻してから
+//        audioPlayerInstance.play()                  // 再生する
+//        // パンとボリュームをいじってみる
+//        audioPlayerInstance.volume = 0.5            // 小さめの音になる
+//        audioPlayerInstance.pan = -1.0              // 左側だけ聴こえるようになる
+//    }
     
     // 画面遷移(スケジュール登録ページ)
 //    @objc func onClick(_: UIButton) {
@@ -564,6 +603,14 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         self.scheduleTable.reloadData()
         
+//        audioPlayerInstance.play()
+        
+//        if let sound = NSDataAsset(name: "星ボタン音") {
+//            let player = try? AVAudioPlayer(data: sound.data)
+//            player?.play()
+        self.audioPlayerClear.play()
+        
+        
     }
     
     
@@ -584,7 +631,21 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     }
     
         
-   
+    // MARK: サウンドファイル作成
+    func makeSound() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "星ボタン音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClear = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClear.prepareToPlay()
+    }
     
     
     // ＜最初作成したカレンダー＞

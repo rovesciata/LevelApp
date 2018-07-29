@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
+    
+    var audioPlayerClearLvBar : AVAudioPlayer! = nil //クリア時用
+    var audioPlayerClearLvNum : AVAudioPlayer! = nil //クリア時用
     
     // ViewControllerクラスのプロパティとしてProfileCollectionクラスのインスタンスを宣言
     let profileCollection = ProfileCollection()
@@ -288,6 +292,8 @@ class ViewController: UIViewController {
         num = num + 1
         levelAll.text = String(num)
         levelBar.progress = 0.0
+        
+        self.audioPlayerClearLvNum.play()
     }
     
     // Skill1のlevel数を1上げる
@@ -295,6 +301,8 @@ class ViewController: UIViewController {
         numSkill1 = numSkill1 + 1
         levelSkill1.text = String(numSkill1)
         levelBarSkill1.progress = 0.0
+        
+         self.audioPlayerClearLvNum.play()
     }
     
     // Skill2のlevel数を１上げる
@@ -302,6 +310,8 @@ class ViewController: UIViewController {
         numSkill2 = numSkill2 + 1
         levelSkill2.text = String(numSkill2)
         levelBarSkill2.progress = 0.0
+        
+         self.audioPlayerClearLvNum.play()
     }
     
     // Skill3のLevel数を１上げる
@@ -309,6 +319,8 @@ class ViewController: UIViewController {
         numSkill3 = numSkill3 + 1
         levelSkill3.text = String(numSkill3)
         levelBarSkill3.progress = 0.0
+        
+         self.audioPlayerClearLvNum.play()
     }
     
     
@@ -377,12 +389,17 @@ class ViewController: UIViewController {
             
         let a = defaults.float(forKey: b)
         levelBar.setProgress(levelBar.progress + (a * Float(numTimes)), animated: true)
+            
+            
         
         } else if levelBar.progress >= 0.89 {
             let a = defaults.float(forKey: b)
             levelBar.setProgress(levelBar.progress + (a * Float(numTimes)), animated: true)
         // レベル数を１上げる
         numLevelPlus()
+            
+            
+            
             
     }
     }
@@ -397,11 +414,15 @@ class ViewController: UIViewController {
             let a = defaults.float(forKey: b)
             levelBar.setProgress(levelBar.progress + (a * Float(numTimesYellow)), animated: true)
             
+            self.audioPlayerClearLvBar.play()
+            
         } else if levelBar.progress >= 0.89 {
             let a = defaults.float(forKey: b)
             levelBar.setProgress(levelBar.progress + (a * Float(numTimesYellow)), animated: true)
             // レベル数を１上げる
             numLevelPlus()
+            
+            
             
         }
     }
@@ -416,11 +437,16 @@ class ViewController: UIViewController {
             let a = defaults.float(forKey: b)
             levelBar.setProgress(levelBar.progress + (a * Float(numTimesBlue)), animated: true)
             
+            self.audioPlayerClearLvBar.play()
+            
         } else if levelBar.progress >= 0.89 {
             let a = defaults.float(forKey: b)
             levelBar.setProgress(levelBar.progress + (a * Float(numTimesBlue)), animated: true)
             // レベル数を１上げる
             numLevelPlus()
+            
+            
+            
             
         }
     }
@@ -436,6 +462,8 @@ class ViewController: UIViewController {
             
             let c = defaults.float(forKey: d)
             levelBarSkill1.setProgress(levelBarSkill1.progress + (c * Float(numTimes1)), animated: true)
+            
+            self.audioPlayerClearLvBar.play()
             
         } else if levelBarSkill1.progress >= 0.89 {
             let c = defaults.float(forKey: d)
@@ -493,6 +521,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        makeSoundLvNum()
+        
+        makeSoundLvBar()
         
         let defaults = UserDefaults.standard
         redUpBtn.addTarget(self, action: #selector(self.redTap(_:)), for: .touchUpInside)
@@ -607,6 +640,39 @@ class ViewController: UIViewController {
         {
             profileImage.image = UIImage(data: imageData as Data)
         }
+    }
+    
+    
+    // MARK: サウンドファイル作成
+    func makeSoundLvBar() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "レベルバー音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClearLvBar = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClearLvBar.prepareToPlay()
+    }
+    
+    
+    func makeSoundLvNum() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "レベルアップ音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClearLvNum = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClearLvNum.prepareToPlay()
     }
     
     

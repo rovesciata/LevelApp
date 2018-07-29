@@ -56,6 +56,21 @@
 		8CC5E9282108D17B001A4D78 /* 赤星光有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E9222108D17B001A4D78 /* 赤星光有り.png */; };
 		8CC5E9292108D17B001A4D78 /* 黄星光有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E9232108D17B001A4D78 /* 黄星光有り.png */; };
 		8CC5E92A2108D17B001A4D78 /* 赤星光無し.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E9242108D17B001A4D78 /* 赤星光無し.png */; };
+		8CC5E936210C3E68001A4D78 /* icons8-設定-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E933210C3E66001A4D78 /* icons8-設定-50.png */; };
+		8CC5E937210C3E68001A4D78 /* icons8-ホーム-filled-50 (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E934210C3E67001A4D78 /* icons8-ホーム-filled-50 (2).png */; };
+		8CC5E938210C3E68001A4D78 /* icons8-ユーザー-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E935210C3E67001A4D78 /* icons8-ユーザー-filled-50.png */; };
+		8CC5E93A210CE024001A4D78 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC5E939210CE024001A4D78 /* AVFoundation.framework */; };
+		8CC5E95F210CE3A9001A4D78 /* jump-anime1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E955210CE3A6001A4D78 /* jump-anime1.mp3 */; };
+		8CC5E960210CE3A9001A4D78 /* robot-startup1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E956210CE3A7001A4D78 /* robot-startup1.mp3 */; };
+		8CC5E961210CE3A9001A4D78 /* decision21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E957210CE3A7001A4D78 /* decision21.mp3 */; };
+		8CC5E962210CE3A9001A4D78 /* correct2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E958210CE3A7001A4D78 /* correct2.mp3 */; };
+		8CC5E963210CE3A9001A4D78 /* decision24.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E959210CE3A7001A4D78 /* decision24.mp3 */; };
+		8CC5E964210CE3A9001A4D78 /* 星ボタン音.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E95A210CE3A8001A4D78 /* 星ボタン音.mp3 */; };
+		8CC5E965210CE3A9001A4D78 /* dondonpafupafu1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E95B210CE3A8001A4D78 /* dondonpafupafu1.mp3 */; };
+		8CC5E966210CE3A9001A4D78 /* extend1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E95C210CE3A8001A4D78 /* extend1.mp3 */; };
+		8CC5E967210CE3A9001A4D78 /* kira2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E95D210CE3A8001A4D78 /* kira2.mp3 */; };
+		8CC5E968210CE3A9001A4D78 /* レベルバー音.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E95E210CE3A9001A4D78 /* レベルバー音.mp3 */; };
+		8CC5E96A210CE473001A4D78 /* レベルアップ音.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E969210CE473001A4D78 /* レベルアップ音.mp3 */; };
 		8CED55DC20ECF27C002AD241 /* icons8-ホーム-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CED55D820ECF27B002AD241 /* icons8-ホーム-filled-50.png */; };
 		8CED55DD20ECF27C002AD241 /* icons8-リスト-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CED55D920ECF27B002AD241 /* icons8-リスト-50.png */; };
 		8CED55DE20ECF27C002AD241 /* icons8-カレンダー-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CED55DA20ECF27C002AD241 /* icons8-カレンダー-50.png */; };
@@ -142,6 +157,32 @@
 		8CC5E9222108D17B001A4D78 /* 赤星光有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赤星光有り.png"; sourceTree = "<group>"; };
 		8CC5E9232108D17B001A4D78 /* 黄星光有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄星光有り.png"; sourceTree = "<group>"; };
 		8CC5E9242108D17B001A4D78 /* 赤星光無し.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赤星光無し.png"; sourceTree = "<group>"; };
+		8CC5E933210C3E66001A4D78 /* icons8-設定-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-設定-50.png"; path = "../icons8-設定-50.png"; sourceTree = "<group>"; };
+		8CC5E934210C3E67001A4D78 /* icons8-ホーム-filled-50 (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ホーム-filled-50 (2).png"; sourceTree = "<group>"; };
+		8CC5E935210C3E67001A4D78 /* icons8-ユーザー-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ユーザー-filled-50.png"; sourceTree = "<group>"; };
+		8CC5E939210CE024001A4D78 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8CC5E955210CE3A6001A4D78 /* jump-anime1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "jump-anime1.mp3"; path = "../../../../../Downloads/jump-anime1.mp3"; sourceTree = "<group>"; };
+		8CC5E956210CE3A7001A4D78 /* robot-startup1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "robot-startup1.mp3"; path = "../../../../../Downloads/robot-startup1.mp3"; sourceTree = "<group>"; };
+		8CC5E957210CE3A7001A4D78 /* decision21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = decision21.mp3; path = ../../../../../Downloads/decision21.mp3; sourceTree = "<group>"; };
+		8CC5E958210CE3A7001A4D78 /* correct2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = correct2.mp3; path = ../../../../../Downloads/correct2.mp3; sourceTree = "<group>"; };
+		8CC5E959210CE3A7001A4D78 /* decision24.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = decision24.mp3; path = ../../../../../Downloads/decision24.mp3; sourceTree = "<group>"; };
+		8CC5E95A210CE3A8001A4D78 /* 星ボタン音.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "星ボタン音.mp3"; path = "../../../../../Downloads/星ボタン音.mp3"; sourceTree = "<group>"; };
+		8CC5E95B210CE3A8001A4D78 /* dondonpafupafu1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dondonpafupafu1.mp3; path = ../../../../../Downloads/dondonpafupafu1.mp3; sourceTree = "<group>"; };
+		8CC5E95C210CE3A8001A4D78 /* extend1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = extend1.mp3; path = ../../../../../Downloads/extend1.mp3; sourceTree = "<group>"; };
+		8CC5E95D210CE3A8001A4D78 /* kira2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kira2.mp3; path = ../../../../../Downloads/kira2.mp3; sourceTree = "<group>"; };
+		8CC5E95E210CE3A9001A4D78 /* レベルバー音.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "レベルバー音.mp3"; path = "../../../../../Downloads/レベルバー音.mp3"; sourceTree = "<group>"; };
+		8CC5E969210CE473001A4D78 /* レベルアップ音.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "レベルアップ音.mp3"; path = "../../../../../Downloads/レベルアップ音.mp3"; sourceTree = "<group>"; };
+		8CC5E96B210CE8DF001A4D78 /* dondonpafupafu1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dondonpafupafu1.mp3; sourceTree = "<group>"; };
+		8CC5E96C210CE8E0001A4D78 /* レベルバー音.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "レベルバー音.mp3"; sourceTree = "<group>"; };
+		8CC5E96D210CE8E0001A4D78 /* decision21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = decision21.mp3; sourceTree = "<group>"; };
+		8CC5E96E210CE8E1001A4D78 /* decision24.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = decision24.mp3; sourceTree = "<group>"; };
+		8CC5E96F210CE8E2001A4D78 /* correct2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct2.mp3; sourceTree = "<group>"; };
+		8CC5E970210CE8E2001A4D78 /* 星ボタン音.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "星ボタン音.mp3"; sourceTree = "<group>"; };
+		8CC5E971210CE8E3001A4D78 /* extend1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = extend1.mp3; sourceTree = "<group>"; };
+		8CC5E972210CE8E3001A4D78 /* jump-anime1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "jump-anime1.mp3"; sourceTree = "<group>"; };
+		8CC5E973210CE8E4001A4D78 /* kira2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kira2.mp3; sourceTree = "<group>"; };
+		8CC5E974210CE8E4001A4D78 /* robot-startup1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "robot-startup1.mp3"; sourceTree = "<group>"; };
+		8CC5E975210CE8E5001A4D78 /* レベルアップ音.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "レベルアップ音.mp3"; sourceTree = "<group>"; };
 		8CED55D820ECF27B002AD241 /* icons8-ホーム-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ホーム-filled-50.png"; sourceTree = "<group>"; };
 		8CED55D920ECF27B002AD241 /* icons8-リスト-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-リスト-50.png"; sourceTree = "<group>"; };
 		8CED55DA20ECF27C002AD241 /* icons8-カレンダー-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-カレンダー-50.png"; sourceTree = "<group>"; };
@@ -156,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CC5E93A210CE024001A4D78 /* AVFoundation.framework in Frameworks */,
 				5791C8BC6DBF56C119D2A306 /* Pods_LevelApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +237,7 @@
 		81F5E89196868D23F1108492 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CC5E939210CE024001A4D78 /* AVFoundation.framework */,
 				F089C8BDF61C63B9BCA1E26D /* Pods_LevelApp.framework */,
 				76C922BF514A0A9F57F0F649 /* Pods_LevelAppTests.framework */,
 				9F587B312C7D5115C65ACEEF /* Pods_LevelAppUITests.framework */,
@@ -253,6 +296,20 @@
 		8C9357E820F3ACD400271B39 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				8CC5E969210CE473001A4D78 /* レベルアップ音.mp3 */,
+				8CC5E958210CE3A7001A4D78 /* correct2.mp3 */,
+				8CC5E95A210CE3A8001A4D78 /* 星ボタン音.mp3 */,
+				8CC5E957210CE3A7001A4D78 /* decision21.mp3 */,
+				8CC5E959210CE3A7001A4D78 /* decision24.mp3 */,
+				8CC5E95B210CE3A8001A4D78 /* dondonpafupafu1.mp3 */,
+				8CC5E95C210CE3A8001A4D78 /* extend1.mp3 */,
+				8CC5E955210CE3A6001A4D78 /* jump-anime1.mp3 */,
+				8CC5E95D210CE3A8001A4D78 /* kira2.mp3 */,
+				8CC5E95E210CE3A9001A4D78 /* レベルバー音.mp3 */,
+				8CC5E956210CE3A7001A4D78 /* robot-startup1.mp3 */,
+				8CC5E934210C3E67001A4D78 /* icons8-ホーム-filled-50 (2).png */,
+				8CC5E935210C3E67001A4D78 /* icons8-ユーザー-filled-50.png */,
+				8CC5E933210C3E66001A4D78 /* icons8-設定-50.png */,
 				8CC5E9202108D17A001A4D78 /* 青星光無し.png */,
 				8CC5E9242108D17B001A4D78 /* 赤星光無し.png */,
 				8CC5E9212108D17B001A4D78 /* 黄星光無し.png */,
@@ -324,6 +381,17 @@
 				8CC11CFB20E78004003E32B8 /* Calendar */,
 				8CC11CF620E77099003E32B8 /* Todo */,
 				8CBED51320DB453600FF0DE3 /* Assets.xcassets */,
+				8CC5E975210CE8E5001A4D78 /* レベルアップ音.mp3 */,
+				8CC5E96F210CE8E2001A4D78 /* correct2.mp3 */,
+				8CC5E970210CE8E2001A4D78 /* 星ボタン音.mp3 */,
+				8CC5E96D210CE8E0001A4D78 /* decision21.mp3 */,
+				8CC5E96E210CE8E1001A4D78 /* decision24.mp3 */,
+				8CC5E96B210CE8DF001A4D78 /* dondonpafupafu1.mp3 */,
+				8CC5E971210CE8E3001A4D78 /* extend1.mp3 */,
+				8CC5E972210CE8E3001A4D78 /* jump-anime1.mp3 */,
+				8CC5E973210CE8E4001A4D78 /* kira2.mp3 */,
+				8CC5E96C210CE8E0001A4D78 /* レベルバー音.mp3 */,
+				8CC5E974210CE8E4001A4D78 /* robot-startup1.mp3 */,
 				8CBED51520DB453600FF0DE3 /* LaunchScreen.storyboard */,
 				8CBED51820DB453600FF0DE3 /* Info.plist */,
 				8CB9DA2A20DB57DB0093F711 /* Characters */,
@@ -504,12 +572,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CC5E966210CE3A9001A4D78 /* extend1.mp3 in Resources */,
 				8C8F68AC20FC8E9300D5941A /* icons8-設定-filled-30.png in Resources */,
 				8C9357E420F2575C00271B39 /* menu_icon.png in Resources */,
+				8CC5E965210CE3A9001A4D78 /* dondonpafupafu1.mp3 in Resources */,
 				8CC5E9282108D17B001A4D78 /* 赤星光有り.png in Resources */,
 				8CED55DE20ECF27C002AD241 /* icons8-カレンダー-50.png in Resources */,
 				8C3690F221044295002D1FE3 /* 青矢印.png in Resources */,
 				8C9357E520F2575C00271B39 /* stop_icon.png in Resources */,
+				8CC5E96A210CE473001A4D78 /* レベルアップ音.mp3 in Resources */,
 				8CB9DA2920DB57B80093F711 /* 女子学生.jpg in Resources */,
 				8CBED51720DB453600FF0DE3 /* LaunchScreen.storyboard in Resources */,
 				8C3690E92103FB69002D1FE3 /* 黄星無し.png in Resources */,
@@ -517,29 +588,40 @@
 				8CC5E9292108D17B001A4D78 /* 黄星光有り.png in Resources */,
 				8C3690ED2103FB69002D1FE3 /* 青星無し.png in Resources */,
 				8C9357EA20F3BBD600271B39 /* icons8-スター-48.png in Resources */,
+				8CC5E964210CE3A9001A4D78 /* 星ボタン音.mp3 in Resources */,
+				8CC5E967210CE3A9001A4D78 /* kira2.mp3 in Resources */,
 				8C3690EC2103FB69002D1FE3 /* 青星有り.png in Resources */,
+				8CC5E962210CE3A9001A4D78 /* correct2.mp3 in Resources */,
 				8C3690EE2103FB69002D1FE3 /* 赤星無し.png in Resources */,
+				8CC5E938210C3E68001A4D78 /* icons8-ユーザー-filled-50.png in Resources */,
 				8C8F68AA20FC8CA200D5941A /* icons8-タスクリスト-30.png in Resources */,
 				8C9357E620F2575C00271B39 /* back_icon.png in Resources */,
+				8CC5E937210C3E68001A4D78 /* icons8-ホーム-filled-50 (2).png in Resources */,
 				8C9357E720F2575C00271B39 /* go_icon.png in Resources */,
 				8C3690EB2103FB69002D1FE3 /* 赤星有り.png in Resources */,
 				8CED55DF20ECF27C002AD241 /* icons8-設定-50.png in Resources */,
 				8CC5E9252108D17B001A4D78 /* 青星光有り.png in Resources */,
+				8CC5E963210CE3A9001A4D78 /* decision24.mp3 in Resources */,
 				8CBED51420DB453600FF0DE3 /* Assets.xcassets in Resources */,
 				8C8F68A620FC8BB900D5941A /* icons8-ホーム-30.png in Resources */,
 				8CBED51220DB453500FF0DE3 /* Main.storyboard in Resources */,
 				8C9357EC20F3BBFA00271B39 /* icons8-星-48.png in Resources */,
 				8CC5E9262108D17B001A4D78 /* 青星光無し.png in Resources */,
+				8CC5E960210CE3A9001A4D78 /* robot-startup1.mp3 in Resources */,
 				8C9357F420F6627F00271B39 /* TodoListTableViewCell.xib in Resources */,
 				8C3690F321044295002D1FE3 /* 黄矢印.png in Resources */,
 				8CC5E92A2108D17B001A4D78 /* 赤星光無し.png in Resources */,
 				8CED55DD20ECF27C002AD241 /* icons8-リスト-50.png in Resources */,
 				8C9357E320F2575C00271B39 /* reload_icon.png in Resources */,
+				8CC5E95F210CE3A9001A4D78 /* jump-anime1.mp3 in Resources */,
 				8CC5E9272108D17B001A4D78 /* 黄星光無し.png in Resources */,
 				8CED55DC20ECF27C002AD241 /* icons8-ホーム-filled-50.png in Resources */,
 				8C3690EA2103FB69002D1FE3 /* 黄星有り.png in Resources */,
+				8CC5E936210C3E68001A4D78 /* icons8-設定-50.png in Resources */,
+				8CC5E961210CE3A9001A4D78 /* decision21.mp3 in Resources */,
 				8CB9DA2820DB57B80093F711 /* 男子学生.jpg in Resources */,
 				8C8F68A820FC8C8A00D5941A /* icons8-カレンダー-30.png in Resources */,
+				8CC5E968210CE3A9001A4D78 /* レベルバー音.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
