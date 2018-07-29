@@ -14,5 +14,6 @@ class Todo: NSObject {
     var descript = ""
     var finished = false
     
+    var date = ""
 
 }

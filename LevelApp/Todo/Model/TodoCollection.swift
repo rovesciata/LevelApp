@@ -29,6 +29,8 @@ class TodoCollection: NSObject {
         todo.descript = attiributes["descript"] as! String
 
         todo.finished = attiributes["finished"] as! Bool
+        
+        todo.date = attiributes["date"] as! String
         return todo
     }
     
@@ -56,6 +58,8 @@ class TodoCollection: NSObject {
         dic["title"] = todo.title as AnyObject
         dic["descript"] = todo.descript as AnyObject
         dic["finished"] = todo.finished as AnyObject
+        
+        dic["date"] = todo.date as AnyObject
 
         return dic
     }

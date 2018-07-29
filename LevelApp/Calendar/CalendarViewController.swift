@@ -37,8 +37,12 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
 //    var player: AVAudioPlayer?
     
+    var dayDodos:[Todo] = []
+    
+    
     var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
     
+//    let realm = try! Realm()
     
     
 //    var audioPlayerInstance : AVAudioPlayer! = nil  // 再生するサウンドのインスタンス
@@ -60,6 +64,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         super.viewDidLoad()
         
         exTableView.frame = CGRect(x: 0, y: 365, width: self.view.bounds.width, height: 300)
+        
         
         // サウンドファイルのパスを生成
 //        let soundFilePath = Bundle.main.path(forResource: "星ボタン音", ofType: "mp3")!
@@ -246,20 +251,38 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         let da = "\(year)/\(m)/\(d)"
         
+        let defaults = UserDefaults.standard
+        defaults.set(da, forKey: "dateCalendar")
+        
         // クリックしたら、日付が表示される
 //        Date.text = "\(m)/\(d)"
 //        view.addSubview(Date)
         
+        
         // スケジュールを取得
-        let realm = try! Realm()
-        var result = realm.objects(Event.self)
-        result = result.filter("date = '\(da)'")
-        print(result)
-        for ev in result {
-            if ev.date == da {
-//                labelDate.text = ev.event
-//                labelDate.textColor = .black
-//                view.addSubview(labelDate)
+        
+//        var result = realm.objects(Event.self)
+//        result = result.filter("date = '\(da)'")
+//        print(result)
+//        for ev in result {
+//            if ev.date == da {
+////                labelDate.text = ev.event
+////                labelDate.textColor = .black
+////                view.addSubview(labelDate)
+//
+//            }
+//        }
+        
+        
+        
+        let result = UserDefaults.standard.object(forKey: "dateCalendar") as! String
+        
+        dayDodos = []
+        for todo in todoCollection.todos{
+            if result == da {
+                dayDodos.append(todo)
+                
+                self.exTableView.reloadData()
             }
         }
     }
@@ -275,7 +298,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     //セクションのタイトル
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
-        return "25(水)"
+        return ""
     }
     
     //セクションのタイトルの高さ
@@ -284,7 +307,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.todoCollection.todos.count
+        return self.dayDodos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -292,7 +315,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         // セルの内容表示
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
-        let todo = self.todoCollection.todos[indexPath.row]
+        let todo = self.dayDodos[indexPath.row]
         cell.labelCell.text = todo.title
         cell.detailCell.text = todo.descript
         cell.labelCell!.font = UIFont(name: "HirakakuProN-W6", size: 15)

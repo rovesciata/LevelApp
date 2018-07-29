@@ -12,21 +12,28 @@ import RealmSwift
 
 
 
-//ディスプレイサイズ取得
-let w2 = UIScreen.main.bounds.size.width
-let h2 = UIScreen.main.bounds.size.height
-//スケジュール内容入力テキスト
-//let eventText = UITextView(frame: CGRect(x: (w2 - 300) / 2, y: 50, width: 300, height: 200))
 
-//日付フォーム(UIDatePickerを使用)
-let y = UIDatePicker(frame: CGRect(x: 0, y: 250, width: w2, height: 300))
-//日付表示
-let y_text = UILabel(frame: CGRect(x: (w2 - 300) / 2, y: 570, width: 300, height: 20))
 
 
 
 class EventViewController: UIViewController {
     var date: String!
+    
+//    let realm = try! Realm()
+    
+    //ディスプレイサイズ取得
+    let w2 = UIScreen.main.bounds.size.width
+    let h2 = UIScreen.main.bounds.size.height
+    //スケジュール内容入力テキスト
+    //let eventText = UITextView(frame: CGRect(x: (w2 - 300) / 2, y: 50, width: 300, height: 200))
+    
+    
+    //日付フォーム(UIDatePickerを使用)
+    let y = UIDatePicker(frame: CGRect(x: 0, y: 250, width: UIScreen.main.bounds.size.width, height: 300))
+    //日付表示
+    let y_text = UILabel(frame: CGRect(x: (UIScreen.main.bounds.size.height - 300) / 2, y: 570, width: 300, height: 20))
+    
+    
     
     
     let todoCollection = TodoCollection.sharedInstance
@@ -36,7 +43,6 @@ class EventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         //キーボードの完了ボタン
@@ -162,11 +168,28 @@ class EventViewController: UIViewController {
         // enumのTodoSkill型に変換されたものを代入
         //            todo.skill = TodoSkill(rawValue: skillSegment.selectedSegmentIndex)!
         todo.finished = false
+        
+        todo.date = self.y_text.text!
+        
         self.todoCollection.addTodoCollection(todo: todo)
         print(self.todoCollection.todos)
-        self.dismiss(animated: true, completion: nil)
-        //    }
         
+        
+        
+        
+//                try! realm.write {
+//                    //日付表示の内容とスケジュール入力の内容が書き込まれる。
+//                    let Events = [Event(value: ["date": y_text.text])]
+//                    realm.add(Events)
+//                    print("データ書き込み中")
+        
+        
+        
+        
+        
+        self.dismiss(animated: true, completion: nil)
+            
+
     }
     
     

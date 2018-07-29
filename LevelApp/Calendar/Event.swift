@@ -12,12 +12,12 @@ import RealmSwift
 
 
 // RealmのDB設定
-class Event: Object {
-    
-    @objc dynamic var date: String = ""
-//    @objc dynamic var event: String = ""
-    
-}
+//class Event: Object {
+//    
+//    @objc dynamic var date: String = ""
+////    @objc dynamic var event: String = ""
+//    
+//}
 
 
 
