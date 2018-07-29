@@ -11,7 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    
+    // レベルバー、レベルアップ時の効果音の宣言
     var audioPlayerClearLvBar : AVAudioPlayer! = nil //クリア時用
     var audioPlayerClearLvNum : AVAudioPlayer! = nil //クリア時用
     
@@ -643,7 +643,7 @@ class ViewController: UIViewController {
     }
     
     
-    // MARK: サウンドファイル作成
+    // レベルバーサウンドファイル作成
     func makeSoundLvBar() {
         //Clear音作る。
         //音声ファイルのパスを作る。
@@ -659,7 +659,7 @@ class ViewController: UIViewController {
         audioPlayerClearLvBar.prepareToPlay()
     }
     
-    
+    // レベルアップ時のサウンドファイル作成
     func makeSoundLvNum() {
         //Clear音作る。
         //音声ファイルのパスを作る。
@@ -674,6 +674,8 @@ class ViewController: UIViewController {
         //出来たインスタンスをバッファに保持する。
         audioPlayerClearLvNum.prepareToPlay()
     }
+    
+    
     
     
     // 編集ボタンを押された時の処理

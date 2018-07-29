@@ -27,7 +27,7 @@ class TodoCollection: NSObject {
         let todo = Todo()
         todo.title = attiributes["title"] as! String
         todo.descript = attiributes["descript"] as! String
-//        todo.skill = TodoSkill(rawValue: attiributes["skill"] as! Int)!
+
         todo.finished = attiributes["finished"] as! Bool
         return todo
     }
@@ -56,7 +56,7 @@ class TodoCollection: NSObject {
         dic["title"] = todo.title as AnyObject
         dic["descript"] = todo.descript as AnyObject
         dic["finished"] = todo.finished as AnyObject
-//        dic["skill"] = todo.skill.rawValue as AnyObject
+
         return dic
     }
     

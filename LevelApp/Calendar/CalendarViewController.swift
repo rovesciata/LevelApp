@@ -48,7 +48,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     let todoCollection = TodoCollection.sharedInstance
     // スケジュール内容
-    let labelDate = UILabel(frame: CGRect(x: 5, y: 580, width: 400, height: 50))
+//    let labelDate = UILabel(frame: CGRect(x: 5, y: 580, width: 400, height: 50))
     // 「主なスケジュール」の表示
 //    let labelTitle = UILabel(frame: CGRect(x: 0, y: 530, width: 180, height: 50))
     // カレンダー部分
@@ -108,9 +108,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        view.addSubview(labelTitle)
         
         // スケジュール内容表示設定
-        labelDate.text = ""
-        labelDate.font = UIFont.systemFont(ofSize: 18.0)
-        view.addSubview(labelDate)
+//        labelDate.text = ""
+//        labelDate.font = UIFont.systemFont(ofSize: 18.0)
+//        view.addSubview(labelDate)
         
         // スケジュール追加ボタン
 //        let addBtn = UIButton(frame: CGRect(x: w - 55, y: h - 115, width: 50, height: 50))
@@ -123,10 +123,20 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        makeSound()
+       
+    }
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        makeSound()
+        
         
         
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
@@ -245,9 +255,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         print(result)
         for ev in result {
             if ev.date == da {
-                labelDate.text = ev.event
-                labelDate.textColor = .black
-                view.addSubview(labelDate)
+//                labelDate.text = ev.event
+//                labelDate.textColor = .black
+//                view.addSubview(labelDate)
             }
         }
     }
