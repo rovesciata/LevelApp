@@ -35,17 +35,15 @@ let h = UIScreen.main.bounds.size.height
 
 class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance, UITableViewDelegate, UITableViewDataSource {
     
-//    var player: AVAudioPlayer?
+
     
-    var dayDodos:[Todo] = []
+    
+    
+    
     
     
     var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
     
-//    let realm = try! Realm()
-    
-    
-//    var audioPlayerInstance : AVAudioPlayer! = nil  // 再生するサウンドのインスタンス
 
     var exTableView: UITableView = UITableView()
     
@@ -60,24 +58,18 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     // 日付の表示
 //    let Date = UILabel(frame: CGRect(x: 5, y: 430, width: 200, height: 100))
     
+//    let noPlan: UILabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         exTableView.frame = CGRect(x: 0, y: 365, width: self.view.bounds.width, height: 300)
         
         
-        // サウンドファイルのパスを生成
-//        let soundFilePath = Bundle.main.path(forResource: "星ボタン音", ofType: "mp3")!
-//        let sound:URL = URL(fileURLWithPath: soundFilePath)
-//        // AVAudioPlayerのインスタンスを作成
-//        do {
-//            audioPlayerInstance = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
-//        } catch {
-//            print("AVAudioPlayerインスタンス作成失敗")
-//        }
-//        // バッファに保持していつでも再生できるようにする
-//        audioPlayerInstance.prepareToPlay()
-        
+//        noPlan.frame = CGRect(x: 0, y: 365, width: self.view.bounds.width, height: 300)
+//        noPlan.backgroundColor = .blue
+//        exTableView.addSubview(noPlan)
+//        noPlan.isHidden = false
         
         // セルの登録
         exTableView.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
@@ -106,7 +98,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        Date.text = ""
 //        Date.font = UIFont.systemFont(ofSize: 60.0)
 //        Date.textColor = .black
-//        view.addSubview(Date)
+//        exTableView.addSubview(Date)
         
         // 「主なスケジュール」表示設定
 //        labelTitle.text = ""
@@ -142,10 +134,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-        
-        
+        // ヘッダーボタンを作成
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalendarViewController.newTodo))
@@ -154,6 +143,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
     }
     
+    // カレンダー部分
     fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -229,7 +219,10 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
 //        present(SecondController, animated: true, completion: nil)
 //    }
-
+    
+    
+    // 日のTodo配列を宣言
+    var dayTodos:[Todo] = []
     // カレンダー処理(スケジュール表示処理)
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 //        labelTitle.text = "主なスケジュール"
@@ -240,7 +233,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         // ない場合、「スケジュールはありません」と表示
 //        labelDate.text = "スケジュールはありません"
 //        labelDate.textColor = .lightGray
-//        view.addSubview(labelDate)
+        
         
         let tmpDate = Calendar(identifier: .gregorian)
         let year = tmpDate.component(.year, from: date)
@@ -251,8 +244,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         let da = "\(year)/\(m)/\(d)"
         
-        let defaults = UserDefaults.standard
-        defaults.set(da, forKey: "dateCalendar")
+//        let defaults = UserDefaults.standard
+//        defaults.set(da, forKey: "dateCalendar")
         
         // クリックしたら、日付が表示される
 //        Date.text = "\(m)/\(d)"
@@ -275,18 +268,26 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         
         
-        let result = UserDefaults.standard.object(forKey: "dateCalendar") as! String
-        
-        dayDodos = []
+//        let result = UserDefaults.standard.object(forKey: "dateCalendar") as! String
+        exTableView.isHidden = true
+        dayTodos = []
         for todo in todoCollection.todos{
-            if result == da {
-                dayDodos.append(todo)
+            
+            if todo.date == da {
+                
+                exTableView.isHidden = false
+                
+                dayTodos.append(todo)
                 
                 self.exTableView.reloadData()
+            } else {
+                
+                
             }
         }
     }
     
+//    var sectionDate = UserDefaults.standard.object(forKey: "dateCalendar") as? String
     
     
     //-------------TableViewの処理------------------
@@ -307,7 +308,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dayDodos.count
+        return self.dayTodos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -315,7 +316,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         // セルの内容表示
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
-        let todo = self.dayDodos[indexPath.row]
+        let todo = self.dayTodos[indexPath.row]
         cell.labelCell.text = todo.title
         cell.detailCell.text = todo.descript
         cell.labelCell!.font = UIFont(name: "HirakakuProN-W6", size: 15)
@@ -326,7 +327,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         let defaults = UserDefaults.standard
         
         //        todo.finished = defaults.bool(forKey: "finishedStar")
-        let redUpAble = defaults.bool(forKey: "redUpBool")
+        let redUpLevel = defaults.bool(forKey: "redUpBool")
         cell.starButton2.isEnabled = true
         
         
@@ -678,8 +679,14 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         }catch{
             print("Failed AVAudioPlayer Instance")
         }
+        
+       
         //出来たインスタンスをバッファに保持する。
         audioPlayerClear.prepareToPlay()
+        
+        //        // 連打した時に連続して音がなるようにする
+        //        audioPlayerInstance.currentTime = 0         // 再生位置を先頭(0)に戻してから
+        //        audioPlayerInstance.play()                  // 再生する
     }
     
     
