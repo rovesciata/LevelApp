@@ -43,7 +43,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
 //    var audioPlayerInstance : AVAudioPlayer! = nil  // 再生するサウンドのインスタンス
 
-    @IBOutlet weak var scheduleTable: UITableView!
+    var exTableView: UITableView = UITableView()
     
     
     let todoCollection = TodoCollection.sharedInstance
@@ -52,13 +52,14 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     // 「主なスケジュール」の表示
 //    let labelTitle = UILabel(frame: CGRect(x: 0, y: 530, width: 180, height: 50))
     // カレンダー部分
-    let dateView = FSCalendar(frame: CGRect(x: 0, y: 30, width: w, height: 300))
+    let dateView = FSCalendar(frame: CGRect(x: 0, y: 65, width: w, height: 300))
     // 日付の表示
 //    let Date = UILabel(frame: CGRect(x: 5, y: 430, width: 200, height: 100))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        exTableView.frame = CGRect(x: 0, y: 365, width: self.view.bounds.width, height: 300)
         
         // サウンドファイルのパスを生成
 //        let soundFilePath = Bundle.main.path(forResource: "星ボタン音", ofType: "mp3")!
@@ -74,17 +75,18 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         
         // セルの登録
-        scheduleTable.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
+        exTableView.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
         
         todoCollection.fetchTodos()
         
         
         //セルの高さを自動で計算
-        self.scheduleTable.estimatedRowHeight = 78
-        scheduleTable.rowHeight = UITableViewAutomaticDimension
+        self.exTableView.estimatedRowHeight = 78
+        exTableView.rowHeight = UITableViewAutomaticDimension
         
-        scheduleTable.delegate = self
-        scheduleTable.dataSource  = self
+        exTableView.delegate = self
+        exTableView.dataSource  = self
+        self.view.addSubview(exTableView)
         
         //カレンダー設定
         self.dateView.dataSource = self
@@ -143,7 +145,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalendarViewController.newTodo))
         self.navigationItem.leftBarButtonItem = editButtonItem
-        self.scheduleTable.reloadData()
+        self.exTableView.reloadData()
         
     }
     
@@ -358,12 +360,12 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     // 星ボタンを押した時の処理
     @objc func buttonTapped(_ button: UIButton) {
         
-        if let indexPath = self.scheduleTable.indexPathForView(button) {
+        if let indexPath = self.exTableView.indexPathForView(button) {
             print("Button tapped at indexPath \(indexPath.row)")
             let todo = self.todoCollection.todos[indexPath.row]
             todo.finished = true
             
-            let cell = scheduleTable.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
+            let cell = exTableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
             cell.labelCell.text = todo.title
             
             
@@ -611,7 +613,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         // 配列を全て保存
         self.todoCollection.save()
         
-        self.scheduleTable.reloadData()
+        self.exTableView.reloadData()
         
 //        audioPlayerInstance.play()
         
