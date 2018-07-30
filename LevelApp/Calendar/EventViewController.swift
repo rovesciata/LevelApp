@@ -11,11 +11,6 @@ import UIKit
 import RealmSwift
 
 
-
-
-
-
-
 class EventViewController: UIViewController {
     var date: String!
     
@@ -29,9 +24,9 @@ class EventViewController: UIViewController {
     
     
     //日付フォーム(UIDatePickerを使用)
-    let y = UIDatePicker(frame: CGRect(x: 0, y: 250, width: UIScreen.main.bounds.size.width, height: 300))
+    let y = UIDatePicker(frame: CGRect(x: 0, y: 350, width: UIScreen.main.bounds.size.width, height: 100))
     //日付表示
-    let y_text = UILabel(frame: CGRect(x: (UIScreen.main.bounds.size.height - 300) / 2, y: 570, width: 300, height: 20))
+    let y_text = UILabel(frame: CGRect(x: -20, y: 310, width: 300, height: 30))
     
     
     
@@ -79,6 +74,10 @@ class EventViewController: UIViewController {
         view.addSubview(y)
         
         //日付表示設定
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        y_text.text = formatter.string(from: y.date)
+        
         y_text.backgroundColor = .white
         y_text.textAlignment = .center
         view.addSubview(y_text)
@@ -141,6 +140,7 @@ class EventViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.plain, target: self, action: #selector(EventViewController.close))
