@@ -63,11 +63,6 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         exTableView.frame = CGRect(x: 0, y: 365, width: self.view.bounds.width, height: 300)
         
         
-//        noPlan.frame = CGRect(x: 0, y: 365, width: self.view.bounds.width, height: 300)
-//        noPlan.backgroundColor = .blue
-//        exTableView.addSubview(noPlan)
-//        noPlan.isHidden = false
-        
         // セルの登録
         exTableView.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
         
@@ -216,8 +211,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
 //        present(SecondController, animated: true, completion: nil)
 //    }
-    
-    
+
     // 日のTodo配列を宣言
     var dayTodos:[Todo] = []
     // カレンダー処理(スケジュール表示処理)
@@ -274,16 +268,18 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 
                 exTableView.isHidden = false
                 
+                let defaults = UserDefaults.standard
+                defaults.set(da, forKey: "dateSection")
+                
                 dayTodos.append(todo)
                 
                 self.exTableView.reloadData()
-            } else {
-                
-                
             }
         }
     }
     
+//    let defaults = UserDefaults.standard
+//    var nameSection = UserDefaults.standard.object(forKey: "dateSection") as! String
 //    var sectionDate = UserDefaults.standard.object(forKey: "dateCalendar") as? String
     
     
@@ -296,7 +292,22 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     //セクションのタイトル
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
-        return ""
+        
+//        let tmpDate = Calendar(identifier: .gregorian)
+//        let month = tmpDate.component(.month, from: date)
+//        let day = tmpDate.component(.day, from: date)
+//        let m = String(format: "%02d", month)
+//        let d = String(format: "%02d", day)
+        
+        
+        return UserDefaults.standard.object(forKey: "dateSection") as? String
+        
+
+//        let formatter = DateFormatter()
+//                formatter.dateFormat = "yy-MM-dd"
+//
+//        return "\((formatter.dateFormat)!)"
+        
     }
     
     //セクションのタイトルの高さ
@@ -655,7 +666,27 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            self.todoCollection.todos.remove(at: indexPath.row)
+            self.dayTodos.remove(at: indexPath.row)
+            
+            var numCell : Int = 0
+            for todo in todoCollection.todos{
+                numCell += 1
+
+                if todo.date == dayTodos[indexPath.row].date {
+
+                    todoCollection.todos.remove(at: numCell)
+                }
+            
+            }
+//            for todo in todoCollection.todos{
+//
+//
+//                if todo.id == dayTodos[indexPath.row].id {
+//
+//                    todoCollection.todos.remove(at: id)
+//                }
+//            }
+            
             self.todoCollection.save()
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.middle)
         default:

@@ -31,6 +31,9 @@ class TodoCollection: NSObject {
         todo.finished = attiributes["finished"] as! Bool
         
         todo.date = attiributes["date"] as! String
+        
+//        todo.id = UInt32(attiributes["id"] as! Int)
+        
         return todo
     }
     
@@ -60,6 +63,8 @@ class TodoCollection: NSObject {
         dic["finished"] = todo.finished as AnyObject
         
         dic["date"] = todo.date as AnyObject
+        
+//        dic["id"] = todo.id as AnyObject
 
         return dic
     }

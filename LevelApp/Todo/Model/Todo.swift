@@ -15,5 +15,7 @@ class Todo: NSObject {
     var finished = false
     
     var date = ""
+    
+//    var id: UInt32 = 0
 
 }
