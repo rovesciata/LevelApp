@@ -472,11 +472,19 @@
                     <view key="view" contentMode="scaleToFill" id="et8-ff-6CY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-By-oQ4" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="65" width="375" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pMv-Hp-iUg"/>
                     </view>
                     <navigationItem key="navigationItem" id="hOY-eo-wG8"/>
                     <connections>
+                        <outlet property="dateView" destination="zJF-By-oQ4" id="et9-jL-vbH"/>
                         <segue destination="awP-el-wkC" kind="presentation" identifier="Insert" id="GnA-6b-IQu"/>
                     </connections>
                 </viewController>

@@ -36,15 +36,12 @@ let h = UIScreen.main.bounds.size.height
 class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance, UITableViewDelegate, UITableViewDataSource {
     
 
-    
-    
-    
-    
-    
-    
     var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
     
 
+    
+    @IBOutlet weak var dateView: FSCalendar!
+    
     var exTableView: UITableView = UITableView()
     
     
@@ -54,7 +51,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     // 「主なスケジュール」の表示
 //    let labelTitle = UILabel(frame: CGRect(x: 0, y: 530, width: 180, height: 50))
     // カレンダー部分
-    let dateView = FSCalendar(frame: CGRect(x: 0, y: 65, width: w, height: 300))
+//    let dateView = FSCalendar(frame: CGRect(x: 0, y: 65, width: w, height: 300))
     // 日付の表示
 //    let Date = UILabel(frame: CGRect(x: 5, y: 430, width: 200, height: 100))
     
@@ -84,15 +81,15 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         exTableView.delegate = self
         exTableView.dataSource  = self
         self.view.addSubview(exTableView)
-        
-        //カレンダー設定
+//
+//        //カレンダー設定
         self.dateView.dataSource = self
         self.dateView.delegate = self
-        self.dateView.today = nil
-        self.dateView.tintColor = .red
-        self.view.backgroundColor = .white
-        dateView.backgroundColor = .white
-        view.addSubview(dateView)
+//        self.dateView.today = nil
+//        self.dateView.tintColor = .red
+//        self.view.backgroundColor = .white
+//        dateView.backgroundColor = .white
+//        view.addSubview(dateView)
         
         // 日付表示設定
 //        Date.text = ""
