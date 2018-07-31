@@ -666,18 +666,31 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            self.dayTodos.remove(at: indexPath.row)
+//            self.dayTodos.remove(at: indexPath.row)
             
             var numCell : Int = 0
             for todo in todoCollection.todos{
-                numCell += 1
-
-                if todo.date == dayTodos[indexPath.row].date {
-
+//                numCell += 1
+                
+                if todo.id == dayTodos[indexPath.row].id {
+                    
+                    
                     todoCollection.todos.remove(at: numCell)
+                    
                 }
-            
+                numCell += 1
             }
+            self.dayTodos.remove(at: indexPath.row)
+
+//                if todo.date == dayTodos[indexPath.row].date {
+//
+//
+//                    todoCollection.todos.remove(at: numCell)
+//
+//                }
+//                numCell += 1
+//
+//            }
 //            for todo in todoCollection.todos{
 //
 //

@@ -171,7 +171,7 @@ class EventViewController: UIViewController {
         
         todo.date = self.y_text.text!
         
-//        todo.id = arc4random()
+        todo.id = String("\(arc4random())")
         
 //        let defaults = UserDefaults.standard
 //        defaults.set(todo.date, forKey: "dateCalendar")

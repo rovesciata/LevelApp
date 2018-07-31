@@ -17,5 +17,6 @@ class Todo: NSObject {
     var date = ""
     
 //    var id: UInt32 = 0
+    var id: String = ""
 
 }
