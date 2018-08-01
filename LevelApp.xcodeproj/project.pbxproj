@@ -21,6 +21,9 @@
 		8C8BBE5D21119AF700583DB9 /* icons8-コンタクト-500.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8BBE5C21119AF600583DB9 /* icons8-コンタクト-500.png */; };
 		8C8BBE622111A0D700583DB9 /* icons8-ホーム-30 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8BBE602111A0D500583DB9 /* icons8-ホーム-30 (1).png */; };
 		8C8BBE652111A11800583DB9 /* icons8-カレンダー1-filled-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8BBE642111A11800583DB9 /* icons8-カレンダー1-filled-30.png */; };
+		8C8BBE692111AB3000583DB9 /* いいね赤.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8BBE662111AB2D00583DB9 /* いいね赤.png */; };
+		8C8BBE6A2111AB3000583DB9 /* いいね黄.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8BBE672111AB2E00583DB9 /* いいね黄.png */; };
+		8C8BBE6B2111AB3000583DB9 /* いいね青.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8BBE682111AB2F00583DB9 /* いいね青.png */; };
 		8C8E0BBF20FD943C009A7B5A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E0BBE20FD943C009A7B5A /* Event.swift */; };
 		8C8F68A620FC8BB900D5941A /* icons8-ホーム-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */; };
 		8C8F68A820FC8C8A00D5941A /* icons8-カレンダー-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */; };
@@ -118,6 +121,9 @@
 		8C8BBE5C21119AF600583DB9 /* icons8-コンタクト-500.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-コンタクト-500.png"; path = "../../../../Downloads/icons8-コンタクト-500.png"; sourceTree = "<group>"; };
 		8C8BBE602111A0D500583DB9 /* icons8-ホーム-30 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-ホーム-30 (1).png"; path = "../../../../Downloads/icons8-ホーム-30 (1).png"; sourceTree = "<group>"; };
 		8C8BBE642111A11800583DB9 /* icons8-カレンダー1-filled-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-カレンダー1-filled-30.png"; path = "../../../../Downloads/icons8-カレンダー1-filled-30.png"; sourceTree = "<group>"; };
+		8C8BBE662111AB2D00583DB9 /* いいね赤.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "いいね赤.png"; path = "../../../../Downloads/いいね赤.png"; sourceTree = "<group>"; };
+		8C8BBE672111AB2E00583DB9 /* いいね黄.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "いいね黄.png"; path = "../../../../Downloads/いいね黄.png"; sourceTree = "<group>"; };
+		8C8BBE682111AB2F00583DB9 /* いいね青.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "いいね青.png"; path = "../../../../Downloads/いいね青.png"; sourceTree = "<group>"; };
 		8C8E0BBE20FD943C009A7B5A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ホーム-30.png"; sourceTree = "<group>"; };
 		8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-カレンダー-30.png"; sourceTree = "<group>"; };
@@ -361,6 +367,9 @@
 				8CC11CFB20E78004003E32B8 /* Calendar */,
 				8CC11CF620E77099003E32B8 /* Todo */,
 				8CBED51320DB453600FF0DE3 /* Assets.xcassets */,
+				8C8BBE672111AB2E00583DB9 /* いいね黄.png */,
+				8C8BBE682111AB2F00583DB9 /* いいね青.png */,
+				8C8BBE662111AB2D00583DB9 /* いいね赤.png */,
 				8C8BBE642111A11800583DB9 /* icons8-カレンダー1-filled-30.png */,
 				8C8BBE602111A0D500583DB9 /* icons8-ホーム-30 (1).png */,
 				8C8BBE5C21119AF600583DB9 /* icons8-コンタクト-500.png */,
@@ -578,6 +587,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C8BBE692111AB3000583DB9 /* いいね赤.png in Resources */,
 				8CC5E966210CE3A9001A4D78 /* extend1.mp3 in Resources */,
 				8C8F68AC20FC8E9300D5941A /* icons8-設定-filled-30.png in Resources */,
 				8C9357E420F2575C00271B39 /* menu_icon.png in Resources */,
@@ -591,8 +601,10 @@
 				8CB9DA2920DB57B80093F711 /* 女子学生.jpg in Resources */,
 				8CBED51720DB453600FF0DE3 /* LaunchScreen.storyboard in Resources */,
 				8C3690E92103FB69002D1FE3 /* 黄星無し.png in Resources */,
+				8C8BBE6A2111AB3000583DB9 /* いいね黄.png in Resources */,
 				8C3690F421044295002D1FE3 /* 赤矢印.png in Resources */,
 				8CC5E9292108D17B001A4D78 /* 黄星光有り.png in Resources */,
+				8C8BBE6B2111AB3000583DB9 /* いいね青.png in Resources */,
 				8C3690ED2103FB69002D1FE3 /* 青星無し.png in Resources */,
 				8C9357EA20F3BBD600271B39 /* icons8-スター-48.png in Resources */,
 				8CC5E964210CE3A9001A4D78 /* 星ボタン音.mp3 in Resources */,

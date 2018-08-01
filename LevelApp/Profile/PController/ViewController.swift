@@ -39,6 +39,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var yellowUpBtn: UIButton!
     @IBOutlet weak var blueUpBtn: UIButton!
     
+    @IBOutlet weak var redGood: UIButton!
+    @IBOutlet weak var yellowGood: UIButton!
+    @IBOutlet weak var blueGood: UIButton!
     
     var redUpBool = false
     
@@ -303,6 +306,9 @@ class ViewController: UIViewController {
         levelBarSkill1.progress = 0.0
         
          self.audioPlayerClearLvNum.play()
+        
+        
+        redGood.isHidden = false
     }
     
     // Skill2のlevel数を１上げる
@@ -312,6 +318,8 @@ class ViewController: UIViewController {
         levelBarSkill2.progress = 0.0
         
          self.audioPlayerClearLvNum.play()
+        
+        yellowGood.isHidden = false
     }
     
     // Skill3のLevel数を１上げる
@@ -321,6 +329,8 @@ class ViewController: UIViewController {
         levelBarSkill3.progress = 0.0
         
          self.audioPlayerClearLvNum.play()
+        
+        blueGood.isHidden = false
     }
     
     
@@ -591,7 +601,9 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        redGood.isHidden = true
+        yellowGood.isHidden = true
+        blueGood.isHidden = true
 
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "編集", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.newProfile))

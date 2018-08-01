@@ -127,15 +127,16 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpo-mc-YLJ">
                                 <rect key="frame" x="321" y="474" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="赤矢印.png">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="0.14901960784313725" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2f-LO-5Nf">
                                 <rect key="frame" x="321" y="521" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="黄矢印.png">
-                                    <color key="titleColor" red="1" green="0.90592536690000003" blue="0.107972635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="0.90588235294117647" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWS-o3-HfX">
@@ -151,12 +152,31 @@
                                 <color key="progressTintColor" red="0.46274509803921571" green="0.83921568627450982" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="0.048916842490000001" green="0.1020083973" blue="0.355528236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsD-d0-ZMd">
+                                <rect key="frame" x="321" y="474" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="いいね赤.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCF-bV-kEN">
+                                <rect key="frame" x="321" y="521" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="いいね黄.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDe-f9-wQb">
+                                <rect key="frame" x="321" y="565" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="いいね青.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="mxA-PR-zrI"/>
                     <connections>
+                        <outlet property="blueGood" destination="TDe-f9-wQb" id="jJQ-Ge-eEl"/>
                         <outlet property="blueUpBtn" destination="EWS-o3-HfX" id="l17-24-daW"/>
                         <outlet property="levelAll" destination="b44-xL-Bzf" id="Knh-Ux-MxZ"/>
                         <outlet property="levelBar" destination="1v9-fM-IP7" id="NVU-VL-hf0"/>
@@ -168,10 +188,12 @@
                         <outlet property="levelSkill3" destination="koz-iR-IQG" id="Zxu-1F-9lJ"/>
                         <outlet property="name" destination="BfP-Qx-TiM" id="GkV-1K-IK6"/>
                         <outlet property="profileImage" destination="kuV-Y3-btB" id="QRU-TP-Cmk"/>
+                        <outlet property="redGood" destination="BsD-d0-ZMd" id="yvG-F9-TRN"/>
                         <outlet property="redUpBtn" destination="jpo-mc-YLJ" id="kGr-ZB-r5U"/>
                         <outlet property="skill1" destination="Fbt-eR-2OA" id="8gk-if-yzM"/>
                         <outlet property="skill2" destination="xWJ-EF-9jQ" id="nzT-vb-Zlh"/>
                         <outlet property="skill3" destination="gDg-0r-eq3" id="2HN-Tj-nxa"/>
+                        <outlet property="yellowGood" destination="tCF-bV-kEN" id="y9Y-sF-U6r"/>
                         <outlet property="yellowUpBtn" destination="i2f-LO-5Nf" id="H7E-Bd-F4L"/>
                         <segue destination="AMU-gk-e5p" kind="presentation" identifier="PresentNewProfileViewController" id="I2o-fH-7Ub"/>
                     </connections>
@@ -680,6 +702,9 @@
         <image name="icons8-コンタクト-500.png" width="500" height="500"/>
         <image name="icons8-タスクリスト-30.png" width="30" height="30"/>
         <image name="icons8-ホーム-30 (1).png" width="30" height="30"/>
+        <image name="いいね赤.png" width="30" height="30"/>
+        <image name="いいね青.png" width="30" height="30"/>
+        <image name="いいね黄.png" width="30" height="30"/>
         <image name="赤矢印.png" width="30" height="30"/>
         <image name="青矢印.png" width="30" height="30"/>
         <image name="黄矢印.png" width="30" height="30"/>
