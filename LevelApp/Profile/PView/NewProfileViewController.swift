@@ -153,6 +153,7 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
     // 閉じるボタン、完了ボタンを作成
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewProfileViewController.close))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "完了", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewProfileViewController.save))
@@ -229,6 +230,13 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
         album.allowsEditing = true
         album.delegate = self
         self.present(album, animated: true, completion: nil)
+        
+        
+        let defaults = UserDefaults.standard
+        defaults.set(nameField.text, forKey: "nameText")
+        defaults.set(skill1Field.text, forKey: "skill1Text")
+        defaults.set(skill2Field.text, forKey: "skill2Text")
+        defaults.set(skill3Field.text, forKey: "skill3Text")
     }
     
     func imagePickerController(_ picker: UIImagePickerController,

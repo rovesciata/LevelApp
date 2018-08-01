@@ -112,6 +112,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
 //        view.addSubview(addBtn)
         
+        
+        
     }
     
     
@@ -130,8 +132,10 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalendarViewController.newTodo))
-        self.navigationItem.leftBarButtonItem = editButtonItem
+//        self.navigationItem.leftBarButtonItem = editButtonItem
         self.exTableView.reloadData()
+        
+        
         
     }
     
@@ -214,6 +218,11 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 
     // 日のTodo配列を宣言
     var dayTodos:[Todo] = []
+    
+    
+    
+        
+    
     // カレンダー処理(スケジュール表示処理)
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 //        labelTitle.text = "主なスケジュール"
@@ -277,6 +286,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
             }
         }
     }
+    
     
 //    let defaults = UserDefaults.standard
 //    var nameSection = UserDefaults.standard.object(forKey: "dateSection") as! String
@@ -346,8 +356,10 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
             }
             else if cell.labelCell.text == defaults.object(forKey: "skill2Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "黄星無し.png"), for: .normal)
+                
             } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "青星無し.png"), for: .normal)
+                
             }
             
             
@@ -366,8 +378,15 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
             //            cell.starButton2.isEnabled = false
             
         }
+        
+        
+        
+        
+        
         // 星ボタンの押したか押してないかを保存
         defaults.set(todo.finished, forKey: "finishedStar")
+        
+        
         
         //      重要  let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "reuseIdentifier")
         //        let todo = self.todoCollection.todos[indexPath.row]
