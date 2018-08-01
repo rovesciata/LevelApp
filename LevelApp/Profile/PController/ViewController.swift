@@ -559,7 +559,7 @@ class ViewController: UIViewController {
         levelBar.layer.borderWidth = 0.3
         
 //        levelBar.layer.shadowOpacity = 1.0
-//        levelBar.layer.shadowOffset = CGSize(width: 5, height: 0.01)
+//        levelBar.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         // levelBarSkill1の高さ変更
         levelBarSkill1.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
@@ -590,6 +590,8 @@ class ViewController: UIViewController {
     // Home画面からProfile編集画面への遷移
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
 
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "編集", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.newProfile))
