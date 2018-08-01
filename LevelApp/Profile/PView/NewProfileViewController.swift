@@ -60,6 +60,10 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // プロフィール写真の影
+        selectImageView.layer.shadowOpacity = 1.0
+        selectImageView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        
         // キーボードの被り直し
         // スワイプでスクロールさせたならばキーボードを下げる
         myScrollView.keyboardDismissMode = .onDrag

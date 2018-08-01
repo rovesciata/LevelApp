@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-スター-48.png" translatesAutoresizingMaskIntoConstraints="NO" id="kuV-Y3-btB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-コンタクト-500.png" translatesAutoresizingMaskIntoConstraints="NO" id="kuV-Y3-btB">
                                 <rect key="frame" x="16" y="69" width="343" height="314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -275,7 +275,7 @@
                                                     <action selector="tapAlbumButton:" destination="c9N-cB-0Pc" eventType="touchUpInside" id="oVq-fv-AY6"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-星-48.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ya7-Er-kAd">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-コンタクト-500.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ya7-Er-kAd">
                                                 <rect key="frame" x="16" y="0.0" width="343" height="314"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="314" id="g0g-CV-iuP"/>
@@ -676,10 +676,9 @@
     </scenes>
     <resources>
         <image name="icons8-カレンダー-30.png" width="30" height="30"/>
-        <image name="icons8-スター-48.png" width="48" height="48"/>
+        <image name="icons8-コンタクト-500.png" width="500" height="500"/>
         <image name="icons8-タスクリスト-30.png" width="30" height="30"/>
         <image name="icons8-ホーム-30.png" width="30" height="30"/>
-        <image name="icons8-星-48.png" width="48" height="48"/>
         <image name="赤矢印.png" width="30" height="30"/>
         <image name="青矢印.png" width="30" height="30"/>
         <image name="黄矢印.png" width="30" height="30"/>

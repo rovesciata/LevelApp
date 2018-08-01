@@ -18,6 +18,7 @@
 		8C3690F221044295002D1FE3 /* 青矢印.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690EF21044293002D1FE3 /* 青矢印.png */; };
 		8C3690F321044295002D1FE3 /* 黄矢印.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690F021044294002D1FE3 /* 黄矢印.png */; };
 		8C3690F421044295002D1FE3 /* 赤矢印.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690F121044294002D1FE3 /* 赤矢印.png */; };
+		8C8BBE5D21119AF700583DB9 /* icons8-コンタクト-500.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8BBE5C21119AF600583DB9 /* icons8-コンタクト-500.png */; };
 		8C8E0BBF20FD943C009A7B5A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8E0BBE20FD943C009A7B5A /* Event.swift */; };
 		8C8F68A620FC8BB900D5941A /* icons8-ホーム-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */; };
 		8C8F68A820FC8C8A00D5941A /* icons8-カレンダー-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */; };
@@ -113,6 +114,7 @@
 		8C3690EF21044293002D1FE3 /* 青矢印.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "青矢印.png"; sourceTree = "<group>"; };
 		8C3690F021044294002D1FE3 /* 黄矢印.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄矢印.png"; sourceTree = "<group>"; };
 		8C3690F121044294002D1FE3 /* 赤矢印.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赤矢印.png"; sourceTree = "<group>"; };
+		8C8BBE5C21119AF600583DB9 /* icons8-コンタクト-500.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-コンタクト-500.png"; path = "../../../../Downloads/icons8-コンタクト-500.png"; sourceTree = "<group>"; };
 		8C8E0BBE20FD943C009A7B5A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8C8F68A520FC8BB800D5941A /* icons8-ホーム-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ホーム-30.png"; sourceTree = "<group>"; };
 		8C8F68A720FC8C8900D5941A /* icons8-カレンダー-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-カレンダー-30.png"; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				8CC11CFB20E78004003E32B8 /* Calendar */,
 				8CC11CF620E77099003E32B8 /* Todo */,
 				8CBED51320DB453600FF0DE3 /* Assets.xcassets */,
+				8C8BBE5C21119AF600583DB9 /* icons8-コンタクト-500.png */,
 				8CC5E934210C3E67001A4D78 /* icons8-ホーム-filled-50 (2).png */,
 				8CC5E935210C3E67001A4D78 /* icons8-ユーザー-filled-50.png */,
 				8CC5E933210C3E66001A4D78 /* icons8-設定-50.png */,
@@ -576,6 +579,7 @@
 				8C8F68AC20FC8E9300D5941A /* icons8-設定-filled-30.png in Resources */,
 				8C9357E420F2575C00271B39 /* menu_icon.png in Resources */,
 				8CC5E965210CE3A9001A4D78 /* dondonpafupafu1.mp3 in Resources */,
+				8C8BBE5D21119AF700583DB9 /* icons8-コンタクト-500.png in Resources */,
 				8CC5E9282108D17B001A4D78 /* 赤星光有り.png in Resources */,
 				8CED55DE20ECF27C002AD241 /* icons8-カレンダー-50.png in Resources */,
 				8C3690F221044295002D1FE3 /* 青矢印.png in Resources */,

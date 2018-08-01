@@ -573,6 +573,7 @@ class ViewController: UIViewController {
         levelBarSkill3.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
         levelBarSkill3.layer.borderWidth = 0.3
         
+        // プロフィール写真の影
         profileImage.layer.shadowOpacity = 1.0
         profileImage.layer.shadowOffset = CGSize(width: 5, height: 5)
         
