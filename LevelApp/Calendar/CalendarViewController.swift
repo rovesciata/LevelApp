@@ -135,7 +135,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        self.navigationItem.leftBarButtonItem = editButtonItem
         self.exTableView.reloadData()
         
-        
+        exTableView.isHidden = true
         
     }
     
@@ -269,7 +269,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         
 //        let result = UserDefaults.standard.object(forKey: "dateCalendar") as! String
-        exTableView.isHidden = true
+//        exTableView.isHidden = true
         dayTodos = []
         for todo in todoCollection.todos{
             
