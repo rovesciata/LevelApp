@@ -269,7 +269,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         
 //        let result = UserDefaults.standard.object(forKey: "dateCalendar") as! String
-//        exTableView.isHidden = true
+        exTableView.isHidden = true
         dayTodos = []
         for todo in todoCollection.todos{
             
@@ -283,6 +283,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 dayTodos.append(todo)
                 
                 self.exTableView.reloadData()
+            
             }
         }
     }
