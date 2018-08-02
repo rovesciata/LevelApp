@@ -516,9 +516,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="タスク" id="01L-eE-jAP"/>
-                    <connections>
-                        <segue destination="xws-Fc-xXT" kind="presentation" identifier="PresentNewTodoViewController" id="dK0-k3-Qil"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H60-Lw-S4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -604,6 +601,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWS-yg-No2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2773.5999999999999" y="1607.9460269865069"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="V1q-6J-baR">
+            <objects>
+                <viewController id="QNZ-tW-uQu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y6A-9l-2aF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="GXm-HH-HTt"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-設定-filled-30.png" id="4MN-KQ-eya"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B3d-af-r2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3573" y="1629"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="6hX-qx-vn0">
@@ -698,6 +711,8 @@
                     <connections>
                         <segue destination="iFu-oY-t7l" kind="relationship" relationship="viewControllers" id="7dL-WU-TNI"/>
                         <segue destination="5bw-MX-rjd" kind="relationship" relationship="viewControllers" id="FkB-6f-PmS"/>
+                        <segue destination="a8j-1B-A6k" kind="relationship" relationship="viewControllers" id="CGK-VA-RBy"/>
+                        <segue destination="QNZ-tW-uQu" kind="relationship" relationship="viewControllers" id="Mmt-5d-VQh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yH-La-bcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -708,7 +723,7 @@
         <scene sceneID="uDq-mE-MFB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a8j-1B-A6k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-タスクリスト-30.png" id="wFT-IC-LEA">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-検索-30.png" id="wFT-IC-LEA">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -818,8 +833,9 @@
     <resources>
         <image name="icons8-カレンダー1-filled-30.png" width="30" height="30"/>
         <image name="icons8-コンタクト-500.png" width="500" height="500"/>
-        <image name="icons8-タスクリスト-30.png" width="30" height="30"/>
         <image name="icons8-ホーム-30 (1).png" width="30" height="30"/>
+        <image name="icons8-検索-30.png" width="30" height="30"/>
+        <image name="icons8-設定-filled-30.png" width="30" height="30"/>
         <image name="いいね赤.png" width="30" height="30"/>
         <image name="いいね青.png" width="30" height="30"/>
         <image name="いいね黄.png" width="30" height="30"/>
