@@ -336,21 +336,23 @@ class ViewController: UIViewController {
     
     // 全体のlevel数毎の処理
     func allUp() {
+        // ブロンズ
         if num >= 0 && num <= 10 {
             lvUpBar(a: "count0to10", b: "countStar")
-            
+        // シルバー
         }      else if num > 10 && num <= 30 {
             lvUpBar(a: "count10to30", b: "countStar10to30")
-            
+        // ゴールド
         }  else if num > 30 && num <= 50 {
             lvUpBar(a: "count30to50", b: "countStar30to50")
-            
+        // プラチナ
         } else if num > 50 && num <= 70 {
             lvUpBar(a: "count50to70", b: "countStar50to70")
-            
+        // ブラック
         }  else if num > 70 && num <= 98 {
             lvUpBar(a: "count70to99", b: "countStar70to99")
         }
+        // スーパーブラック
     }
     
     func allUpY() {
