@@ -22,14 +22,81 @@ public extension UITableView {
     }
 }
 
-class TodoListTableViewController: UITableViewController {
+class TodoListTableViewController: UITableViewController, UISearchBarDelegate {
 
 
     let todoCollection = TodoCollection.sharedInstance
+    
+    
+    //SearchBarインスタンス
+    private var mySearchBar: UISearchBar!
+    
+    
+    //テーブルビューに表示する配列
+    private var myItems: [Todo] = []
+//    var myItems:[Todo] = []
+    
+    
+    //検索結果が入る配列
+    private var searchResult: [Todo] = []
+//    var searchResult:[Todo] = []
+    
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //テーブルビューに表示する配列
+//        myItems = ["りんご", "すいか", "すいか","すいか","すいか","すいか","もも", "さくらんぼ", "ぶどう", "なし", "みかん","ぱっしょんふるーつ","どらごんふるーつ","まんごー","めろん","かき","びわ","いちご","らいち","らーめん","すてーき","ゆず","れもん","さくらもち","ぷりん","ぜりー"]
+//        myItems = todoCollection.todos as NSArray
+       
+        
+        myItems = self.todoCollection.todos
+        searchResult = myItems
+        
+        //Viewの大きさを取得
+        let viewWidth = self.view.frame.size.width
+        let viewHeight = self.view.frame.size.height
+        
+        // MARK: - NavigationBar関連
+        //UINavigationBarを作成
+        let myNavBar = UINavigationBar()
+        //大きさの指定
+        myNavBar.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: viewWidth, height: 44)
+        
+        //タイトル、虫眼鏡ボタンの作成
+        let myNavItems = UINavigationItem()
+        myNavItems.title = "タスク一覧"
+        let rightNavBtn =  UIBarButtonItem(barButtonSystemItem:  .search, target: self, action: #selector(rightBarBtnClicked(sender:)))
+        myNavItems.leftBarButtonItem = rightNavBtn
+        rightNavBtn.action = #selector(rightBarBtnClicked(sender:))
+        myNavItems.rightBarButtonItem = rightNavBtn;
+        myNavBar.pushItem(myNavItems, animated: true)
+        //ナビゲーションバーをviewに追加
+        self.view.addSubview(myNavBar)
+        
+        
+        // MARK: - SearchBar関連
+        //SearchBarの作成
+        mySearchBar = UISearchBar()
+        //デリゲートを設定
+        mySearchBar.delegate = self
+        //大きさの指定
+        mySearchBar.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: viewWidth, height: 44)
+        
+        //キャンセルボタンの追加
+        mySearchBar.showsCancelButton = true
+        
+        
+        // MARK: - TableView関連
+        
+        //先ほど作成したSearchBarを作成
+        tableView.tableHeaderView = mySearchBar
+        //サーチバーの高さだけ初期位置を下げる
+        tableView.contentOffset = CGPoint(x: 0,y :44)
+        
+        
         // セルの登録
         tableView.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
 
@@ -58,18 +125,86 @@ class TodoListTableViewController: UITableViewController {
         self.tableView.reloadData()
 
     }
+    
+    
+    //MARK: - ナビゲーションバーの右の虫眼鏡が押されたら呼ばれる
+    @objc internal func rightBarBtnClicked(sender: UIButton){
+        print("rightBarBtnClicked")
+        
+        tableView.contentOffset = CGPoint(x: 0,y : 0)
+    }
+    
+    //MARK: - 渡された文字列を含む要素を検索し、テーブルビューを再表示する
+    func searchItems(searchText: String){
+        //要素を検索する
+        if searchText != "" {
+            searchResult = myItems.filter { myItem in
+                return (myItem as! String).contains(searchText)
+                }
+            
+        } else{
+            //渡された文字列が空の場合は全てを表示
+            searchResult = myItems
+        }
+        
+        //tableViewを再読み込みする
+        tableView.reloadData()
+    }
+    
+    // MARK: - SearchBarのデリゲードメソッドたち
+    //MARK: テキストが変更される毎に呼ばれる
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //検索する
+        searchItems(searchText: searchText)
+    }
+    
+    //MARK: キャンセルボタンが押されると呼ばれる
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        mySearchBar.text = ""
+        self.view.endEditing(true)
+        searchResult = myItems
+        
+        //tableViewを再読み込みする
+        tableView.reloadData()
+    }
+    
+    //MARK: Searchボタンが押されると呼ばれる
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        self.view.endEditing(true)
+        //検索する
+        searchItems(searchText: mySearchBar.text! as String)
+    }
+    
+    
 
     // MARK: - Table view data source
 
     // セクション数
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
+    
+    //セクションのタイトル
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
+//        
+//        
+//        return UserDefaults.standard.object(forKey: "dateSection") as? String
+//        
+//        
+//    }
+    
     // セル数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.todoCollection.todos.count
+        
+        //テーブルビューのセルの数はmyItems配列の数とした
+        return self.searchResult.count
+        
+//        return self.todoCollection.todos.count
     }
 
     // セルの内容
@@ -81,6 +216,10 @@ class TodoListTableViewController: UITableViewController {
         cell.labelCell.text = todo.title
         cell.detailCell.text = todo.descript
         cell.labelCell!.font = UIFont(name: "HirakakuProN-W6", size: 15)
+        
+        
+        
+//        cell.labelCell.text = self.searchResult[indexPath.row] as? String
 
 
 

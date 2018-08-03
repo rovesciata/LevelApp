@@ -287,6 +287,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 
                 dayTodos.append(todo)
                 
+                
                 self.exTableView.reloadData()
             
             }
@@ -309,20 +310,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     //セクションのタイトル
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
         
-//        let tmpDate = Calendar(identifier: .gregorian)
-//        let month = tmpDate.component(.month, from: date)
-//        let day = tmpDate.component(.day, from: date)
-//        let m = String(format: "%02d", month)
-//        let d = String(format: "%02d", day)
-        
         
         return UserDefaults.standard.object(forKey: "dateSection") as? String
         
-
-//        let formatter = DateFormatter()
-//                formatter.dateFormat = "yy-MM-dd"
-//
-//        return "\((formatter.dateFormat)!)"
         
     }
     
