@@ -341,7 +341,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         let defaults = UserDefaults.standard
         
         //        todo.finished = defaults.bool(forKey: "finishedStar")
-        let redUpLevel = defaults.bool(forKey: "redUpBool")
+//        let redUpLevel = defaults.bool(forKey: "redUpBool")
         cell.starButton2.isEnabled = true
         
         

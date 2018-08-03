@@ -720,8 +720,8 @@
                     <connections>
                         <segue destination="iFu-oY-t7l" kind="relationship" relationship="viewControllers" id="7dL-WU-TNI"/>
                         <segue destination="5bw-MX-rjd" kind="relationship" relationship="viewControllers" id="FkB-6f-PmS"/>
-                        <segue destination="a8j-1B-A6k" kind="relationship" relationship="viewControllers" id="pz0-dV-jQN"/>
                         <segue destination="6bB-za-bog" kind="relationship" relationship="viewControllers" id="Mmt-5d-VQh"/>
+                        <segue destination="bGw-u5-lzw" kind="relationship" relationship="viewControllers" id="CBT-Xs-l8l"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yH-La-bcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -741,9 +741,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bGw-u5-lzw" kind="relationship" relationship="rootViewController" id="5V4-rM-B0d"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hQ-lL-MEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
