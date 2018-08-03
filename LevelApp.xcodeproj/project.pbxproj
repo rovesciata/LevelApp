@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5791C8BC6DBF56C119D2A306 /* Pods_LevelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F089C8BDF61C63B9BCA1E26D /* Pods_LevelApp.framework */; };
 		8C00276020FED03600552381 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C00275F20FED03600552381 /* EventViewController.swift */; };
+		8C3449DF211458FF004FB58C /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3449DE211458FF004FB58C /* TaskListViewController.swift */; };
 		8C3690E92103FB69002D1FE3 /* 黄星無し.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E32103FB66002D1FE3 /* 黄星無し.png */; };
 		8C3690EA2103FB69002D1FE3 /* 黄星有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E42103FB67002D1FE3 /* 黄星有り.png */; };
 		8C3690EB2103FB69002D1FE3 /* 赤星有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E52103FB67002D1FE3 /* 赤星有り.png */; };
@@ -110,6 +111,7 @@
 		76C922BF514A0A9F57F0F649 /* Pods_LevelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LevelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDB0513C864CA1D9136DEA9 /* Pods-LevelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LevelApp/Pods-LevelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8C00275F20FED03600552381 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		8C3449DE211458FF004FB58C /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		8C3690E32103FB66002D1FE3 /* 黄星無し.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄星無し.png"; sourceTree = "<group>"; };
 		8C3690E42103FB67002D1FE3 /* 黄星有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄星有り.png"; sourceTree = "<group>"; };
 		8C3690E52103FB67002D1FE3 /* 赤星有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赤星有り.png"; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 				8CC11CEB20E625CB003E32B8 /* TodoListTableViewController.swift */,
 				8C9357F120F6627F00271B39 /* TodoListTableViewCell.swift */,
 				8C9357F220F6627F00271B39 /* TodoListTableViewCell.xib */,
+				8C3449DE211458FF004FB58C /* TaskListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				8CC11CF120E629D7003E32B8 /* Todo.swift in Sources */,
 				8C9357F320F6627F00271B39 /* TodoListTableViewCell.swift in Sources */,
 				8C8E0BBF20FD943C009A7B5A /* Event.swift in Sources */,
+				8C3449DF211458FF004FB58C /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
