@@ -10,6 +10,7 @@
 		5791C8BC6DBF56C119D2A306 /* Pods_LevelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F089C8BDF61C63B9BCA1E26D /* Pods_LevelApp.framework */; };
 		8C00276020FED03600552381 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C00275F20FED03600552381 /* EventViewController.swift */; };
 		8C3449DF211458FF004FB58C /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3449DE211458FF004FB58C /* TaskListViewController.swift */; };
+		8C344A1F211589AE004FB58C /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C344A1E211589AE004FB58C /* SystemViewController.swift */; };
 		8C3690E92103FB69002D1FE3 /* 黄星無し.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E32103FB66002D1FE3 /* 黄星無し.png */; };
 		8C3690EA2103FB69002D1FE3 /* 黄星有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E42103FB67002D1FE3 /* 黄星有り.png */; };
 		8C3690EB2103FB69002D1FE3 /* 赤星有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3690E52103FB67002D1FE3 /* 赤星有り.png */; };
@@ -112,6 +113,7 @@
 		7DDB0513C864CA1D9136DEA9 /* Pods-LevelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LevelApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LevelApp/Pods-LevelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8C00275F20FED03600552381 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		8C3449DE211458FF004FB58C /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		8C344A1E211589AE004FB58C /* SystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewController.swift; sourceTree = "<group>"; };
 		8C3690E32103FB66002D1FE3 /* 黄星無し.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄星無し.png"; sourceTree = "<group>"; };
 		8C3690E42103FB67002D1FE3 /* 黄星有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄星有り.png"; sourceTree = "<group>"; };
 		8C3690E52103FB67002D1FE3 /* 赤星有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赤星有り.png"; sourceTree = "<group>"; };
@@ -259,6 +261,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8C344A1D21158946004FB58C /* SystemControll */ = {
+			isa = PBXGroup;
+			children = (
+				8C344A1E211589AE004FB58C /* SystemViewController.swift */,
+			);
+			path = SystemControll;
+			sourceTree = "<group>";
+		};
 		8C52C7D120E9E39500E44F84 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +380,7 @@
 				8C52C7D120E9E39500E44F84 /* Profile */,
 				8CC11CFB20E78004003E32B8 /* Calendar */,
 				8CC11CF620E77099003E32B8 /* Todo */,
+				8C344A1D21158946004FB58C /* SystemControll */,
 				8CBED51320DB453600FF0DE3 /* Assets.xcassets */,
 				8C8BBE6C2112B4C600583DB9 /* icons8-検索-30.png */,
 				8C8BBE672111AB2E00583DB9 /* いいね黄.png */,
@@ -763,6 +774,7 @@
 				8CBED50D20DB453500FF0DE3 /* AppDelegate.swift in Sources */,
 				8CC11CEC20E625CB003E32B8 /* TodoListTableViewController.swift in Sources */,
 				8CC11D0120E7915D003E32B8 /* CalendarViewController.swift in Sources */,
+				8C344A1F211589AE004FB58C /* SystemViewController.swift in Sources */,
 				8C00276020FED03600552381 /* EventViewController.swift in Sources */,
 				8C9357DC20F24F9D00271B39 /* SkillSelection.swift in Sources */,
 				8CC11CF120E629D7003E32B8 /* Todo.swift in Sources */,

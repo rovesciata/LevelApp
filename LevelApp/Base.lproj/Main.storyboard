@@ -620,10 +620,10 @@
             </objects>
             <point key="canvasLocation" x="2773.5999999999999" y="1607.9460269865069"/>
         </scene>
-        <!--View Controller-->
+        <!--System View Controller-->
         <scene sceneID="V1q-6J-baR">
             <objects>
-                <viewController id="QNZ-tW-uQu" sceneMemberID="viewController">
+                <viewController id="QNZ-tW-uQu" customClass="SystemViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y6A-9l-2aF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -638,6 +638,9 @@
                         <viewLayoutGuide key="safeArea" id="GXm-HH-HTt"/>
                     </view>
                     <navigationItem key="navigationItem" id="smP-VN-XdL"/>
+                    <connections>
+                        <outlet property="systemTableView" destination="ayF-Qp-bN4" id="Zfa-91-fJh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3d-af-r2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

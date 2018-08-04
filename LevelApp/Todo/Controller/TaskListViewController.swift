@@ -43,19 +43,9 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     //検索結果が入る配列
     //    private var searchTodoCollection: [String] = []
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //テーブルビューに表示する配列
-        //        myItems = ["りんご", "すいか", "すいか","すいか","すいか","すいか","もも", "さくらんぼ", "ぶどう", "なし", "みかん","ぱっしょんふるーつ","どらごんふるーつ","まんごー","めろん","かき","びわ","いちご","らいち","らーめん","すてーき","ゆず","れもん","さくらもち","ぷりん","ぜりー"]
-        //        myItems = todoCollection.todos as NSArray
-        
-        
-        
+   
         //Viewの大きさを取得
         let viewWidth = self.view.frame.size.width
         let viewHeight = self.view.frame.size.height
