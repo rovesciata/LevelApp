@@ -574,8 +574,11 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
+            self.searchTodoCollection.remove(at: indexPath.row)
             self.todoCollection.todos.remove(at: indexPath.row)
             self.todoCollection.save()
+//            self.todoCollection.todos.remove(at: indexPath.row)
+//            self.todoCollection.save()
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.middle)
         default:
             return
