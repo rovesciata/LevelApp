@@ -14,7 +14,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -523,7 +523,7 @@
             </objects>
             <point key="canvasLocation" x="626" y="1605"/>
         </scene>
-        <!--Item-->
+        <!--Task List View Controller-->
         <scene sceneID="VIH-ju-wf6">
             <objects>
                 <viewController id="VB8-a1-aCI" customClass="TaskListViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -533,7 +533,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8Ql-FP-Kvd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="S8J-aY-VGQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-検索-30.png" id="S8J-aY-VGQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZV-8q-dYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -646,7 +646,7 @@
         <!--Calendar View Controller-->
         <scene sceneID="6hX-qx-vn0">
             <objects>
-                <viewController storyboardIdentifier="Main" id="kYQ-Lb-2mt" customClass="CalendarViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kYQ-Lb-2mt" customClass="CalendarViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="et8-ff-6CY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -736,8 +736,9 @@
                     <connections>
                         <segue destination="iFu-oY-t7l" kind="relationship" relationship="viewControllers" id="7dL-WU-TNI"/>
                         <segue destination="5bw-MX-rjd" kind="relationship" relationship="viewControllers" id="FkB-6f-PmS"/>
-                        <segue destination="6bB-za-bog" kind="relationship" relationship="viewControllers" id="Mmt-5d-VQh"/>
+                        <segue destination="a8j-1B-A6k" kind="relationship" relationship="viewControllers" id="Tbh-pT-q1P"/>
                         <segue destination="VB8-a1-aCI" kind="relationship" relationship="viewControllers" id="B3E-6t-s4y"/>
+                        <segue destination="6bB-za-bog" kind="relationship" relationship="viewControllers" id="Mmt-5d-VQh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yH-La-bcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -748,7 +749,7 @@
         <scene sceneID="uDq-mE-MFB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a8j-1B-A6k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-検索-30.png" id="wFT-IC-LEA">
+                    <tabBarItem key="tabBarItem" title="" id="wFT-IC-LEA">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>

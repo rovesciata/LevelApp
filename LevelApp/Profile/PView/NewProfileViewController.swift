@@ -160,7 +160,7 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
         
         
         self.navigationController!.navigationBar.tintColor = UIColor.black
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewProfileViewController.close))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "キャンセル", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewProfileViewController.close))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "完了", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewProfileViewController.save))
         
         // userDefaultsの読み込み

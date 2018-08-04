@@ -108,18 +108,29 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        labelDate.font = UIFont.systemFont(ofSize: 18.0)
 //        view.addSubview(labelDate)
         
-        // スケジュール追加ボタン
-//        let addBtn = UIButton(frame: CGRect(x: w - 55, y: h - 115, width: 50, height: 50))
+//        // スケジュール追加ボタン
+//        let addBtn = UIButton(frame: CGRect(x: 170, y: h - 48, width: 45, height:45))
 //        addBtn.setTitle("+", for: UIControlState())
 //        addBtn.setTitleColor(.white, for: UIControlState())
 //        addBtn.backgroundColor = .red
-//        addBtn.layer.cornerRadius = 25.0
+//        addBtn.layer.cornerRadius = addBtn.frame.height/2
 //        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
-//        view.addSubview(addBtn)
-        
+//        self.tabBarController?.view.addSubview(addBtn)
         
         
     }
+    
+//    @objc func onClick(_: UIButton) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
+//        present(SecondController, animated: true, completion: nil)
+//    }
+    //画面遷移(スケジュール登録ページ)
+//    @objc func onClick(_: UIButton) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
+//        present(SecondController, animated: true, completion: nil)
+//    }
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -134,9 +145,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // ヘッダーボタンを作成
-        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
-        self.navigationController!.navigationBar.tintColor = UIColor.black
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalendarViewController.newTodo))
+//        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+//        self.navigationController!.navigationBar.tintColor = UIColor.black
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalendarViewController.newTodo))
 //        self.navigationItem.leftBarButtonItem = editButtonItem
         self.exTableView.reloadData()
         

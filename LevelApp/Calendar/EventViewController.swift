@@ -83,26 +83,58 @@ class EventViewController: UIViewController {
         view.addSubview(y_text)
         
         //「書く!」ボタン
-//        let eventInsert = UIButton(frame: CGRect(x: (w2 - 200) / 2, y: 530, width: 200, height: 50))
-//        eventInsert.setTitle("保存", for: UIControlState())
-//        eventInsert.setTitleColor(.white, for: UIControlState())
-//        eventInsert.backgroundColor = .orange
-//        eventInsert.addTarget(self, action: #selector(saveEvent(_:)), for: .touchUpInside)
-//        view.addSubview(eventInsert)
+        let eventInsert = UIButton(frame: CGRect(x: 290, y: 35, width: 70, height: 25))
+        eventInsert.setTitle("保存", for: UIControlState())
+        eventInsert.setTitleColor(.black, for: UIControlState())
+        eventInsert.backgroundColor = .white
+        eventInsert.layer.cornerRadius = 5.0
+        eventInsert.layer.borderColor = UIColor.black.cgColor
+        eventInsert.layer.borderWidth = 1.0
+        eventInsert.addTarget(self, action: #selector(saveEvent(_:)), for: .touchUpInside)
+        view.addSubview(eventInsert)
         
         //「戻る!」ボタン
-        let backBtn = UIButton(frame: CGRect(x: (w - 200) / 2, y: h - 60, width: 200, height: 30))
-        backBtn.setTitle("戻る", for: UIControlState())
-        backBtn.setTitleColor(.orange, for: UIControlState())
+        let backBtn = UIButton(frame: CGRect(x: 10, y: 35, width: 50, height: 25))
+//        let backBtn = UIButton(frame: CGRect(x: (w - 200) / 2, y: h - 60, width: 150, height: 30))
+        backBtn.setTitle("×", for: UIControlState())
+        backBtn.setTitleColor(.black, for: UIControlState())
         backBtn.backgroundColor = .white
-        backBtn.layer.cornerRadius = 10.0
-        backBtn.layer.borderColor = UIColor.orange.cgColor
+        backBtn.layer.cornerRadius = 5.0
+        backBtn.layer.borderColor = UIColor.black.cgColor
         backBtn.layer.borderWidth = 1.0
         backBtn.addTarget(self, action: #selector(onbackClick(_:)), for: .touchUpInside)
         view.addSubview(backBtn)
         
     }
     
+        @objc func saveEvent(_ : UIButton){
+            
+            let todo = Todo()
+            
+            // 　defaults.userの値をタスク画面に表示
+            todo.title = UserDefaults.standard.object(forKey: "text1") as! String
+            //            todo.title = todoField.text!
+            todo.descript = descriptionView.text
+            // enumのTodoSkill型に変換されたものを代入
+            //            todo.skill = TodoSkill(rawValue: skillSegment.selectedSegmentIndex)!
+            todo.finished = false
+            
+            todo.date = self.y_text.text!
+            
+            todo.id = String("\(arc4random())")
+            
+            //        let defaults = UserDefaults.standard
+            //        defaults.set(todo.date, forKey: "dateCalendar")
+            
+            self.todoCollection.addTodoCollection(todo: todo)
+            print(self.todoCollection.todos)
+    
+    
+            //前のページに戻る
+            dismiss(animated: true, completion: nil)
+    
+        }
+
     //画面遷移(カレンダーページ)
     @objc func onbackClick(_: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -141,10 +173,10 @@ class EventViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
-        self.navigationController!.navigationBar.tintColor = UIColor.black
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "閉じる", style: UIBarButtonItemStyle.plain, target: self, action: #selector(EventViewController.close))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: UIBarButtonItemStyle.plain, target: self, action: #selector(EventViewController.save))
+//        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+//        self.navigationController!.navigationBar.tintColor = UIColor.black
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "キャンセル", style: UIBarButtonItemStyle.plain, target: self, action: #selector(EventViewController.close))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: UIBarButtonItemStyle.plain, target: self, action: #selector(EventViewController.save))
         skillSelectedLabel.text =  UserDefaults.standard.object(forKey: "text1") as? String
         
     }
@@ -153,49 +185,49 @@ class EventViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func save() {
-        //        if todoField.text!.isEmpty {
-        //            let alertView = UIAlertController(title: "エラー", message: "タスクが記述されていません", preferredStyle: UIAlertControllerStyle.alert)
-        //            alertView.addAction(UIAlertAction(title: "はい", style: UIAlertActionStyle.default, handler: nil))
-        //            self.present(alertView, animated: true, completion: nil)
-        //        } else {
-        let todo = Todo()
-        
-        // 　defaults.userの値をタスク画面に表示
-        todo.title = UserDefaults.standard.object(forKey: "text1") as! String
-        //            todo.title = todoField.text!
-        todo.descript = descriptionView.text
-        // enumのTodoSkill型に変換されたものを代入
-        //            todo.skill = TodoSkill(rawValue: skillSegment.selectedSegmentIndex)!
-        todo.finished = false
-        
-        todo.date = self.y_text.text!
-        
-        todo.id = String("\(arc4random())")
-        
-//        let defaults = UserDefaults.standard
-//        defaults.set(todo.date, forKey: "dateCalendar")
-        
-        self.todoCollection.addTodoCollection(todo: todo)
-        print(self.todoCollection.todos)
-        
-        
-        
-        
-//                try! realm.write {
-//                    //日付表示の内容とスケジュール入力の内容が書き込まれる。
-//                    let Events = [Event(value: ["date": y_text.text])]
-//                    realm.add(Events)
-//                    print("データ書き込み中")
-        
-        
-        
-        
-        
-        self.dismiss(animated: true, completion: nil)
-            
-
-    }
+//    @objc func save() {
+//        //        if todoField.text!.isEmpty {
+//        //            let alertView = UIAlertController(title: "エラー", message: "タスクが記述されていません", preferredStyle: UIAlertControllerStyle.alert)
+//        //            alertView.addAction(UIAlertAction(title: "はい", style: UIAlertActionStyle.default, handler: nil))
+//        //            self.present(alertView, animated: true, completion: nil)
+//        //        } else {
+//        let todo = Todo()
+//
+//        // 　defaults.userの値をタスク画面に表示
+//        todo.title = UserDefaults.standard.object(forKey: "text1") as! String
+//        //            todo.title = todoField.text!
+//        todo.descript = descriptionView.text
+//        // enumのTodoSkill型に変換されたものを代入
+//        //            todo.skill = TodoSkill(rawValue: skillSegment.selectedSegmentIndex)!
+//        todo.finished = false
+//
+//        todo.date = self.y_text.text!
+//
+//        todo.id = String("\(arc4random())")
+//
+////        let defaults = UserDefaults.standard
+////        defaults.set(todo.date, forKey: "dateCalendar")
+//
+//        self.todoCollection.addTodoCollection(todo: todo)
+//        print(self.todoCollection.todos)
+//
+//
+//
+//
+////                try! realm.write {
+////                    //日付表示の内容とスケジュール入力の内容が書き込まれる。
+////                    let Events = [Event(value: ["date": y_text.text])]
+////                    realm.add(Events)
+////                    print("データ書き込み中")
+//
+//
+//
+//
+//
+//        self.dismiss(animated: true, completion: nil)
+//
+//
+//    }
     
     
     

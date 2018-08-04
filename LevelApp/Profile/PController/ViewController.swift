@@ -590,6 +590,24 @@ class ViewController: UIViewController {
         profileImage.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         
+        // スケジュール追加ボタン
+        let addBtn = UIButton(frame: CGRect(x: 170, y: h - 48, width: 45, height:45))
+        addBtn.setTitle("+", for: UIControlState())
+        addBtn.setTitleColor(.white, for: UIControlState())
+        addBtn.backgroundColor = .blue
+        addBtn.layer.cornerRadius = addBtn.frame.height/2
+        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+        self.tabBarController?.view.addSubview(addBtn)
+        addBtn.layer.shadowOpacity = 0.5
+        addBtn.layer.shadowOffset = CGSize(width: 0, height: 5)
+        
+        
+    }
+    
+    @objc func onClick(_: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
+        present(SecondController, animated: true, completion: nil)
     }
     
 
