@@ -80,6 +80,7 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         mySearchBar.showsCancelButton = true
         
         
+        
         // MARK: - TableView関連
         //テーブルビューの初期化
         tableView = UITableView()
@@ -106,8 +107,8 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         for todo in todoCollection.todos {
             todoTitleArray.append(todo.title)
         }
-        
-        
+
+
         myItems = todoTitleArray
         searchTodoCollection = todoCollection.todos
         

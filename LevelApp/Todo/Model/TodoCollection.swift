@@ -12,13 +12,17 @@ class TodoCollection: NSObject {
     static let sharedInstance = TodoCollection()
     var todos:[Todo] = []
     
+    
+    
     func fetchTodos() {
+        self.todos.removeAll()
         let defaults = UserDefaults.standard
         if let todoList = defaults.object(forKey: "todoLists") as? Array<Dictionary<String, AnyObject>> {
             for todoDic in todoList {
                 let todo = TodoCollection.convertTodoModel(attiributes: todoDic)
 //                self.todos.append(todo)
                 self.todos.insert(todo, at: 0)
+                
             }
         }
     }
