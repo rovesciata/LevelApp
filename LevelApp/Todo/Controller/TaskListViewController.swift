@@ -131,6 +131,9 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         //        self.navigationController!.navigationBar.tintColor = UIColor.black
         //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TodoListTableViewController.newTodo))
         //        self.navigationItem.leftBarButtonItem = editButtonItem
+        
+        searchTodoCollection = todoCollection.todos
+        
         self.tableView.reloadData()
         
     }
@@ -204,13 +207,13 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     }
     
     //セクションのタイトル
-    //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
-    //
-    //
-    //        return UserDefaults.standard.object(forKey: "dateSection") as? String
-    //
-    //
-    //    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
+//    
+//    
+//            return UserDefaults.standard.object(forKey: "dateSection") as? String
+//    
+//    
+//        }
     
     // セル数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
