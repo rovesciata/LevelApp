@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 // 星ボタンのセル選択のための機能拡張
 public extension UITableView {
@@ -22,6 +23,11 @@ public extension UITableView {
 }
 
 class TaskListViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
+    var audioPlayerClearY : AVAudioPlayer! = nil //クリア時用
+    var audioPlayerClearB: AVAudioPlayer! = nil //クリア時用
 
     let todoCollection = TodoCollection.sharedInstance
     
@@ -122,6 +128,16 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        makeSound()
+        makeSoundY()
+        makeSoundB()
+        
     }
     
     // ヘッダーボタン作成
@@ -427,6 +443,8 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
                 // 星ボタンの押したか押してないかを保存
                 defaults.set(todo.finished, forKey: "finishedStar")
                 
+                self.audioPlayerClear.play()
+                
                 // Skill2の星ボタンをタップした場合
             } else if cell.labelCell.text == defaults.object(forKey: "skill2Text") as? String{
                 
@@ -501,6 +519,8 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
                 
                 // 星ボタンの押したか押してないかを保存
                 defaults.set(todo.finished, forKey: "finishedStar")
+                
+                self.audioPlayerClearY.play()
                 
                 // Skill3の星ボタンを押した場合
             } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
@@ -577,6 +597,8 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
                 // 星ボタンの押したか押してないかを保存
                 defaults.set(todo.finished, forKey: "finishedStar")
                 
+                self.audioPlayerClearB.play()
+                
             }
             
             
@@ -612,6 +634,52 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     //    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     //        return 70
     //    }
+    
+    // MARK: サウンドファイル作成
+    func makeSound() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "星ボタン音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClear = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClear.prepareToPlay()
+    }
+    
+    func makeSoundY() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "星ボタン音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClearY = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClearY.prepareToPlay()
+    }
+    
+    func makeSoundB() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "星ボタン音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClearB = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClearB.prepareToPlay()
+    }
 
     
 
