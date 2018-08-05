@@ -11,6 +11,9 @@ import UIKit
 class SkillSelection: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var myTableView: UITableView!
     
+    
+    
+    
     // userDefaultsの読み込み
     let defaults = UserDefaults.standard
 //    skill1.text = defaults.object(forKey: "skill1Text") as? String
@@ -19,6 +22,9 @@ class SkillSelection: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let todoCollection = TodoCollection.sharedInstance
+        todoCollection.fetchTodos()
 
         // myTableViewのデリゲート
         myTableView.delegate = self

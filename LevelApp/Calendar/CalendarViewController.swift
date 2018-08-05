@@ -47,6 +47,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     
     let todoCollection = TodoCollection.sharedInstance
+    
     // スケジュール内容
 //    let labelDate = UILabel(frame: CGRect(x: 5, y: 580, width: 400, height: 50))
     // 「主なスケジュール」の表示
