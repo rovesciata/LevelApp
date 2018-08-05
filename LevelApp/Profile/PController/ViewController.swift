@@ -11,6 +11,10 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
+    
+    
+    
+    
     // レベルバー、レベルアップ時の効果音の宣言
     var audioPlayerClearLvBar : AVAudioPlayer! = nil //クリア時用
     var audioPlayerClearLvBarY : AVAudioPlayer! = nil //クリア時用
@@ -662,6 +666,11 @@ class ViewController: UIViewController {
 
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "編集", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.newProfile))
+        
+        
+        let todoCollection = TodoCollection.sharedInstance
+        todoCollection.fetchTodos()
+        
         
         // userDefaultsの読み込み
         let defaults = UserDefaults.standard

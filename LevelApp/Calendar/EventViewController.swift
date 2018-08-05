@@ -33,6 +33,8 @@ class EventViewController: UIViewController {
     
     let todoCollection = TodoCollection.sharedInstance
     
+    
+    
     @IBOutlet weak var skillSelectedLabel: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
     
@@ -109,6 +111,8 @@ class EventViewController: UIViewController {
     
         @objc func saveEvent(_ : UIButton){
             
+            
+            
             let todo = Todo()
             
             // 　defaults.userの値をタスク画面に表示
@@ -128,6 +132,9 @@ class EventViewController: UIViewController {
             
             self.todoCollection.addTodoCollection(todo: todo)
             print(self.todoCollection.todos)
+            
+            let todoCollection = TodoCollection.sharedInstance
+            todoCollection.save()
     
     
             //前のページに戻る
