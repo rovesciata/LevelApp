@@ -355,6 +355,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        let redUpLevel = defaults.bool(forKey: "redUpBool")
         cell.starButton2.isEnabled = true
         
+        cell.redStarImage.isHidden = true
         
         if todo.finished == false {
             // 星ボタン(くり抜き)を表示
@@ -374,33 +375,43 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
             // 星ボタン(塗りつぶし)を表示
             let defaults = UserDefaults.standard
             if cell.labelCell?.text == defaults.object(forKey: "skill1Text") as? String {
-                cell.starButton2.setImage(UIImage(named: "赤星有り.png"), for: .normal)
+                // 星ボタンを押された後、無効化して塗りつぶし星を表示
+                for todo in todoCollection.todos {
+                    if todo.finished == true {
+                        cell.starButton2.isEnabled = false
+                        cell.redStarImage.isHidden = false
+                        cell.redStarImage.image = UIImage(named: "赤星有り.png")
+                        cell.starButton2.addSubview(cell.redStarImage)
+                        
+                    }
+                }
                 
             } else if cell.labelCell?.text == defaults.object(forKey: "skill2Text") as? String {
-                cell.starButton2.setImage(UIImage(named: "黄星有り.png"), for: .normal)
+                for todo in todoCollection.todos {
+                    if todo.finished == true {
+                        cell.starButton2.isEnabled = false
+                        cell.redStarImage.isHidden = false
+                        cell.redStarImage.image = UIImage(named: "黄星有り.png")
+                        cell.starButton2.addSubview(cell.redStarImage)
+                        
+                    }
+                }
             } else if cell.labelCell?.text == defaults.object(forKey: "skill3Text") as? String {
-                cell.starButton2.setImage(UIImage(named: "青星有り.png"), for: .normal)
+                for todo in todoCollection.todos {
+                    if todo.finished == true {
+                        cell.starButton2.isEnabled = false
+                        cell.redStarImage.isHidden = false
+                        cell.redStarImage.image = UIImage(named: "青星有り.png")
+                        cell.starButton2.addSubview(cell.redStarImage)
+                        
+                    }
+                }
             }
-            
-            //            cell.starButton2.isEnabled = false
             
         }
         
-        
-        
-        
-        
         // 星ボタンの押したか押してないかを保存
         defaults.set(todo.finished, forKey: "finishedStar")
-        
-        
-        
-        //      重要  let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "reuseIdentifier")
-        //        let todo = self.todoCollection.todos[indexPath.row]
-        //
-        //        cell.textLabel!.text = todo.title
-        //        cell.detailTextLabel!.text = todo.descript
-        //        cell.textLabel!.font = UIFont(name: "HirakakuProN-W3", size: 15)
         
         return cell
     }

@@ -44,23 +44,31 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JMl-4N-xAF">
+                        <rect key="frame" x="340" y="8" width="46" height="59"/>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="JMl-4N-xAF" firstAttribute="leading" secondItem="Z9C-We-42t" secondAttribute="trailing" constant="24" id="2zf-xM-tIT"/>
                     <constraint firstItem="B8H-q2-viq" firstAttribute="leading" secondItem="Fr8-DX-pmY" secondAttribute="trailing" constant="24" id="5KP-4H-Cdc"/>
                     <constraint firstItem="Fr8-DX-pmY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="7Il-gJ-zsU"/>
                     <constraint firstItem="B8H-q2-viq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ceq-Xk-bUB"/>
                     <constraint firstAttribute="bottom" secondItem="Z9C-We-42t" secondAttribute="bottom" constant="2" id="Tt9-QO-u2N"/>
                     <constraint firstAttribute="trailing" secondItem="B8H-q2-viq" secondAttribute="trailing" constant="8" id="VbK-WC-psJ"/>
                     <constraint firstAttribute="bottom" secondItem="B8H-q2-viq" secondAttribute="bottom" constant="8" id="WUh-7s-24a"/>
+                    <constraint firstAttribute="trailing" secondItem="JMl-4N-xAF" secondAttribute="trailing" constant="8" id="Xpd-VV-QsZ"/>
                     <constraint firstItem="Z9C-We-42t" firstAttribute="top" secondItem="Fr8-DX-pmY" secondAttribute="bottom" constant="2" id="qFa-tM-SYB"/>
+                    <constraint firstAttribute="bottom" secondItem="JMl-4N-xAF" secondAttribute="bottom" constant="8" id="wIn-gX-GyX"/>
                     <constraint firstItem="Fr8-DX-pmY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="wTz-WU-KeN"/>
                     <constraint firstItem="Z9C-We-42t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="y86-cH-reg"/>
+                    <constraint firstItem="JMl-4N-xAF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="z9R-VL-ult"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="detailCell" destination="Z9C-We-42t" id="nVq-0F-PA5"/>
                 <outlet property="labelCell" destination="Fr8-DX-pmY" id="NiS-wr-j5c"/>
+                <outlet property="redStarImage" destination="JMl-4N-xAF" id="w8P-RY-Lts"/>
                 <outlet property="starButton2" destination="B8H-q2-viq" id="DRF-yq-lFb"/>
             </connections>
             <point key="canvasLocation" x="71" y="69.5"/>

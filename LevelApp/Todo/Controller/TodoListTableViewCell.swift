@@ -12,11 +12,11 @@ class TodoListTableViewCell: UITableViewCell {
     @IBOutlet weak var labelCell: UILabel!
     @IBOutlet weak var detailCell: UILabel!
     @IBOutlet weak var starButton2: UIButton!
+    @IBOutlet weak var redStarImage: UIImageView!
     
     let todoCollection = TodoCollection.sharedInstance
     
-    
-    
+
 
     
     override func awakeFromNib() {
@@ -25,6 +25,7 @@ class TodoListTableViewCell: UITableViewCell {
         
         // 詳細の長さにより高さを可変にする
         detailCell.numberOfLines = 0
+        
         
         
     }
