@@ -13,7 +13,12 @@ class ViewController: UIViewController {
     
     // レベルバー、レベルアップ時の効果音の宣言
     var audioPlayerClearLvBar : AVAudioPlayer! = nil //クリア時用
+    var audioPlayerClearLvBarY : AVAudioPlayer! = nil //クリア時用
+    var audioPlayerClearLvBarB : AVAudioPlayer! = nil //クリア時用
     var audioPlayerClearLvNum : AVAudioPlayer! = nil //クリア時用
+    var audioPlayerClearLvNumY : AVAudioPlayer! = nil //クリア時用
+    var audioPlayerClearLvNumB : AVAudioPlayer! = nil //クリア時用
+    
     
     // ViewControllerクラスのプロパティとしてProfileCollectionクラスのインスタンスを宣言
     let profileCollection = ProfileCollection()
@@ -317,7 +322,7 @@ class ViewController: UIViewController {
         levelSkill2.text = String(numSkill2)
         levelBarSkill2.progress = 0.0
         
-         self.audioPlayerClearLvNum.play()
+         self.audioPlayerClearLvNumY.play()
         
         yellowGood.isHidden = false
     }
@@ -328,7 +333,7 @@ class ViewController: UIViewController {
         levelSkill3.text = String(numSkill3)
         levelBarSkill3.progress = 0.0
         
-         self.audioPlayerClearLvNum.play()
+         self.audioPlayerClearLvNumB.play()
         
         blueGood.isHidden = false
     }
@@ -426,7 +431,9 @@ class ViewController: UIViewController {
             let a = defaults.float(forKey: b)
             levelBar.setProgress(levelBar.progress + (a * Float(numTimesYellow)), animated: true)
             
-            self.audioPlayerClearLvBar.play()
+            self.audioPlayerClearLvBarY.play()
+            
+            
             
         } else if levelBar.progress >= 0.89 {
             let a = defaults.float(forKey: b)
@@ -435,8 +442,8 @@ class ViewController: UIViewController {
             numLevelPlus()
             
             
-            
         }
+        
     }
     
     func lvUpBarB(a: String, b: String) {
@@ -449,7 +456,9 @@ class ViewController: UIViewController {
             let a = defaults.float(forKey: b)
             levelBar.setProgress(levelBar.progress + (a * Float(numTimesBlue)), animated: true)
             
-            self.audioPlayerClearLvBar.play()
+            self.audioPlayerClearLvBarB.play()
+            
+            
             
         } else if levelBar.progress >= 0.89 {
             let a = defaults.float(forKey: b)
@@ -535,9 +544,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        makeSoundLvNum()
-        
-        makeSoundLvBar()
+//        makeSoundLvNum()
+//
+//        makeSoundLvBar()
         
         let defaults = UserDefaults.standard
         redUpBtn.addTarget(self, action: #selector(self.redTap(_:)), for: .touchUpInside)
@@ -616,6 +625,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        makeSoundLvNum()
+        makeSoundLvNumY()
+        makeSoundLvNumB()
+        makeSoundLvBar()
+        makeSoundLvBarY()
+        makeSoundLvBarB()
+        
+        
+    }
+    
     
     // Home画面からProfile編集画面への遷移
     override func viewWillAppear(_ animated: Bool) {
@@ -642,6 +665,7 @@ class ViewController: UIViewController {
             redUpBtn.isHidden = false
         } else {
             redUpBtn.isHidden = true
+            
         }
         
         numTimes2 = defaults.integer(forKey: "numberTimes2")
@@ -694,6 +718,36 @@ class ViewController: UIViewController {
         audioPlayerClearLvBar.prepareToPlay()
     }
     
+    func makeSoundLvBarY() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "レベルバー音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClearLvBarY = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClearLvBarY.prepareToPlay()
+    }
+    
+    func makeSoundLvBarB() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "レベルバー音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClearLvBarB = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClearLvBarB.prepareToPlay()
+    }
+    
     // レベルアップ時のサウンドファイル作成
     func makeSoundLvNum() {
         //Clear音作る。
@@ -710,7 +764,49 @@ class ViewController: UIViewController {
         audioPlayerClearLvNum.prepareToPlay()
     }
     
+    func makeSoundLvNumY() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "レベルアップ音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClearLvNumY = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClearLvNumY.prepareToPlay()
+    }
     
+    func makeSoundLvNumB() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "レベルアップ音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClearLvNumB = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClearLvNumB.prepareToPlay()
+    }
+    
+    
+    
+//    var soundID: SystemSoundID = 0
+//    AudioServicesCreateSystemSoundID(url as CFURL, &soundID)
+//    AudioServicesPlaySystemSound(soundID)
+//    AudioServicesDisposeSystemSoundID(soundID) // サウンドが再生されなくなった
+    
+//    func playSound() {
+//        // 連打した時に連続して音がなるようにする
+//        audioPlayerClearLvNum.currentTime = 0         // 再生位置を先頭(0)に戻してから
+//        audioPlayerClearLvNum.play()                  // 再生する
+//
+//    }
     
     
     // 編集ボタンを押された時の処理
