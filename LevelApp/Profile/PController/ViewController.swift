@@ -133,6 +133,9 @@ class ViewController: UIViewController {
             
             redUpBool = true
             defaults.set(redUpBool, forKey: "redUpBool")
+            
+            // 赤矢印ボタンを無効
+            redUpBtn.isEnabled = false
 
         }
     }
@@ -202,6 +205,8 @@ class ViewController: UIViewController {
             
             // 星ボタンを押したことを保存
 //            defaults.set(trueStar, forKey: "finishedStar")
+            
+            yellowUpBtn.isEnabled = false
 
     }
         
@@ -271,6 +276,8 @@ class ViewController: UIViewController {
             
             // 星ボタンを押したことを保存
 //            defaults.set(trueStar, forKey: "finishedStar")
+            
+            blueUpBtn.isEnabled = false
             
     }
         
@@ -543,10 +550,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-//        makeSoundLvNum()
-//
-//        makeSoundLvBar()
+    
         
         let defaults = UserDefaults.standard
         redUpBtn.addTarget(self, action: #selector(self.redTap(_:)), for: .touchUpInside)
@@ -637,12 +641,20 @@ class ViewController: UIViewController {
         makeSoundLvBarB()
         
         
+        
+        redUpBtn.isEnabled = true
+        yellowUpBtn.isEnabled = true
+        blueUpBtn.isEnabled = true
+        
+        
     }
     
     
     // Home画面からProfile編集画面への遷移
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
         
         redGood.isHidden = true
         yellowGood.isHidden = true
