@@ -37,7 +37,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
 
     var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
-    
+    var audioPlayerClearY : AVAudioPlayer! = nil //クリア時用
+    var audioPlayerClearB: AVAudioPlayer! = nil //クリア時用
 
     
     @IBOutlet weak var dateView: FSCalendar!
@@ -137,6 +138,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         super.viewDidAppear(animated)
         
         makeSound()
+        makeSoundY()
+        makeSoundB()
        
     }
     
@@ -524,6 +527,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 // 星ボタンの押したか押してないかを保存
                 defaults.set(todo.finished, forKey: "finishedStar")
                 
+                self.audioPlayerClear.play()
+                
                 // Skill2の星ボタンをタップした場合
             } else if cell.labelCell.text == defaults.object(forKey: "skill2Text") as? String{
                 
@@ -598,6 +603,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 
                 // 星ボタンの押したか押してないかを保存
                 defaults.set(todo.finished, forKey: "finishedStar")
+                
+                self.audioPlayerClearY.play()
                 
                 // Skill3の星ボタンを押した場合
             } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
@@ -674,6 +681,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 // 星ボタンの押したか押してないかを保存
                 defaults.set(todo.finished, forKey: "finishedStar")
                 
+                self.audioPlayerClearB.play()
+                
             }
             
             
@@ -689,7 +698,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        if let sound = NSDataAsset(name: "星ボタン音") {
 //            let player = try? AVAudioPlayer(data: sound.data)
 //            player?.play()
-        self.audioPlayerClear.play()
+//        self.audioPlayerClear.play()
         
         
     }
@@ -757,14 +766,38 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         }catch{
             print("Failed AVAudioPlayer Instance")
         }
-        
-       
         //出来たインスタンスをバッファに保持する。
         audioPlayerClear.prepareToPlay()
-        
-        //        // 連打した時に連続して音がなるようにする
-        //        audioPlayerInstance.currentTime = 0         // 再生位置を先頭(0)に戻してから
-        //        audioPlayerInstance.play()                  // 再生する
+    }
+    
+    func makeSoundY() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "星ボタン音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClearY = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClearY.prepareToPlay()
+    }
+    
+    func makeSoundB() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "星ボタン音", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClearB = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClearB.prepareToPlay()
     }
     
     
