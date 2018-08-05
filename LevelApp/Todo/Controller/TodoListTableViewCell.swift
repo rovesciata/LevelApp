@@ -13,6 +13,7 @@ class TodoListTableViewCell: UITableViewCell {
     @IBOutlet weak var detailCell: UILabel!
     @IBOutlet weak var starButton2: UIButton!
     @IBOutlet weak var redStarImage: UIImageView!
+    @IBOutlet weak var spaceLabel: UILabel!
     
     let todoCollection = TodoCollection.sharedInstance
     

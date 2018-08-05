@@ -253,9 +253,10 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         
         let defaults = UserDefaults.standard
         
-        //        todo.finished = defaults.bool(forKey: "finishedStar")
-        let redUpAble = defaults.bool(forKey: "redUpBool")
         cell.starButton2.isEnabled = true
+        
+        
+        cell.redStarImage.isHidden = true
         
         
         if todo.finished == false {
@@ -274,15 +275,35 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
             // 星ボタン(塗りつぶし)を表示
             let defaults = UserDefaults.standard
             if cell.labelCell?.text == defaults.object(forKey: "skill1Text") as? String {
-                cell.starButton2.setImage(UIImage(named: "赤星有り.png"), for: .normal)
-                
+                // 星ボタンを押された後、無効化して塗りつぶし星を表示
+                for todo in todoCollection.todos {
+                    if todo.finished == true {
+                        cell.starButton2.isEnabled = false
+                        cell.redStarImage.isHidden = false
+                        cell.redStarImage.image = UIImage(named: "赤星有り.png")
+                        cell.starButton2.addSubview(cell.redStarImage)
+                    }
+                }
             } else if cell.labelCell?.text == defaults.object(forKey: "skill2Text") as? String {
-                cell.starButton2.setImage(UIImage(named: "黄星有り.png"), for: .normal)
+                for todo in todoCollection.todos {
+                    if todo.finished == true {
+                        cell.starButton2.isEnabled = false
+                        cell.redStarImage.isHidden = false
+                        cell.redStarImage.image = UIImage(named: "黄星有り.png")
+                        cell.starButton2.addSubview(cell.redStarImage)
+                    }
+                }
             } else if cell.labelCell?.text == defaults.object(forKey: "skill3Text") as? String {
-                cell.starButton2.setImage(UIImage(named: "青星有り.png"), for: .normal)
+                for todo in todoCollection.todos {
+                    if todo.finished == true {
+                        cell.starButton2.isEnabled = false
+                        cell.redStarImage.isHidden = false
+                        cell.redStarImage.image = UIImage(named: "青星有り.png")
+                        cell.starButton2.addSubview(cell.redStarImage)
+                        
+                    }
+                }
             }
-            
-            //            cell.starButton2.isEnabled = false
             
         }
         // 星ボタンの押したか押してないかを保存

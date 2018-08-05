@@ -20,13 +20,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8H-q2-viq">
-                        <rect key="frame" x="340" y="8" width="46" height="59"/>
+                        <rect key="frame" x="359" y="23.5" width="26" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="JZC-Yv-tkS"/>
+                            <constraint firstAttribute="height" constant="28" id="ac7-f2-qgt"/>
+                        </constraints>
                         <connections>
                             <action selector="starButtonCell:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0mo-DD-dA8"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9C-We-42t">
-                        <rect key="frame" x="16" y="29" width="300" height="44"/>
+                        <rect key="frame" x="16" y="29" width="300" height="43.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="300" id="t6n-Jo-wef"/>
                         </constraints>
@@ -44,24 +48,31 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JMl-4N-xAF">
-                        <rect key="frame" x="340" y="8" width="46" height="59"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMl-4N-xAF">
+                        <rect key="frame" x="359" y="23.5" width="26" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="O5q-Yg-fzg"/>
+                            <constraint firstAttribute="width" constant="26" id="PoH-mP-D2H"/>
+                        </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtA-pw-CE1">
+                        <rect key="frame" x="324" y="8" width="27" height="58"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="JMl-4N-xAF" firstAttribute="leading" secondItem="Z9C-We-42t" secondAttribute="trailing" constant="24" id="2zf-xM-tIT"/>
-                    <constraint firstItem="B8H-q2-viq" firstAttribute="leading" secondItem="Fr8-DX-pmY" secondAttribute="trailing" constant="24" id="5KP-4H-Cdc"/>
+                    <constraint firstItem="JMl-4N-xAF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0wJ-t3-yQP"/>
+                    <constraint firstAttribute="trailing" secondItem="JMl-4N-xAF" secondAttribute="trailing" constant="9" id="5kV-in-d7x"/>
                     <constraint firstItem="Fr8-DX-pmY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="7Il-gJ-zsU"/>
-                    <constraint firstItem="B8H-q2-viq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ceq-Xk-bUB"/>
+                    <constraint firstAttribute="bottom" secondItem="wtA-pw-CE1" secondAttribute="bottom" constant="8" id="HcG-F5-4q0"/>
+                    <constraint firstItem="wtA-pw-CE1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="O1e-iO-r43"/>
                     <constraint firstAttribute="bottom" secondItem="Z9C-We-42t" secondAttribute="bottom" constant="2" id="Tt9-QO-u2N"/>
-                    <constraint firstAttribute="trailing" secondItem="B8H-q2-viq" secondAttribute="trailing" constant="8" id="VbK-WC-psJ"/>
-                    <constraint firstAttribute="bottom" secondItem="B8H-q2-viq" secondAttribute="bottom" constant="8" id="WUh-7s-24a"/>
-                    <constraint firstAttribute="trailing" secondItem="JMl-4N-xAF" secondAttribute="trailing" constant="8" id="Xpd-VV-QsZ"/>
+                    <constraint firstItem="B8H-q2-viq" firstAttribute="leading" secondItem="wtA-pw-CE1" secondAttribute="trailing" constant="8" id="TzO-3N-ksM"/>
+                    <constraint firstItem="B8H-q2-viq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kjn-Bs-T15"/>
                     <constraint firstItem="Z9C-We-42t" firstAttribute="top" secondItem="Fr8-DX-pmY" secondAttribute="bottom" constant="2" id="qFa-tM-SYB"/>
-                    <constraint firstAttribute="bottom" secondItem="JMl-4N-xAF" secondAttribute="bottom" constant="8" id="wIn-gX-GyX"/>
+                    <constraint firstItem="wtA-pw-CE1" firstAttribute="leading" secondItem="Z9C-We-42t" secondAttribute="trailing" constant="8" id="scE-q4-3xp"/>
+                    <constraint firstAttribute="trailing" secondItem="B8H-q2-viq" secondAttribute="trailing" constant="9" id="skh-Mj-V5X"/>
                     <constraint firstItem="Fr8-DX-pmY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="wTz-WU-KeN"/>
                     <constraint firstItem="Z9C-We-42t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="y86-cH-reg"/>
-                    <constraint firstItem="JMl-4N-xAF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="z9R-VL-ult"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
