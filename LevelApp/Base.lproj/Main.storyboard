@@ -180,7 +180,7 @@
                                     <constraint firstAttribute="height" constant="30" id="iGm-c8-hLQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" image="赤矢印.png">
+                                <state key="normal" image="赤手押す">
                                     <color key="titleColor" red="1" green="0.14901960784313725" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -190,7 +190,7 @@
                                     <constraint firstAttribute="width" constant="30" id="aYl-3J-DCH"/>
                                     <constraint firstAttribute="height" constant="30" id="pgY-Ih-jZ3"/>
                                 </constraints>
-                                <state key="normal" image="黄矢印.png">
+                                <state key="normal" image="黄押す">
                                     <color key="titleColor" red="1" green="0.90588235294117647" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -200,7 +200,7 @@
                                     <constraint firstAttribute="height" constant="30" id="7A6-FD-WAe"/>
                                     <constraint firstAttribute="width" constant="30" id="YUx-np-rSK"/>
                                 </constraints>
-                                <state key="normal" image="青矢印.png">
+                                <state key="normal" image="青手押す">
                                     <color key="titleColor" red="0.46274509800000002" green="0.83921568629999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -220,7 +220,7 @@
                                     <constraint firstAttribute="width" constant="30" id="GMI-og-ebg"/>
                                     <constraint firstAttribute="height" constant="30" id="Ubp-jk-yY7"/>
                                 </constraints>
-                                <state key="normal" image="いいね黄.png"/>
+                                <state key="normal" image="黄手アップ"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDe-f9-wQb">
                                 <rect key="frame" x="321" y="555" width="30" height="30"/>
@@ -229,7 +229,7 @@
                                     <constraint firstAttribute="height" constant="30" id="9dC-8m-rO7"/>
                                     <constraint firstAttribute="width" constant="30" id="SW0-PE-0yc"/>
                                 </constraints>
-                                <state key="normal" image="いいね青.png"/>
+                                <state key="normal" image="青手アップ"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsD-d0-ZMd">
                                 <rect key="frame" x="321" y="462" width="30" height="30"/>
@@ -238,7 +238,7 @@
                                     <constraint firstAttribute="height" constant="30" id="ero-1O-fUZ"/>
                                     <constraint firstAttribute="width" constant="30" id="m1R-wx-9Eh"/>
                                 </constraints>
-                                <state key="normal" image="いいね赤.png"/>
+                                <state key="normal" image="赤手アップ"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -785,7 +785,9 @@
         <scene sceneID="a9Z-jI-sMK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iFu-oY-t7l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-ホーム-30 (1).png" id="jXy-kn-LkD"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-ホーム-30 (1).png" id="jXy-kn-LkD">
+                        <inset key="largeContentSizeImageInsets" minX="1" minY="0.0" maxX="1" maxY="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eBP-ME-g51">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -881,11 +883,11 @@
         <image name="icons8-ホーム-30 (1).png" width="30" height="30"/>
         <image name="icons8-検索-30.png" width="30" height="30"/>
         <image name="icons8-設定-filled-30.png" width="30" height="30"/>
-        <image name="いいね赤.png" width="30" height="30"/>
-        <image name="いいね青.png" width="30" height="30"/>
-        <image name="いいね黄.png" width="30" height="30"/>
-        <image name="赤矢印.png" width="30" height="30"/>
-        <image name="青矢印.png" width="30" height="30"/>
-        <image name="黄矢印.png" width="30" height="30"/>
+        <image name="赤手アップ" width="512" height="492"/>
+        <image name="赤手押す" width="389" height="512"/>
+        <image name="青手アップ" width="512" height="492"/>
+        <image name="青手押す" width="389" height="512"/>
+        <image name="黄手アップ" width="512" height="492"/>
+        <image name="黄押す" width="389" height="512"/>
     </resources>
 </document>

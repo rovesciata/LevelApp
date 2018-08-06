@@ -364,13 +364,13 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         if todo.finished == false {
             // 星ボタン(くり抜き)を表示
             if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
-                cell.starButton2.setImage(UIImage(named: "赤星無し.png"), for: .normal)
+                cell.starButton2.setImage(UIImage(named: "赤星中抜き.png"), for: .normal)
             }
             else if cell.labelCell.text == defaults.object(forKey: "skill2Text") as? String {
-                cell.starButton2.setImage(UIImage(named: "黄星無し.png"), for: .normal)
+                cell.starButton2.setImage(UIImage(named: "黄星中抜き.png"), for: .normal)
                 
             } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
-                cell.starButton2.setImage(UIImage(named: "青星無し.png"), for: .normal)
+                cell.starButton2.setImage(UIImage(named: "青星中抜き.png"), for: .normal)
                 
             }
             
@@ -384,7 +384,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                     if todo.finished == true {
                         cell.starButton2.isEnabled = false
                         cell.redStarImage.isHidden = false
-                        cell.redStarImage.image = UIImage(named: "赤星有り.png")
+                        cell.redStarImage.image = UIImage(named: "赤星中あり.png")
                         cell.starButton2.addSubview(cell.redStarImage)
                         
                     }
@@ -395,7 +395,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                     if todo.finished == true {
                         cell.starButton2.isEnabled = false
                         cell.redStarImage.isHidden = false
-                        cell.redStarImage.image = UIImage(named: "黄星有り.png")
+                        cell.redStarImage.image = UIImage(named: "黄星中あり.png")
                         cell.starButton2.addSubview(cell.redStarImage)
                         
                     }
@@ -405,7 +405,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                     if todo.finished == true {
                         cell.starButton2.isEnabled = false
                         cell.redStarImage.isHidden = false
-                        cell.redStarImage.image = UIImage(named: "青星有り.png")
+                        cell.redStarImage.image = UIImage(named: "青星中あり.png")
                         cell.starButton2.addSubview(cell.redStarImage)
                         
                     }
@@ -454,7 +454,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
             // skill1の場合
             if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
                 
-                cell.starButton2.setImage(UIImage(named: "赤星有り.png"), for: .normal)
+                cell.starButton2.setImage(UIImage(named: "赤星中あり.png"), for: .normal)
                 
                 
                 times = defaults.integer(forKey: "numberTimes")
@@ -533,7 +533,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 // Skill2の星ボタンをタップした場合
             } else if cell.labelCell.text == defaults.object(forKey: "skill2Text") as? String{
                 
-                cell.starButton2.setImage(UIImage(named: "黄星有り.png"), for: .normal)
+                cell.starButton2.setImage(UIImage(named: "黄星中あり.png"), for: .normal)
                 
                 timesYellow = defaults.integer(forKey: "numberTimesYellow")
                 
@@ -610,7 +610,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 // Skill3の星ボタンを押した場合
             } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
                 
-                cell.starButton2.setImage(UIImage(named: "青星有り.png"), for: .normal)
+                cell.starButton2.setImage(UIImage(named: "青星中あり.png"), for: .normal)
                 
                 
                 timesBlue = defaults.integer(forKey: "numberTimesBlue")
