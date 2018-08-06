@@ -120,6 +120,10 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        self.tabBarController?.view.addSubview(addBtn)
         
         
+        
+        
+        
+        
     }
     
 //    @objc func onClick(_: UIButton) {
@@ -141,6 +145,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         makeSound()
         makeSoundY()
         makeSoundB()
+        
+        
        
     }
     
@@ -148,14 +154,32 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        dayTodos = []
+        for todo in todoCollection.todos{
+            
+            if todo.date == UserDefaults.standard.object(forKey: "dateSection") as? String {
+                
+                exTableView.isHidden = false
+                
+                let defaults = UserDefaults.standard
+                defaults.set(UserDefaults.standard.object(forKey: "dateSection") as? String, forKey: "dateSection")
+                
+                dayTodos.append(todo)
+                
+                
+                self.exTableView.reloadData()
+            }
+        }
+
         // ヘッダーボタンを作成
 //        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
 //        self.navigationController!.navigationBar.tintColor = UIColor.black
 //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalendarViewController.newTodo))
 //        self.navigationItem.leftBarButtonItem = editButtonItem
-        self.exTableView.reloadData()
+//        self.exTableView.reloadData()
         
-        exTableView.isHidden = true
+//        exTableView.isHidden = true
         
     }
     
