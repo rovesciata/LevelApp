@@ -533,7 +533,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8Ql-FP-Kvd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-検索-30.png" id="S8J-aY-VGQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="虫眼鏡" id="S8J-aY-VGQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZV-8q-dYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -785,7 +785,7 @@
         <scene sceneID="a9Z-jI-sMK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iFu-oY-t7l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-ホーム-30 (1).png" id="jXy-kn-LkD">
+                    <tabBarItem key="tabBarItem" title="" image="ホームミニ" id="jXy-kn-LkD">
                         <inset key="largeContentSizeImageInsets" minX="1" minY="0.0" maxX="1" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -824,7 +824,7 @@
         <scene sceneID="dIQ-c1-dEn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5bw-MX-rjd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-カレンダー1-filled-30.png" id="U1j-jF-tOj"/>
+                    <tabBarItem key="tabBarItem" title="" image="カレンダーミニ2" id="U1j-jF-tOj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tUI-hS-T55">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -861,7 +861,9 @@
         <scene sceneID="QJy-f2-TO8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6bB-za-bog" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-設定-filled-30.png" id="4MN-KQ-eya"/>
+                    <tabBarItem key="tabBarItem" title="" image="設定" id="4MN-KQ-eya">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Foy-yx-Zsu">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -878,11 +880,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-カレンダー1-filled-30.png" width="30" height="30"/>
         <image name="icons8-コンタクト-500.png" width="500" height="500"/>
-        <image name="icons8-ホーム-30 (1).png" width="30" height="30"/>
-        <image name="icons8-検索-30.png" width="30" height="30"/>
-        <image name="icons8-設定-filled-30.png" width="30" height="30"/>
+        <image name="カレンダーミニ2" width="26" height="27"/>
+        <image name="ホームミニ" width="27" height="26"/>
+        <image name="虫眼鏡" width="28" height="28"/>
+        <image name="設定" width="29" height="29"/>
         <image name="赤手アップ" width="512" height="492"/>
         <image name="赤手押す" width="389" height="512"/>
         <image name="青手アップ" width="512" height="492"/>
