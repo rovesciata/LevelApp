@@ -64,7 +64,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         
         // プロフィール写真の影
-        dateView.layer.shadowOpacity = 1.0
+        dateView.layer.shadowOpacity = 0.5
         dateView.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         exTableView.frame = CGRect(x: 0, y: 365, width: self.view.bounds.width, height: 300)

@@ -39,7 +39,7 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     
     
     //テーブルビューに表示する配列
-    private var myItems: [String] = []
+    private var searchTitleArray: [String] = []
     
     var todoTitleArray: [String] = []
     
@@ -49,15 +49,16 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     
     // 日付配列
 //    var sectionTitleArray: [String] = []
-//    // タスクの配列
+    // タスクの配列
 //    var sectionDataArray: [[String]] = []
-//    // 全ての配列
-//    var dateArray: [String] = []
-//    // 日付が違う配列
-//    var otherArray: [NSArray] = []
+    // 全ての配列
+    var todoDateArray: [String] = []
+    // 日付が違う配列
+    var diferDateArray: [String] = []
     
-    //検索結果が入る配列
-    //    private var searchTodoCollection: [String] = []
+    // section毎のTodoCollection
+    var sectionTodoCollection = [Array<Todo>]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,13 +125,7 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         
         todoCollection.fetchTodos()
         
-        for todo in todoCollection.todos {
-            todoTitleArray.append(todo.title)
-        }
-
-
-        myItems = todoTitleArray
-        searchTodoCollection = todoCollection.todos
+        sectionTodoCollectionReload()
         
         //セルの高さを自動で計算
         self.tableView.estimatedRowHeight = 78
@@ -162,10 +157,41 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TodoListTableViewController.newTodo))
         //        self.navigationItem.leftBarButtonItem = editButtonItem
         
-        searchTodoCollection = todoCollection.todos
+        sectionTodoCollectionReload()
         
         self.tableView.reloadData()
         
+    }
+    
+    func sectionTodoCollectionReload() {
+        
+        todoTitleArray = []
+        todoDateArray = []
+        sectionTodoCollection = [Array<Todo>]()
+        
+        for todo in todoCollection.todos {
+            //検索用のタイトル配列
+            todoTitleArray.append(todo.title)
+            //日付でセクションを分けるための日付配列
+            todoDateArray.append(todo.date)
+        }
+        
+        //重複した日付を削除する
+        let diferOrderSet = NSOrderedSet(array: todoDateArray)
+        diferDateArray = diferOrderSet.array as! [String]
+        
+        searchTitleArray = todoTitleArray
+        searchTodoCollection = todoCollection.todos
+        
+        for diferDate in diferDateArray {
+            var tempItem = [Todo]()
+            for searchTodo in searchTodoCollection {
+                if diferDate == searchTodo.date {
+                    tempItem.append(searchTodo)
+                }
+            }
+            sectionTodoCollection.append(tempItem)
+        }
     }
     
     
@@ -181,7 +207,7 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         searchTodoCollection = []
         //要素を検索する
         if searchText != "" {
-            todoTitleArray = myItems.filter { myItem in
+            todoTitleArray = searchTitleArray.filter { myItem in
                 return (myItem).contains(searchText)
             }
             for todo in todoCollection.todos {
@@ -227,24 +253,24 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         
-//        return sectionDataArray.count
+        return diferDateArray.count
         
         
-        return 1
+//        return 1
     }
     // let sectionTitle: NSArray = []
     
     // Sectionのタイトル
     //セクションのタイトル
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
-//    
-//        
-////        return sectionTitleArray[section]
-////        return sectionTitle[section] as? String
-////            return UserDefaults.standard.object(forKey: "dateSection") as? String
-//    
-//    
-//        }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
+    
+        return diferDateArray[section]
+//        return sectionTitleArray[section]
+//        return sectionTitle[section] as? String
+//            return UserDefaults.standard.object(forKey: "dateSection") as? String
+    
+    
+        }
     
     // セル数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -253,7 +279,9 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
 //        return sectionDataArray[section].count
         
         //テーブルビューのセルの数はmyItems配列の数とした
-        return self.searchTodoCollection.count
+        
+        let dateSection = sectionTodoCollection[section]
+        return dateSection.count
         
         //        return self.todoCollection.todos.count
     }
@@ -263,7 +291,8 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         
         // セルの内容表示
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
-        let todo = self.searchTodoCollection[indexPath.row]
+        let dateSection = sectionTodoCollection[indexPath.section]
+        let todo = dateSection[indexPath.row]
         //        let todo = self.todoCollection.todos[indexPath.row]
         cell.labelCell.text = todo.title
         cell.detailCell.text = todo.descript
@@ -271,7 +300,7 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         
 //        cell.labelCell?.text = sectionDataArray[indexPath.section][indexPath.row]
         
-        // cell.texLabel?.text = String(describing: (sectionAarray[indexPath.section]) [indexPath.row])
+//         cell.texLabel?.text = String(describing: (sectionTodoCollection[indexPath.section]) [indexPath.row])
         
         
         
@@ -368,259 +397,271 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         
         if let indexPath = self.tableView.indexPathForViewTodo(button) {
             print("Button tapped at indexPath \(indexPath.row)")
-            let todo = self.todoCollection.todos[indexPath.row]
-            todo.finished = true
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
-            cell.labelCell.text = todo.title
+            let dateSection = sectionTodoCollection[indexPath.section]
+            let sectionTodo = dateSection[indexPath.row]
             
-            
-            let defaults = UserDefaults.standard
-            
-            // 星ボタンの押したか押してないかを保存
-            defaults.set(todo.finished, forKey: "finishedStar")
-            
-            
-            
-            
-            // スキルの選別をしてlevelBarを増やす
-            // skill1の場合
-            if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
-                
-                cell.starButton2.setImage(UIImage(named: "赤星中あり.png"), for: .normal)
-                
-                
-                times = defaults.integer(forKey: "numberTimes")
-                
-                times += 1
-                
-                var count0to10: Float = 0.0
-                
-                var count10to30: Float = 0.0
-                
-                var count30to50: Float = 0.0
-                
-                var count50to70: Float = 0.0
-                
-                var count70to99: Float = 0.0
-                
-                
-                // 星ボタンを押した時、0.45を足す
-                count0to10 += 0.45
-                
-                count10to30 += 0.100
-                
-                count30to50 += 0.050
-                
-                count50to70 += 0.010
-                
-                count70to99 += 0.0036
-                
-                
-                // 星ボタンの完了カウント数をuserDefaultsで保存
-                
-                defaults.set(count0to10, forKey: "countStar")
-                defaults.set(count10to30, forKey: "countStar10to30")
-                defaults.set(count30to50, forKey: "countStar30to50")
-                defaults.set(count50to70, forKey: "countStar50to70")
-                defaults.set(count70to99, forKey: "countStar70to99")
-                
-                defaults.set(times, forKey: "numberTimes")
-                
-                
-                var countSkill10to10: Float = 0.0
-                var countSkill110to30: Float = 0.0
-                var countSkill130to50: Float = 0.0
-                var countSkill150to70: Float = 0.0
-                var countSkill170to99: Float = 0.0
-                
-                timesSkill1 = defaults.integer(forKey: "numberTimes1")
-                timesSkill1 += 1
-                
-                // 星ボタンを押した時、0.45を足す
-                countSkill10to10 += 0.45
-                
-                countSkill110to30 += 0.100
-                
-                countSkill130to50 += 0.050
-                
-                countSkill150to70 += 0.010
-                
-                countSkill170to99 += 0.0036
-                
-                // Skill1の星ボタンの完了カウント数を保存
-                defaults.set(countSkill10to10, forKey: "countStar1")
-                defaults.set(countSkill110to30, forKey: "countStar110to30")
-                defaults.set(countSkill130to50, forKey: "countStar130to50")
-                defaults.set(countSkill150to70, forKey: "countStar150to70")
-                defaults.set(countSkill170to99, forKey: "countStar170to99")
-                
-                defaults.set(timesSkill1, forKey: "numberTimes1")
-                
-                
-                // 星ボタンの押したか押してないかを保存
-                defaults.set(todo.finished, forKey: "finishedStar")
-                
-                self.audioPlayerClear.play()
-                
-                // Skill2の星ボタンをタップした場合
-            } else if cell.labelCell.text == defaults.object(forKey: "skill2Text") as? String{
-                
-                cell.starButton2.setImage(UIImage(named: "黄星中あり.png"), for: .normal)
-                
-                timesYellow = defaults.integer(forKey: "numberTimesYellow")
-                
-                timesYellow += 1
-                
-                var count0to10: Float = 0.0
-                
-                var count10to30: Float = 0.0
-                
-                var count30to50: Float = 0.0
-                
-                var count50to70: Float = 0.0
-                
-                var count70to99: Float = 0.0
-                
-                
-                // 星ボタンを押した時、0.45を足す
-                count0to10 += 0.45
-                
-                count10to30 += 0.100
-                
-                count30to50 += 0.050
-                
-                count50to70 += 0.010
-                
-                count70to99 += 0.0036
-                
-                
-                // 星ボタンの完了カウント数をuserDefaultsで保存
-                
-                defaults.set(count0to10, forKey: "countStar")
-                defaults.set(count10to30, forKey: "countStar10to30")
-                defaults.set(count30to50, forKey: "countStar30to50")
-                defaults.set(count50to70, forKey: "countStar50to70")
-                defaults.set(count70to99, forKey: "countStar70to99")
-                
-                defaults.set(timesYellow, forKey: "numberTimesYellow")
-                
-                var countSkill20to10: Float = 0.0
-                var countSkill210to30: Float = 0.0
-                var countSkill230to50: Float = 0.0
-                var countSkill250to70: Float = 0.0
-                var countSkill270to99: Float = 0.0
-                
-                timesSkill2 = defaults.integer(forKey: "numberTimes2")
-                timesSkill2 += 1
-                
-                // 星ボタンを押した時、0.45を足す
-                countSkill20to10 += 0.45
-                
-                countSkill210to30 += 0.100
-                
-                countSkill230to50 += 0.050
-                
-                countSkill250to70 += 0.010
-                
-                countSkill270to99 += 0.0036
-                
-                // Skill2の星ボタンの完了カウント数を保存
-                defaults.set(countSkill20to10, forKey: "countStar2")
-                defaults.set(countSkill210to30, forKey: "countStar210to30")
-                defaults.set(countSkill230to50, forKey: "countStar230to50")
-                defaults.set(countSkill250to70, forKey: "countStar250to70")
-                defaults.set(countSkill270to99, forKey: "countStar270to99")
-                
-                defaults.set(timesSkill2, forKey: "numberTimes2")
-                
-                
-                // 星ボタンの押したか押してないかを保存
-                defaults.set(todo.finished, forKey: "finishedStar")
-                
-                self.audioPlayerClearY.play()
-                
-                // Skill3の星ボタンを押した場合
-            } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
-                
-                cell.starButton2.setImage(UIImage(named: "青星中あり.png"), for: .normal)
-                
-                
-                timesBlue = defaults.integer(forKey: "numberTimesBlue")
-                
-                timesBlue += 1
-                
-                var count0to10: Float = 0.0
-                
-                var count10to30: Float = 0.0
-                
-                var count30to50: Float = 0.0
-                
-                var count50to70: Float = 0.0
-                
-                var count70to99: Float = 0.0
-                
-                
-                // 星ボタンを押した時、0.45を足す
-                count0to10 += 0.45
-                
-                count10to30 += 0.100
-                
-                count30to50 += 0.050
-                
-                count50to70 += 0.010
-                
-                count70to99 += 0.0036
-                
-                
-                // 星ボタンの完了カウント数をuserDefaultsで保存
-                
-                defaults.set(count0to10, forKey: "countStar")
-                defaults.set(count10to30, forKey: "countStar10to30")
-                defaults.set(count30to50, forKey: "countStar30to50")
-                defaults.set(count50to70, forKey: "countStar50to70")
-                defaults.set(count70to99, forKey: "countStar70to99")
-                
-                defaults.set(timesBlue, forKey: "numberTimesBlue")
-                
-                var countSkill30to10: Float = 0.0
-                var countSkill310to30: Float = 0.0
-                var countSkill330to50: Float = 0.0
-                var countSkill350to70: Float = 0.0
-                var countSkill370to99: Float = 0.0
-                
-                timesSkill3 = defaults.integer(forKey: "numberTimes3")
-                timesSkill3 += 1
-                
-                // 星ボタンを押した時、0.45を足す
-                countSkill30to10 += 0.45
-                
-                countSkill310to30 += 0.100
-                
-                countSkill330to50 += 0.050
-                
-                countSkill350to70 += 0.010
-                
-                countSkill370to99 += 0.0036
-                
-                // Skill3の星ボタンの完了カウント数を保存
-                defaults.set(countSkill30to10, forKey: "countStar3")
-                defaults.set(countSkill310to30, forKey: "countStar310to30")
-                defaults.set(countSkill330to50, forKey: "countStar330to50")
-                defaults.set(countSkill350to70, forKey: "countStar350to70")
-                defaults.set(countSkill370to99, forKey: "countStar370to99")
-                
-                defaults.set(timesSkill3, forKey: "numberTimes3")
-                
-                // 星ボタンの押したか押してないかを保存
-                defaults.set(todo.finished, forKey: "finishedStar")
-                
-                self.audioPlayerClearB.play()
-                
+            for todo in todoCollection.todos {
+                if todo.id == sectionTodo.id {
+                    
+                    
+//                    let todo = self.todoCollection.todos[indexPath.row]
+                    sectionTodo.finished = true
+                    
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
+                    cell.labelCell.text = todo.title
+                    
+                    
+                    let defaults = UserDefaults.standard
+                    
+                    // 星ボタンの押したか押してないかを保存
+                    defaults.set(todo.finished, forKey: "finishedStar")
+                    
+                    
+                    
+                    
+                    // スキルの選別をしてlevelBarを増やす
+                    // skill1の場合
+                    if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
+                        
+                        cell.starButton2.setImage(UIImage(named: "赤星中あり.png"), for: .normal)
+                        
+                        
+                        times = defaults.integer(forKey: "numberTimes")
+                        
+                        times += 1
+                        
+                        var count0to10: Float = 0.0
+                        
+                        var count10to30: Float = 0.0
+                        
+                        var count30to50: Float = 0.0
+                        
+                        var count50to70: Float = 0.0
+                        
+                        var count70to99: Float = 0.0
+                        
+                        
+                        // 星ボタンを押した時、0.45を足す
+                        count0to10 += 0.45
+                        
+                        count10to30 += 0.100
+                        
+                        count30to50 += 0.050
+                        
+                        count50to70 += 0.010
+                        
+                        count70to99 += 0.0036
+                        
+                        
+                        // 星ボタンの完了カウント数をuserDefaultsで保存
+                        
+                        defaults.set(count0to10, forKey: "countStar")
+                        defaults.set(count10to30, forKey: "countStar10to30")
+                        defaults.set(count30to50, forKey: "countStar30to50")
+                        defaults.set(count50to70, forKey: "countStar50to70")
+                        defaults.set(count70to99, forKey: "countStar70to99")
+                        
+                        defaults.set(times, forKey: "numberTimes")
+                        
+                        
+                        var countSkill10to10: Float = 0.0
+                        var countSkill110to30: Float = 0.0
+                        var countSkill130to50: Float = 0.0
+                        var countSkill150to70: Float = 0.0
+                        var countSkill170to99: Float = 0.0
+                        
+                        timesSkill1 = defaults.integer(forKey: "numberTimes1")
+                        timesSkill1 += 1
+                        
+                        // 星ボタンを押した時、0.45を足す
+                        countSkill10to10 += 0.45
+                        
+                        countSkill110to30 += 0.100
+                        
+                        countSkill130to50 += 0.050
+                        
+                        countSkill150to70 += 0.010
+                        
+                        countSkill170to99 += 0.0036
+                        
+                        // Skill1の星ボタンの完了カウント数を保存
+                        defaults.set(countSkill10to10, forKey: "countStar1")
+                        defaults.set(countSkill110to30, forKey: "countStar110to30")
+                        defaults.set(countSkill130to50, forKey: "countStar130to50")
+                        defaults.set(countSkill150to70, forKey: "countStar150to70")
+                        defaults.set(countSkill170to99, forKey: "countStar170to99")
+                        
+                        defaults.set(timesSkill1, forKey: "numberTimes1")
+                        
+                        
+                        // 星ボタンの押したか押してないかを保存
+                        defaults.set(todo.finished, forKey: "finishedStar")
+                        
+                        self.audioPlayerClear.play()
+                        
+                        // Skill2の星ボタンをタップした場合
+                    } else if cell.labelCell.text == defaults.object(forKey: "skill2Text") as? String{
+                        
+                        cell.starButton2.setImage(UIImage(named: "黄星中あり.png"), for: .normal)
+                        
+                        timesYellow = defaults.integer(forKey: "numberTimesYellow")
+                        
+                        timesYellow += 1
+                        
+                        var count0to10: Float = 0.0
+                        
+                        var count10to30: Float = 0.0
+                        
+                        var count30to50: Float = 0.0
+                        
+                        var count50to70: Float = 0.0
+                        
+                        var count70to99: Float = 0.0
+                        
+                        
+                        // 星ボタンを押した時、0.45を足す
+                        count0to10 += 0.45
+                        
+                        count10to30 += 0.100
+                        
+                        count30to50 += 0.050
+                        
+                        count50to70 += 0.010
+                        
+                        count70to99 += 0.0036
+                        
+                        
+                        // 星ボタンの完了カウント数をuserDefaultsで保存
+                        
+                        defaults.set(count0to10, forKey: "countStar")
+                        defaults.set(count10to30, forKey: "countStar10to30")
+                        defaults.set(count30to50, forKey: "countStar30to50")
+                        defaults.set(count50to70, forKey: "countStar50to70")
+                        defaults.set(count70to99, forKey: "countStar70to99")
+                        
+                        defaults.set(timesYellow, forKey: "numberTimesYellow")
+                        
+                        var countSkill20to10: Float = 0.0
+                        var countSkill210to30: Float = 0.0
+                        var countSkill230to50: Float = 0.0
+                        var countSkill250to70: Float = 0.0
+                        var countSkill270to99: Float = 0.0
+                        
+                        timesSkill2 = defaults.integer(forKey: "numberTimes2")
+                        timesSkill2 += 1
+                        
+                        // 星ボタンを押した時、0.45を足す
+                        countSkill20to10 += 0.45
+                        
+                        countSkill210to30 += 0.100
+                        
+                        countSkill230to50 += 0.050
+                        
+                        countSkill250to70 += 0.010
+                        
+                        countSkill270to99 += 0.0036
+                        
+                        // Skill2の星ボタンの完了カウント数を保存
+                        defaults.set(countSkill20to10, forKey: "countStar2")
+                        defaults.set(countSkill210to30, forKey: "countStar210to30")
+                        defaults.set(countSkill230to50, forKey: "countStar230to50")
+                        defaults.set(countSkill250to70, forKey: "countStar250to70")
+                        defaults.set(countSkill270to99, forKey: "countStar270to99")
+                        
+                        defaults.set(timesSkill2, forKey: "numberTimes2")
+                        
+                        
+                        // 星ボタンの押したか押してないかを保存
+                        defaults.set(todo.finished, forKey: "finishedStar")
+                        
+                        self.audioPlayerClearY.play()
+                        
+                        // Skill3の星ボタンを押した場合
+                    } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
+                        
+                        cell.starButton2.setImage(UIImage(named: "青星中あり.png"), for: .normal)
+                        
+                        
+                        timesBlue = defaults.integer(forKey: "numberTimesBlue")
+                        
+                        timesBlue += 1
+                        
+                        var count0to10: Float = 0.0
+                        
+                        var count10to30: Float = 0.0
+                        
+                        var count30to50: Float = 0.0
+                        
+                        var count50to70: Float = 0.0
+                        
+                        var count70to99: Float = 0.0
+                        
+                        
+                        // 星ボタンを押した時、0.45を足す
+                        count0to10 += 0.45
+                        
+                        count10to30 += 0.100
+                        
+                        count30to50 += 0.050
+                        
+                        count50to70 += 0.010
+                        
+                        count70to99 += 0.0036
+                        
+                        
+                        // 星ボタンの完了カウント数をuserDefaultsで保存
+                        
+                        defaults.set(count0to10, forKey: "countStar")
+                        defaults.set(count10to30, forKey: "countStar10to30")
+                        defaults.set(count30to50, forKey: "countStar30to50")
+                        defaults.set(count50to70, forKey: "countStar50to70")
+                        defaults.set(count70to99, forKey: "countStar70to99")
+                        
+                        defaults.set(timesBlue, forKey: "numberTimesBlue")
+                        
+                        var countSkill30to10: Float = 0.0
+                        var countSkill310to30: Float = 0.0
+                        var countSkill330to50: Float = 0.0
+                        var countSkill350to70: Float = 0.0
+                        var countSkill370to99: Float = 0.0
+                        
+                        timesSkill3 = defaults.integer(forKey: "numberTimes3")
+                        timesSkill3 += 1
+                        
+                        // 星ボタンを押した時、0.45を足す
+                        countSkill30to10 += 0.45
+                        
+                        countSkill310to30 += 0.100
+                        
+                        countSkill330to50 += 0.050
+                        
+                        countSkill350to70 += 0.010
+                        
+                        countSkill370to99 += 0.0036
+                        
+                        // Skill3の星ボタンの完了カウント数を保存
+                        defaults.set(countSkill30to10, forKey: "countStar3")
+                        defaults.set(countSkill310to30, forKey: "countStar310to30")
+                        defaults.set(countSkill330to50, forKey: "countStar330to50")
+                        defaults.set(countSkill350to70, forKey: "countStar350to70")
+                        defaults.set(countSkill370to99, forKey: "countStar370to99")
+                        
+                        defaults.set(timesSkill3, forKey: "numberTimes3")
+                        
+                        // 星ボタンの押したか押してないかを保存
+                        defaults.set(todo.finished, forKey: "finishedStar")
+                        
+                        self.audioPlayerClearB.play()
+                        
+                    }
+                    
+                    
+                }
+                }
             }
             
-            
-        }
+//            let todo = self.todoCollection.todos[indexPath.row]
         
         // 配列を全て保存
         self.todoCollection.save()
