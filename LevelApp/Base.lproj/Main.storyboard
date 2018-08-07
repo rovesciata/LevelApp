@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-コンタクト-500.png" translatesAutoresizingMaskIntoConstraints="NO" id="kuV-Y3-btB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-コンタクト-500.png" translatesAutoresizingMaskIntoConstraints="NO" id="kuV-Y3-btB">
                                 <rect key="frame" x="16" y="64" width="343" height="314"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="314" id="QtT-6B-W36"/>
@@ -415,7 +415,7 @@
                                                     <action selector="tapAlbumButton:" destination="c9N-cB-0Pc" eventType="touchUpInside" id="oVq-fv-AY6"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-コンタクト-500.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ya7-Er-kAd">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-コンタクト-500.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ya7-Er-kAd">
                                                 <rect key="frame" x="16" y="0.0" width="343" height="314"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="314" id="g0g-CV-iuP"/>
@@ -730,7 +730,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6En-KI-2nc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="lWR-ez-FCU">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="lWR-ez-FCU">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

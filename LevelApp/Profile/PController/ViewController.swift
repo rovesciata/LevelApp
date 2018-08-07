@@ -577,6 +577,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
         audioPlayer.delegate = self
+        audioPlayer.numberOfLoops = -1   // ループ再生する
         audioPlayer.prepareToPlay()
     
         
@@ -627,13 +628,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         levelBarSkill3.layer.borderWidth = 0.3
         
         // プロフィール写真の影
-        profileImage.layer.shadowOpacity = 1.0
+        profileImage.layer.shadowOpacity = 0.5
         profileImage.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         
         // スケジュール追加ボタン
-        let addBtn = UIButton(frame: CGRect(x: 170, y: h - 48, width: 45, height:45))
+        let addBtn = UIButton(frame: CGRect(x: 155, y: h - 65, width: 65, height:65))
         addBtn.setTitle("+", for: UIControlState())
+        addBtn.titleLabel!.font = UIFont(name: "Helvetica", size: 30)
         addBtn.setTitleColor(.white, for: UIControlState())
         addBtn.backgroundColor = .blue
         addBtn.layer.cornerRadius = addBtn.frame.height/2
@@ -682,6 +684,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+        audioPlayer.play()
        
         
         
@@ -764,6 +768,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             print("Failed AVAudioPlayer Instance")
         }
         //出来たインスタンスをバッファに保持する。
+        
+        
         audioPlayerClearLvBar.prepareToPlay()
     }
     
@@ -866,9 +872,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 //            button.setTitle("Stop", for: UIControlState())
 //        }
 //        else{
-            audioPlayer.play()
 //            button.setTitle("Play", for: UIControlState())
 //        }
+        
+//        audioPlayer.play()
     }
         
     }
