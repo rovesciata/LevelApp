@@ -620,7 +620,7 @@
             </objects>
             <point key="canvasLocation" x="2773.5999999999999" y="1607.9460269865069"/>
         </scene>
-        <!--System View Controller-->
+        <!--設定-->
         <scene sceneID="V1q-6J-baR">
             <objects>
                 <viewController id="QNZ-tW-uQu" customClass="SystemViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -637,7 +637,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="GXm-HH-HTt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="smP-VN-XdL"/>
+                    <navigationItem key="navigationItem" title="設定" id="smP-VN-XdL"/>
                     <connections>
                         <outlet property="systemTableView" destination="ayF-Qp-bN4" id="Zfa-91-fJh"/>
                     </connections>
@@ -646,7 +646,7 @@
             </objects>
             <point key="canvasLocation" x="4511.1999999999998" y="1628.6356821589206"/>
         </scene>
-        <!--Calendar View Controller-->
+        <!--カレンダー-->
         <scene sceneID="6hX-qx-vn0">
             <objects>
                 <viewController id="kYQ-Lb-2mt" customClass="CalendarViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -663,7 +663,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pMv-Hp-iUg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hOY-eo-wG8"/>
+                    <navigationItem key="navigationItem" title="カレンダー" id="hOY-eo-wG8"/>
                     <connections>
                         <outlet property="dateView" destination="zJF-By-oQ4" id="et9-jL-vbH"/>
                         <segue destination="awP-el-wkC" kind="presentation" identifier="Insert" id="GnA-6b-IQu"/>
@@ -730,11 +730,11 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6En-KI-2nc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="lWR-ez-FCU">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="ビアンコ" itemPositioning="centered" id="lWR-ez-FCU">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="iFu-oY-t7l" kind="relationship" relationship="viewControllers" id="7dL-WU-TNI"/>
@@ -882,6 +882,7 @@
     <resources>
         <image name="icons8-コンタクト-500.png" width="500" height="500"/>
         <image name="カレンダーミニ2" width="26" height="27"/>
+        <image name="ビアンコ" width="251" height="34"/>
         <image name="ホームミニ" width="27" height="26"/>
         <image name="虫眼鏡" width="28" height="28"/>
         <image name="設定" width="29" height="29"/>

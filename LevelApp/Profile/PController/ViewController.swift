@@ -557,6 +557,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
         
         
+        
         // 再生する audio ファイルのパスを取得
         let audioPath = Bundle.main.path(forResource: "バックミュージック", ofType:"mp3")!
         let audioUrl = URL(fileURLWithPath: audioPath)
