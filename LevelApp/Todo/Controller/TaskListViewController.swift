@@ -46,12 +46,26 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     
     var searchTodoCollection: [Todo] = []
     
+    
+    // 日付配列
+//    var sectionTitleArray: [String] = []
+//    // タスクの配列
+//    var sectionDataArray: [[String]] = []
+//    // 全ての配列
+//    var dateArray: [String] = []
+//    // 日付が違う配列
+//    var otherArray: [NSArray] = []
+    
     //検索結果が入る配列
     //    private var searchTodoCollection: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
    
+        // セクションに日付を入れる
+//        setupLinks()
+        
+        
         //Viewの大きさを取得
         let viewWidth = self.view.frame.size.width
         let viewHeight = self.view.frame.size.height
@@ -203,13 +217,7 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         tableView.reloadData()
     }
     
-    //MARK: Searchボタンが押されると呼ばれる
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        self.view.endEditing(true)
-        //検索する
-        searchItems(searchText: mySearchBar.text! as String)
-    }
+    
     
     
     
@@ -219,14 +227,21 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         
+//        return sectionDataArray.count
+        
+        
         return 1
     }
+    // let sectionTitle: NSArray = []
     
+    // Sectionのタイトル
     //セクションのタイトル
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
 //    
-//    
-//            return UserDefaults.standard.object(forKey: "dateSection") as? String
+//        
+////        return sectionTitleArray[section]
+////        return sectionTitle[section] as? String
+////            return UserDefaults.standard.object(forKey: "dateSection") as? String
 //    
 //    
 //        }
@@ -234,6 +249,8 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     // セル数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
+//        return sectionDataArray[section].count
         
         //テーブルビューのセルの数はmyItems配列の数とした
         return self.searchTodoCollection.count
@@ -252,8 +269,9 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         cell.detailCell.text = todo.descript
         cell.labelCell!.font = UIFont(name: "HirakakuProN-W6", size: 15)
         
+//        cell.labelCell?.text = sectionDataArray[indexPath.section][indexPath.row]
         
-        
+        // cell.texLabel?.text = String(describing: (sectionAarray[indexPath.section]) [indexPath.row])
         
         
         
@@ -680,6 +698,43 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         //出来たインスタンスをバッファに保持する。
         audioPlayerClearB.prepareToPlay()
     }
+    
+    
+    
+    
+    //MARK: Searchボタンが押されると呼ばれる
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+
+        self.view.endEditing(true)
+        //検索する
+        searchItems(searchText: mySearchBar.text! as String)
+    }
+    // セクションに日付を入れる
+//    func setupLinks() {
+////                var json = JSON(data!)
+////                for (i, topic) in json {
+//        for todo in todoCollection.todos {
+//            if sectionDataArray.count == 1 {
+//                todoCollection.todos.append(todo)
+//            } else {
+//                otherArray = todoCollection.todos.append(todo)
+//            }
+////                    var links = [Link]()
+////                    for (k, link) in topic["links"] {
+////                        links.append(Link(
+////                            title: link["title"].asString!,
+////                            username: link["author"].asString!,
+////                            userIconUrl: link["icon"].asString!,
+////                            stockCount: link["stock"].asInt!,
+////                            isNew: link["is_new"].asBool!
+////                        ))
+////                    }
+////                    self.sections.append(topic["send_date"].asString!)
+////                    self.linkList.append(links)
+//                }
+//                self.tableView.reloadData()
+//        }
+    
 
     
 

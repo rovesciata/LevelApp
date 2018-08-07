@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     
@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     var audioPlayerClearLvNum : AVAudioPlayer! = nil //クリア時用
     var audioPlayerClearLvNumY : AVAudioPlayer! = nil //クリア時用
     var audioPlayerClearLvNumB : AVAudioPlayer! = nil //クリア時用
+    
+    var audioPlayer : AVAudioPlayer!
     
     
     // ViewControllerクラスのプロパティとしてProfileCollectionクラスのインスタンスを宣言
@@ -554,6 +556,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // 再生する audio ファイルのパスを取得
+        let audioPath = Bundle.main.path(forResource: "バックミュージック", ofType:"mp3")!
+        let audioUrl = URL(fileURLWithPath: audioPath)
+        
+        
+        // auido を再生するプレイヤーを作成する
+        var audioError:NSError?
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: audioUrl)
+        } catch let error as NSError {
+            audioError = error
+            audioPlayer = nil
+        }
+        
+        // エラーが起きたとき
+        if let error = audioError {
+            print("Error \(error.localizedDescription)")
+        }
+        
+        audioPlayer.delegate = self
+        audioPlayer.prepareToPlay()
     
         
         let defaults = UserDefaults.standard
@@ -658,6 +682,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+       
         
         
         redGood.isHidden = true
@@ -721,6 +746,9 @@ class ViewController: UIViewController {
             profileImage.image = UIImage(data: imageData as Data)
         }
     }
+    
+    
+    
     
     
     // レベルバーサウンドファイル作成
@@ -833,7 +861,14 @@ class ViewController: UIViewController {
     // 編集ボタンを押された時の処理
     @objc func newProfile() {
         self.performSegue(withIdentifier: "PresentNewProfileViewController", sender: self)
-        
+//        if ( audioPlayer.isPlaying ){
+//            audioPlayer.stop()
+//            button.setTitle("Stop", for: UIControlState())
+//        }
+//        else{
+            audioPlayer.play()
+//            button.setTitle("Play", for: UIControlState())
+//        }
     }
         
     }
