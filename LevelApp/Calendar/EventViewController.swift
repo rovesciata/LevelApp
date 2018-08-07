@@ -95,6 +95,11 @@ class EventViewController: UIViewController {
         eventInsert.addTarget(self, action: #selector(saveEvent(_:)), for: .touchUpInside)
         view.addSubview(eventInsert)
         
+        
+        
+        
+        
+        
         //「戻る!」ボタン
         let backBtn = UIButton(frame: CGRect(x: 10, y: 35, width: 50, height: 25))
 //        let backBtn = UIButton(frame: CGRect(x: (w - 200) / 2, y: h - 60, width: 150, height: 30))
@@ -135,6 +140,7 @@ class EventViewController: UIViewController {
             
             let todoCollection = TodoCollection.sharedInstance
             todoCollection.save()
+            
     
     
             //前のページに戻る

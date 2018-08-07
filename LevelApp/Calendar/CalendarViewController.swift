@@ -388,6 +388,10 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         cell.redStarImage.isHidden = true
         
         if todo.finished == false {
+            
+            let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
+            tabItem1.badgeValue = "!"
+            
             // 星ボタン(くり抜き)を表示
             if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "赤星中抜き.png"), for: .normal)
@@ -475,6 +479,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
             
             let tabItem: UITabBarItem = (self.tabBarController?.tabBar.items![0])!
             tabItem.badgeValue = "!"
+            
+            let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
+            tabItem1.badgeValue = nil
             
             
             // スキルの選別をしてlevelBarを増やす

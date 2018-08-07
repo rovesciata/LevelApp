@@ -152,6 +152,10 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     // ヘッダーボタン作成
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
+        
+        
         //        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         //        self.navigationController!.navigationBar.tintColor = UIColor.black
         //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TodoListTableViewController.newTodo))
@@ -417,8 +421,12 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
                     let tabItem: UITabBarItem = (self.tabBarController?.tabBar.items![0])!
                     tabItem.badgeValue = "!"
                     
+                    let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
+                    tabItem1.badgeValue = nil
+                    
                     // 星ボタンの押したか押してないかを保存
                     defaults.set(todo.finished, forKey: "finishedStar")
+                    
                     
                     
                     
