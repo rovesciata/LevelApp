@@ -90,7 +90,7 @@ class EventViewController: UIViewController {
         eventInsert.setTitleColor(.black, for: UIControlState())
         eventInsert.backgroundColor = .white
         eventInsert.layer.cornerRadius = 5.0
-        eventInsert.layer.borderColor = UIColor.black.cgColor
+        eventInsert.layer.borderColor = UIColor.lightGray.cgColor
         eventInsert.layer.borderWidth = 1.0
         eventInsert.addTarget(self, action: #selector(saveEvent(_:)), for: .touchUpInside)
         view.addSubview(eventInsert)
@@ -102,7 +102,7 @@ class EventViewController: UIViewController {
         backBtn.setTitleColor(.black, for: UIControlState())
         backBtn.backgroundColor = .white
         backBtn.layer.cornerRadius = 5.0
-        backBtn.layer.borderColor = UIColor.black.cgColor
+        backBtn.layer.borderColor = UIColor.lightGray.cgColor
         backBtn.layer.borderWidth = 1.0
         backBtn.addTarget(self, action: #selector(onbackClick(_:)), for: .touchUpInside)
         view.addSubview(backBtn)
