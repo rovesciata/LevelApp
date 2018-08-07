@@ -9,6 +9,9 @@
 import UIKit
 import AVFoundation
 
+
+
+
 class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     
@@ -69,6 +72,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var numTimes2 = 1
     var numTimes3 = 1
     
+//    @IBAction func button1Action(sender: AnyObject) {
+//        tabBarItem.badgeValue = "!"
+//    }
+    
+    
+    
+    
     // 赤矢印ボタンを押した時の処理
     @objc func redTap(_ button: UIButton) {
         
@@ -78,6 +88,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         let trueStar = defaults.bool(forKey: "finishedStar")
 
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
+        
+        let tabItem: UITabBarItem = (self.tabBarController?.tabBar.items![0])!
+        tabItem.badgeValue = nil
 
         // 星ボタンが押されたかどうか判別
         if trueStar == false {
@@ -159,6 +172,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
         
         
+        let tabItem: UITabBarItem = (self.tabBarController?.tabBar.items![0])!
+        tabItem.badgeValue = nil
+        
+        
         // 星ボタンが押されたかどうか判別
         if trueStar == false {
         
@@ -228,6 +245,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         let trueStar = defaults.bool(forKey: "finishedStar")
         
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
+        
+        
+        let tabItem: UITabBarItem = (self.tabBarController?.tabBar.items![0])!
+        tabItem.badgeValue = nil
         
         
         // 星ボタンが押されたかどうか判別
@@ -645,6 +666,20 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         addBtn.layer.shadowOpacity = 0.5
         addBtn.layer.shadowOffset = CGSize(width: 0, height: 5)
         
+        
+        // 星ボタンが押されたかどうか判別
+//        let trueStar = defaults.bool(forKey: "finishedStar")
+//        
+//        // 星ボタンが押されたかどうか判別
+//        if trueStar == false {
+//            let tabItem: UITabBarItem = (self.tabBarController?.tabBar.items![0])!
+//            tabItem.badgeValue = nil
+//        } else {
+//        
+//        
+//        let tabItem: UITabBarItem = (self.tabBarController?.tabBar.items![0])!
+//        tabItem.badgeValue = "!"
+//        }
         
     }
     

@@ -414,6 +414,9 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
                     
                     let defaults = UserDefaults.standard
                     
+                    let tabItem: UITabBarItem = (self.tabBarController?.tabBar.items![0])!
+                    tabItem.badgeValue = "!"
+                    
                     // 星ボタンの押したか押してないかを保存
                     defaults.set(todo.finished, forKey: "finishedStar")
                     

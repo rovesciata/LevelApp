@@ -379,6 +379,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         let defaults = UserDefaults.standard
         
+        
+        
         //        todo.finished = defaults.bool(forKey: "finishedStar")
 //        let redUpLevel = defaults.bool(forKey: "redUpBool")
         cell.starButton2.isEnabled = true
@@ -471,7 +473,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
             // 星ボタンの押したか押してないかを保存
             defaults.set(todo.finished, forKey: "finishedStar")
             
-            
+            let tabItem: UITabBarItem = (self.tabBarController?.tabBar.items![0])!
+            tabItem.badgeValue = "!"
             
             
             // スキルの選別をしてlevelBarを増やす
