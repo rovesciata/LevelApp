@@ -578,6 +578,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
         
         
+        var num = 1
+        var numSkill1 = 1
+        var numSkill2 = 1
+        var numSkill3 = 1
+        
         
         // 再生する audio ファイルのパスを取得
         let audioPath = Bundle.main.path(forResource: "バックミュージック", ofType:"mp3")!
@@ -612,20 +617,44 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         // levelAllの現Level数を表示
 //        let defaults = UserDefaults.standard
-        num = defaults.integer(forKey: "numCount")
-        levelAll.text = String(num)
+        if defaults.integer(forKey: "numCount") == 0 {
+            num = 1
+            defaults.set(num, forKey: "numCount")
+        } else {
+            num = defaults.integer(forKey: "numCount")
+            levelAll.text = String(num)
+        }
+        
         
         // skill1の現Level数を表示
-        numSkill1 = defaults.integer(forKey: "numCount1")
-        levelSkill1.text = String(numSkill1)
+        if defaults.integer(forKey: "numCount1") == 0 {
+            numSkill1 = 1
+            defaults.set(numSkill1, forKey: "numCount1")
+        } else {
+            numSkill1 = defaults.integer(forKey: "numCount1")
+            levelSkill1.text = String(numSkill1)
+        }
+        
         
         // skill2の現Level数を表示
-        numSkill2 = defaults.integer(forKey: "numCount2")
-        levelSkill2.text = String(numSkill2)
+        if defaults.integer(forKey: "numCount2") == 0 {
+            numSkill2 = 1
+            defaults.set(numSkill2, forKey: "numCount2")
+        } else {
+            numSkill2 = defaults.integer(forKey: "numCount2")
+            levelSkill2.text = String(numSkill2)
+        }
+        
         
         // skill3の現Level数を表示
-        numSkill3 = defaults.integer(forKey: "numCount3")
-        levelSkill3.text = String(numSkill3)
+        if defaults.integer(forKey: "numCount3") == 0 {
+            numSkill3 = 1
+            defaults.set(numSkill3, forKey: "numCount3")
+        } else {
+            numSkill3 = defaults.integer(forKey: "numCount3")
+            levelSkill3.text = String(numSkill3)
+        }
+        
         
         // levelBarの高さ変更
         levelBar.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
