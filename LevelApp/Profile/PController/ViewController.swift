@@ -11,7 +11,6 @@ import AVFoundation
 
 
 
-
 class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     
@@ -336,6 +335,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         levelBar.progress = 0.0
         
         self.audioPlayerClearLvNum.play()
+        
+//        levelAll.animation = "flash"
+//        levelAll.animate()
+        
+        
     }
     
     // Skill1のlevel数を1上げる
@@ -346,8 +350,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
          self.audioPlayerClearLvNum.play()
         
+//        levelSkill1.animation = "flash"
+//        levelSkill1.animate()
         
-        redGood.isHidden = false
+//        redGood.isHidden = false
     }
     
     // Skill2のlevel数を１上げる
@@ -358,7 +364,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
          self.audioPlayerClearLvNumY.play()
         
-        yellowGood.isHidden = false
+//        levelSkill2.animation = "flash"
+//        levelSkill2.animate()
+        
+//        yellowGood.isHidden = false
     }
     
     // Skill3のLevel数を１上げる
@@ -369,7 +378,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
          self.audioPlayerClearLvNumB.play()
         
-        blueGood.isHidden = false
+        
+//        levelSkill3.animation = "flash"
+//        levelSkill3.animate()
+//        blueGood.isHidden = false
     }
     
     
@@ -578,6 +590,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
         
         
+        
         var num = 1
         var numSkill1 = 1
         var numSkill2 = 1
@@ -778,6 +791,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         numTimes1 = defaults.integer(forKey: "numberTimes1")
         if numTimes1 >= 1 {
             redUpBtn.isHidden = false
+//            redUpBtn.animation = "flash"
+//            redUpBtn.animate()
         } else {
             redUpBtn.isHidden = true
             
@@ -786,6 +801,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         numTimes2 = defaults.integer(forKey: "numberTimes2")
         if numTimes2 >= 1 {
             yellowUpBtn.isHidden = false
+//            yellowUpBtn.animation = "flash"
+//            yellowUpBtn.animate()
         } else {
             yellowUpBtn.isHidden = true
         }
@@ -793,6 +810,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         numTimes3 = defaults.integer(forKey: "numberTimes3")
         if numTimes3 >= 1 {
             blueUpBtn.isHidden = false
+//            blueUpBtn.animation = "flash"
+//            blueUpBtn.animate()
         } else {
             blueUpBtn.isHidden = true
         }

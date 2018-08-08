@@ -9,6 +9,7 @@ target 'LevelApp' do
 pod 'FSCalendar'
   pod 'CalculateCalendarLogic' 
 pod 'RealmSwift'
+pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 
   # Pods for LevelApp
 
