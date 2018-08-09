@@ -55,6 +55,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var redGood: UIButton!
     @IBOutlet weak var yellowGood: UIButton!
     @IBOutlet weak var blueGood: UIButton!
+    @IBOutlet weak var greenGood: UIButton!
     
     var redUpBool = false
     
@@ -338,7 +339,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
 //        levelAll.animation = "flash"
 //        levelAll.animate()
-        
+        greenGood.isHidden = false
         
     }
     
@@ -353,7 +354,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 //        levelSkill1.animation = "flash"
 //        levelSkill1.animate()
         
-//        redGood.isHidden = false
+        redGood.isHidden = false
     }
     
     // Skill2のlevel数を１上げる
@@ -367,7 +368,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 //        levelSkill2.animation = "flash"
 //        levelSkill2.animate()
         
-//        yellowGood.isHidden = false
+        yellowGood.isHidden = false
     }
     
     // Skill3のLevel数を１上げる
@@ -381,7 +382,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
 //        levelSkill3.animation = "flash"
 //        levelSkill3.animate()
-//        blueGood.isHidden = false
+        blueGood.isHidden = false
     }
     
     
@@ -783,7 +784,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         audioPlayer.play()
        
         
-        
+        greenGood.isHidden = true
         redGood.isHidden = true
         yellowGood.isHidden = true
         blueGood.isHidden = true

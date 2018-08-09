@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="height" constant="2" id="UwP-JQ-e4V"/>
                                     <constraint firstAttribute="width" constant="85" id="VLL-sL-Uyq"/>
                                 </constraints>
-                                <color key="progressTintColor" red="0.1939630826" green="0.66757217639999999" blue="0.42424463359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="progressTintColor" red="0.19215686274509802" green="0.66666666666666663" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="0.048916842490000001" green="0.1020083973" blue="0.355528236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lv." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAD-cd-mCe">
@@ -317,8 +317,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScO-Gr-KPl">
-                                <rect key="frame" x="321" y="403" width="30" height="34"/>
+                                <rect key="frame" x="321" y="405" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="緑手アップ"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -376,6 +377,7 @@
                     <connections>
                         <outlet property="blueGood" destination="TDe-f9-wQb" id="jJQ-Ge-eEl"/>
                         <outlet property="blueUpBtn" destination="EWS-o3-HfX" id="l17-24-daW"/>
+                        <outlet property="greenGood" destination="ScO-Gr-KPl" id="YX3-dX-E96"/>
                         <outlet property="levelAll" destination="b44-xL-Bzf" id="Knh-Ux-MxZ"/>
                         <outlet property="levelBar" destination="1v9-fM-IP7" id="NVU-VL-hf0"/>
                         <outlet property="levelBarSkill1" destination="42n-fF-WDO" id="5JA-bZ-bCt"/>
@@ -965,6 +967,7 @@
         <image name="ビアンコ" width="251" height="34"/>
         <image name="ビアンコカラーラ" width="305" height="301"/>
         <image name="ホームミニ" width="27" height="26"/>
+        <image name="緑手アップ" width="429" height="409"/>
         <image name="虫眼鏡" width="28" height="28"/>
         <image name="設定" width="29" height="29"/>
         <image name="赤手アップ" width="512" height="492"/>
