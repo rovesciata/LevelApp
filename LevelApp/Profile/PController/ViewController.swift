@@ -461,9 +461,26 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // レベル数を１上げる
         numLevelPlus()
             
+            // while文で試作
+//            while numTimes > 0 {
+//
+//                if levelBar.progress == 1.0 {
+//
+//
+//                    numLevelPlus()
+//
+//                } else {
+//
+//                    // 0.5秒後に実行したい処理
+//                    let a = defaults.float(forKey: b)
+//                    levelBar.setProgress(levelBar.progress + a, animated: true)
+//
+//
+//                }
+//
+//                numTimes -= 1
             
-            
-            
+        
     }
     }
     
@@ -697,7 +714,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         
         // スケジュール追加ボタン
-        let addBtn = UIButton(frame: CGRect(x: 155, y: h - 65, width: 65, height:65))
+        let addBtn = UIButton(frame: CGRect(x: 155, y: h - 70, width: 65, height:65))
         addBtn.setTitle("+", for: UIControlState())
         addBtn.titleLabel!.font = UIFont(name: "Helvetica", size: 30)
         addBtn.setTitleColor(.white, for: UIControlState())
