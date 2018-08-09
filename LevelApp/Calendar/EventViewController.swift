@@ -114,6 +114,8 @@ class EventViewController: UIViewController {
         
     }
     
+    
+    
         @objc func saveEvent(_ : UIButton){
             
             
@@ -140,6 +142,7 @@ class EventViewController: UIViewController {
             
             let todoCollection = TodoCollection.sharedInstance
             todoCollection.save()
+            
             
     
     

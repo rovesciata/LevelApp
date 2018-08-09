@@ -605,7 +605,7 @@
             </objects>
             <point key="canvasLocation" x="626" y="1605"/>
         </scene>
-        <!--Task List View Controller-->
+        <!--履歴-->
         <scene sceneID="VIH-ju-wf6">
             <objects>
                 <viewController id="VB8-a1-aCI" customClass="TaskListViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -615,7 +615,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8Ql-FP-Kvd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="虫眼鏡" id="S8J-aY-VGQ"/>
+                    <tabBarItem key="tabBarItem" title="履歴" image="虫眼鏡" id="S8J-aY-VGQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZV-8q-dYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -863,11 +863,11 @@
             </objects>
             <point key="canvasLocation" x="1336.8" y="1608.8455772113944"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--ホーム-->
         <scene sceneID="a9Z-jI-sMK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iFu-oY-t7l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ホームミニ" id="jXy-kn-LkD">
+                    <tabBarItem key="tabBarItem" title="ホーム" image="ホームミニ" id="jXy-kn-LkD">
                         <inset key="largeContentSizeImageInsets" minX="1" minY="0.0" maxX="1" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -902,11 +902,11 @@
             </objects>
             <point key="canvasLocation" x="2528.8000000000002" y="131.78410794602701"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--タスク-->
         <scene sceneID="dIQ-c1-dEn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5bw-MX-rjd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="カレンダーミニ2" id="U1j-jF-tOj"/>
+                    <tabBarItem key="tabBarItem" title="タスク" image="カレンダーミニ2" id="U1j-jF-tOj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tUI-hS-T55">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -939,11 +939,11 @@
             </objects>
             <point key="canvasLocation" x="2720.8000000000002" y="879.31034482758628"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--設定-->
         <scene sceneID="QJy-f2-TO8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6bB-za-bog" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="設定" id="4MN-KQ-eya">
+                    <tabBarItem key="tabBarItem" title="設定" image="設定" id="4MN-KQ-eya">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <toolbarItems/>

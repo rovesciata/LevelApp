@@ -169,6 +169,11 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 
                 
                 self.exTableView.reloadData()
+                
+                if todo.finished == false {
+                let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
+                tabItem1.badgeValue = "!"
+                }
             }
         }
 
@@ -389,8 +394,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         if todo.finished == false {
             
-            let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
-            tabItem1.badgeValue = "!"
+//            let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
+//            tabItem1.badgeValue = "!"
             
             // 星ボタン(くり抜き)を表示
             if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
