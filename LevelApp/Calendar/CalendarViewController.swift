@@ -67,7 +67,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         dateView.layer.shadowOpacity = 0.5
         dateView.layer.shadowOffset = CGSize(width: 5, height: 5)
         
-        exTableView.frame = CGRect(x: 0, y: 300, width: self.view.bounds.width, height: 300)
+        exTableView.frame = CGRect(x: 0, y: 300, width: self.view.bounds.width, height: 330)
         
         
         // セルの登録
@@ -119,24 +119,29 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
 //        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
 //        self.tabBarController?.view.addSubview(addBtn)
         
-        
+        // スケジュール追加ボタン
+        let addBtn = UIButton(frame: CGRect(x: 280, y: h - 110, width: 55, height:55))
+        addBtn.setTitle("+", for: UIControlState())
+        addBtn.titleLabel!.font = UIFont(name: "Helvetica", size: 20)
+        addBtn.setTitleColor(.white, for: UIControlState())
+        addBtn.backgroundColor = .blue
+        addBtn.layer.cornerRadius = addBtn.frame.height/2
+        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+        self.view.addSubview(addBtn)
+        addBtn.layer.shadowOpacity = 0.5
+        addBtn.layer.shadowOffset = CGSize(width: 0, height: 5)
         
         
         
         
     }
     
-//    @objc func onClick(_: UIButton) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
-//        present(SecondController, animated: true, completion: nil)
-//    }
-    //画面遷移(スケジュール登録ページ)
-//    @objc func onClick(_: UIButton) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
-//        present(SecondController, animated: true, completion: nil)
-//    }
+    @objc func onClick(_: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
+        present(SecondController, animated: true, completion: nil)
+    }
+    
     
     
     override func viewDidAppear(_ animated: Bool) {

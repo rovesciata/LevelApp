@@ -732,12 +732,12 @@
         <!--タスク-->
         <scene sceneID="6hX-qx-vn0">
             <objects>
-                <viewController title="タスク" id="kYQ-Lb-2mt" customClass="CalendarViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Calendar" title="タスク" id="kYQ-Lb-2mt" customClass="CalendarViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="et8-ff-6CY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-By-oQ4" customClass="FSCalendar">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-By-oQ4" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="20" width="375" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -856,7 +856,6 @@
                     <connections>
                         <segue destination="iFu-oY-t7l" kind="relationship" relationship="viewControllers" id="7dL-WU-TNI"/>
                         <segue destination="kYQ-Lb-2mt" kind="relationship" relationship="viewControllers" id="db6-sl-uIF"/>
-                        <segue destination="a8j-1B-A6k" kind="relationship" relationship="viewControllers" id="Tbh-pT-q1P"/>
                         <segue destination="VB8-a1-aCI" kind="relationship" relationship="viewControllers" id="B3E-6t-s4y"/>
                         <segue destination="6bB-za-bog" kind="relationship" relationship="viewControllers" id="Mmt-5d-VQh"/>
                     </connections>

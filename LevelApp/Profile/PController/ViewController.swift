@@ -696,17 +696,17 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         profileImage.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         
-        // スケジュール追加ボタン
-        let addBtn = UIButton(frame: CGRect(x: 155, y: h - 70, width: 65, height:65))
-        addBtn.setTitle("+", for: UIControlState())
-        addBtn.titleLabel!.font = UIFont(name: "Helvetica", size: 30)
-        addBtn.setTitleColor(.white, for: UIControlState())
-        addBtn.backgroundColor = .blue
-        addBtn.layer.cornerRadius = addBtn.frame.height/2
-        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
-        self.tabBarController?.view.addSubview(addBtn)
-        addBtn.layer.shadowOpacity = 0.5
-        addBtn.layer.shadowOffset = CGSize(width: 0, height: 5)
+//        // スケジュール追加ボタン
+//        let addBtn = UIButton(frame: CGRect(x: 155, y: h - 70, width: 65, height:65))
+//        addBtn.setTitle("+", for: UIControlState())
+//        addBtn.titleLabel!.font = UIFont(name: "Helvetica", size: 30)
+//        addBtn.setTitleColor(.white, for: UIControlState())
+//        addBtn.backgroundColor = .blue
+//        addBtn.layer.cornerRadius = addBtn.frame.height/2
+//        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+//        self.tabBarController?.view.addSubview(addBtn)
+//        addBtn.layer.shadowOpacity = 0.5
+//        addBtn.layer.shadowOffset = CGSize(width: 0, height: 5)
         
         
         // 星ボタンが押されたかどうか判別
@@ -725,11 +725,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
-    @objc func onClick(_: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
-        present(SecondController, animated: true, completion: nil)
-    }
+//    @objc func onClick(_: UIButton) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
+//        present(SecondController, animated: true, completion: nil)
+//    }
     
 
     override func didReceiveMemoryWarning() {
