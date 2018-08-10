@@ -24,9 +24,9 @@ class EventViewController: UIViewController {
     
     
     //日付フォーム(UIDatePickerを使用)
-    let y = UIDatePicker(frame: CGRect(x: 0, y: 350, width: UIScreen.main.bounds.size.width, height: 100))
+    let y = UIDatePicker(frame: CGRect(x: 0, y: 400, width: UIScreen.main.bounds.size.width, height: 100))
     //日付表示
-    let y_text = UILabel(frame: CGRect(x: -20, y: 310, width: 300, height: 30))
+    let y_text = UILabel(frame: CGRect(x: 90, y: 343, width: 150, height: 30))
     
     
     

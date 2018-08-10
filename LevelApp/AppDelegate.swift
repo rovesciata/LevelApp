@@ -16,7 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        let flg = true //分岐条件
+//        
+//        let storyboard:UIStoryboard =  UIStoryboard(name: "Main",bundle:nil)
+//        var viewController:UIViewController
+//        
+//        
+//        //表示するビューコントローラーを指定
+//        if  flg {
+//            viewController = storyboard.instantiateViewController(withIdentifier: "Profile") as UIViewController
+//        } else {
+//            viewController = storyboard.instantiateViewController(withIdentifier: "Main") as UIViewController
+//        }
+//        
+//        
+//        window?.rootViewController = viewController
+        
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
