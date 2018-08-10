@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,10 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ビアンコカラーラ" translatesAutoresizingMaskIntoConstraints="NO" id="yRc-dW-Qkf">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1v9-fM-IP7">
                                 <rect key="frame" x="213" y="419" width="85" height="2"/>
                                 <constraints>
@@ -373,7 +369,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="mxA-PR-zrI"/>
+                    <navigationItem key="navigationItem" id="mxA-PR-zrI"/>
                     <connections>
                         <outlet property="blueGood" destination="TDe-f9-wQb" id="jJQ-Ge-eEl"/>
                         <outlet property="blueUpBtn" destination="EWS-o3-HfX" id="l17-24-daW"/>
@@ -728,16 +724,16 @@
             </objects>
             <point key="canvasLocation" x="4511.1999999999998" y="1628.6356821589206"/>
         </scene>
-        <!--カレンダー-->
+        <!--タスク-->
         <scene sceneID="6hX-qx-vn0">
             <objects>
-                <viewController id="kYQ-Lb-2mt" customClass="CalendarViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="タスク" id="kYQ-Lb-2mt" customClass="CalendarViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="et8-ff-6CY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-By-oQ4" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="65" width="375" height="289"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-By-oQ4" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="20" width="375" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -745,10 +741,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pMv-Hp-iUg"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="タスク" image="カレンダーミニ2" id="loO-d5-dbn"/>
                     <navigationItem key="navigationItem" title="カレンダー" id="hOY-eo-wG8"/>
                     <connections>
                         <outlet property="dateView" destination="zJF-By-oQ4" id="et9-jL-vbH"/>
-                        <segue destination="awP-el-wkC" kind="presentation" identifier="Insert" id="GnA-6b-IQu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be8-0M-0n8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -812,7 +808,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6En-KI-2nc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="ビアンコ" itemPositioning="centered" id="lWR-ez-FCU">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="lWR-ez-FCU">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -820,7 +816,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="iFu-oY-t7l" kind="relationship" relationship="viewControllers" id="7dL-WU-TNI"/>
-                        <segue destination="5bw-MX-rjd" kind="relationship" relationship="viewControllers" id="FkB-6f-PmS"/>
+                        <segue destination="kYQ-Lb-2mt" kind="relationship" relationship="viewControllers" id="db6-sl-uIF"/>
                         <segue destination="a8j-1B-A6k" kind="relationship" relationship="viewControllers" id="Tbh-pT-q1P"/>
                         <segue destination="VB8-a1-aCI" kind="relationship" relationship="viewControllers" id="B3E-6t-s4y"/>
                         <segue destination="6bB-za-bog" kind="relationship" relationship="viewControllers" id="Mmt-5d-VQh"/>
@@ -913,9 +909,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="kYQ-Lb-2mt" kind="relationship" relationship="rootViewController" id="81l-pd-gKV"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LO4-Lj-16O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -931,9 +924,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="LTY-F0-qdk" kind="relationship" relationship="rootViewController" id="2zG-Ga-d9q"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFe-0x-Z1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -964,8 +954,6 @@
     <resources>
         <image name="icons8-コンタクト-500.png" width="500" height="500"/>
         <image name="カレンダーミニ2" width="26" height="27"/>
-        <image name="ビアンコ" width="251" height="34"/>
-        <image name="ビアンコカラーラ" width="305" height="301"/>
         <image name="ホームミニ" width="27" height="26"/>
         <image name="緑手アップ" width="429" height="409"/>
         <image name="虫眼鏡" width="28" height="28"/>

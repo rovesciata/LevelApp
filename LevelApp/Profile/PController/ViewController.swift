@@ -310,24 +310,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
-//    func numIf (num: Int ) {
-//        if num >= 0 && num <= 10 {
-//            lvUpBar3()
-//
-//        } else if num > 10 && num <= 30 {
-//            lvUpBar3()
-//
-//        } else if num > 30 && num <= 50 {
-//            lvUpBar3()
-//
-//        } else if num > 50 && num <= 70 {
-//            lvUpBar3()
-//
-//        } else if num > 70 && num <= 99 {
-//            lvUpBar3()
-//
-//        }
-//    }
     
     // 全体のlevel数を１上げる
     func numLevelPlus() {
@@ -790,7 +772,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         blueGood.isHidden = true
 
         self.navigationController!.navigationBar.tintColor = UIColor.black
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "編集", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.newProfile))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "プロフィール編集", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.newProfile))
         
         
         let todoCollection = TodoCollection.sharedInstance
