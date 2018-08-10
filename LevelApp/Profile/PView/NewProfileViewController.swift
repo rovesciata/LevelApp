@@ -183,7 +183,7 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
     // 完了ボタンが押された時の処理
     @objc func save() {
         
-        if nameField.text!.isEmpty {
+        if skill1Field.text!.isEmpty {
             let alertView = UIAlertController(title: "エラー", message: "記述されていません", preferredStyle: UIAlertControllerStyle.alert)
             alertView.addAction(UIAlertAction(title: "はい", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertView, animated: true, completion: nil)
