@@ -65,10 +65,8 @@
 		8CBED51720DB453600FF0DE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBED51520DB453600FF0DE3 /* LaunchScreen.storyboard */; };
 		8CBED52220DB453600FF0DE3 /* LevelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBED52120DB453600FF0DE3 /* LevelAppTests.swift */; };
 		8CBED52D20DB453600FF0DE3 /* LevelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBED52C20DB453600FF0DE3 /* LevelAppUITests.swift */; };
-		8CC11CEC20E625CB003E32B8 /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC11CEB20E625CB003E32B8 /* TodoListTableViewController.swift */; };
 		8CC11CF120E629D7003E32B8 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC11CF020E629D7003E32B8 /* Todo.swift */; };
 		8CC11CF320E62AAA003E32B8 /* TodoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC11CF220E62AAA003E32B8 /* TodoCollection.swift */; };
-		8CC11CF520E6325B003E32B8 /* NewTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC11CF420E6325B003E32B8 /* NewTodoViewController.swift */; };
 		8CC11D0120E7915D003E32B8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC11D0020E7915D003E32B8 /* CalendarViewController.swift */; };
 		8CC5E9252108D17B001A4D78 /* 青星光有り.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E91F2108D17A001A4D78 /* 青星光有り.png */; };
 		8CC5E9262108D17B001A4D78 /* 青星光無し.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E9202108D17A001A4D78 /* 青星光無し.png */; };
@@ -175,10 +173,8 @@
 		8CBED52820DB453600FF0DE3 /* LevelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LevelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBED52C20DB453600FF0DE3 /* LevelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelAppUITests.swift; sourceTree = "<group>"; };
 		8CBED52E20DB453600FF0DE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CC11CEB20E625CB003E32B8 /* TodoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
 		8CC11CF020E629D7003E32B8 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		8CC11CF220E62AAA003E32B8 /* TodoCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCollection.swift; sourceTree = "<group>"; };
-		8CC11CF420E6325B003E32B8 /* NewTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoViewController.swift; sourceTree = "<group>"; };
 		8CC11D0020E7915D003E32B8 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8CC5E91F2108D17A001A4D78 /* 青星光有り.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "青星光有り.png"; sourceTree = "<group>"; };
 		8CC5E9202108D17A001A4D78 /* 青星光無し.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "青星光無し.png"; sourceTree = "<group>"; };
@@ -463,7 +459,7 @@
 		8CC11CEE20E62973003E32B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8CC11CF420E6325B003E32B8 /* NewTodoViewController.swift */,
+				8C3449DE211458FF004FB58C /* TaskListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -471,10 +467,8 @@
 		8CC11CEF20E6297A003E32B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8CC11CEB20E625CB003E32B8 /* TodoListTableViewController.swift */,
 				8C9357F120F6627F00271B39 /* TodoListTableViewCell.swift */,
 				8C9357F220F6627F00271B39 /* TodoListTableViewCell.xib */,
-				8C3449DE211458FF004FB58C /* TaskListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -773,10 +767,8 @@
 				8CA8DA4620E9E63000B87947 /* Profile.swift in Sources */,
 				8CA8DA4820E9E96E00B87947 /* ProfileCollection.swift in Sources */,
 				8CA8DA4A20E9F20100B87947 /* NewProfileViewController.swift in Sources */,
-				8CC11CF520E6325B003E32B8 /* NewTodoViewController.swift in Sources */,
 				8CBED50F20DB453500FF0DE3 /* ViewController.swift in Sources */,
 				8CBED50D20DB453500FF0DE3 /* AppDelegate.swift in Sources */,
-				8CC11CEC20E625CB003E32B8 /* TodoListTableViewController.swift in Sources */,
 				8CC11D0120E7915D003E32B8 /* CalendarViewController.swift in Sources */,
 				8C344A1F211589AE004FB58C /* SystemViewController.swift in Sources */,
 				8C00276020FED03600552381 /* EventViewController.swift in Sources */,
