@@ -575,37 +575,6 @@
             </objects>
             <point key="canvasLocation" x="3208.8000000000002" y="131.33433283358323"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="KPe-Ye-2Ws">
-            <objects>
-                <tableViewController storyboardIdentifier="TodoListTableViewController" id="bGw-u5-lzw" customClass="TodoListTableViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Mk-2i-WPu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="bGw-u5-lzw" id="ShD-f2-6nr"/>
-                            <outlet property="delegate" destination="bGw-u5-lzw" id="uNG-Gf-jbH"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="cuy-Xo-6kx"/>
-                    <navigationItem key="navigationItem" id="01L-eE-jAP"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="TEY-eB-5mA" id="MUL-jL-eIw"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H60-Lw-S4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="TEY-eB-5mA">
-                    <connections>
-                        <outlet property="delegate" destination="bGw-u5-lzw" id="aXW-S7-snl"/>
-                        <outlet property="searchContentsController" destination="bGw-u5-lzw" id="d7e-jW-Q4f"/>
-                        <outlet property="searchResultsDataSource" destination="bGw-u5-lzw" id="Vf5-K9-8Z8"/>
-                        <outlet property="searchResultsDelegate" destination="bGw-u5-lzw" id="PtU-NN-FLx"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="626" y="1605"/>
-        </scene>
         <!--履歴-->
         <scene sceneID="VIH-ju-wf6">
             <objects>
@@ -620,63 +589,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZV-8q-dYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="625" y="2282"/>
-        </scene>
-        <!--タスク作成-->
-        <scene sceneID="3f5-aT-vPZ">
-            <objects>
-                <viewController storyboardIdentifier="NewTodoViewController" id="fv5-f4-L72" customClass="NewTodoViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BkI-AZ-N5N">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="詳細" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuQ-1U-x5C">
-                                <rect key="frame" x="24" y="171" width="335" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JNG-Q4-u4x">
-                                <rect key="frame" x="24" y="200" width="335" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZQB-1P-P9V">
-                                <rect key="frame" x="34" y="210" width="335" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="スキル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czo-Fo-qbK">
-                                <rect key="frame" x="20" y="118" width="253" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ny-3n-lNA">
-                                <rect key="frame" x="0.0" y="80" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="スキルを選択"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="NqD-N5-RS5"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="タスク作成" id="r2J-x0-vnM"/>
-                    <connections>
-                        <outlet property="descriptionView" destination="JNG-Q4-u4x" id="43o-Lg-2QZ"/>
-                        <outlet property="skillSelectedLabel" destination="czo-Fo-qbK" id="BE9-H5-ckY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VdB-fa-tYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2029.5999999999999" y="1608.8455772113944"/>
+            <point key="canvasLocation" x="1076" y="1608"/>
         </scene>
         <!--Skill Selection-->
         <scene sceneID="Xta-rP-kwc">
@@ -701,7 +614,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWS-yg-No2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2773.5999999999999" y="1607.9460269865069"/>
+            <point key="canvasLocation" x="2529" y="878"/>
         </scene>
         <!--設定-->
         <scene sceneID="V1q-6J-baR">
@@ -727,7 +640,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3d-af-r2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4511.1999999999998" y="1628.6356821589206"/>
+            <point key="canvasLocation" x="2529" y="1608"/>
         </scene>
         <!--タスク-->
         <scene sceneID="6hX-qx-vn0">
@@ -754,7 +667,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be8-0M-0n8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2015.2" y="879.31034482758628"/>
+            <point key="canvasLocation" x="1076" y="879"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="nbO-Zi-Wx1">
@@ -840,7 +753,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBZ-f0-Qzz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3660" y="879.31034482758628"/>
+            <point key="canvasLocation" x="1854" y="878"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1HN-Dc-Neb">
@@ -863,39 +776,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yH-La-bcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="uDq-mE-MFB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a8j-1B-A6k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="wFT-IC-LEA">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qcb-wK-yOT">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7hQ-lL-MEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-122.40000000000001" y="1605.2473763118442"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="8ci-hV-67s">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xws-Fc-xXT" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WOJ-br-qb2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8V-jy-opf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1336.8" y="1608.8455772113944"/>
         </scene>
         <!--ホーム-->
         <scene sceneID="a9Z-jI-sMK">
@@ -936,37 +816,6 @@
             </objects>
             <point key="canvasLocation" x="2528.8000000000002" y="131.78410794602701"/>
         </scene>
-        <!--タスク-->
-        <scene sceneID="dIQ-c1-dEn">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5bw-MX-rjd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="タスク" image="カレンダーミニ2" id="U1j-jF-tOj"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tUI-hS-T55">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LO4-Lj-16O" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1076" y="879.31034482758628"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="mSt-Iv-sRU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="awP-el-wkC" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1rP-o0-0tq">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFe-0x-Z1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2720.8000000000002" y="879.31034482758628"/>
-        </scene>
         <!--設定-->
         <scene sceneID="QJy-f2-TO8">
             <objects>
@@ -986,7 +835,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMe-GK-rCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3572" y="1628.6356821589206"/>
+            <point key="canvasLocation" x="1854" y="1608"/>
         </scene>
     </scenes>
     <resources>
