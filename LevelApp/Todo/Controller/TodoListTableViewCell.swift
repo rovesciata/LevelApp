@@ -17,24 +17,17 @@ class TodoListTableViewCell: UITableViewCell {
     
     let todoCollection = TodoCollection.sharedInstance
     
-
-
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
+       
         // 詳細の長さにより高さを可変にする
         detailCell.numberOfLines = 0
-        
-        
         
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     @IBAction func starButtonCell(_ sender: UIButton) {

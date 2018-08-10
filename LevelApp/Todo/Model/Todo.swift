@@ -13,9 +13,7 @@ class Todo: NSObject {
     var title = ""
     var descript = ""
     var finished = false
-    
     var date = ""
-    
     var id: String = ""
 
 }
