@@ -11,15 +11,8 @@ import UIKit
 class SkillSelection: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var myTableView: UITableView!
     
-    
-    
-    
-    // userDefaultsの読み込み
     let defaults = UserDefaults.standard
-//    skill1.text = defaults.object(forKey: "skill1Text") as? String
-//    skill2.text = defaults.object(forKey: "skill2Text") as? String
-//    skill3.text = defaults.object(forKey: "skill3Text") as? String
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,14 +67,4 @@ class SkillSelection: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

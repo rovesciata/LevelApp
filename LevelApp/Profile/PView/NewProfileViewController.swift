@@ -44,25 +44,19 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true) // キーボードを下げる
         // 改行コードは入力しない
-        return false
+//        return false
         
         // キーボードを閉じる
-                nameField.resignFirstResponder()
-                skill1Field.resignFirstResponder()
-                skill2Field.resignFirstResponder()
-                skill3Field.resignFirstResponder()
-                return true
+        nameField.resignFirstResponder()
+        skill1Field.resignFirstResponder()
+        skill2Field.resignFirstResponder()
+        skill3Field.resignFirstResponder()
+        return true
     }
     
-    
-    // ビューのタップでキーボードを下げる
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // プロフィール写真の影
-        selectImageView.layer.shadowOpacity = 1.0
-        selectImageView.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         // キーボードの被り直し
         // スワイプでスクロールさせたならばキーボードを下げる
@@ -83,8 +77,6 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
         skill2Field.delegate = self
         skill3Field.delegate = self
         
-        
-        // キーボードの被り直し
         // デフォルトの通知センターを得る
         let notification = NotificationCenter.default
         // キーボードのframeが変化した
@@ -101,8 +93,7 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
                                  selector: #selector(NewProfileViewController.keyboardDidHide(_:)),
                                  name: NSNotification.Name.UIKeyboardDidHide, object: nil)
     }
-    
-    // キーボードの被り直し
+   
     // キーボードのframeが変化した通知を受けた
     @objc func keyboardChangeFrame(_ notification: Notification) {  // 通知で実行するイベントハンドラ
         // 編集中のテキストフィールドがない場合は中断する
@@ -123,9 +114,9 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
         let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         // テキストフィールドのframeをキーボードと同じ座標軸にする
         let nameFieldFrame = view.convert(nameField.frame, from: contentView)
-        let skill1FieldFrame = view.convert(skill1Field.frame, from: contentView)
-        let skill2FieldFrame = view.convert(skill2Field.frame, from: contentView)
-        let skill3FieldFrame = view.convert(skill3Field.frame, from: contentView)
+        _ = view.convert(skill1Field.frame, from: contentView)
+        _ = view.convert(skill2Field.frame, from: contentView)
+        _ = view.convert(skill3Field.frame, from: contentView)
         // 編集中のテキストフィールドがキーボードと重なっていないか調べる
         overlap = nameFieldFrame.maxY - keyboardFrame.minY + 20
         if overlap > 0 {
@@ -135,7 +126,6 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
         }
     }
     
-    // キーボードの被り直し
     // キーボードが登場する通知を受けた
     @objc func keyboardWillShow(_ notification: Notification) {  // 通知で実行するイベントハンドラ
         // 現在のスクロール量を保存しておく
@@ -151,19 +141,18 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // 閉じるボタン、完了ボタンを作成
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        // 閉じるボタン、完了ボタンを作成
         self.navigationController!.navigationBar.tintColor = UIColor.black
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "キャンセル", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewProfileViewController.close))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "完了", style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewProfileViewController.save))
         
-        // userDefaultsの読み込み
+        // 名前、アビリティの読み込み
         let defaults = UserDefaults.standard
         nameField.text = defaults.object(forKey: "nameText") as? String
         skill1Field.text = defaults.object(forKey: "skill1Text") as? String
@@ -182,13 +171,13 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     // 完了ボタンが押された時の処理
     @objc func save() {
-        
-        if skill1Field.text!.isEmpty {
-            let alertView = UIAlertController(title: "エラー", message: "記述されていません", preferredStyle: UIAlertControllerStyle.alert)
+        // 空欄の場合はアラート通知を出す
+        if nameField.text!.isEmpty || skill1Field.text!.isEmpty || skill2Field.text!.isEmpty || skill3Field.text!.isEmpty{
+            let alertView = UIAlertController(title: "エラー", message: "全て記入してください。", preferredStyle: UIAlertControllerStyle.alert)
             alertView.addAction(UIAlertAction(title: "はい", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertView, animated: true, completion: nil)
         } else {
- 
+            // 名前、アビリティを記入
             let profile = Profile()
             profile.name = nameField.text!
             profile.skill1 = skill1Field.text!
@@ -196,16 +185,16 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
             profile.skill3 = skill3Field.text!
             self.dismiss(animated: true, completion: nil)
             
-            // userDefaulsの保存
+            // 名前、アビリティの保存
             let defaults = UserDefaults.standard
             defaults.set(nameField.text, forKey: "nameText")
             defaults.set(skill1Field.text, forKey: "skill1Text")
             defaults.set(skill2Field.text, forKey: "skill2Text")
             defaults.set(skill3Field.text, forKey: "skill3Text")
+            
             // UIImageのuserDefaultsの保存は一度NSデータ型にする必要がある
             defaults.set(UIImageJPEGRepresentation(selectImageView.image!, 0.8), forKey: "selectImage")
         }
-        
     }
     
     // タップしたらキーボードが消える
@@ -216,26 +205,13 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
         skill3Field.resignFirstResponder()
     }
     
-    // デリゲートメソッドを利用
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//
-//
-//        // キーボードを閉じる
-//        nameField.resignFirstResponder()
-//        skill1Field.resignFirstResponder()
-//        skill2Field.resignFirstResponder()
-//        skill3Field.resignFirstResponder()
-//        return true
-//    }
-    
-    
+    // 写真を編集
     @IBAction func tapAlbumButton(_ sender: UIButton) {
         let album = UIImagePickerController()
         album.sourceType = UIImagePickerControllerSourceType.photoLibrary
         album.allowsEditing = true
         album.delegate = self
         self.present(album, animated: true, completion: nil)
-        
         
         let defaults = UserDefaults.standard
         defaults.set(nameField.text, forKey: "nameText")
@@ -246,26 +222,12 @@ class NewProfileViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]){
-        
         // 再表示
         DispatchQueue.main.async {
             self.selectImageView.image = info[UIImagePickerControllerEditedImage] as? UIImage
-            
             self.selectImageView.setNeedsLayout()
         }
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

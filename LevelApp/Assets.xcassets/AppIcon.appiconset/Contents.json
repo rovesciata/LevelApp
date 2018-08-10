@@ -45,12 +45,6 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "120x120.jpg",
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
       "filename" : "Icon-App-60x60@3x.png",
       "scale" : "3x"
     },

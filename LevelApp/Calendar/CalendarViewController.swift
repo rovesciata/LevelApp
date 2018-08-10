@@ -9,17 +9,13 @@
 import UIKit
 import FSCalendar
 import CalculateCalendarLogic
-import RealmSwift
 import AVFoundation
-
-
 
 
 // 星ボタンのセル選択のための機能拡張
 public extension UITableView {
     
     func indexPathForView(_ view: UIView) -> IndexPath? {
-//        let origin = view.bounds.origin
         // セルの位置を取得
         let height: CGPoint = CGPoint(x: 0, y: 0)
         let viewOrigin = self.convert(height, from: view)
@@ -35,7 +31,6 @@ let h = UIScreen.main.bounds.size.height
 
 class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance, UITableViewDelegate, UITableViewDataSource {
     
-
     var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
     var audioPlayerClearY : AVAudioPlayer! = nil //クリア時用
     var audioPlayerClearB: AVAudioPlayer! = nil //クリア時用
@@ -43,38 +38,25 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     @IBOutlet weak var dateView: FSCalendar!
     
+    // tableViewを生成
     var exTableView: UITableView = UITableView()
-    
     
     let todoCollection = TodoCollection.sharedInstance
     
-    // スケジュール内容
-//    let labelDate = UILabel(frame: CGRect(x: 5, y: 580, width: 400, height: 50))
-    // 「主なスケジュール」の表示
-//    let labelTitle = UILabel(frame: CGRect(x: 0, y: 530, width: 180, height: 50))
-    // カレンダー部分
-//    let dateView = FSCalendar(frame: CGRect(x: 0, y: 65, width: w, height: 300))
-    // 日付の表示
-//    let Date = UILabel(frame: CGRect(x: 5, y: 430, width: 200, height: 100))
-    
-//    let noPlan: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // プロフィール写真の影
+        // カレンダーの影
         dateView.layer.shadowOpacity = 0.5
         dateView.layer.shadowOffset = CGSize(width: 5, height: 5)
         
         exTableView.frame = CGRect(x: 0, y: 300, width: self.view.bounds.width, height: 330)
         
-        
         // セルの登録
         exTableView.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
         
         todoCollection.fetchTodos()
-        
         
         //セルの高さを自動で計算
         self.exTableView.estimatedRowHeight = 78
@@ -84,42 +66,11 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         exTableView.dataSource  = self
         self.view.addSubview(exTableView)
 //
-//        //カレンダー設定
+        //カレンダー設定
         self.dateView.dataSource = self
         self.dateView.delegate = self
-//        self.dateView.today = nil
-//        self.dateView.tintColor = .red
-//        self.view.backgroundColor = .white
-//        dateView.backgroundColor = .white
-//        view.addSubview(dateView)
         
-        // 日付表示設定
-//        Date.text = ""
-//        Date.font = UIFont.systemFont(ofSize: 60.0)
-//        Date.textColor = .black
-//        exTableView.addSubview(Date)
-        
-        // 「主なスケジュール」表示設定
-//        labelTitle.text = ""
-//        labelTitle.textAlignment = .center
-//        labelTitle.font = UIFont.systemFont(ofSize: 20.0)
-//        view.addSubview(labelTitle)
-        
-        // スケジュール内容表示設定
-//        labelDate.text = ""
-//        labelDate.font = UIFont.systemFont(ofSize: 18.0)
-//        view.addSubview(labelDate)
-        
-//        // スケジュール追加ボタン
-//        let addBtn = UIButton(frame: CGRect(x: 170, y: h - 48, width: 45, height:45))
-//        addBtn.setTitle("+", for: UIControlState())
-//        addBtn.setTitleColor(.white, for: UIControlState())
-//        addBtn.backgroundColor = .red
-//        addBtn.layer.cornerRadius = addBtn.frame.height/2
-//        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
-//        self.tabBarController?.view.addSubview(addBtn)
-        
-        // スケジュール追加ボタン
+        // プラスボタン
         let addBtn = UIButton(frame: CGRect(x: 280, y: h - 110, width: 55, height:55))
         addBtn.setTitle("+", for: UIControlState())
         addBtn.titleLabel!.font = UIFont(name: "Helvetica", size: 20)
@@ -130,18 +81,14 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         self.view.addSubview(addBtn)
         addBtn.layer.shadowOpacity = 0.5
         addBtn.layer.shadowOffset = CGSize(width: 0, height: 5)
-        
-        
-        
-        
     }
     
+    // プラスボタンの処理
     @objc func onClick(_: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
         present(SecondController, animated: true, completion: nil)
     }
-    
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -150,12 +97,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         makeSound()
         makeSoundY()
         makeSoundB()
-        
-        
-       
     }
-    
-    
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -164,14 +107,13 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         for todo in todoCollection.todos{
             
             if todo.date == UserDefaults.standard.object(forKey: "dateSection") as? String {
-                
+                // tableViewを表示
                 exTableView.isHidden = false
                 
                 let defaults = UserDefaults.standard
                 defaults.set(UserDefaults.standard.object(forKey: "dateSection") as? String, forKey: "dateSection")
                 
                 dayTodos.append(todo)
-                
                 
                 self.exTableView.reloadData()
                 
@@ -181,19 +123,9 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 }
             }
         }
-
-        // ヘッダーボタンを作成
-//        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
-//        self.navigationController!.navigationBar.tintColor = UIColor.black
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalendarViewController.newTodo))
-//        self.navigationItem.leftBarButtonItem = editButtonItem
-//        self.exTableView.reloadData()
-        
-//        exTableView.isHidden = true
-        
     }
     
-    // カレンダー部分
+    //----------------カレンダー部分----------------------------------------------------
     fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -249,45 +181,12 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         return nil
     }
-    
-    
-//    @IBAction func playSound() {
-//        // 連打した時に連続して音がなるようにする
-//        audioPlayerInstance.currentTime = 0         // 再生位置を先頭(0)に戻してから
-//        audioPlayerInstance.play()                  // 再生する
-//        // パンとボリュームをいじってみる
-//        audioPlayerInstance.volume = 0.5            // 小さめの音になる
-//        audioPlayerInstance.pan = -1.0              // 左側だけ聴こえるようになる
-//    }
-    
-    // 画面遷移(スケジュール登録ページ)
-//    @objc func onClick(_: UIButton) {
-////        self.performSegue(withIdentifier: "NewTodoViewController", sender: self)
-//
-////        self.performSegue(withIdentifier: "PresentNewTodoViewController", sender: self)
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
-//        present(SecondController, animated: true, completion: nil)
-//    }
 
     // 日のTodo配列を宣言
     var dayTodos:[Todo] = []
     
-    
-    
-        
-    
-    // カレンダー処理(スケジュール表示処理)
+    // カレンダー処理
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//        labelTitle.text = "主なスケジュール"
-//        labelTitle.backgroundColor = .orange
-//        view.addSubview(labelTitle)
-        
-        // 予定がある場合、スケジュールをDBから取得・表示する。
-        // ない場合、「スケジュールはありません」と表示
-//        labelDate.text = "スケジュールはありません"
-//        labelDate.textColor = .lightGray
-        
         
         let tmpDate = Calendar(identifier: .gregorian)
         let year = tmpDate.component(.year, from: date)
@@ -298,57 +197,27 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         let da = "\(year)/\(m)/\(d)"
         
-//        let defaults = UserDefaults.standard
-//        defaults.set(da, forKey: "dateCalendar")
-        
-        // クリックしたら、日付が表示される
-//        Date.text = "\(m)/\(d)"
-//        view.addSubview(Date)
-        
-        
-        // スケジュールを取得
-        
-//        var result = realm.objects(Event.self)
-//        result = result.filter("date = '\(da)'")
-//        print(result)
-//        for ev in result {
-//            if ev.date == da {
-////                labelDate.text = ev.event
-////                labelDate.textColor = .black
-////                view.addSubview(labelDate)
-//
-//            }
-//        }
-        
-        
-        
-//        let result = UserDefaults.standard.object(forKey: "dateCalendar") as! String
+        // tableViewを非表示
         exTableView.isHidden = true
+        
         dayTodos = []
+        
         for todo in todoCollection.todos{
-            
+            // todo.date(タスク実行日)とカレンダーをタップした日付が同じなら処理する。
             if todo.date == da {
                 
                 exTableView.isHidden = false
                 
                 let defaults = UserDefaults.standard
                 defaults.set(da, forKey: "dateSection")
-                
+                // タスクを追加
                 dayTodos.append(todo)
                 
-                
                 self.exTableView.reloadData()
-            
             }
         }
     }
-    
-    
-//    let defaults = UserDefaults.standard
-//    var nameSection = UserDefaults.standard.object(forKey: "dateSection") as! String
-//    var sectionDate = UserDefaults.standard.object(forKey: "dateCalendar") as? String
-    
-    
+
     //-------------TableViewの処理------------------
     
     //セクションの数
@@ -358,11 +227,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     
     //セクションのタイトル
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
-        
-        
+        // 日付を表示
         return UserDefaults.standard.object(forKey: "dateSection") as? String
-        
-        
     }
     
     //セクションのタイトルの高さ
@@ -375,8 +241,6 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "myCell")
-        
         // セルの内容表示
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
         let todo = self.dayTodos[indexPath.row]
@@ -389,19 +253,12 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         
         let defaults = UserDefaults.standard
         
-        
-        
-        //        todo.finished = defaults.bool(forKey: "finishedStar")
-//        let redUpLevel = defaults.bool(forKey: "redUpBool")
         cell.starButton2.isEnabled = true
         
         cell.redStarImage.isHidden = true
         
         if todo.finished == false {
-            
-//            let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
-//            tabItem1.badgeValue = "!"
-            
+         
             // 星ボタン(くり抜き)を表示
             if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "赤星中抜き.png"), for: .normal)
@@ -451,9 +308,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                     }
                 }
             }
-            
         }
-        
         // 星ボタンの押したか押してないかを保存
         defaults.set(todo.finished, forKey: "finishedStar")
         
@@ -468,7 +323,6 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
     var timesSkill1 = 0
     var timesSkill2 = 0
     var timesSkill3 = 0
-    
     
     // 星ボタンを押した時の処理
     @objc func buttonTapped(_ button: UIButton) {
@@ -727,69 +581,33 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 defaults.set(todo.finished, forKey: "finishedStar")
                 
                 self.audioPlayerClearB.play()
-                
             }
-            
-            
         }
-        
         // 配列を全て保存
         self.todoCollection.save()
-        
         self.exTableView.reloadData()
         
-//        audioPlayerInstance.play()
-        
-//        if let sound = NSDataAsset(name: "星ボタン音") {
-//            let player = try? AVAudioPlayer(data: sound.data)
-//            player?.play()
-//        self.audioPlayerClear.play()
-        
-        
     }
-    
-    
     
     @objc func newTodo() {
         self.performSegue(withIdentifier: "Insert", sender: self)
     }
+
     
-     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    // セルの削除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-//            self.dayTodos.remove(at: indexPath.row)
-            
+
             var numCell : Int = 0
             for todo in todoCollection.todos{
-//                numCell += 1
-                
+                // 全セルと特定の日のセルのidが一緒なら削除
                 if todo.id == dayTodos[indexPath.row].id {
-                    
-                    
                     todoCollection.todos.remove(at: numCell)
-                    
                 }
                 numCell += 1
             }
             self.dayTodos.remove(at: indexPath.row)
-
-//                if todo.date == dayTodos[indexPath.row].date {
-//
-//
-//                    todoCollection.todos.remove(at: numCell)
-//
-//                }
-//                numCell += 1
-//
-//            }
-//            for todo in todoCollection.todos{
-//
-//
-//                if todo.id == dayTodos[indexPath.row].id {
-//
-//                    todoCollection.todos.remove(at: id)
-//                }
-//            }
             
             self.todoCollection.save()
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.middle)
@@ -798,7 +616,6 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         }
     }
     
-        
     // MARK: サウンドファイル作成
     func makeSound() {
         //Clear音作る。
@@ -845,98 +662,4 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         audioPlayerClearB.prepareToPlay()
     }
     
-    
-    // ＜最初作成したカレンダー＞
-    
-//    @IBOutlet weak var calendar: FSCalendar!
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // デリゲートの設定
-//        self.calendar.dataSource = self
-//        self.calendar.delegate = self
-//
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-//
-//    fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
-//    fileprivate lazy var dateFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd"
-//        return formatter
-//    }()
-//
-//    // 祝日判定を行い結果を返すメソッド(True:祝日)
-//    func judgeHoliday(_ date : Date) -> Bool {
-//        //祝日判定用のカレンダークラスのインスタンス
-//        let tmpCalendar = Calendar(identifier: .gregorian)
-//
-//        // 祝日判定を行う日にちの年、月、日を取得
-//        let year = tmpCalendar.component(.year, from: date)
-//        let month = tmpCalendar.component(.month, from: date)
-//        let day = tmpCalendar.component(.day, from: date)
-//
-//        // CalculateCalendarLogic()：祝日判定のインスタンスの生成
-//        let holiday = CalculateCalendarLogic()
-//
-//        return holiday.judgeJapaneseHoliday(year: year, month: month, day: day)
-//    }
-//    // date型 -> 年月日をIntで取得
-//    func getDay(_ date:Date) -> (Int,Int,Int){
-//        let tmpCalendar = Calendar(identifier: .gregorian)
-//        let year = tmpCalendar.component(.year, from: date)
-//        let month = tmpCalendar.component(.month, from: date)
-//        let day = tmpCalendar.component(.day, from: date)
-//        return (year,month,day)
-//    }
-//
-//    //曜日判定(日曜日:1 〜 土曜日:7)
-//    func getWeekIdx(_ date: Date) -> Int{
-//        let tmpCalendar = Calendar(identifier: .gregorian)
-//        return tmpCalendar.component(.weekday, from: date)
-//    }
-//
-//    // 土日や祝日の日の文字色を変える
-//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
-//        //祝日判定をする（祝日は赤色で表示する）
-//        if self.judgeHoliday(date){
-//            return UIColor.red
-//        }
-//
-//        //土日の判定を行う（土曜日は青色、日曜日は赤色で表示する）
-//        let weekday = self.getWeekIdx(date)
-//        if weekday == 1 {   //日曜日
-//            return UIColor.red
-//        }
-//        else if weekday == 7 {  //土曜日
-//            return UIColor.blue
-//        }
-//
-//        return nil
-//    }
-//
-//    // カレンダータップイベントの取得
-//    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
-////
-////        // 上記の関数に以下のコードを追加することで、タッチした日付を取得できます。
-//        let selectDay = getDay(date)
-//    }
-//
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
