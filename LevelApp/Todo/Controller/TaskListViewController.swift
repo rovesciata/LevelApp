@@ -79,7 +79,7 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         
         //タイトル、虫眼鏡ボタンの作成
         let myNavItems = UINavigationItem()
-        myNavItems.title = "タスク一覧"
+        myNavItems.title = "履歴"
         let rightNavBtn =  UIBarButtonItem(barButtonSystemItem:  .search, target: self, action: #selector(rightBarBtnClicked(sender:)))
         myNavItems.leftBarButtonItem = rightNavBtn
         rightNavBtn.action = #selector(rightBarBtnClicked(sender:))
@@ -96,9 +96,10 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         mySearchBar.delegate = self
         //大きさの指定
         mySearchBar.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: viewWidth, height: 44)
-        
         //キャンセルボタンの追加
         mySearchBar.showsCancelButton = true
+        
+        mySearchBar.placeholder = "アビリティ名を入力"
         
         
         
@@ -152,14 +153,6 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     // ヘッダーボタン作成
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-        
-        
-        //        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
-        //        self.navigationController!.navigationBar.tintColor = UIColor.black
-        //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.plain, target: self, action: #selector(TodoListTableViewController.newTodo))
-        //        self.navigationItem.leftBarButtonItem = editButtonItem
         
         sectionTodoCollectionReload()
         
@@ -229,14 +222,14 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         tableView.reloadData()
     }
     
-    // MARK: - SearchBarのデリゲードメソッドたち
-    //MARK: テキストが変更される毎に呼ばれる
+    // SearchBarのデリゲードメソッドたち
+    // テキストが変更される毎に呼ばれる
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //検索する
         searchItems(searchText: searchText)
     }
     
-    //MARK: キャンセルボタンが押されると呼ばれる
+    // キャンセルボタンが押されると呼ばれる
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
         mySearchBar.text = ""
@@ -247,47 +240,25 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         tableView.reloadData()
     }
     
-    
-    
-    
-    
     // MARK: - Table view data source
     
     // セクション数
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         
         return diferDateArray.count
-        
-        
-//        return 1
     }
-    // let sectionTitle: NSArray = []
     
-    // Sectionのタイトル
     //セクションのタイトル
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
     
         return diferDateArray[section]
-//        return sectionTitleArray[section]
-//        return sectionTitle[section] as? String
-//            return UserDefaults.standard.object(forKey: "dateSection") as? String
-    
-    
         }
     
     // セル数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
-//        return sectionDataArray[section].count
-        
-        //テーブルビューのセルの数はmyItems配列の数とした
         
         let dateSection = sectionTodoCollection[section]
         return dateSection.count
-        
-        //        return self.todoCollection.todos.count
     }
     
     // セルの内容
@@ -302,30 +273,15 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         cell.detailCell.text = todo.descript
         cell.labelCell!.font = UIFont(name: "HirakakuProN-W6", size: 15)
         
-//        cell.labelCell?.text = sectionDataArray[indexPath.section][indexPath.row]
-        
-//         cell.texLabel?.text = String(describing: (sectionTodoCollection[indexPath.section]) [indexPath.row])
-        
-        
-        
-        
-        //        cell.labelCell.text = self.searchResult[indexPath.row] as? String
-        
-        
-        
-        
-        
         // 星ボタンを押した時
         cell.starButton2.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
         
         let defaults = UserDefaults.standard
         
         cell.starButton2.isEnabled = true
-        
-        
         cell.redStarImage.isHidden = true
         
-        
+        // 星ボタンが押されていない時
         if todo.finished == false {
             // 星ボタン(くり抜き)を表示
             if cell.labelCell.text == defaults.object(forKey: "skill1Text") as? String {
@@ -337,7 +293,7 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
                 cell.starButton2.setImage(UIImage(named: "青星中抜き.png"), for: .normal)
             }
             
-            
+            // 星ボタンが押された時
         } else {
             // 星ボタン(塗りつぶし)を表示
             let defaults = UserDefaults.standard
@@ -375,13 +331,6 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         }
         // 星ボタンの押したか押してないかを保存
         defaults.set(todo.finished, forKey: "finishedStar")
-        
-        //      重要  let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "reuseIdentifier")
-        //        let todo = self.todoCollection.todos[indexPath.row]
-        //
-        //        cell.textLabel!.text = todo.title
-        //        cell.detailTextLabel!.text = todo.descript
-        //        cell.textLabel!.font = UIFont(name: "HirakakuProN-W3", size: 15)
         
         return cell
     }
@@ -426,10 +375,6 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
                     
                     // 星ボタンの押したか押してないかを保存
                     defaults.set(todo.finished, forKey: "finishedStar")
-                    
-                    
-                    
-                    
                     
                     // スキルの選別をしてlevelBarを増やす
                     // skill1の場合
@@ -666,26 +611,14 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
                         self.audioPlayerClearB.play()
                         
                     }
-                    
-                    
                 }
                 }
             }
-            
-//            let todo = self.todoCollection.todos[indexPath.row]
         
         // 配列を全て保存
         self.todoCollection.save()
-        
         self.tableView.reloadData()
-        
     }
-    
-    
-    
-    //    @objc func newTodo() {
-    //        self.performSegue(withIdentifier: "PresentNewTodoViewController", sender: self)
-    //    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
@@ -700,10 +633,6 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
             return
         }
     }
-    
-    //    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //        return 70
-    //    }
     
     // MARK: サウンドファイル作成
     func makeSound() {
@@ -751,9 +680,6 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         audioPlayerClearB.prepareToPlay()
     }
     
-    
-    
-    
     //MARK: Searchボタンが押されると呼ばれる
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
@@ -761,35 +687,4 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         //検索する
         searchItems(searchText: mySearchBar.text! as String)
     }
-    // セクションに日付を入れる
-//    func setupLinks() {
-////                var json = JSON(data!)
-////                for (i, topic) in json {
-//        for todo in todoCollection.todos {
-//            if sectionDataArray.count == 1 {
-//                todoCollection.todos.append(todo)
-//            } else {
-//                otherArray = todoCollection.todos.append(todo)
-//            }
-////                    var links = [Link]()
-////                    for (k, link) in topic["links"] {
-////                        links.append(Link(
-////                            title: link["title"].asString!,
-////                            username: link["author"].asString!,
-////                            userIconUrl: link["icon"].asString!,
-////                            stockCount: link["stock"].asInt!,
-////                            isNew: link["is_new"].asBool!
-////                        ))
-////                    }
-////                    self.sections.append(topic["send_date"].asString!)
-////                    self.linkList.append(links)
-//                }
-//                self.tableView.reloadData()
-//        }
-    
-
-    
-
-    
-
 }
