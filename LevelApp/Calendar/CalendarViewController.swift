@@ -71,7 +71,8 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         self.dateView.delegate = self
         
         // プラスボタン
-        let addBtn = UIButton(frame: CGRect(x: 280, y: h - 110, width: 55, height:55))
+        // タブバーの高さを取得して、正しい位置にオートレイアウト
+        let addBtn = UIButton(frame: CGRect(x: self.view.bounds.width - 100, y: (self.view.bounds.height) - (self.tabBarController?.tabBar.frame.size.height)! - 60, width: 55, height:55))
         addBtn.setTitle("+", for: UIControlState())
         addBtn.titleLabel!.font = UIFont(name: "Helvetica", size: 20)
         addBtn.setTitleColor(.white, for: UIControlState())
