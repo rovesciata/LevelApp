@@ -34,9 +34,22 @@ class TodoCollection: NSObject {
 
         todo.finished = attiributes["finished"] as! Bool
         
-        todo.date = attiributes["date"] as! String
+        if let date = attiributes["date"] {
+            todo.date = date as! String
+        } else {
+            
+        }
         
-        todo.id = attiributes["id"] as! String
+        if let id = attiributes["id"] {
+            todo.id = id as! String
+        } else {
+            
+        }
+        
+//        todo.date = attiributes["date"] as! String
+        
+        
+//        todo.id = attiributes["id"] as! String
         
         return todo
     }
