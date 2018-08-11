@@ -47,8 +47,6 @@ class TodoCollection: NSObject {
         }
         
 //        todo.date = attiributes["date"] as! String
-        
-        
 //        todo.id = attiributes["id"] as! String
         
         return todo

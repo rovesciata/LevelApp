@@ -18,12 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Lv1120x1120" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-Jp-Kfq">
-                                <rect key="frame" x="141" y="266" width="93" height="93"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lv1120x1120" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-Jp-Kfq">
+                                <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="6bk-S2-fNW"/>
+                                    <constraint firstAttribute="width" constant="150" id="Kwx-BP-aQE"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="B3D-Jp-Kfq" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="nfH-6M-HGa"/>
+                            <constraint firstItem="B3D-Jp-Kfq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wt1-e5-DOs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
