@@ -399,7 +399,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="679"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アビリティ1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJf-1A-nKM">
-                                                <rect key="frame" x="10" y="400" width="112" height="30"/>
+                                                <rect key="frame" x="10" y="380" width="112" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="112" id="BBh-vU-DTd"/>
                                                     <constraint firstAttribute="height" constant="30" id="PJR-h7-6YX"/>
@@ -409,7 +409,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アビリティ3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14G-Ve-ysr">
-                                                <rect key="frame" x="10" y="492" width="112" height="30"/>
+                                                <rect key="frame" x="10" y="472" width="112" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="112" id="Sk5-B5-AG5"/>
                                                     <constraint firstAttribute="height" constant="30" id="kpW-FI-1z1"/>
@@ -419,7 +419,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="例) ランニング" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2Mw-ME-eOV">
-                                                <rect key="frame" x="141" y="448" width="122" height="30"/>
+                                                <rect key="frame" x="141" y="428" width="122" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="122" id="UXR-QM-dpJ"/>
                                                     <constraint firstAttribute="height" constant="30" id="nIy-zp-8zK"/>
@@ -429,7 +429,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アビリティ2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeS-mX-e7R">
-                                                <rect key="frame" x="10" y="448" width="112" height="30"/>
+                                                <rect key="frame" x="10" y="428" width="112" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="3Ec-3Z-koF"/>
                                                     <constraint firstAttribute="width" constant="112" id="Mqo-PW-qkl"/>
@@ -439,7 +439,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPe-W1-LBM">
-                                                <rect key="frame" x="86" y="322" width="204" height="30"/>
+                                                <rect key="frame" x="86" y="302" width="204" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="204" id="ELl-CM-90Y"/>
                                                     <constraint firstAttribute="height" constant="30" id="r4G-dD-Rzq"/>
@@ -450,14 +450,14 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-コンタクト-500.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ya7-Er-kAd">
-                                                <rect key="frame" x="16" y="0.0" width="343" height="314"/>
+                                                <rect key="frame" x="28" y="0.0" width="319" height="297"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="343" id="82C-CK-b8z"/>
-                                                    <constraint firstAttribute="height" constant="314" id="qFt-w2-rXl"/>
+                                                    <constraint firstAttribute="height" constant="297" id="6GL-81-c9h"/>
+                                                    <constraint firstAttribute="width" constant="319" id="Jcj-cQ-rcb"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4W-Gd-P2n">
-                                                <rect key="frame" x="10" y="356" width="112" height="30"/>
+                                                <rect key="frame" x="10" y="336" width="112" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="112" id="UK3-8V-5he"/>
                                                     <constraint firstAttribute="height" constant="30" id="wGC-Bf-OVU"/>
@@ -467,7 +467,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="例) 英語" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Yf9-8B-hG8">
-                                                <rect key="frame" x="141" y="400" width="122" height="30"/>
+                                                <rect key="frame" x="141" y="380" width="122" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="xlk-3E-BQs"/>
                                                     <constraint firstAttribute="width" constant="122" id="zIL-gd-cn5"/>
@@ -477,7 +477,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前を入力" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VQh-fZ-T5e">
-                                                <rect key="frame" x="141" y="356" width="130" height="30"/>
+                                                <rect key="frame" x="141" y="336" width="130" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Cd5-vb-Rs2"/>
                                                     <constraint firstAttribute="width" constant="130" id="zsj-SZ-A5M"/>
@@ -487,7 +487,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="例) ヨガ" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yxN-4H-hqx">
-                                                <rect key="frame" x="141" y="492" width="122" height="30"/>
+                                                <rect key="frame" x="141" y="472" width="122" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="122" id="15f-Qd-Xdm"/>
                                                     <constraint firstAttribute="height" constant="30" id="TpP-0Z-C9n"/>
@@ -511,13 +511,13 @@
                                             <constraint firstItem="Yf9-8B-hG8" firstAttribute="top" secondItem="VQh-fZ-T5e" secondAttribute="bottom" constant="14" id="Vrm-gL-BPZ"/>
                                             <constraint firstItem="jeS-mX-e7R" firstAttribute="leading" secondItem="PYN-M8-Vxa" secondAttribute="leading" constant="10" id="Ysv-uD-UaV"/>
                                             <constraint firstItem="jeS-mX-e7R" firstAttribute="top" secondItem="fJf-1A-nKM" secondAttribute="bottom" constant="18" id="YyY-YO-vyR"/>
-                                            <constraint firstItem="wPe-W1-LBM" firstAttribute="top" secondItem="Ya7-Er-kAd" secondAttribute="bottom" constant="8" id="d3M-gV-GpI"/>
+                                            <constraint firstItem="Ya7-Er-kAd" firstAttribute="top" secondItem="PYN-M8-Vxa" secondAttribute="top" id="bzZ-Zj-Kno"/>
                                             <constraint firstItem="yxN-4H-hqx" firstAttribute="top" secondItem="2Mw-ME-eOV" secondAttribute="bottom" constant="14" id="fj1-z8-iaW"/>
                                             <constraint firstItem="14G-Ve-ysr" firstAttribute="top" secondItem="jeS-mX-e7R" secondAttribute="bottom" constant="14" id="fjb-AK-0DQ"/>
-                                            <constraint firstItem="Ya7-Er-kAd" firstAttribute="top" secondItem="PYN-M8-Vxa" secondAttribute="top" id="gRD-Od-pyt"/>
                                             <constraint firstItem="fJf-1A-nKM" firstAttribute="top" secondItem="D4W-Gd-P2n" secondAttribute="bottom" constant="14" id="j9f-pv-sIS"/>
+                                            <constraint firstItem="wPe-W1-LBM" firstAttribute="top" secondItem="Ya7-Er-kAd" secondAttribute="bottom" constant="5" id="mEI-6s-kAy"/>
+                                            <constraint firstItem="Ya7-Er-kAd" firstAttribute="centerX" secondItem="PYN-M8-Vxa" secondAttribute="centerX" id="nbK-0C-rVO"/>
                                             <constraint firstItem="VQh-fZ-T5e" firstAttribute="leading" secondItem="D4W-Gd-P2n" secondAttribute="trailing" constant="19" id="rad-hg-rFR"/>
-                                            <constraint firstItem="Ya7-Er-kAd" firstAttribute="centerX" secondItem="PYN-M8-Vxa" secondAttribute="centerX" id="x4t-Ov-HfE"/>
                                         </constraints>
                                     </view>
                                 </subviews>
