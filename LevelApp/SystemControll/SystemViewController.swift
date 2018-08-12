@@ -12,7 +12,7 @@ class SystemViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var systemTableView: UITableView!
     
-    let systemArray = ["ライセンス", "", ""]
+    let systemArray = ["ライセンスについて", "このアプリを評価する", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +53,22 @@ class SystemViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
             
         }
+    
+    // Cell が選択された場合
+    func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
+       
+            // LicenceViewControllerへ遷移するために Segue を呼び出す
+            performSegue(withIdentifier: "toLicenceViewController",sender: nil)
+        }
+    
+    
+    // Segue 準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "toLicenceViewController") {
+            let licVC: LicenceViewController = (segue.destination as? LicenceViewController)!
+            
+        }
+    }
     
 
     

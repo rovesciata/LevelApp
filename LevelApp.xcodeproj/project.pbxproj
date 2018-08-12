@@ -11,6 +11,7 @@
 		8C00276020FED03600552381 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C00275F20FED03600552381 /* EventViewController.swift */; };
 		8C3449DF211458FF004FB58C /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3449DE211458FF004FB58C /* TaskListViewController.swift */; };
 		8C344A1F211589AE004FB58C /* SystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C344A1E211589AE004FB58C /* SystemViewController.swift */; };
+		8C6F8382211FADE2007AA4C2 /* LicenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F8381211FADE2007AA4C2 /* LicenceViewController.swift */; };
 		8C7397B221181DC2000DB6AC /* バックミュージック.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C7397B121181DC2000DB6AC /* バックミュージック.mp3 */; };
 		8C7398EA211DFE46000DB6AC /* 星ボタン音.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C7398E9211DFE46000DB6AC /* 星ボタン音.mp3 */; };
 		8C7398EE211DFE64000DB6AC /* レベルバー音.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C7398ED211DFE64000DB6AC /* レベルバー音.mp3 */; };
@@ -64,6 +65,7 @@
 		8C00275F20FED03600552381 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		8C3449DE211458FF004FB58C /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		8C344A1E211589AE004FB58C /* SystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemViewController.swift; sourceTree = "<group>"; };
+		8C6F8381211FADE2007AA4C2 /* LicenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenceViewController.swift; sourceTree = "<group>"; };
 		8C7397B121181DC2000DB6AC /* バックミュージック.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "バックミュージック.mp3"; sourceTree = "<group>"; };
 		8C7398E9211DFE46000DB6AC /* 星ボタン音.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "星ボタン音.mp3"; path = "LevelApp/星ボタン音.mp3"; sourceTree = SOURCE_ROOT; };
 		8C7398ED211DFE64000DB6AC /* レベルバー音.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "レベルバー音.mp3"; path = "LevelApp/Assets.xcassets/レベルバー音.dataset/レベルバー音.mp3"; sourceTree = SOURCE_ROOT; };
@@ -156,6 +158,7 @@
 		8C344A1D21158946004FB58C /* SystemControll */ = {
 			isa = PBXGroup;
 			children = (
+				8C6F8381211FADE2007AA4C2 /* LicenceViewController.swift */,
 				8C344A1E211589AE004FB58C /* SystemViewController.swift */,
 			);
 			path = SystemControll;
@@ -540,6 +543,7 @@
 				8CA8DA4620E9E63000B87947 /* Profile.swift in Sources */,
 				8CA8DA4820E9E96E00B87947 /* ProfileCollection.swift in Sources */,
 				8CA8DA4A20E9F20100B87947 /* NewProfileViewController.swift in Sources */,
+				8C6F8382211FADE2007AA4C2 /* LicenceViewController.swift in Sources */,
 				8CBED50F20DB453500FF0DE3 /* ViewController.swift in Sources */,
 				8CBED50D20DB453500FF0DE3 /* AppDelegate.swift in Sources */,
 				8CC11D0120E7915D003E32B8 /* CalendarViewController.swift in Sources */,

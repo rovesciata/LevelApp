@@ -617,11 +617,37 @@
                     <navigationItem key="navigationItem" title="設定" id="smP-VN-XdL"/>
                     <connections>
                         <outlet property="systemTableView" destination="ayF-Qp-bN4" id="Zfa-91-fJh"/>
+                        <segue destination="NIy-qw-T09" kind="show" identifier="toLicenceViewController" id="ZRe-m5-hHW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3d-af-r2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2529" y="1608"/>
+        </scene>
+        <!--Licence View Controller-->
+        <scene sceneID="s0f-xf-sdv">
+            <objects>
+                <viewController id="NIy-qw-T09" customClass="LicenceViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="knr-5I-jgZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZpP-aL-xaa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7On-5Q-of2"/>
+                    </view>
+                    <connections>
+                        <outlet property="licenceTableView" destination="ZpP-aL-xaa" id="F49-kM-vMU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4eK-X8-h3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3253.5999999999999" y="1602.5487256371816"/>
         </scene>
         <!--タスク-->
         <scene sceneID="6hX-qx-vn0">
