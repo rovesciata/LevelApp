@@ -63,10 +63,6 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        // セクションに日付を入れる
-//        setupLinks()
-        
-        
         //Viewの大きさを取得
         let viewWidth = self.view.frame.size.width
         let viewHeight = self.view.frame.size.height
@@ -210,8 +206,10 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
             for todo in todoCollection.todos {
                 if searchText == todo.title {
                     searchTodoCollection.append(todo)
+                    print("\(todo.title)" + "/////////////////////")
                 }
             }
+            
             
         } else{
             //渡された文字列が空の場合は全てを表示
@@ -219,14 +217,14 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         }
         
         //tableViewを再読み込みする
-        tableView.reloadData()
+       // tableView.reloadData()
     }
     
     // SearchBarのデリゲードメソッドたち
     // テキストが変更される毎に呼ばれる
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //検索する
-        searchItems(searchText: searchText)
+       // searchItems(searchText: searchText)
     }
     
     // キャンセルボタンが押されると呼ばれる
@@ -237,6 +235,15 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         searchTodoCollection = todoCollection.todos
         
         //tableViewを再読み込みする
+        tableView.reloadData()
+    }
+    
+    //MARK: Searchボタンが押されると呼ばれる
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        self.view.endEditing(true)
+        //検索する
+        searchItems(searchText: mySearchBar.text! as String)
         tableView.reloadData()
     }
     
@@ -680,11 +687,5 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         audioPlayerClearB.prepareToPlay()
     }
     
-    //MARK: Searchボタンが押されると呼ばれる
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
-        self.view.endEditing(true)
-        //検索する
-        searchItems(searchText: mySearchBar.text! as String)
-    }
+    
 }
