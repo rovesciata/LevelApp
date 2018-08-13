@@ -10,6 +10,7 @@ import UIKit
 
 class SystemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+
     @IBOutlet weak var systemTableView: UITableView!
     
     let systemArray = ["ライセンスについて", "このアプリを評価する", ""]
