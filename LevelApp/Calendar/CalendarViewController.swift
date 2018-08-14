@@ -70,25 +70,26 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         self.dateView.dataSource = self
         self.dateView.delegate = self
         
-        // プラスボタン
-        // タブバーの高さを取得して、正しい位置にオートレイアウト
-        let addBtn = UIButton(frame: CGRect(x: self.view.bounds.width - 100, y: (self.view.bounds.height) - (self.tabBarController?.tabBar.frame.size.height)! - 60, width: 55, height:55))
-        addBtn.setTitle("+", for: UIControlState())
-        addBtn.titleLabel!.font = UIFont(name: "Helvetica", size: 20)
-        addBtn.setTitleColor(.white, for: UIControlState())
-        addBtn.backgroundColor = .blue
-        addBtn.layer.cornerRadius = addBtn.frame.height/2
-        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
-        self.view.addSubview(addBtn)
-        addBtn.layer.shadowOpacity = 0.5
-        addBtn.layer.shadowOffset = CGSize(width: 0, height: 5)
-    }
-    
-    // プラスボタンの処理
-    @objc func onClick(_: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
-        present(SecondController, animated: true, completion: nil)
+//        // プラスボタン
+//        // タブバーの高さを取得して、正しい位置にオートレイアウト
+//        let addBtn = UIButton(frame: CGRect(x: self.view.bounds.width - 100, y: (self.view.bounds.height) - (self.tabBarController?.tabBar.frame.size.height)! - 60, width: 55, height:55))
+//        addBtn.setTitle("+", for: UIControlState())
+//        addBtn.titleLabel!.font = UIFont(name: "Helvetica", size: 20)
+//        addBtn.setTitleColor(.white, for: UIControlState())
+//        addBtn.backgroundColor = .blue
+//        addBtn.layer.cornerRadius = addBtn.frame.height/2
+//        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+//        self.view.addSubview(addBtn)
+//        addBtn.layer.shadowOpacity = 0.5
+//        addBtn.layer.shadowOffset = CGSize(width: 0, height: 5)
+//    }
+//
+//    // プラスボタンの処理
+//    @objc func onClick(_: UIButton) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
+//        present(SecondController, animated: true, completion: nil)
+//    }
     }
     
     
@@ -118,10 +119,10 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
                 
                 self.exTableView.reloadData()
                 
-                if todo.finished == false {
-                let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
-                tabItem1.badgeValue = "!"
-                }
+//                if todo.finished == false {
+//                let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
+//                tabItem1.badgeValue = "!"
+//                }
             }
         }
     }

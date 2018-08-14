@@ -556,7 +556,7 @@
             </objects>
             <point key="canvasLocation" x="3208.8000000000002" y="131.33433283358323"/>
         </scene>
-        <!--履歴-->
+        <!--タスク-->
         <scene sceneID="VIH-ju-wf6">
             <objects>
                 <viewController id="VB8-a1-aCI" customClass="TaskListViewController" customModule="LevelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -566,7 +566,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8Ql-FP-Kvd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="履歴" image="虫眼鏡" id="S8J-aY-VGQ"/>
+                    <tabBarItem key="tabBarItem" title="タスク" image="虫眼鏡" id="S8J-aY-VGQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZV-8q-dYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -668,7 +668,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pMv-Hp-iUg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="タスク" image="カレンダーミニ2" id="loO-d5-dbn"/>
+                    <tabBarItem key="tabBarItem" title="履歴" image="カレンダーミニ2" id="loO-d5-dbn"/>
                     <navigationItem key="navigationItem" title="カレンダー" id="hOY-eo-wG8"/>
                     <connections>
                         <outlet property="dateView" destination="zJF-By-oQ4" id="et9-jL-vbH"/>
@@ -777,8 +777,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="iFu-oY-t7l" kind="relationship" relationship="viewControllers" id="7dL-WU-TNI"/>
-                        <segue destination="kYQ-Lb-2mt" kind="relationship" relationship="viewControllers" id="db6-sl-uIF"/>
                         <segue destination="VB8-a1-aCI" kind="relationship" relationship="viewControllers" id="B3E-6t-s4y"/>
+                        <segue destination="kYQ-Lb-2mt" kind="relationship" relationship="viewControllers" id="db6-sl-uIF"/>
                         <segue destination="6bB-za-bog" kind="relationship" relationship="viewControllers" id="Mmt-5d-VQh"/>
                     </connections>
                 </tabBarController>

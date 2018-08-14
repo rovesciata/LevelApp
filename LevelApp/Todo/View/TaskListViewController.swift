@@ -128,8 +128,29 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         self.tableView.estimatedRowHeight = 78
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        
+        // プラスボタン
+        // タブバーの高さを取得して、正しい位置にオートレイアウト
+        let addBtn = UIButton(frame: CGRect(x: self.view.bounds.width - 100, y: (self.view.bounds.height) - (self.tabBarController?.tabBar.frame.size.height)! - 60, width: 55, height:55))
+        addBtn.setTitle("+", for: UIControlState())
+        addBtn.titleLabel!.font = UIFont(name: "Helvetica", size: 20)
+        addBtn.setTitleColor(.white, for: UIControlState())
+        addBtn.backgroundColor = .blue
+        addBtn.layer.cornerRadius = addBtn.frame.height/2
+        addBtn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+        self.view.addSubview(addBtn)
+        addBtn.layer.shadowOpacity = 0.5
+        addBtn.layer.shadowOffset = CGSize(width: 0, height: 5)
     }
+    
+    // プラスボタンの処理
+    @objc func onClick(_: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let SecondController = storyboard.instantiateViewController(withIdentifier: "Insert")
+        present(SecondController, animated: true, completion: nil)
+    }
+        
+        
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -153,6 +174,7 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         sectionTodoCollectionReload()
         
         self.tableView.reloadData()
+        
         
     }
     
@@ -185,6 +207,7 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
             }
             sectionTodoCollection.append(tempItem)
         }
+        
     }
     
     
@@ -316,6 +339,11 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
                 cell.starButton2.setImage(UIImage(named: "黄星中抜き.png"), for: .normal)
             } else if cell.labelCell.text == defaults.object(forKey: "skill3Text") as? String {
                 cell.starButton2.setImage(UIImage(named: "青星中抜き.png"), for: .normal)
+            }
+            
+            if todo.finished == false {
+                let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
+                tabItem1.badgeValue = "!"
             }
             
             // 星ボタンが押された時

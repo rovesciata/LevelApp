@@ -106,6 +106,11 @@ class EventViewController: UIViewController {
             let todoCollection = TodoCollection.sharedInstance
             todoCollection.save()
             
+//            if todo.finished == false {
+//                let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
+//                tabItem1.badgeValue = "!"
+//            }
+            
             //前のページに戻る
             dismiss(animated: true, completion: nil)
         }
