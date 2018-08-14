@@ -566,7 +566,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8Ql-FP-Kvd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="タスク" image="虫眼鏡" id="S8J-aY-VGQ"/>
+                    <tabBarItem key="tabBarItem" title="タスク" image="タスク星１" id="S8J-aY-VGQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZV-8q-dYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -850,9 +850,9 @@
     <resources>
         <image name="icons8-コンタクト-500.png" width="500" height="500"/>
         <image name="カレンダーミニ2" width="26" height="27"/>
+        <image name="タスク星１" width="28" height="27"/>
         <image name="ホームミニ" width="27" height="26"/>
         <image name="緑手アップ" width="429" height="409"/>
-        <image name="虫眼鏡" width="28" height="28"/>
         <image name="設定" width="29" height="29"/>
         <image name="赤手アップ" width="512" height="492"/>
         <image name="赤手押す" width="389" height="512"/>
