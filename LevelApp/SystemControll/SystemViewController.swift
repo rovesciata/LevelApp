@@ -13,7 +13,7 @@ class SystemViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var systemTableView: UITableView!
     
-    let systemArray = ["ライセンスについて", "このアプリを評価する", ""]
+    let systemArray = ["ライセンスについて", "", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()

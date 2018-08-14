@@ -51,7 +51,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate,FSCalendarData
         dateView.layer.shadowOpacity = 0.5
         dateView.layer.shadowOffset = CGSize(width: 5, height: 5)
         
-        exTableView.frame = CGRect(x: 0, y: 300, width: self.view.bounds.width, height: 330)
+        exTableView.frame = CGRect(x: 0, y: 315, width: self.view.bounds.width, height: 430)
         
         // セルの登録
         exTableView.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
