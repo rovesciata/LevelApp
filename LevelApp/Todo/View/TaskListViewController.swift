@@ -74,28 +74,28 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         myNavBar.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: viewWidth, height: 44)
         
         //タイトル、虫眼鏡ボタンの作成
-        let myNavItems = UINavigationItem()
-        myNavItems.title = "履歴"
-        let rightNavBtn =  UIBarButtonItem(barButtonSystemItem:  .search, target: self, action: #selector(rightBarBtnClicked(sender:)))
-        myNavItems.leftBarButtonItem = rightNavBtn
-        rightNavBtn.action = #selector(rightBarBtnClicked(sender:))
-        myNavItems.rightBarButtonItem = rightNavBtn;
-        myNavBar.pushItem(myNavItems, animated: true)
-        //ナビゲーションバーをviewに追加
-        self.view.addSubview(myNavBar)
+//        let myNavItems = UINavigationItem()
+//        myNavItems.title = "履歴"
+//        let rightNavBtn =  UIBarButtonItem(barButtonSystemItem:  .search, target: self, action: #selector(rightBarBtnClicked(sender:)))
+//        myNavItems.leftBarButtonItem = rightNavBtn
+//        rightNavBtn.action = #selector(rightBarBtnClicked(sender:))
+//        myNavItems.rightBarButtonItem = rightNavBtn;
+//        myNavBar.pushItem(myNavItems, animated: true)
+//        //ナビゲーションバーをviewに追加
+//        self.view.addSubview(myNavBar)
         
         
         // MARK: - SearchBar関連
         //SearchBarの作成
-        mySearchBar = UISearchBar()
-        //デリゲートを設定
-        mySearchBar.delegate = self
-        //大きさの指定
-        mySearchBar.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: viewWidth, height: 44)
-        //キャンセルボタンの追加
-        mySearchBar.showsCancelButton = true
-        
-        mySearchBar.placeholder = "アビリティ名を入力"
+//        mySearchBar = UISearchBar()
+//        //デリゲートを設定
+//        mySearchBar.delegate = self
+//        //大きさの指定
+//        mySearchBar.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height, width: viewWidth, height: 44)
+//        //キャンセルボタンの追加
+//        mySearchBar.showsCancelButton = true
+//
+//        mySearchBar.placeholder = "アビリティ名を入力"
         
         
         
@@ -108,9 +108,9 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         //テーブルビューの大きさの指定
         tableView.frame = CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height + myNavBar.frame.height, width: viewWidth, height: viewHeight - UIApplication.shared.statusBarFrame.height-myNavBar.frame.height)
         //先ほど作成したSearchBarを作成
-        tableView.tableHeaderView = mySearchBar
-        //サーチバーの高さだけ初期位置を下げる
-        tableView.contentOffset = CGPoint(x: 0,y :44)
+//        tableView.tableHeaderView = mySearchBar
+//        //サーチバーの高さだけ初期位置を下げる
+//        tableView.contentOffset = CGPoint(x: 0,y :44)
         
         //テーブルビューの設置
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -266,6 +266,24 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         
         let dateSection = sectionTodoCollection[section]
         return dateSection.count
+        // サーチバーで検索したセルだけ表示させるための試作
+//        if i == 0 {
+            //            let dateSection = sectionTodoCollection[section]
+            //            //        print(dateSection[0].title)
+            //            //        print("\(dateSection.count)" + "!!!!!!!!!!!!!!!")
+            //            i += 1
+            //            return dateSection.count
+            //        } else {
+            //            print("2回目")
+            //            if section == 0 {
+            //                return 4
+            //            } else if section == 1 {
+            //                return 1
+            //            } else if section == 2 {
+            //                return 1
+            //            }
+            //        }
+            //        return 10
     }
     
     // セルの内容
@@ -627,19 +645,20 @@ class TaskListViewController: UIViewController, UISearchBarDelegate, UITableView
         self.tableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        switch editingStyle {
-        case .delete:
-            self.searchTodoCollection.remove(at: indexPath.row)
-            self.todoCollection.todos.remove(at: indexPath.row)
-            self.todoCollection.save()
+    // セルの削除
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        switch editingStyle {
+//        case .delete:
+//            self.searchTodoCollection.remove(at: indexPath.row)
 //            self.todoCollection.todos.remove(at: indexPath.row)
 //            self.todoCollection.save()
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.middle)
-        default:
-            return
-        }
-    }
+////            self.todoCollection.todos.remove(at: indexPath.row)
+////            self.todoCollection.save()
+//            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.middle)
+//        default:
+//            return
+//        }
+//    }
     
     // MARK: サウンドファイル作成
     func makeSound() {

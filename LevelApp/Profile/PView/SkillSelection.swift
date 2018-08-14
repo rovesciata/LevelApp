@@ -43,7 +43,7 @@ class SkillSelection: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // セクションのタイトル
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "スキル選択"
+        return "アビリティ選択"
     }
     
     // セクションタイトルの高さ
