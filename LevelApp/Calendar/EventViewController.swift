@@ -22,10 +22,11 @@ class EventViewController: UIViewController {
     //日付フォーム(UIDatePickerを使用)
     let y = UIDatePicker(frame: CGRect(x: 0, y: 400, width: UIScreen.main.bounds.size.width, height: 100))
     //日付表示
-    let y_text = UILabel(frame: CGRect(x: 90, y: 343, width: 150, height: 30))
+//    let y_text = UILabel(frame: CGRect(x: 90, y: 343, width: 150, height: 30))
     
     let todoCollection = TodoCollection.sharedInstance
     
+    @IBOutlet weak var y_text: UILabel!
     @IBOutlet weak var skillSelectedLabel: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
     
@@ -64,7 +65,7 @@ class EventViewController: UIViewController {
         view.addSubview(y_text)
         
         // 保存ボタン
-        let eventInsert = UIButton(frame: CGRect(x: 290, y: 35, width: 70, height: 25))
+        let eventInsert = UIButton(frame: CGRect(x: self.view.bounds.width - 80, y: 50, width: 70, height: 25))
         eventInsert.setTitle("保存", for: UIControlState())
         eventInsert.setTitleColor(.black, for: UIControlState())
         eventInsert.backgroundColor = .white
@@ -75,7 +76,7 @@ class EventViewController: UIViewController {
         view.addSubview(eventInsert)
         
         // キャンセルボタン
-        let backBtn = UIButton(frame: CGRect(x: 10, y: 35, width: 50, height: 25))
+        let backBtn = UIButton(frame: CGRect(x: 10, y: 50, width: 50, height: 25))
         backBtn.setTitle("×", for: UIControlState())
         backBtn.setTitleColor(.black, for: UIControlState())
         backBtn.backgroundColor = .white
