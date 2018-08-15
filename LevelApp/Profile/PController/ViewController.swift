@@ -578,8 +578,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         levelBarSkill3.layer.borderWidth = 0.3
         
         // プロフィール写真の影
-        profileImage.layer.shadowOpacity = 0.5
-        profileImage.layer.shadowOffset = CGSize(width: 5, height: 5)
+//        profileImage.layer.shadowOpacity = 0.5
+//        profileImage.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
     
 
