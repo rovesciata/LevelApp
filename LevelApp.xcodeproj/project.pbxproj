@@ -726,6 +726,7 @@
 			baseConfigurationReference = 7DDB0513C864CA1D9136DEA9 /* Pods-LevelApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89JXWRYFPR;
 				INFOPLIST_FILE = LevelApp/Info.plist;
@@ -735,6 +736,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cagioro.LevelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -745,6 +747,7 @@
 			baseConfigurationReference = 440EDD7E4FC40BBACC5B7E58 /* Pods-LevelApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89JXWRYFPR;
 				INFOPLIST_FILE = LevelApp/Info.plist;
@@ -754,6 +757,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cagioro.LevelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
