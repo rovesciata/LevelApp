@@ -7,9 +7,10 @@ target 'LevelApp' do
 
 
 pod 'FSCalendar'
-  pod 'CalculateCalendarLogic' 
-pod 'RealmSwift'
-pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+ pod 'CalculateCalendarLogic' 
+pod 'Firebase/Core'
+pod 'Firebase/AdMob'
+pod 'Google-Mobile-Ads-SDK'
 
   # Pods for LevelApp
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,21 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        let flg = true //分岐条件
-//        
-//        let storyboard:UIStoryboard =  UIStoryboard(name: "Main",bundle:nil)
-//        var viewController:UIViewController
-//        
-//        
-//        //表示するビューコントローラーを指定
-//        if  flg {
-//            viewController = storyboard.instantiateViewController(withIdentifier: "Profile") as UIViewController
-//        } else {
-//            viewController = storyboard.instantiateViewController(withIdentifier: "Main") as UIViewController
-//        }
-//        
-//        
-//        window?.rootViewController = viewController
+        
+        // Use Firebase library to configure APIs.
+        FirebaseApp.configure()
+        
+        // Initialize the Google Mobile Ads SDK.
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-7282907738662618~3305663650")
+
         
         return true
         

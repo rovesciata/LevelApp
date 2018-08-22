@@ -8,7 +8,6 @@
 
 
 import UIKit
-import RealmSwift
 
 
 class EventViewController: UIViewController {
