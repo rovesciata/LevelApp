@@ -2,7 +2,6 @@
 //  EventViewController.swift
 //  LevelApp
 //
-//  Created by 門屋　陽二郎 on 2018/07/18.
 //  Copyright © 2018年 cagioro. All rights reserved.
 //
 
@@ -172,10 +171,6 @@ class EventViewController: UIViewController, GADBannerViewDelegate {
             let todoCollection = TodoCollection.sharedInstance
             todoCollection.save()
             
-//            if todo.finished == false {
-//                let tabItem1: UITabBarItem = (self.tabBarController?.tabBar.items![1])!
-//                tabItem1.badgeValue = "!"
-//            }
             
             //前のページに戻る
             dismiss(animated: true, completion: nil)

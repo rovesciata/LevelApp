@@ -2,7 +2,6 @@
 //  SystemViewController.swift
 //  LevelApp
 //
-//  Created by 門屋　陽二郎 on 2018/08/04.
 //  Copyright © 2018年 cagioro. All rights reserved.
 //
 
@@ -12,13 +11,20 @@ import GoogleMobileAds
 class SystemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADBannerViewDelegate {
     
     var bannerView: GADBannerView!
+    
+    // アプリのアドレス
+    var url = NSURL(string: "https://itunes.apple.com/us/app/レベルアップ/id1427127985?l=ja&ls=1&mt=8")
 
     @IBOutlet weak var systemTableView: UITableView!
     
-    let systemArray = ["ライセンスについて", "", ""]
+    let systemArray = ["ライセンスについて", "このアプリを評価する", ""]
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
@@ -110,6 +116,18 @@ class SystemViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
         cell.textLabel?.text = "\(systemArray[indexPath.row])"
         
+        let attributedString = NSMutableAttributedString(string: systemArray[indexPath.row])
+        
+        attributedString.addAttribute(.link,
+                                      value: "https://itunes.apple.com/us/app/レベルアップ/id1427127985?l=ja&ls=1&mt=8",
+                                      range: NSString(string: systemArray[indexPath.row]).range(of: "このアプリを評価する"))
+        
+        
+//        systemArray[indexPath.row].attributedText = attributedString
+//        systemArray[indexPath.row].isSelectable = true
+//        systemArray[1].attributedText = attributedString
+//        systemArray[indexPath.row].delegate = self
+        
         // セルの内容表示
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell", for: indexPath)as! TodoListTableViewCell
 //        let todo = self.dayTodos[indexPath.row]
@@ -122,9 +140,11 @@ class SystemViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // Cell が選択された場合
     func tableView(_ table: UITableView,didSelectRowAt indexPath: IndexPath) {
-       
+        if indexPath.row == 0 {
             // LicenceViewControllerへ遷移するために Segue を呼び出す
             performSegue(withIdentifier: "toLicenceViewController",sender: nil)
+        }
+        
         }
     
     

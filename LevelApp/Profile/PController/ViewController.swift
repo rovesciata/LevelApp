@@ -1,8 +1,6 @@
 //
 //  ViewController.swift
 //  LevelApp
-//
-//  Created by 門屋　陽二郎 on 2018/06/21.
 //  Copyright © 2018年 cagioro. All rights reserved.
 //
 
@@ -11,33 +9,36 @@ import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
     
-    // レベルバー、レベルアップ時の効果音の宣言
-    var audioPlayerClearLvBar : AVAudioPlayer! = nil //クリア時用
-    var audioPlayerClearLvBarY : AVAudioPlayer! = nil //クリア時用
-    var audioPlayerClearLvBarB : AVAudioPlayer! = nil //クリア時用
-    var audioPlayerClearLvNum : AVAudioPlayer! = nil //クリア時用
-    var audioPlayerClearLvNumY : AVAudioPlayer! = nil //クリア時用
-    var audioPlayerClearLvNumB : AVAudioPlayer! = nil //クリア時用
-    
+    // レベルバー、レベルアップ時の効果音の宣言(クリア時用)
+    var audioPlayerClearLvBar : AVAudioPlayer! = nil
+    var audioPlayerClearLvBarY : AVAudioPlayer! = nil
+    var audioPlayerClearLvBarB : AVAudioPlayer! = nil
+    var audioPlayerClearLvNum : AVAudioPlayer! = nil
+    var audioPlayerClearLvNumY : AVAudioPlayer! = nil
+    var audioPlayerClearLvNumB : AVAudioPlayer! = nil
+    // バックミュージックの宣言
     var audioPlayer : AVAudioPlayer!
     
     // ViewControllerクラスのプロパティとしてProfileCollectionクラスのインスタンスを宣言
     let profileCollection = ProfileCollection()
     
-    @IBOutlet weak var levelBar: UIProgressView!
+    // 名前、スキルのラベル
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var skill1: UILabel!
     @IBOutlet weak var skill2: UILabel!
     @IBOutlet weak var skill3: UILabel!
-    @IBOutlet weak var profileImage: UIImageView!
+   // レベル数
     @IBOutlet weak var levelAll: UILabel!
     @IBOutlet weak var levelSkill1: UILabel!
     @IBOutlet weak var levelSkill2: UILabel!
     @IBOutlet weak var levelSkill3: UILabel!
+    // レベルバー
+    @IBOutlet weak var levelBar: UIProgressView!
     @IBOutlet weak var levelBarSkill1: UIProgressView!
     @IBOutlet weak var levelBarSkill2: UIProgressView!
     @IBOutlet weak var levelBarSkill3: UIProgressView!
-    
+    // プロフィール写真
+     @IBOutlet weak var profileImage: UIImageView!
     // 押しボタン
     @IBOutlet weak var redUpBtn: UIButton!
     @IBOutlet weak var yellowUpBtn: UIButton!
@@ -577,21 +578,19 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         levelBarSkill3.transform = CGAffineTransform(scaleX: 1.0, y: 5.0)
         levelBarSkill3.layer.borderWidth = 0.3
         
-        // プロフィール写真の影
-//        profileImage.layer.shadowOpacity = 0.5
-//        profileImage.layer.shadowOffset = CGSize(width: 5, height: 5)
     }
     
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // 効果音
         makeSoundLvNum()
         makeSoundLvNumY()
         makeSoundLvNumB()
